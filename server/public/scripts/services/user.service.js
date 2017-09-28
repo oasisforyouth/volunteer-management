@@ -16,11 +16,11 @@ myApp.factory('UserService', function($http, $location){
           } else {
               console.log('UserService -- getuser -- failure');
               // user has no session, bounce them back to the login page
-              $location.path("/home");
+              $location.path("/login");
           }
       },function(response){
         console.log('UserService -- getuser -- failure: ', response);
-        $location.path("/home");
+        $location.path("/login");
       });
     },
 
@@ -28,7 +28,7 @@ myApp.factory('UserService', function($http, $location){
       console.log('UserService -- logout');
       $http.get('/user/logout').then(function(response) {
         console.log('UserService -- logout -- logged out');
-        $location.path("/home");
+        $location.path("/login");
       });
     }
   };
