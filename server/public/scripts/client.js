@@ -26,6 +26,14 @@ myApp.config(function($routeProvider, $locationProvider) {
         }
       }
     })
+    .when('/overview', {
+      templateUrl: '/views/templates/overview.html',
+      controller: 'LoginController as lc',
+    })
+    .when('/volunteerDetail', {
+      templateUrl: '/views/templates/volunteerDetail.html',
+      controller: 'LoginController as lc',
+    })
     .when('/info', {
       templateUrl: '/views/templates/info.html',
       controller: 'InfoController',
