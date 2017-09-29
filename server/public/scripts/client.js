@@ -7,7 +7,7 @@ myApp.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/home', {
             templateUrl: '/views/templates/home.html',
-            controller: 'LoginController as lc',
+            controller: 'HomeController as hc',
         })
         .when('/login', {
             templateUrl: '/views/templates/login.html',
@@ -28,18 +28,17 @@ myApp.config(function($routeProvider, $locationProvider) {
         })
         .when('/overview', {
             templateUrl: '/views/templates/overview.html',
-            controller: 'LoginController as lc',
+            controller: 'OverviewController as oc',
         })
         .when('/volunteerDetail', {
             templateUrl: '/views/templates/volunteerDetail.html',
-            controller: 'LoginController as lc',
+            controller: 'VolunteerDetailController as vc',
         })
-<<<<<<< HEAD
-=======
+
         .when('/newAdmin', {
-            templateUrl: '/views/templates/newAdmin.html'
+            templateUrl: '/views/templates/newAdmin.html',
+            controller: 'NewAdminController as nc',
         })
->>>>>>> ccfcf5c16b2c9b532539ce3b69752c9fc63a1137
         .when('/info', {
             templateUrl: '/views/templates/info.html',
             controller: 'InfoController',
@@ -49,21 +48,14 @@ myApp.config(function($routeProvider, $locationProvider) {
                 }
             }
         })
-<<<<<<< HEAD
-        .when('/manageadmin', {
-            templateUrl: '/views/manageadmin.html',
-            controller: 'ManageAdminController as vm',
-        })
-        .when('/newadmin', {
-            templateUrl: '/views/newadmin.html',
-            controller: 'newAdminController as vm',
+        .when('/manageAdmin', {
+            templateUrl: '/views/templates/manageAdmin.html',
+            controller: 'ManageAdminController as mc',
         })
         .when('/training', {
-            templateUrl: '/views/training.html',
-            controller: 'trainingController as vm',
+            templateUrl: '/views/templates/training.html',
+            controller: 'TrainingController as tc',
         })
-=======
->>>>>>> ccfcf5c16b2c9b532539ce3b69752c9fc63a1137
         .otherwise({
             redirectTo: 'home'
         });
