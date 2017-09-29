@@ -54,6 +54,12 @@ body, html {
   border-radius: 0px;
 }
 
+.loginHeader {
+  background-color: #333333;
+  width: 100%;
+  border-radius: 0px;
+}
+
 ul {
   list-style-type: none;
   margin: 0;

@@ -7,6 +7,11 @@ myApp.controller('LoginController', function($http, $location, UserService) {
     };
     vm.message = '';
 
+//directs user to login if hey click the admin button on home page  
+vm.goToLogin = function(){
+  $location.path('/login');
+}
+
     vm.login = function() {
       console.log('LoginController -- login');
       if(vm.user.username === '' || vm.user.password === '') {
@@ -17,7 +22,7 @@ myApp.controller('LoginController', function($http, $location, UserService) {
           if(response.data.username) {
             console.log('LoginController -- login -- success: ', response.data);
             // location works with SPA (ng-route)
-            $location.path('/user'); // http://localhost:5000/#/user
+            $location.path('/overview'); // http://localhost:5000/#/overview
           } else {
             console.log('LoginController -- login -- failure: ', response);
             vm.message = "Wrong!!";
