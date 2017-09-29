@@ -1,0 +1,45 @@
+
+
+<div ng-include="'views/partials/nav.html'"></div>
+
+<div flexbox-parent="flexbox-parent" layout="row" layout-align="center center">
+    <md-content>
+        <form class="newAdmin">
+            <md-input-container class="md-block">
+                <label for="firstName">First Name</label>
+                <input required name="firstName">
+                <div ng-messages="projectForm.firstName.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label for="lastName">Last Name</label>
+                <input required name="lastName">
+                <div ng-messages="projectForm.lastName.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label for="username">Username</label>
+                <input required name="username">
+                <div ng-messages="projectForm.username.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label for="email">Email</label>
+                <input required type="email">
+                <div ng-messages="projectForm.email.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button class="md-raised md-primary">Submit</md-button>
+            </section>
+        </form>
+    </md-content>
+</div>
