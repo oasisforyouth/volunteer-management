@@ -34,9 +34,12 @@ myApp.config(function($routeProvider, $locationProvider) {
             templateUrl: '/views/templates/volunteerDetail.html',
             controller: 'LoginController as lc',
         })
+<<<<<<< HEAD
+=======
         .when('/newAdmin', {
             templateUrl: '/views/templates/newAdmin.html'
         })
+>>>>>>> ccfcf5c16b2c9b532539ce3b69752c9fc63a1137
         .when('/info', {
             templateUrl: '/views/templates/info.html',
             controller: 'InfoController',
@@ -46,6 +49,21 @@ myApp.config(function($routeProvider, $locationProvider) {
                 }
             }
         })
+<<<<<<< HEAD
+        .when('/manageadmin', {
+            templateUrl: '/views/manageadmin.html',
+            controller: 'ManageAdminController as vm',
+        })
+        .when('/newadmin', {
+            templateUrl: '/views/newadmin.html',
+            controller: 'newAdminController as vm',
+        })
+        .when('/training', {
+            templateUrl: '/views/training.html',
+            controller: 'trainingController as vm',
+        })
+=======
+>>>>>>> ccfcf5c16b2c9b532539ce3b69752c9fc63a1137
         .otherwise({
             redirectTo: 'home'
         });
