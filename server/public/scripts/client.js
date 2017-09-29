@@ -34,6 +34,9 @@ myApp.config(function($routeProvider, $locationProvider) {
             templateUrl: '/views/templates/volunteerDetail.html',
             controller: 'LoginController as lc',
         })
+        .when('/newAdmin', {
+            templateUrl: '/views/templates/newAdmin.html'
+        })
         .when('/info', {
             templateUrl: '/views/templates/info.html',
             controller: 'InfoController',
