@@ -1,4 +1,4 @@
-myApp.controller('newAdminController', ['UserService', function(UserService) {
-    console.log('newAdminController created');
+myApp.controller('NewAdminController', function($http, $location, UserService) {
+    console.log('NewAdminController created');
 
-}])
+});

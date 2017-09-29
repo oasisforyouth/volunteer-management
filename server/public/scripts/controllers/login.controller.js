@@ -7,10 +7,7 @@ myApp.controller('LoginController', function($http, $location, UserService) {
     };
     vm.message = '';
 
-//directs user to login if hey click the admin button on home page  
-vm.goToLogin = function(){
-  $location.path('/login');
-}
+
 
     vm.login = function() {
       console.log('LoginController -- login');
