@@ -1,42 +1,71 @@
 <div ng-include="'views/partials/nav.html'"></div>
-<div class="container">
-  <p>
-    On the Admin Overview Page
-  </p>
-  <table class="mdl-data-table mdl-js-data-table">
-      <thead>
-        <tr>
-          <th class="mdl-data-table__cell--non-numeric">Name</th>
-          <th class="mdl-data-table__cell--non-numeric">Nickname</th>
-          <th>Age</th>
-          <th class="mdl-data-table__cell--non-numeric">Living?</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">John Lennon</td>
-          <td class="mdl-data-table__cell--non-numeric">The smart one</td>
-          <td>40</td>
-          <td class="mdl-data-table__cell--non-numeric">No</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">Paul McCartney</td>
-          <td class="mdl-data-table__cell--non-numeric">The cute one</td>
-          <td>73</td>
-          <td class="mdl-data-table__cell--non-numeric">Yes</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">George Harrison</td>
-          <td class="mdl-data-table__cell--non-numeric">The shy one</td>
-          <td>58</td>
-          <td class="mdl-data-table__cell--non-numeric">No</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">Ringo Starr</td>
-          <td class="mdl-data-table__cell--non-numeric">The funny one</td>
-          <td>74</td>
-          <td class="mdl-data-table__cell--non-numeric">Yes</td>
-        </tr>
-      </tbody>
-    </table>
+<div id="overviewContainer" class="container">
+  <h3>
+    Volunteer Overview
+  </h3>
+  <div layout-padding id=sideBar class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Search Filters</span>
+      <h6>Volunteers</h6>
+      <md-checkbox>All</md-checkbox>
+      <md-checkbox>Onboarding</md-checkbox>
+      <md-checkbox>Ready to Volunteer</md-checkbox>
+      <h6>Volunteer Interests</h6>
+      <md-checkbox>Tutoring</md-checkbox>
+      <md-checkbox>Transportation</md-checkbox>
+      <md-checkbox>Administration</md-checkbox>
+      <md-checkbox>Marketing and Outreach</md-checkbox>
+      <md-checkbox>Supplies/Donations</md-checkbox>
+      <md-checkbox>Fundraising and Events</md-checkbox>
+      <h6>Length of Service</h6>
+      <md-checkbox>Less than 1 year</md-checkbox>
+      <md-checkbox>1-3 years</md-checkbox>
+      <md-checkbox>More than 3 years</md-checkbox>
+      <h6>Status</h6>
+      <md-checkbox>Submitted Application</md-checkbox>
+      <md-checkbox>Application in Review</md-checkbox>
+      <md-checkbox>Checking Background/References</md-checkbox>
+      <md-checkbox>Schedule Interview</md-checkbox>
+      <md-checkbox>Schedule Training</md-checkbox>
+      <md-checkbox>Ready to Volunteer!</md-checkbox>
+    </div>
+    <main class="mdl-layout__content">
+      <div id="overviewTable" class="page-content">
+        <table class="mdl-data-table mdl-js-data-table">
+          <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">Name</th>
+              <th class="mdl-data-table__cell--non-numeric">Volunteer Interests</th>
+              <th>Skills/Hobbies/Experience</th>
+              <th class="mdl-data-table__cell--non-numeric">Length of Service</th>
+              <th class="mdl-data-table__cell--non-numeric">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric"><a href="#/volunteerDetail">Chip Chapman III</a></td>
+              <td class="mdl-data-table__cell--non-numeric">Tutoring, Administration</td>
+              <td class="mdl-data-table__cell--non-numeric">Cooking, Politicking</td>
+              <td class="mdl-data-table__cell--non-numeric">18 months</td>
+              <td class="mdl-data-table__cell--non-numeric">Ready to Volunteer!</td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">John Doe</td>
+              <td class="mdl-data-table__cell--non-numeric">Transportation</td>
+              <td class="mdl-data-table__cell--non-numeric">Teaching, Music</td>
+              <td class="mdl-data-table__cell--non-numeric">0 months</td>
+              <td class="mdl-data-table__cell--non-numeric">Application in Review</td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">Jane Doe</td>
+              <td class="mdl-data-table__cell--non-numeric">Marketing and Outreach</td>
+              <td class="mdl-data-table__cell--non-numeric">Health and Wellness</td>
+              <td class="mdl-data-table__cell--non-numeric">0 months</td>
+              <td class="mdl-data-table__cell--non-numeric">Checking Background/References</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
 </div>

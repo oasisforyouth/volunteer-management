@@ -27,6 +27,15 @@ html {
     margin-top: 10px;
 }
 
+#overviewContainer {
+    height:100vh;
+}
+
+.container h6 {
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
 .container p {
     margin-top: 14px;
 }
@@ -45,11 +54,26 @@ html {
     width: 15%;
 }
 
-#volunteerButton{
+#volunteerButton {
     color: white;
     background-color: #104b86;
     width: 15%;
     }
+
+
+#sidebar{
+height: 100%;
+}
+#overviewTable{
+    /* display: flex;
+    justify-content: flex-end;
+    padding-right: 1%; */
+}
+
+.container h3 {
+    display: flex;
+    justify-content: center;
+}
 
 .message {
     padding: 10px 0;
