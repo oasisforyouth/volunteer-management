@@ -1,4 +1,35 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container">
-        <p>Manage Administrator Page</p>
+    <center>
+        <h3>Manage Administrators</h3>
+
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+            <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Name</th>
+                    <th>Position</th>
+                    <th>Email Address</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Noah Gallagher</td>
+                    <td>Guitar</td>
+                    <td>Noah@oasis.com</td>
+                    <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Edit</button></td>
+                    <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Delete</button></td>
+                </tr>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Liam Gallagher</td>
+                    <td>Vocals</td>
+                    <td>Liam@oasis.com</td>
+                    <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Edit</button></td>
+                    <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+
 </div>
