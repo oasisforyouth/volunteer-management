@@ -1,4 +1,30 @@
 <div ng-include="'views/partials/nav.html'"></div>
-<div class="container">
-        <p>Training Page</p>
+<div flexbox-parent="flexbox-parent" layout="row" layout-align="center center">
+    <md-content>
+        <h1 class="lead" layout="row" layout-align="center center">Trainings</h1>
+    </md-content>
+
 </div>
+<div>
+    <md-content>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Volunteers</th>
+                    <th>Employees</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tr ng-repeat="training in tc.TrainingService.training.list">
+                <td>{{training.title}}</td>
+                <td>{{training.volunteers}}</td>
+                <td>{{training.employees}}</td>
+                <td><button>Edit</button></td>
+                <td><button>Delete</button></td>
+            </tr>
+        </table>
+    </md-content>
+</div>
+<md-button class="md-raised md-primary" ng-click="tc.addTraining()">Add New Training</md-button>
