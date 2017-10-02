@@ -1,9 +1,10 @@
-<div ng-include="'views/partials/nav.html'">
+<div ng-include="'views/partials/nav.html'"></div>
 
-</div>
 
 <div flexbox-parent="flexbox-parent" layout="row" layout-align="center center">
     <md-content>
+        <h1 class="lead" layout="row" layout-align="center center">Administrator Sign Up</h1>
+
         <form class="newAdmin">
             <md-input-container class="md-block">
                 <label for="firstName">First Name</label>
@@ -38,7 +39,7 @@
             </md-input-container>
 
             <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-                <md-button class="md-raised md-primary" ng-click="nc.submitAdmin(newAdmin)">Submit</md-button>
+                <md-button class="md-raised md-primary" ng-click="nc.addAdmin(newAdmin)">Submit</md-button>
             </section>
         </form>
     </md-content>
