@@ -10,4 +10,6 @@ myApp.controller('UserController', function(UserService) {
         UserService.addAdmin(self.newAdmin);
         // self.newAdmin = {};
     };
+
+
 });
