@@ -2,7 +2,7 @@ body,
 html {
     margin: 0;
     padding: 0;
-    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
 }
 
@@ -28,7 +28,7 @@ html {
 }
 
 #overviewContainer {
-    height:100vh;
+    height: 100vh;
 }
 
 .container h6 {
@@ -58,13 +58,13 @@ html {
     color: white;
     background-color: #104b86;
     width: 15%;
-    }
-
-
-#sidebar{
-height: 100%;
 }
-#overviewTable{
+
+#sidebar {
+    height: 100%;
+}
+
+#overviewTable {
     /* display: flex;
     justify-content: flex-end;
     padding-right: 1%; */
@@ -137,6 +137,14 @@ li a:hover {
 }
 
 .newAdmin {
+    height: 30%;
+    width: 300px;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 10px
+}
+
+.login {
     height: 30%;
     width: 300px;
     border: 1px solid black;
