@@ -1,18 +1,22 @@
-<div class="container">
-  <h1 class="lead">Login</h1>
-    <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
-    <form ng-submit="lc.login()">
-      <div>
-          <label for="username">Username:</label>
-          <input type="text" ng-model="lc.user.username" />
-      </div>
-      <div>
-          <label for="password">Password:</label>
-          <input type="password" ng-model="lc.user.password" />
-      </div>
-      <div>
-          <input class="btn btn-default" type="submit" name="submit" value="Log In" />
-          <a href="#register">Register</a>
-      </div>
-    </form>
+<div class="container" flexbox-parent="flexbox-parent" layout="row" layout-align="center center">
+    <md-content>
+        <h1 class="lead" layout="row" layout-align="center center">Login</h1>
+        <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
+            <form class="login" ng-submit="lc.login()">
+                <div>
+                    <md-input-container class="md-block">
+                        <label for="username">Username:</label>
+                        <input type="text" ng-model="lc.user.username" required name="username" />
+                    </md-input-container>
+                </div>
+                <div>
+                    <md-input-container class="md-block">
+                        <label for="password">Password:</label>
+                        <input type="password" ng-model="lc.user.password" required password="password" />
+                </div>
+                <div layout="row" layout-align="center center">
+                    <md-button class="md-raised md-primary" type="submit" name="submit" value="Log In" />Submit</md-button>
+                </div>
+            </form>
+    </md-content>
 </div>
