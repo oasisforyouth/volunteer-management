@@ -9,4 +9,5 @@ myApp.controller('NewAdminController', ['$http', '$location', 'UserService', fun
         UserService.addAdmin(self.newAdmin);
         // self.newAdmin = {};
     };
+
 }]);
