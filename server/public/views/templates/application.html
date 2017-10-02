@@ -1,35 +1,39 @@
 <html>
-    <title>Volunteer Application</title>
-    <form>
-        <div class='container'>
-           <div>
+<title>Volunteer Application</title>
+<form>
+    <div class='container'>
+        <div>
             <label><b>Name:  </b></label>
-            <input type="text" ng-model="firstName"placeholder="First"><input type="text" ng-model="lastName"placeholder="last"><input type="text" ng-model="middleName"placeholder="Middle"><input type="text" ng-model="maidenName"placeholder="Maiden">
-        <p></p>
+            <input type="text" ng-model="firstName" placeholder="First"><input type="text" ng-model="lastName" placeholder="Last">
+            <input type="text" ng-model="middleName" placeholder="Middle"><input type="text" ng-model="maidenName" placeholder="Maiden">
+            <p></p>
         </div>
         <div>
             <label><b>Address:  </b></label>
-            <input type="text" ng-model="streetNumber"placeholder="Number">
-        <p></p>
+            <input type="text" ng-model="streetNumber" placeholder="Number">
+            <p></p>
         </div>
-        <div>  
+        <div>
             <label><b>How long have you been at your current address?</b></label>
             <input type="text" placeholder="Years">
-        <p></p>
-        </div>  
-        <div>    
-            <p><b>Preferred method of contact:</b></p>
-            <p><input type="checkbox" name="Cell Phone"><label><b>Cell Phone:  </b></label><input type="text" placeholder="123-456-7890" ng-model="cell_phone"></p>
-            <p><input type="checkbox" name="Home Phone"><label><b>Home Phone:  </b></label><input type="text" placeholder="123-456-7890" ng-model="home_phone"></p>
-            <p><input type="checkbox" name="Email Address"><label><b>Email Address:  </b></label><input type="text" placeholder="sam.doe@email.com" ng-model="email"></p>
+            <p></p>
         </div>
-        <div>  
+        <div>
+            <p><b>Preferred method of contact:</b></p>
+            <p><input type="checkbox" name="Cell Phone"><label><b>Cell Phone:  </b></label><input type="text" placeholder="123-456-7890"
+                    ng-model="cellPhone"></p>
+            <p><input type="checkbox" name="Home Phone"><label><b>Home Phone:  </b></label><input type="text" placeholder="123-456-7890"
+                    ng-model="homePhone"></p>
+            <p><input type="checkbox" name="Email Address"><label><b>Email Address:  </b></label><input type="text" placeholder="sam.doe@email.com"
+                    ng-model="email"></p>
+        </div>
+        <div>
             <p><b>Emergency Contact:</b></p>
             <p><label><b>Name:  </b></label><input type="text" placeholder="sam.doe@email.com"></p>
             <p><label><b>Address:  </b></label><input type="text" placeholder="123 4th St."></p>
             <p><label><b>Daytime Phone:  </b></label><input type="text" placeholder="123-456-7890"></p>
             <p><label><b>Relationship:  </b></label><input type="text" placeholder="friend, cousin, spouse"></p>
-        </div>  
+        </div>
         <div>
             <p><b>Drivers License:  </b><label>Yes</label><input type="checkbox"><label>No</label><input type="checkbox"></p>
         </div>
@@ -39,10 +43,72 @@
             <p><label><b>Address:  </b></label><input type="text" placeholder="Address"></p>
             <p><label><b>Phone:  </b></label><input type="text" placeholder="Phone"></p>
             <p><label><b>Email:  </b></label><input type="text" placeholder="Email"></p>
-            <p><label><b>Years Known:  </b></label><input type="text" placeholder=""><label><b>Relationship:  </b></label><input type="text"></p>
-            
+            <p><label><b>Years Known:  </b></label><input type="text" placeholder="Years">
+            <p><label><b>Relationship:  </b></label><input type="text" placeholder="Boss, Peer, Employee"></p> 
         </div>
-<!-- build ng-model to create object -->
+        <div>
+            <p><label><b>Availability to volunteer: </b></label><br></p>
+            <select name="availabilitySelect" ng-model="data.Availability">
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Monthly">Monthly</option>
+              </select><br>
+            <div>
+                </script>
+                <p><label><b>Preferred days to volunteer: </b></label><br></p>
+
+                <form name="preferredDays" ng-controller="ExampleController">
+                    <label>Monday:
+            <input type="checkbox" ng-model="checkbox.Monday">
+          </label><br/>
+                    <label>Tuesday:
+            <input type="checkbox" ng-model="checkbox.Tuesday">
+          </label><br/>
+                    <label>Wednesday:
+            <input type="checkbox" ng-model="checkbox.Wednesday">
+          </label><br/>
+                    <label>Thursday:
+            <input type="checkbox" ng-model="checkbox.Thursday"
+            ng-true-value="'YES'" ng-false-value="'NO'">
+          </label><br/>
+                    <label>Friday:
+            <input type="checkbox" ng-model="checkbox.Friday"
+            ng-true-value="'YES'" ng-false-value="'NO'">
+          </label><br/>
+                    <label>Saturday:
+            <input type="checkbox" ng-model="checkbox.Saturday"
+            ng-true-value="'YES'" ng-false-value="'NO'">
+          </label><br/>
+                    <label>Sunday:
+            <input type="checkbox" ng-model="checkbox.Sunday"
+            ng-true-value="'YES'" ng-false-value="'NO'">
+          </label><br/>
+                    <label>No Preference:
+            <input type="checkbox" ng-model="checkbox.NoPreference"
+                   ng-true-value="'YES'" ng-false-value="'NO'">
+           </label><br/>
+
+                </form>
+            </div>
+            <div>
+                <p><label><b>Hours available: </b></label><br></p>
+                <label>Any:</label>
+                <input type="checkbox" ng-model="checkbox.Any" ng-true-value="'YES'" ng-false-value="'NO'">
+                <label>Mornings:</label>
+                <input type="checkbox" ng-model="checkbox.Mornings" ng-true-value="'YES'" ng-false-value="'NO'">
+                <label>Afternoons:</label>
+                <input type="checkbox" ng-model="checkbox.Afternoons" ng-true-value="'YES'" ng-false-value="'NO'">
+                <label>Other:</label>
+                <input type="checkbox" ng-model="checkbox.Other" ng-true-value="'YES'" ng-false-value="'NO'">
+            </div>
+            <div>
+                <p><label><b>Volunteer experience(organization, duties, dates: </b></label><br></p>
+                <input type="text" placeholder="Big Brother, Coordinator, 5/14-9/16"></p>
+            </div>
+            <p><label><b>Interests: </b></label><br></p>
+            <label>Interest:</label>
+            <input type="checkbox" ng-model="checkbox.Interest" ng-true-value="'YES'" ng-false-value="'NO'">
+            <!-- build ng-model to create object -->
 
 
 
@@ -57,5 +123,6 @@
 
 
         </div>
-    </form>
+</form>
+
 </html>
