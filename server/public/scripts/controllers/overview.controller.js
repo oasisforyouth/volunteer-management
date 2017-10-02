@@ -1,4 +1,4 @@
-myApp.controller('OverviewController', function($http, $location, UserService) {
+myApp.controller('OverviewController', function($http, $location, VolunteerService) {
     console.log('OverviewController created');
     self.allVolunteers = VolunteerService.allVolunteers;
 
