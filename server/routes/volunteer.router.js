@@ -4,7 +4,7 @@ var path = require('path');
 var pool = require('../modules/pool.js')
 
 
-router.get('/', function(req, res){
+router.post('/', function(req, res){
     console.log('post route hit server')
     res.sendStatus(200);
 })

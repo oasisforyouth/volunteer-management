@@ -3,7 +3,7 @@ myApp.service('VolunteerService', function ($http, $location) {
     var self = this;
 
     self.postNewVolunteer = function(){
-        $http.get('/volunteer').then(function(response){
+        $http.post('/volunteer').then(function(response){
             console.log('completed the post route', response);
         })
     }
