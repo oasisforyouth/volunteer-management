@@ -1,17 +1,12 @@
-myApp.controller('NewAdminController', function($http, $location, UserService) {
+myApp.controller('NewAdminController', ['$http', '$location', 'UserService', function($http, $location, UserService) {
     console.log('NewAdminController created');
     var self = this;
+    self.UserService = UserService;
 
-    // self.newAdmin = {
-    //     firstName: '',
-    //     lastName: '',
-    //     username: '',
-    //     email: ''
-    // };
-
-
-    self.submitAdmin = function() {
+    // POST ROUTE FOR NEW ADMIN SIGN-UP
+    self.addAdmin = function() {
         console.log('Submit was clicked', self.newAdmin);
-        self.newAdmin = {};
+        UserService.addAdmin(self.newAdmin);
+        // self.newAdmin = {};
     };
-});
+}]);

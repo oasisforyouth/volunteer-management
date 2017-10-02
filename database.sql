@@ -6,7 +6,7 @@ create table Users (
 	last_name TEXT NOT NULL,
 	user_name TEXT NOT NULL,
 	email TEXT NOT NULL,
-    password VARCHAR(100) NOT NULL
+    password VARCHAR(100)
 	);
 --this password is "1" for both admins	
 INSERT INTO users (first_name, last_name, user_name, email, password)
