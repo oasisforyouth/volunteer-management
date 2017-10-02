@@ -1,4 +1,7 @@
-myApp.controller('ApplicationController', function($http, $location, UserService) {
+myApp.controller('ApplicationController', ['$http', '$location', 'UserService', 'VolunteerService',  function($http, $location, UserService, VolunteerService) {
     console.log('ApplicationController created');
-    var vm = this;
-});
+    var self = this;
+
+    VolunteerService.postNewVolunteer();
+
+}]);
