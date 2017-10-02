@@ -12,6 +12,11 @@ create table Users (
 INSERT INTO users (first_name, last_name, user_name, email, password)
 VALUES ('John', 'Doe', 'John', 'johndoe@themail.com','$2a$10$b2QDCEBm/twSssJ7jPNObO8rbTISTLbArfQHaYAhfWVtjUmg.HceG'),
 	('Jane', 'Joe', 'Jane', 'janejoe@themail.com', '$2a$10$b2QDCEBm/twSssJ7jPNObO8rbTISTLbArfQHaYAhfWVtjUmg.HceG');
+
+-- need to run this to add new field to your database
+    ALTER TABLE "public"."volunteers"
+  ADD COLUMN "attended_orientation" boolean DEFAULT false,
+  ADD COLUMN "orientation_date" date;
 	
 create table Trainings (
 	id SERIAL PRIMARY KEY,
@@ -89,5 +94,7 @@ CREATE TABLE Volunteers (
     thursday_preference BOOLEAN DEFAULT FALSE,
     friday_preference BOOLEAN DEFAULT FALSE,
     saturday_preference BOOLEAN DEFAULT FALSE,
-    sunday_preference BOOLEAN DEFAULT FALSE
+    sunday_preference BOOLEAN DEFAULT FALSE,
+    attended_orientation boolean DEFAULT false,
+    orientation_date date;
 );
