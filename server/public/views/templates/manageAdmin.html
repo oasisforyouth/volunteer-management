@@ -14,25 +14,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Noah Gallagher</td>
-                    <td>Guitar</td>
-                    <td>Noah@oasis.com</td>
+                <tr ng-repeat="user in mc.allUsers.list">
+                    <td class="mdl-data-table__cell--non-numeric">{{user.first_name}} {{user.last_name}}</td>
+                    <td>{{user.position}}</td>
+                    <td>{{user.email}}</td>
                     <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
                                 <i class="material-icons">create</i>
                               </button></td>
-                    <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-                                <i class="material-icons">delete</i>
-                              </button></td>
-                </tr>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Liam Gallagher</td>
-                    <td>Vocals</td>
-                    <td>Liam@oasis.com</td>
-                    <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-                                <i class="material-icons">create</i>
-                              </button></td>
-                    <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+                    <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-click="mc.deleteAdmin(user.id)">
                                 <i class="material-icons">delete</i>
                               </button></td>
                 </tr>
