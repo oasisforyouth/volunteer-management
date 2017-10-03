@@ -103,4 +103,5 @@ CREATE TABLE Volunteers (
     sunday_preference BOOLEAN DEFAULT FALSE,
     attended_orientation boolean DEFAULT false,
     orientation_date date;
+
 );
