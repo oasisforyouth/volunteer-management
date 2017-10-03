@@ -17,7 +17,8 @@
                     <th></th>
                 </tr>
             </thead>
-            <tr ng-repeat="training in tc.Trainings.training.list">
+            <!-- NON-EDITABLE TABLE -->
+            <tr ng-repeat="training in tc.Trainings.training.list" ng-class="{'hidden': tc.toggle}">
                 <td class="mdl-data-table__cell--non-numeric">{{training.title}}</td>
                 <td>
                     <md-checkbox aria-label="volunteer checkbox"></md-checkbox>
@@ -25,8 +26,20 @@
                 <td>
                     <md-checkbox aria-label="employee checkbox"></md-checkbox>
                 </td>
-                <td><button>Edit</button></td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised" ng-if="!tc.toggle" ng-click="tc.toggle = true">Edit</button></td>
                 <td><button class="mdl-button mdl-js-button mdl-button--raised" ng-click="tc.deleteTraining(training.id)">Delete</button></td>
+            </tr>
+            <!-- EDITABLE TABLE -->
+            <tr ng-repeat="training in tc.Trainings.training.list" ng-class="{'hidden': !tc.toggle}">
+                <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="training.title"></td>
+                <td>
+                    <md-checkbox aria-label="volunteer checkbox"></md-checkbox>
+                </td>
+                <td>
+                    <md-checkbox aria-label="employee checkbox"></md-checkbox>
+                </td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised" ng-click="tc.updateTraining(training)">Save</button></td>
+                <td><button class="mdl-button mdl-js-button mdl-button--raised" ng-if="tc.toggle" ng-click="tc.toggle = false">Cancel</button></td>
             </tr>
         </table>
     </md-content>

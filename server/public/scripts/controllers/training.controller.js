@@ -3,6 +3,7 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
 
     var self = this;
 
+    self.toggle = false;
     self.Trainings = TrainingService;
     TrainingService.getTraining();
 
@@ -15,5 +16,11 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
     self.deleteTraining = function(trainingId) {
         // console.log('delete training was clicked', trainingId);
         TrainingService.deleteTraining(trainingId);
+    };
+
+    // EDIT TRAINING
+    self.updateTraining = function(trainingId) {
+        // console.log('updateTraining button was clicked', trainingId);
+        TrainingService.updateTraining(trainingId);
     };
 }]);

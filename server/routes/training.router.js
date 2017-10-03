@@ -51,6 +51,29 @@ router.delete('/:id', function(req, res) {
     });
 }); // end router.delete
 
-
+// UPDATE/EDIT ROUTE FOR TRAINING
+router.put('/:id', function(req, res) {
+    var trainingId = req.params.id;
+    console.log('training put was hit!', req.body);
+    pool.connect(function(errorConnectingToDatabase, client, done) {
+        if (errorConnectingToDatabase) {
+            // when connecting to database failed
+            console.log('Error connecting to database', errorConnectingToDatabase);
+            res.sendStatus(500);
+        } else {
+            // when connecting to database worked!
+            client.query('UPDATE trainings SET title=$1, volunteers=$2, employees=$3 WHERE id=$4;', [req.body.title, req.body.volunteers, req.body.employees, trainingId],
+                function(errorMakingQuery, result) {
+                    done();
+                    if (errorMakingQuery) {
+                        console.log('Error making database query', errorMakingQuery);
+                        res.sendStatus(500);
+                    } else {
+                        res.sendStatus(200);
+                    }
+                });
+        }
+    });
+});
 
 module.exports = router;
