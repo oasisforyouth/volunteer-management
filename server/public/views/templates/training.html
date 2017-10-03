@@ -5,26 +5,32 @@
     </md-content>
 
 </div>
-<div>
+<div flexbox-parent="flexbox-parent" layout="row" layout-align="center center">
     <md-content>
-        <table class="table table-striped">
+        <table class="mdl-data-table mdl-js-data-table">
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Volunteers</th>
-                    <th>Employees</th>
+                    <th class="mdl-data-table__cell--non-numeric">Title</th>
+                    <th class="mdl-data-table__cell--non-numeric">Volunteers</th>
+                    <th class="mdl-data-table__cell--non-numeric">Employees</th>
                     <th></th>
                     <th></th>
                 </tr>
             </thead>
-            <tr ng-repeat="training in tc.TrainingService.training.list">
-                <td>{{training.title}}</td>
-                <td>{{training.volunteers}}</td>
-                <td>{{training.employees}}</td>
+            <tr ng-repeat="training in tc.Trainings.training.list">
+                <td class="mdl-data-table__cell--non-numeric">{{training.title}}</td>
+                <td>
+                    <md-checkbox aria-label="volunteer checkbox"></md-checkbox>
+                </td>
+                <td>
+                    <md-checkbox aria-label="employee checkbox"></md-checkbox>
+                </td>
                 <td><button>Edit</button></td>
                 <td><button>Delete</button></td>
             </tr>
         </table>
     </md-content>
 </div>
-<md-button class="md-raised md-primary" ng-click="tc.addTraining()">Add New Training</md-button>
+<div layout="row" layout-align="center center">
+    <md-button class="md-raised md-primary" ng-click="tc.addTraining()">Add New Training</md-button>
+</div>

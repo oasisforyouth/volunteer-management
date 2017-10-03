@@ -3,11 +3,12 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
 
     var self = this;
 
-    self.TrainingService = TrainingService;
+    self.Trainings = TrainingService;
     TrainingService.getTraining();
 
     // ADDS NEW TRAININGS
-    // self.addTraining = function() {
-    //     console.log('addTraining button was clicked');
-    // };
+    self.addTraining = function() {
+        console.log('addTraining button was clicked');
+
+    };
 }]);
