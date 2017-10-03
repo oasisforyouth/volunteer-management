@@ -21,6 +21,7 @@ myApp.service('TrainingService', function($http, $location) {
         });
     };
 
+    // EDITS FROM TRAINING.HTML TO DATABASE
     self.updateTraining = function(trainingId) {
         // console.log('updateTraining hit', trainingId);
         $http.put('/training/' + trainingId.id, trainingId).then(function(response) {
@@ -28,4 +29,12 @@ myApp.service('TrainingService', function($http, $location) {
         })
     };
 
+    // ADD A NEW TRAINING TO THE DATABASE
+    self.addTraining = function(newTraining) {
+        console.log(newTraining);
+        $http.post('/training', newTraining).then(function(response) {
+            console.log('service post was returned: ', response);
+            self.getTraining();
+        });
+    };
 });

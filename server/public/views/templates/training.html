@@ -5,7 +5,7 @@
     </md-content>
 
 </div>
-<div flexbox-parent="flexbox-parent" layout="row" layout-align="center center">
+<div flexbox-parent="flexbox-parent" layout="row" layout-align="center center" ng-class="{'hidden': tc.newTrainingToggle}">
     <md-content>
         <table class="mdl-data-table mdl-js-data-table">
             <thead>
@@ -18,25 +18,25 @@
                 </tr>
             </thead>
             <!-- NON-EDITABLE TABLE -->
-            <tr ng-repeat="training in tc.Trainings.training.list" ng-class="{'hidden': tc.toggle}">
+            <tr ng-repeat="training in tc.Trainings.training.list | orderBy: 'title'" ng-class="{'hidden': tc.toggle}">
                 <td class="mdl-data-table__cell--non-numeric">{{training.title}}</td>
                 <td>
-                    <md-checkbox aria-label="volunteer checkbox"></md-checkbox>
+                    <md-checkbox aria-label="disabled volunteer checkbox" ng-disabled="true" ng-model="training.volunteers"></md-checkbox>
                 </td>
                 <td>
-                    <md-checkbox aria-label="employee checkbox"></md-checkbox>
+                    <md-checkbox aria-label="employee checkbox" ng-disabled="true" ng-model="training.employees"></md-checkbox>
                 </td>
                 <td><button class="mdl-button mdl-js-button mdl-button--raised" ng-if="!tc.toggle" ng-click="tc.toggle = true">Edit</button></td>
                 <td><button class="mdl-button mdl-js-button mdl-button--raised" ng-click="tc.deleteTraining(training.id)">Delete</button></td>
             </tr>
             <!-- EDITABLE TABLE -->
-            <tr ng-repeat="training in tc.Trainings.training.list" ng-class="{'hidden': !tc.toggle}">
+            <tr ng-repeat="training in tc.Trainings.training.list | orderBy: 'title'" ng-class="{'hidden': !tc.toggle}">
                 <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="training.title"></td>
                 <td>
-                    <md-checkbox aria-label="volunteer checkbox"></md-checkbox>
+                    <md-checkbox aria-label="volunteer checkbox" ng-model="training.volunteers"></md-checkbox>
                 </td>
                 <td>
-                    <md-checkbox aria-label="employee checkbox"></md-checkbox>
+                    <md-checkbox aria-label="employee checkbox" ng-model="training.employees"></md-checkbox>
                 </td>
                 <td><button class="mdl-button mdl-js-button mdl-button--raised" ng-click="tc.updateTraining(training)">Save</button></td>
                 <td><button class="mdl-button mdl-js-button mdl-button--raised" ng-if="tc.toggle" ng-click="tc.toggle = false">Cancel</button></td>
@@ -45,5 +45,32 @@
     </md-content>
 </div>
 <div layout="row" layout-align="center center">
-    <md-button class="md-raised md-primary" ng-click="tc.addTraining()">Add New Training</md-button>
+    <!-- HIDDEN NEW TRAINING FORM -->
+    <md-content ng-class="{'hidden': !tc.newTrainingToggle}">
+        <table>
+            <table class="mdl-data-table mdl-js-data-table">
+                <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Title</th>
+                        <th class="mdl-data-table__cell--non-numeric">Volunteers</th>
+                        <th class="mdl-data-table__cell--non-numeric">Employees</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="tc.newTraining.title"></td>
+
+                    <td>
+                        <md-checkbox aria-label="volunteer checkbox" ng-model="tc.newTraining.volunteers"></md-checkbox>
+                    </td>
+                    <td>
+                        <md-checkbox aria-label="employee checkbox" ng-model="tc.newTraining.employees"></md-checkbox>
+                    </td>
+                    <td><button class="mdl-button mdl-js-button mdl-button--raised" ng-click="tc.addTraining()">Submit Training</button></td>
+                    <td><button class="mdl-button mdl-js-button mdl-button--raised" ng-if="tc.newTrainingToggle" ng-click="tc.newTrainingToggle = false">Cancel</button></td>
+                </tr>
+            </table>
+    </md-content>
+    <md-button class="md-raised md-primary" ng-if="!tc.newTrainingToggle" ng-click="tc.newTrainingToggle = true">Add New Training</md-button>
 </div>
