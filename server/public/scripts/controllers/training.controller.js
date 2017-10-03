@@ -4,6 +4,7 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
     var self = this;
 
     self.TrainingService = TrainingService;
+    
     TrainingService.getTraining();
 
     // ADDS NEW TRAININGS
