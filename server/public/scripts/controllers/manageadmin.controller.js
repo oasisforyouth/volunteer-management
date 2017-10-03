@@ -1,4 +1,9 @@
-myApp.controller('ManageAdminController', function($http, $location, UserService) {
+myApp.controller('ManageAdminController',['$http', '$location', 'UserService', function($http, $location, UserService) {
     console.log('ManageAdminController created');
-    var vm = this;
-});
+    var self = this;
+    self.allUsers = UserService.allUsers;
+
+    UserService.getAllUsers();
+
+
+}]);
