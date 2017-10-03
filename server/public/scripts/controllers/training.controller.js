@@ -9,6 +9,11 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
     // ADDS NEW TRAININGS
     self.addTraining = function() {
         console.log('addTraining button was clicked');
+    };
 
+    // DELETES TRAINING
+    self.deleteTraining = function(trainingId) {
+        // console.log('delete training was clicked', trainingId);
+        TrainingService.deleteTraining(trainingId);
     };
 }]);

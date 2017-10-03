@@ -13,4 +13,11 @@ myApp.service('TrainingService', function($http, $location) {
         });
     };
 
+    self.deleteTraining = function(trainingId) {
+        console.log('deleteTraining hit', trainingId);
+        $http.delete('/training/' + trainingId).then(function(response) {
+            self.getTraining();
+        });
+    };
+
 });
