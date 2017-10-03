@@ -3,11 +3,24 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
 
     var self = this;
 
-    self.TrainingService = TrainingService;
+    self.toggle = false;
+    self.Trainings = TrainingService;
     TrainingService.getTraining();
 
     // ADDS NEW TRAININGS
-    // self.addTraining = function() {
-    //     console.log('addTraining button was clicked');
-    // };
+    self.addTraining = function() {
+        console.log('addTraining button was clicked');
+    };
+
+    // DELETES TRAINING
+    self.deleteTraining = function(trainingId) {
+        // console.log('delete training was clicked', trainingId);
+        TrainingService.deleteTraining(trainingId);
+    };
+
+    // EDIT TRAINING
+    self.updateTraining = function(trainingId) {
+        // console.log('updateTraining button was clicked', trainingId);
+        TrainingService.updateTraining(trainingId);
+    };
 }]);
