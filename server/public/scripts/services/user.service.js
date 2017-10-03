@@ -2,9 +2,16 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
     console.log('UserService Loaded');
     var self = this;
     var userObject = {};
+    self.allUsers = {list:[]};
 
 
-
+    self.getAllUsers = function(){
+        console.log('UserService -- getAllUsers')
+        $http.get('/user/allusers').then(function(response){
+            console.log('all users route response', response);
+            self.allUsers.list = response.data;
+        })
+    }
 
     self.getuser = function() {
         console.log('UserService -- getuser');
