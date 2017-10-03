@@ -20,6 +20,22 @@ router.get('/', function(req, res) {
         res.send(false);
     }
 });
+router.get('/allusers', function(req,res){
+    pool.connect(function(errorConnectingToDatabase, client, done){
+        if(errorConnectingToDatabase){
+            res.sendStatus(500);
+        }else{
+            client.query('SELECT first_name ,last_name, user_name, email FROM users', function(errorMakingQuery, result){
+                done();
+                if(errorMakingQuery){
+                    res.sendStatus(500);
+                }else{
+                    res.send(result.rows);
+                }
+            })
+        }
+    })
+})
 
 // clear all server session information about this user
 router.get('/logout', function(req, res) {
