@@ -76,4 +76,28 @@ router.put('/:id', function(req, res) {
     });
 });
 
+// POST ROUTE FOR NEW TRAINING
+router.post('/', function(req, res) {
+    var newTraining = req.body;
+    console.log('addTraining post was hit');
+    pool.connect(function(errorConnectingToDatabase, client, done) {
+        if (errorConnectingToDatabase) {
+            //when connecting to database failed
+            console.log('Error connecting to database', errorConnectingToDatabase);
+            res.sendStatus(500);
+        } else {
+            // when connecting to database worked aka HAPPYPATH!
+            client.query('INSERT INTO trainings (title, volunteers, employees) VALUES ($1, $2, $3);', [newTraining.title, newTraining.volunteers, newTraining.employees], function(errorMakingQuery, result) {
+                done(); //needed
+                if (errorMakingQuery) {
+                    console.log('Error making database query', errorMakingQuery);
+                    res.sendStatus(500);
+                } else {
+                    res.sendStatus(201);
+                }
+            }); // end client.query
+        }
+    }); // end pool.connect
+}); // end post route
+
 module.exports = router;
