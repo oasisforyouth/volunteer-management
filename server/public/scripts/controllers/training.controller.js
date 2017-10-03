@@ -4,12 +4,16 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
     var self = this;
 
     self.toggle = false;
+    self.newTrainingToggle = false;
     self.Trainings = TrainingService;
     TrainingService.getTraining();
 
     // ADDS NEW TRAININGS
     self.addTraining = function() {
-        console.log('addTraining button was clicked');
+        console.log('addTraining button was clicked', self.newTraining);
+        TrainingService.addTraining(self.newTraining);
+        self.newTrainingToggle = false;
+        self.newTraining = {};
     };
 
     // DELETES TRAINING
