@@ -2,12 +2,12 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
     console.log('UserService Loaded');
     var self = this;
     var userObject = {};
-    self.allUsers = {list:[]};
+    self.allUsers = { list: [] };
 
 
-    self.getAllUsers = function(){
+    self.getAllUsers = function() {
         console.log('UserService -- getAllUsers')
-        $http.get('/user/allusers').then(function(response){
+        $http.get('/user/allusers').then(function(response) {
             console.log('all users route response', response);
             self.allUsers.list = response.data;
         })
@@ -44,6 +44,14 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
         $http.post('/user', newAdmin).then(function(response) {
             console.log('UserService post response:', response);
         });
+    }
+    self.deleteAdmin = function(id) {
+        $http({
+            method: 'DELETE',
+            url: '/users',
+            success: function(response) {
+                console.log('DeleteService response:', response);
+            }
+        })
     };
-
 }]);
