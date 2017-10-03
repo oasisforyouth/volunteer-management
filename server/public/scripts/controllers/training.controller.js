@@ -22,5 +22,6 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
     self.updateTraining = function(trainingId) {
         // console.log('updateTraining button was clicked', trainingId);
         TrainingService.updateTraining(trainingId);
+        self.toggle = false;
     };
 }]);
