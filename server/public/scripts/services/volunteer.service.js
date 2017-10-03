@@ -10,7 +10,7 @@ myApp.service('VolunteerService', function ($http, $location) {
     }
     self.getAllVolunteers = function(){
         $http.get('/volunteer').then(function(response){
-            console.log('all volunteers from server', response);
+            console.log('all volunteers from server', response.data);
             self.allVolunteers.list = response.data;
 
         })
