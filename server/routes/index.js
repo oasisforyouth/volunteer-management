@@ -1,5 +1,4 @@
 var nodemailer = require('nodemailer');
-require('dotenv').config();
 
 nodemailer.createTestAccount((err, account) => {
 
