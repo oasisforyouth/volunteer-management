@@ -91,4 +91,27 @@ router.delete('/:id', function(req, res) {
 }); //end delete route
 
 
+//admin edit route//
+
+router.put('/', function(req, res) {
+    console.log('put hit', req.body);
+    pool.connect(function(err, db, done) {
+        if (err) {
+            console.log('remove error: ', err);
+            res.sendStatus(500);
+        } else {
+            db.query('UPDATE users SET first_name=$1, last_name=$2, position=$3, email=$4 WHERE id=$5', [req.body.first_name, req.body.last_name, req.body.position, req.body.email, req.body.id], function(errorMakingQuery, result) {
+                done();
+                if (errorMakingQuery) {
+                    console.log('error with put', errorMakingQuery);
+                    res.sendStatus(500);
+                } else {
+                    res.sendStatus(200);
+                }
+            })
+        }
+    })
+});
+//end admin edit route//
+
 module.exports = router;

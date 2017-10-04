@@ -48,10 +48,18 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
     self.deleteAdmin = function(id) {
         $http({
             method: 'DELETE',
-            url: '/users',
+            url: '/user/' + id,
             success: function(response) {
                 console.log('DeleteService response:', response);
             }
         })
+        self.getAllUsers();
     };
+
+    self.editAdmin = function(id) {
+        $http({
+            method: 'PUT',
+            url: '/users',
+        })
+    }
 }]);
