@@ -145,6 +145,13 @@ li a:hover {
     justify-content: center; */
 }
 
+.setPassword {
+    height: 30%;
+    width: 70%;
+    border: 1px solid black;
+    padding: 10px;
+}
+
 .login {
     height: 30%;
     width: 300px;
