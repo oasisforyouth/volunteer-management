@@ -13,16 +13,26 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="user in mc.allUsers.list">
+                <!-- non editable table -->
+                <tr ng-repeat="user in mc.allUsers.list" ng-class="{'hidden': mc.toggle}">
                     <td class="mdl-data-table__cell--non-numeric">{{user.first_name}} {{user.last_name}}</td>
                     <td>{{user.position}}</td>
                     <td>{{user.email}}</td>
                     <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-                                <i class="material-icons">create</i>
+                                <i class="material-icons" ng-if="!mc.toggle" ng-click="mc.toggle = true">create</i>
                               </button></td>
                     <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-click="mc.deleteAdmin(user.id)">
                                 <i class="material-icons">delete</i>
                               </button></td>
+                </tr>
+                <!-- editable table -->
+                <tr ng-repeat="user in mc.allUsers.list" ng-class="{'hidden': !mc.toggle}">
+                    <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="user.first_name" placeholder="First Name"></td>
+                    <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="user.last_name" placeholder="Last Name"></td>
+                    <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="user.position" placeholder="Position"></td>
+                    <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="user.email" placeholder="Email Address"></td>
+                    <td><button ng-if="mc.toggle" aria-hidden="true" ng-click="mc.toggle = false">Edit</button></td>
+                    <td><button ng-if="mc.toggle" aria-hidden="true" ng-click="mc.updateAdmin(user)">Save</button></td>
                 </tr>
             </tbody>
         </table>

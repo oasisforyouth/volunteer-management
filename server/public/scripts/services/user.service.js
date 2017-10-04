@@ -56,9 +56,9 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
         self.getAllUsers();
     };
 
-    self.updateAdmin = function(id) {
-        console.log('updateAdmin hit', id);
-        $http.put('/user/' + id).then(function(response) {
+    self.updateAdmin = function(user) {
+        console.log('updateAdmin hit', user);
+        $http.put('/user/', user).then(function(response) {
             self.getAllUsers();
         })
     };
