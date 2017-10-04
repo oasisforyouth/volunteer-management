@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial', 'ngMap']);
 
 /// Routes ///
 myApp.config(function($routeProvider, $locationProvider) {
@@ -74,6 +74,15 @@ myApp.config(function($routeProvider, $locationProvider) {
         .when('/training', {
             templateUrl: '/views/templates/training.html',
             controller: 'TrainingController as tc',
+            resolve: {
+                getuser: function(UserService) {
+                    return UserService.getuser();
+                }
+            }
+        })
+        .when('/newAdminLogin', {
+            templateUrl: '/views/templates/newAdminLogin.html',
+            controller: 'LoginController as lc',
             resolve: {
                 getuser: function(UserService) {
                     return UserService.getuser();
