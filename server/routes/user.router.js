@@ -21,16 +21,16 @@ router.get('/', function(req, res) {
         res.send(false);
     }
 });
-router.get('/allusers', function(req,res){
-    pool.connect(function(errorConnectingToDatabase, client, done){
-        if(errorConnectingToDatabase){
+router.get('/allusers', function(req, res) {
+    pool.connect(function(errorConnectingToDatabase, client, done) {
+        if (errorConnectingToDatabase) {
             res.sendStatus(500);
-        }else{
-            client.query('SELECT first_name ,last_name, user_name, email FROM users', function(errorMakingQuery, result){
+        } else {
+            client.query('SELECT first_name ,last_name, position, user_name, email, id FROM users', function(errorMakingQuery, result) {
                 done();
-                if(errorMakingQuery){
+                if (errorMakingQuery) {
                     res.sendStatus(500);
-                }else{
+                } else {
                     res.send(result.rows);
                 }
             })
@@ -68,6 +68,27 @@ router.post('/', function(req, res) {
         }
     }); // end pool.connect
 }); // end router.post
+
+//delete route
+router.delete('/:id', function(req, res) {
+    console.log('delete hit', req.params.id);
+    pool.connect(function(err, db, done) {
+        if (err) {
+            console.log('delete error: ', err);
+            res.sendStatus(500);
+        } else {
+            db.query('DELETE FROM users WHERE id=$1', [req.params.id], function(errorMakingQuery, result) {
+                done();
+                if (errorMakingQuery) {
+                    console.log('error with put', errorMakingQuery);
+                    res.sendStatus(500);
+                } else {
+                    res.sendStatus(200);
+                }
+            })
+        }
+    })
+}); //end delete route
 
 
 module.exports = router;
