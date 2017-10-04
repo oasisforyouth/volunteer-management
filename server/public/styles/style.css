@@ -152,3 +152,19 @@ li a:hover {
     margin: 20px;
     padding: 10px;
 }
+
+.Icon {
+    font-size: 150%;
+}
+
+#editIcon {
+    font-size: 150%;
+}
+
+#saveIcon {
+    font-size: 150%;
+}
+
+#cancelIcon {
+    font-size: 150%;
+}
