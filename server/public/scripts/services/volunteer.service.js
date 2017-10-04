@@ -3,14 +3,15 @@ myApp.service('VolunteerService', function ($http, $location) {
     var self = this;
     self.allVolunteers = {list:[]};
 
-    self.postNewVolunteer = function(){
-        $http.post('/volunteer').then(function(response){
+    self.postNewVolunteer = function(newVolunteer){
+        console.log('new volunteer object', newVolunteer);
+        $http.post('/volunteer', newVolunteer).then(function(response){
             console.log('completed the post route', response);
         })
     }
     self.getAllVolunteers = function(){
         $http.get('/volunteer').then(function(response){
-            console.log('all volunteers from server', response);
+            console.log('all volunteers from server', response.data);
             self.allVolunteers.list = response.data;
 
         })

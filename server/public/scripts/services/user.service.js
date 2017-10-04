@@ -46,6 +46,7 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
         });
     }
     self.deleteAdmin = function(id) {
+<<<<<<< HEAD
         $http({
             method: 'DELETE',
             url: '/user/' + id,
@@ -54,6 +55,19 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
             }
         })
         self.getAllUsers();
+=======
+        console.log('delete hit!', id);
+
+        $http({
+            method: 'DELETE',
+            url: '/user',
+            success: function(response) {
+                console.log('UserService delete response:', response);
+            }
+
+        })
+
+>>>>>>> master
     };
 
     self.editAdmin = function(id) {

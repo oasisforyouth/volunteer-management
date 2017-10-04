@@ -80,6 +80,15 @@ myApp.config(function($routeProvider, $locationProvider) {
                 }
             }
         })
+        .when('/newAdminLogin', {
+            templateUrl: '/views/templates/newAdminLogin.html',
+            controller: 'LoginController as lc',
+            resolve: {
+                getuser: function(UserService) {
+                    return UserService.getuser();
+                }
+            }
+        })
         .otherwise({
             redirectTo: 'home'
         });
