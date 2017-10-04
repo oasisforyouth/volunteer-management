@@ -1,9 +1,11 @@
-myApp.controller('ApplicationController', ['$http', '$location', 'UserService', 'VolunteerService',  function($http, $location, UserService, VolunteerService) {
+myApp.controller('ApplicationController', ['NgMap','$http', '$location', 'UserService', 'VolunteerService',  function(NgMap, $http, $location, UserService, VolunteerService) {
     console.log('ApplicationController created');
     var self = this;
     self.newApplication = {};
 
-    
+    self.placeChanged = function() {
+        self.place = this.getPlace();
+    }
     self.postApplication = function(){
         VolunteerService.postNewVolunteer(self.newApplication);
 
