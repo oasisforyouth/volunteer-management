@@ -13,6 +13,12 @@
         </div>
         <div>
             <label><b>Address:  </b></label>
+            <md-input-container>
+                    <input places-auto-complete size=50
+                      ng-model="ac.newApplication.address"
+                      component-restrictions="{country:'us'}"
+                      on-place-changed="ac.placeChanged()" /> <br/>
+                    </md-input-container>
             <input type="text" ng-model="ac.newApplication.address" placeholder="Address">
             <p></p>
         </div>

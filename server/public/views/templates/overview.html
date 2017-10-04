@@ -2,8 +2,20 @@
 <div id="overviewContainer" class="container">
   {{oc.allVolunteers}}
   <h3>
-    
+    VOLUNTEER OVERVIEW
   </h3>
+    Enter an address: <br/>
+    <md-input-container>
+    <input places-auto-complete size=50
+      ng-model="oc.address"
+      component-restrictions="{country:'us'}"
+      on-place-changed="oc.placeChanged()" /> <br/>
+    </md-input-container>
+    <div ng-show="oc.place">
+      Address = {{oc.place.formatted_address}} <br/>
+    </div>
+
+  
   <div layout-padding id=sideBar class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Search Filters</span>
@@ -43,6 +55,13 @@
             </tr>
           </thead>
           <tbody>
+              <tr ng-repeat="volunteer in oc.allVolunteers.list">
+                  <td class="mdl-data-table__cell--non-numeric"><a href="#/volunteerDetail">{{volunteer.firstName}}{{volunteer.lastName}}</a></td>
+                  <td class="mdl-data-table__cell--non-numeric">{{volunteer}}</td>
+                  <td class="mdl-data-table__cell--non-numeric">{{volunteer}}</td>
+                  <td class="mdl-data-table__cell--non-numeric">{{volunteer}}</td>
+                  <td class="mdl-data-table__cell--non-numeric">{{volunteer}}</td>
+                </tr>
             <tr>
               <td class="mdl-data-table__cell--non-numeric"><a href="#/volunteerDetail">Chip Chapman III</a></td>
               <td class="mdl-data-table__cell--non-numeric">Tutoring, Administration</td>
