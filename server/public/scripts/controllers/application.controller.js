@@ -3,6 +3,10 @@ myApp.controller('ApplicationController', ['$http', '$location', 'UserService', 
     var self = this;
     self.newApplication = {};
 
-    VolunteerService.postNewVolunteer();
+    
+    self.postApplication = function(){
+        VolunteerService.postNewVolunteer(self.newApplication);
+
+    }
 
 }]);
