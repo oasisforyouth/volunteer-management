@@ -8,5 +8,11 @@ myApp.controller('ManageAdminController', ['$http', '$location', 'UserService', 
     }
     UserService.getAllUsers();
 
+    self.updateAdmin = function(userId) {
+        console.log('updateAdmin was clicked', userId);
+        UserService.updateAdmin(userId);
+        self.toggle = false;
+    }
+
 
 }]);
