@@ -14,7 +14,12 @@ myApp.service('VolunteerService', function($http, $location) {
             console.log('all volunteers from server', response.data);
             self.allVolunteers.list = response.data;
 
-        })
-    }
+        });
+    };
 
-})
+    self.emailProgramManager = function() {
+        $http.post('/email').then(function(response) {
+            console.log('email sent', response.data);
+        });
+    }
+});
