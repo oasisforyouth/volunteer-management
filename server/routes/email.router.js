@@ -17,7 +17,7 @@ nodemailer.createTestAccount((err, account) => {
         to: 'nicbade@me.com', // list of receivers NEEDS ADDRESS
         subject: 'Hello ✔', // Subject line
         text: 'Hello world?', // plain text body
-        html: '<b>Hello world?</b>' // html body
+        html: '<b>Hello</b><p>A new application for volunteer has been submitted</p>' // html body
     };
 
     // send mail with defined transport object
