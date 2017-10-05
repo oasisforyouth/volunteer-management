@@ -6,15 +6,15 @@ nodemailer.createTestAccount((err, account) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: '', // generated ethereal user
-            pass: '' // generated ethereal password
+            user: process.env.DB_USER, // generated ethereal user
+            pass: process.env.DB_PASS // generated ethereal password
         }
     });
 
     // setup email data with unicode symbols
     let mailOptions = {
         from: '"Fred Foo 👻" <pm.oasisforyouth@gmail.com>', // sender address  NEEDS ADDRESS
-        to: '', // list of receivers NEEDS ADDRESS
+        to: 'nicbade@me.com', // list of receivers NEEDS ADDRESS
         subject: 'Hello ✔', // Subject line
         text: 'Hello world?', // plain text body
         html: '<b>Hello world?</b>' // html body

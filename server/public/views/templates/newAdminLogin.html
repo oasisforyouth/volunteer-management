@@ -1,25 +1,31 @@
-<div class="container">
-    <h1 class="lead">Administrator Page</h1>
+<div class="container" flexbox-parent="flexbox-parent" layout="column" layout-align="center center">
+    <h1 class="lead" layout="column" layout-align="center center">Administrator Page</h1>
+    <p>Welcome, username should go here with angular magic</p>
     <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
         <form ng-submit="lc.registerUser()">
             <!-- <div>
                 <label for="username">Username:</label>
                 <input type="text" ng-model="lc.user.username" />
             </div> -->
-            <div>
-                <form class="setPassword">
-                    <md-input-container class="md-block">
-                        <label for="password">Password:</label>
-                        <input type="password" ng-model="lc.newAdmin.password" />
-                    </md-input-container>
-                    <div>
-                        <label for="password">Confirm Password:</label>
-                        <input type="password" ng-model="lc.newAdmin.password" />
-                    </div>
-                </form>
+            <div flexbox-parent="flexbox-parent" layout="column" layout-align="center center">
+                <md-content>
+                    <form class="setPassword">
+                        <md-input-container class="md-block">
+                            <label for="password">Password:</label>
+                            <input type="password" ng-model="lc.newAdmin.password" />
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label for="password">Confirm Password:</label>
+                            <input type="password" ng-model="lc.newAdmin.password" />
+                        </md-input-container>
+                    </form>
+                </md-content>
             </div>
-            <input class="btn btn-default" type="submit" name="submit" value="Register" />
+            <md-button class="md-raised md-primary">
+                <inputtype="submit" name="submit" value="Register" />Submit
+            </md-button>
             <a href="#login">Cancel</a>
+
         </form>
 
 </div>

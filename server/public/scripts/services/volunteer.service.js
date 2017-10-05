@@ -1,4 +1,4 @@
-myApp.service('VolunteerService', function ($http, $location) {
+myApp.service('VolunteerService', function($http, $location) {
     console.log('volunteer service loaded');
     var self = this;
     self.allVolunteers = { list: [] };
@@ -28,8 +28,10 @@ myApp.service('VolunteerService', function ($http, $location) {
         });
     };
 
-    self.getAllVolunteers = function () {
-        $http.get('/volunteer').then(function (response) {
+ 
+    self.getAllVolunteers = function() {
+        $http.get('/volunteer').then(function(response) {
+            console.log('all volunteers from server', response.data);
             self.allVolunteers.list = response.data;
             for (var i = 0; i < self.allVolunteers.list.length; i++) {
                 var volunteerInterests = ''; //variable to hold a list of volunteer interests as a string
