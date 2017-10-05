@@ -7,6 +7,7 @@ myApp.service('VolunteerService', function($http, $location) {
         console.log('new volunteer object', newVolunteer);
         $http.post('/volunteer', newVolunteer).then(function(response) {
             console.log('completed the post route', response);
+            self.emailProgramManager();
         });
     }
     self.getAllVolunteers = function() {
@@ -21,5 +22,5 @@ myApp.service('VolunteerService', function($http, $location) {
         $http.post('/email').then(function(response) {
             console.log('email sent', response.data);
         });
-    }
+    };
 });
