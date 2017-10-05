@@ -11,7 +11,7 @@ create table Users (
     position TEXT NOT NULL
     );
 	
-	INSERT INTO users (first_name, last_name, user_name, email, password, position)
+INSERT INTO users (first_name, last_name, user_name, email, password, position)
 VALUES ('John', 'Doe', 'John', 'johndoe@themail.com','$2a$10$b2QDCEBm/twSssJ7jPNObO8rbTISTLbArfQHaYAhfWVtjUmg.HceG', 'IT Administrator'),
     ('Jane', 'Joe', 'Jane', 'janejoe@themail.com', '$2a$10$b2QDCEBm/twSssJ7jPNObO8rbTISTLbArfQHaYAhfWVtjUmg.HceG','Social Worker');
 	);
