@@ -39,6 +39,13 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
         });
     }
 
+    // SENDS AN EMAIL TO HAVE NEW ADMIN SET A PASSWORD
+    self.emailNewAdmin = function() {
+        $http.post('/email/user').then(function(response) {
+            console.log('email sent to new Admin: ', response);
+        });
+    };
+
     self.addAdmin = function(newAdmin) {
         console.log('UserService -- addAdmin', newAdmin);
         $http.post('/user', newAdmin).then(function(response) {

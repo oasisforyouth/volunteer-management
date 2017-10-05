@@ -47,7 +47,7 @@ myApp.controller('LoginController', function($http, $location, UserService) {
         }
     }
 
-    self.setPassword = function() {
-        console.log('LoginController -- setPassword');
-    }
+    self.updatePassword = function() {
+        console.log('password clicked', self.newAdmin);
+    };
 });

@@ -23,6 +23,14 @@
                 </md-input-container>
 
                 <md-input-container class="md-block">
+                    <label for="position">Position</label>
+                    <input required name="position" ng-model="nc.newAdmin.position">
+                    <div ng-messages="projectForm.position.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block">
                     <label for="username">Username</label>
                     <input required name="username" ng-model="nc.newAdmin.username">
                     <div ng-messages="projectForm.username.$error">
