@@ -13,7 +13,7 @@ myApp.service('VolunteerService', function($http, $location) {
         fundraising_events_opportunity: 'Fundraising/Events'
     };
 
-    var volunteerSkillsObject = {//volunteer skills for each volunteer
+    var volunteerSkillsObject = { //volunteer skills for each volunteer
         tutoring_skill: 'Tutoring',
         cooking_skill: 'Cooking',
         art_skill: 'Art',
@@ -21,14 +21,15 @@ myApp.service('VolunteerService', function($http, $location) {
         career_jobs_skill: 'Career Training'
     }
 
-    self.postNewVolunteer = function (newVolunteer) {
+    self.postNewVolunteer = function(newVolunteer) {
         console.log('new volunteer object', newVolunteer);
-        $http.post('/volunteer', newVolunteer).then(function (response) {
+        $http.post('/volunteer', newVolunteer).then(function(response) {
             console.log('completed the post route', response);
+            self.emailProgramManager();
         });
     };
 
- 
+
     self.getAllVolunteers = function() {
         $http.get('/volunteer').then(function(response) {
             console.log('all volunteers from server', response.data);
@@ -62,6 +63,16 @@ myApp.service('VolunteerService', function($http, $location) {
     };
 
 });
+
+
+self.emailProgramManager = function() {
+    $http.post('/email').then(function(response) {
+        console.log('email sent', response.data);
+    });
+
+};
+
+
 
 
 // {"list":[{"id":1,"first_name":"Troy","last_name":"Smith","middle_name":"T","maiden_name":null,
