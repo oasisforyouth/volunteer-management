@@ -1,9 +1,10 @@
 <div ng-include="'views/partials/nav.html'"></div>
-<div ng-repeat="volunteer in oc.allVolunteers.list | filter: oc.currentVolunteerId">
+{{vc.volunteerDetail.list}}
+<div>
     <!-- begin row 1 -->
     <div layout="row" class="container">
         <div flex layout-padding>
-            <h2 align="center">{{volunteer.first_name}} {{volunteer.last_name}} </h2>
+            <h2 align="center">{{vc.volunteerDetail.list.first_name}} {{vc.volunteerDetail.list.last_name}} </h2>
         </div>
     </div>
     <!-- end row 1 -->
@@ -12,8 +13,8 @@
     <div layout="row">
         <!-- column 1 -->
         <div flex layout-padding>
-            ADDRESS:<br> TIME AT CURRENT ADDRESS:<br> PRIMARY PHONE:<br> SECONDARY PHONE:<br> EMAIL:
-            <br> DRIVER'S LICENSE: YES/NO
+            ADDRESS:{{vc.volunteerDetail.list.address}}<br> TIME AT CURRENT ADDRESS:{{vc.volunteerDetail.list.time_at_address}}<br> PRIMARY PHONE: {{vc.volunteerDetail.list.primary_phone}}<br> SECONDARY PHONE: {{vc.volunteerDetail.list.secondary_phone}}<br> EMAIL: {{vc.volunteerDetail.list.email}}
+            <br> DRIVER'S LICENSE: {{vc.volunteerDetail.list.drivers_license}}
         </div>
         <!-- column 2 -->
         <div flex layout-padding>
@@ -54,10 +55,10 @@
         </md-card-title-text>
       </md-card-title>
       <md-card-content>
-        NAME<br> ADDRESS
-        <br> PHONE
-        <br> EMAIL
-        <br> RELATIONSHIP
+        NAME {{vc.volunteerDetail.list.emergency_name}}<br> ADDRESS v{{vc.volunteerDetail.list.emergency_address}}
+        <br> PHONE {{vc.volunteerDetail.list.emergency_phone}}
+        <br> EMAIL {{vc.volunteerDetail.list.emergency_email}}
+        <br> RELATIONSHIP {{vc.volunteerDetail.list.emergency_relationship}}
         <br>
       </md-card-content>
     </md-card>
@@ -71,7 +72,7 @@
         </md-card-title-text>
       </md-card-title>
       <md-card-content>
-        FREQUENCY<br> DAYS OF THE WEEK<br> TIME OF DAY
+        FREQUENCY {{vc.volunteerDetail.list.frequency}}<br> DAYS OF THE WEEK <br> TIME OF DAY
       </md-card-content>
     </md-card>
   </div>
@@ -103,11 +104,11 @@
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                    NAME<br> ADDRESS
-                    <br> PHONE
-                    <br> EMAIL
-                    <br> RELATIONSHIP
-                    <br> YEARS KNOWN<br>
+                    NAME {{vc.volunteerDetail.list.reference_1_name}}<br> ADDRESS {{vc.volunteerDetail.list.reference_1_address}}
+                    <br> PHONE {{vc.volunteerDetail.list.reference_1_phone}}
+                    <br> EMAIL {{vc.volunteerDetail.list.reference_1_email}}
+                    <br> RELATIONSHIP {{vc.volunteerDetail.list.reference_1_relationship}}
+                    <br> YEARS KNOWN {{vc.volunteerDetail.list.reference_1_years_known}}<br>
                 </md-card-content>
             </md-card>
         </div>
@@ -120,8 +121,8 @@
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                    ENGLISH<br> SPANISH
-                    <br> SOMALI
+                    ENGLISH {{vc.volunteerDetail.list.english}}<br> SPANISH {{vc.volunteerDetail.list.spanish}}
+                    <br> OTHER {{vc.volunteerDetail.list.language_other}}
                 </md-card-content>
             </md-card>
         </div>
@@ -134,8 +135,9 @@
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                    TUTOR<br> TRANSPORTATION
-                    <br> MARKETING AND OUTREACH
+                    TUTOR {{vc.volunteerDetail.list.tutor_opportunity}}<br> TRANSPORTATION {{vc.volunteerDetail.list.transportation_opportunity}}
+                    <br> MARKETING AND OUTREACH {{vc.volunteerDetail.list.marketing_opportunity}}<br>
+                    DROP-IN CENTER {{vc.volunteerDetail.list.dropin_opportunity}} <br> ADMINISTRATION {{vc.volunteerDetail.list.administration_opportunity}} <br> SUPPLIES/DONATIONS {{vc.volunteerDetail.list.supplies_donations_opportunity}} <br> FUNDRAISING AND EVENTS {{vc.volunteerDetail.list.fundraising_events_opportunity}} <br> OTHER {{vc.volunteerDetail.list.other_opportunity}}
                 </md-card-content>
             </md-card>
         </div>
@@ -154,8 +156,8 @@
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                    TEACHING<br> COOKING
-                    <br> HEALTH AND WELLNESS
+                    TUTOR {{vc.volunteerDetail.list.tutoring_skill}}<br> COOKING {{vc.volunteerDetail.list.cooking_skill}}
+                    <br> HEALTH AND WELLNESS {{vc.volunteerDetail.list.health_wellness_skill}} <br> CAREER/JOBS {{vc.volunteerDetail.list.career_jobs_skill}} <br> ART {{vc.volunteerDetail.list.art_skill}} <br> OTHER HOBBIES/SKILLS {{vc.volunteerDetail.list.additional_hobbies}}
                 </md-card-content>
             </md-card>
         </div>
@@ -181,7 +183,7 @@
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                    BIG BROTHER/BIG SISTER
+                   VOLUNTEER EXPERIENCE {{vc.volunteerDetail.list.volunteer_experience}}
                 </md-card-content>
             </md-card>
         </div>
@@ -198,7 +200,7 @@
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                    THIS GUYS KNOWS HIS STUFF
+                    {{vc.volunteerDetail.list.admin_notes}}
                 </md-card-content>
             </md-card>
         </div>
