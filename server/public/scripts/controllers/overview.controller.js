@@ -3,6 +3,6 @@ myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'Vo
     console.log('OverviewController created');
     self.allVolunteers = VolunteerService.allVolunteers;
     VolunteerService.getAllVolunteers();
-    self.currentVolunteerId = $routeParams.id;
+    // self.currentVolunteerId = $routeParams.id;
     
 }]);
