@@ -1,203 +1,204 @@
 <div ng-include="'views/partials/nav.html'"></div>
+<div ng-repeat="volunteer in oc.allVolunteers.list | filter: oc.currentVolunteerId">
+    <!-- begin row 1 -->
+    <div layout="row" class="container">
+        <div flex layout-padding>
+            <h2 align="center">{{volunteer.first_name}} {{volunteer.last_name}} </h2>
+        </div>
+    </div>
+    <!-- end row 1 -->
 
-<!-- begin row 1 -->
-<div layout="row" class="container">
-  <div flex layout-padding>
-    <h2 align="center">Chip Chapman III</h2>
-  </div>
-</div>
-<!-- end row 1 -->
+    <!-- begin row 2 -->
+    <div layout="row">
+        <!-- column 1 -->
+        <div flex layout-padding>
+            ADDRESS:<br> TIME AT CURRENT ADDRESS:<br> PRIMARY PHONE:<br> SECONDARY PHONE:<br> EMAIL:
+            <br> DRIVER'S LICENSE: YES/NO
+        </div>
+        <!-- column 2 -->
+        <div flex layout-padding>
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <h5>VOLUNTEER STATUS</h5>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <md-select ng-model="status" placeholder="Submitted Application" class="md-no-underline">
+                        <md-option value="Submitted Application">Submitted Application</md-option>
+                        <md-option value="Application in Review">Application in Review</md-option>
+                        <md-option value="Checking Background/Reference">Checking Background/Reference</md-option>
+                        <md-option value="Schedule Interview">Schedule Interview</md-option>
+                        <md-option value="Schedule Training">Schedule Training</md-option>
+                        <md-option value="Ready to Volunteer">Ready to Volunteer!</md-option>
+                    </md-select>
+                </md-card-content>
+            </md-card>
+        </div>
+        <!-- column 2 -->
+        <div flex layout-padding>
+            <md-button>EDIT</md-button>
+            <md-button>DELETE</md-button>
+        </div>
+    </div>
+    <!-- end row 2 -->
 
-<!-- begin row 2 -->
-<div layout="row">
-  <!-- column 1 -->
-  <div flex layout-padding>
-    ADDRESS:<br> TIME AT CURRENT ADDRESS:<br> PRIMARY PHONE:<br> SECONDARY PHONE:<br> EMAIL:
-    <br> DRIVER'S LICENSE: YES/NO
-  </div>
-  <!-- column 2 -->
-  <div flex layout-padding>
-    <md-card>
-      <md-card-title>
-        <md-card-title-text>
-          <h5>VOLUNTEER STATUS</h5>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        <md-select ng-model="status" placeholder="Submitted Application" class="md-no-underline">
-          <md-option value="Submitted Application">Submitted Application</md-option>
-          <md-option value="Application in Review">Application in Review</md-option>
-          <md-option value="Checking Background/Reference">Checking Background/Reference</md-option>
-          <md-option value="Schedule Interview">Schedule Interview</md-option>
-          <md-option value="Schedule Training">Schedule Training</md-option>
-          <md-option value="Ready to Volunteer">Ready to Volunteer!</md-option>
-        </md-select>
-      </md-card-content>
-    </md-card>
-  </div>
-  <!-- column 2 -->
-  <div flex layout-padding>
-    <md-button>EDIT</md-button>
-    <md-button>DELETE</md-button>
-  </div>
-</div>
-<!-- end row 2 -->
+    <!-- begin row 3 -->
+    <div layout="row">
+        <!-- column 1 -->
+        <div flex layout-padding>
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <h5>EMERGENCY CONTACT</h5>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    NAME<br> ADDRESS
+                    <br> PHONE
+                    <br> EMAIL
+                    <br> RELATIONSHIP
+                    <br>
+                </md-card-content>
+            </md-card>
+        </div>
+        <!-- column 2 -->
+        <div flex layout-padding>
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <h5>AVAILABILITY </h5>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    FREQUENCY<br> DAYS OF THE WEEK<br> TIME OF DAY
+                </md-card-content>
+            </md-card>
+        </div>
+        <!-- column 3 -->
+        <div flex layout-padding>
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <h5>TRAININGS</h5>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    CPR<br> INITIAL TRAININGS
+                </md-card-content>
+            </md-card>
+        </div>
+    </div>
+    <!-- end row 3 -->
 
-<!-- begin row 3 -->
-<div layout="row">
-  <!-- column 1 -->
-  <div flex layout-padding>
-    <md-card>
-      <md-card-title>
-        <md-card-title-text>
-          <h5>EMERGENCY CONTACT</h5>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        NAME<br> ADDRESS
-        <br> PHONE
-        <br> EMAIL
-        <br> RELATIONSHIP
-        <br>
-      </md-card-content>
-    </md-card>
-  </div>
-  <!-- column 2 -->
-  <div flex layout-padding>
-    <md-card>
-      <md-card-title>
-        <md-card-title-text>
-          <h5>AVAILABILITY </h5>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        FREQUENCY<br> DAYS OF THE WEEK<br> TIME OF DAY
-      </md-card-content>
-    </md-card>
-  </div>
-  <!-- column 3 -->
-  <div flex layout-padding>
-    <md-card>
-      <md-card-title>
-        <md-card-title-text>
-          <h5>TRAININGS</h5>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        CPR<br> INITIAL TRAININGS
-      </md-card-content>
-    </md-card>
-  </div>
-</div>
-<!-- end row 3 -->
+    <!-- begin row 4 -->
+    <div layout="row">
+        <!-- column 1 -->
+        <div flex layout-padding>
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <h5>PERSONAL REFERENCE</h5>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    NAME<br> ADDRESS
+                    <br> PHONE
+                    <br> EMAIL
+                    <br> RELATIONSHIP
+                    <br> YEARS KNOWN<br>
+                </md-card-content>
+            </md-card>
+        </div>
+        <!-- column 2 -->
+        <div flex layout-padding>
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <h5>LANGUAGES </h5>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    ENGLISH<br> SPANISH
+                    <br> SOMALI
+                </md-card-content>
+            </md-card>
+        </div>
+        <!-- column 3 -->
+        <div flex layout-padding>
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <h5>VOLUNTEER INTERESTS </h5>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    TUTOR<br> TRANSPORTATION
+                    <br> MARKETING AND OUTREACH
+                </md-card-content>
+            </md-card>
+        </div>
+    </div>
+    <!-- end row 4 -->
 
-<!-- begin row 4 -->
-<div layout="row">
-  <!-- column 1 -->
-  <div flex layout-padding>
-    <md-card>
-      <md-card-title>
-        <md-card-title-text>
-          <h5>PERSONAL REFERENCE</h5>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        NAME<br> ADDRESS
-        <br> PHONE
-        <br> EMAIL
-        <br> RELATIONSHIP
-        <br> YEARS KNOWN<br>
-      </md-card-content>
-    </md-card>
-  </div>
-  <!-- column 2 -->
-  <div flex layout-padding>
-    <md-card>
-      <md-card-title>
-        <md-card-title-text>
-          <h5>LANGUAGES </h5>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        ENGLISH<br> SPANISH
-        <br> SOMALI
-      </md-card-content>
-    </md-card>
-  </div>
-  <!-- column 3 -->
-  <div flex layout-padding>
-    <md-card>
-      <md-card-title>
-        <md-card-title-text>
-          <h5>VOLUNTEER INTERESTS </h5>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        TUTOR<br> TRANSPORTATION
-        <br> MARKETING AND OUTREACH
-      </md-card-content>
-    </md-card>
-  </div>
-</div>
-<!-- end row 4 -->
+    <!-- beginning of row 5 -->
+    <div layout="row">
+        <!-- column 1 -->
+        <div flex layout-padding>
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <h5>HOBBIES/SKILLS/INTERESTS</h5>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    TEACHING<br> COOKING
+                    <br> HEALTH AND WELLNESS
+                </md-card-content>
+            </md-card>
+        </div>
+        <!-- column 2 -->
+        <div flex layout-padding>
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <h5>MEDICAL CONDITIONS</h5>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    PEANUT ALLERGY
+                </md-card-content>
+            </md-card>
+        </div>
+        <!-- column 3 -->
+        <div flex layout-padding>
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <h5>VOLUNTEER EXPERIENCE</h5>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    BIG BROTHER/BIG SISTER
+                </md-card-content>
+            </md-card>
+        </div>
+    </div>
+    <!-- end row 5 -->
 
-<!-- beginning of row 5 -->
-<div layout="row">
-  <!-- column 1 -->
-  <div flex layout-padding>
-    <md-card>
-      <md-card-title>
-        <md-card-title-text>
-          <h5>HOBBIES/SKILLS/INTERESTS</h5>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        TEACHING<br> COOKING
-        <br> HEALTH AND WELLNESS
-      </md-card-content>
-    </md-card>
-  </div>
-  <!-- column 2 -->
-  <div flex layout-padding>
-    <md-card>
-      <md-card-title>
-        <md-card-title-text>
-          <h5>MEDICAL CONDITIONS</h5>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        PEANUT ALLERGY
-      </md-card-content>
-    </md-card>
-  </div>
-  <!-- column 3 -->
-  <div flex layout-padding>
-    <md-card>
-      <md-card-title>
-        <md-card-title-text>
-          <h5>VOLUNTEER EXPERIENCE</h5>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        BIG BROTHER/BIG SISTER
-      </md-card-content>
-    </md-card>
-  </div>
-</div>
-<!-- end row 5 -->
-
-<!-- begin row 6 -->
-<div layout="row">
-  <div flex layout-padding>
-    <md-card>
-      <md-card-title>
-        <md-card-title-text>
-          <h5>ADMINISTRATOR NOTES</h5>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        THIS GUYS KNOWS HIS STUFF
-      </md-card-content>
-    </md-card>
-  </div>
+    <!-- begin row 6 -->
+    <div layout="row">
+        <div flex layout-padding>
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <h5>ADMINISTRATOR NOTES</h5>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    THIS GUYS KNOWS HIS STUFF
+                </md-card-content>
+            </md-card>
+        </div>
+    </div>
 </div>
