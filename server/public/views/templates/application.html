@@ -1,7 +1,7 @@
 <html>
 <title>Volunteer Application</title>
 
-<!-- {{ac.newApplication}} -->
+{{ac.newApplication}}
 <div flexbox-parent="flexbox-parent" layout="row">
 
     <md-content>
@@ -40,7 +40,7 @@
             </div>
             <div>
                 <p><b>Select your preferred method of contact:</b>
-                    <md-radio-group ng-model="ac.newApplication.preferred_contact" layout="row">
+                    <md-radio-group ng-model="ac.newApplication.preferredContact" layout="row">
                         <md-radio-button value="primary" class="md-primary">Primary</md-radio-button>
                         <md-radio-button value="secondary">Secondary</md-radio-button>
                         <md-radio-button value="email">Email</md-radio-button>
@@ -103,140 +103,214 @@
                 </md-radio-group>
             </div>
             <div>
-                <p><label><b>Name:  </b></label><input type="text " placeholder="First Last " ng-model="ac.newApplication.reference1Name "></p>
-                <p><label><b>Address:  </b></label><input type="text " placeholder="Address " ng-model="ac.newApplication.reference1Address "></p>
-                <p><label><b>Phone:  </b></label><input type="text " placeholder="Phone " ng-model="ac.newApplication.reference1Phone "></p>
-                <p><label><b>Email:  </b></label><input type="text " placeholder="Email " ng-model="ac.newApplication.reference1Email "></p>
-                <p><label><b>Years Known:  </b></label><input type="text " placeholder="Years " ng-model="ac.newApplication.reference1YearsKnown "></p>
-                <p><label><b>Relationship:  </b></label><input type="text " placeholder="Boss, Peer, Employee " ng-model="ac.newApplication.reference1Relationship "></p>
-            </div>
-            <div>
-                <p><b>Personal References: Must have known for at least two years</b></p>
-                <p><label><b>Name:  </b></label><input type="text " placeholder="First Last " ng-model="ac.newApplication.reference2Name "></p>
-                <p><label><b>Address:  </b></label><input type="text " placeholder="Address " ng-model="ac.newApplication.reference2Address "></p>
-                <p><label><b>Phone:  </b></label><input type="text " placeholder="Phone " ng-model="ac.newApplication.reference2Phone "></p>
-                <p><label><b>Email:  </b></label><input type="text " placeholder="Email " ng-model="ac.newApplication.reference2Email "></p>
-                <p><label><b>Years Known:  </b></label><input type="text " placeholder="Years " ng-model="ac.newApplication.reference2YearsKnown "></p>
-                <p><label><b>Relationship:  </b></label><input type="text " placeholder="Boss, Peer, Employee " ng-model="ac.newApplication.reference2Relationship "></p>
-            </div>
+                <p><label><b>Personal References: Must have known for at least two years</b></label></p>
+                <p><label><b>First Reference:</b></label></p>
+                <div>
+                    <label><b>Name:</b></label>
+                    <md-input-container>
+                        <label for="reference1Name">Full Name</label>
+                        <input type="text " ng-model="ac.newApplication.reference1Name ">
+                    </md-input-container>
 
+                    <label><b>Address:</b></label>
+                    <md-input-container>
+                        <input aria-label="emergency address" places-auto-complete size=50 ng-model="ac.newApplication.reference1Address" component-restrictions="{country: 'us'} " on-place-changed="ac.placeChanged() " /> <br/>
+                    </md-input-container>
+                </div>
+                <div>
+                    <label><b>Phone: </b></label>
+                    <md-input-container>
+                        <label>(763) 867-5309</label>
+                        <input type="phone" ng-model="ac.newApplication.reference1Phone ">
+                    </md-input-container>
+
+                    <label><b>Email:</b></label>
+                    <md-input-container>
+                        <label>bob@gmail.com</label>
+                        <input type="email" ng-model="ac.newApplication.reference1Email">
+                    </md-input-container>
+                </div>
+
+                <div>
+                    <label><b>Years Known:  </b></label>
+                    <md-input-container>
+                        <label>Years</label>
+                        <input type="text" ng-model="ac.newApplication.reference1YearsKnown">
+                    </md-input-container>
+
+                    <label><b>Relationship:</b></label>
+                    <md-input-container>
+                        <label>Boss, Peer, Employee</label>
+                        <input type="text" ng-model="ac.newApplication.reference1Relationship">
+                    </md-input-container>
+                </div>
+
+            </div>
             <div>
-                <p><label><b>Availability to volunteer: </b></label><br></p>
-                <select name="availabilitySelect " ng-model="data.availabilitySelect ">
+                <p><label><b>Second Reference:</b></label></p>
+                <div>
+                    <label><b>Name:</b></label>
+                    <md-input-container>
+                        <label for="reference1Name">Full Name</label>
+                        <input type="text" ng-model="ac.newApplication.reference2Name">
+                    </md-input-container>
+                    <label><b>Address:</b></label>
+                    <md-input-container>
+                        <input aria-label="emergency address" places-auto-complete size=50 ng-model="ac.newApplication.reference2Address" component-restrictions="{country: 'us'} " on-place-changed="ac.placeChanged() " /> <br/>
+                    </md-input-container>
+                </div>
+
+                <div>
+                    <label><b>Phone: </b></label>
+                    <md-input-container>
+                        <label>(763) 867-5309</label>
+                        <input type="phone" ng-model="ac.newApplication.reference2Phone ">
+                    </md-input-container>
+
+                    <label><b>Email:</b></label>
+                    <md-input-container>
+                        <label>bob@gmail.com</label>
+                        <input type="email" ng-model="ac.newApplication.reference2Email">
+                    </md-input-container>
+                </div>
+
+                <div>
+                    <label><b>Years Known:  </b></label>
+                    <md-input-container>
+                        <label>Years</label>
+                        <input type="text" ng-model="ac.newApplication.reference2YearsKnown">
+                    </md-input-container>
+
+                    <label><b>Relationship:</b></label>
+                    <md-input-container>
+                        <label>Boss, Peer, Employee</label>
+                        <input type="text" ng-model="ac.newApplication.reference2Relationship">
+                    </md-input-container>
+                </div>
+
+                <div>
+                    <p><label><b>Availability to volunteer: </b></label><br></p>
+                    <md-radio-group layout="row" ng-model="ac.newApplication.frequency">
+                        <md-radio-button value="daily">Daily</md-radio-button>
+                        <md-radio-button value="weekly">Weekly</md-radio-button>
+                        <md-radio-button value="monthly">Monthly</md-radio-button>
+                    </md-radio-group>
+
+                    <select name="availabilitySelect " ng-model="data.availabilitySelect ">
                 <option value="Daily ">Daily</option>
                 <option value="Weekly ">Weekly</option>
                 <option value="Monthly ">Monthly</option>
               </select><br>
-                <div>
-                    </script>
-                    <p><label><b>Preferred days to volunteer: </b></label><br></p>
+                    <div>
+                        </script>
+                        <p><label><b>Preferred days to volunteer: </b></label><br></p>
 
-                    <form name="preferredDays ">
-                        <label>Monday:
+                        <form name="preferredDays ">
+                            <label>Monday:
             <input type="checkbox " ng-model="ac.newApplication.mondayPreference ">
           </label><br/>
-                        <label>Tuesday:
+                            <label>Tuesday:
             <input type="checkbox " ng-model="ac.newApplication.tuesdayPreference ">
           </label><br/>
-                        <label>Wednesday:
+                            <label>Wednesday:
             <input type="checkbox " ng-model="ac.newApplication.wednesdayPreference ">
           </label><br/>
-                        <label>Thursday:
+                            <label>Thursday:
             <input type="checkbox " ng-model="ac.newApplication.thursdayPreference ">
           </label><br/>
-                        <label>Friday:
+                            <label>Friday:
             <input type="checkbox " ng-model="ac.newApplication.fridayPreference ">
           </label><br/>
-                        <label>Saturday:
+                            <label>Saturday:
             <input type="checkbox " ng-model="ac.newApplication.saturdayPreference ">
           </label><br/>
-                        <label>Sunday:
+                            <label>Sunday:
             <input type="checkbox " ng-model="ac.newApplication.sundayPreference ">
           </label><br/>
-                        <label>No Preference:
+                            <label>No Preference:
             <input type="checkbox " ng-model="ac.newApplication.noDayPreference ">
            </label><br/>
 
-                    </form>
-                </div>
-                <div>
-                    <p><label><b>Hours available: </b></label><br></p>
-                    <label>Any:</label>
-                    <input type="checkbox " ng-model="ac.newApplication.hoursAny ">
-                    <label>Mornings:</label>
-                    <input type="checkbox " ng-model="ac.newApplication.hoursMorning ">
-                    <label>Afternoons:</label>
-                    <input type="checkbox " ng-model="ac.newApplication.hoursAfternoon ">
-                    <label>Evening:</label>
-                    <input type="checkbox " ng-model="ac.newApplication.hoursEvening ">
-                </div>
-                <div>
-                    <p><label><b>Volunteer experience(organization, duties, dates): </b></label><br><input type="text " placeholder="Big Brother, Coordinator, 5/14-9/16 " ng-model="ac.newApplication.volunteerExperience "></p>
-
+                        </form>
+                    </div>
                     <div>
-                        <p><label><b>Volunteer Skills: </b></label><br></p>
-                        <label>Tutoring:
+                        <p><label><b>Hours available: </b></label><br></p>
+                        <label>Any:</label>
+                        <input type="checkbox " ng-model="ac.newApplication.hoursAny ">
+                        <label>Mornings:</label>
+                        <input type="checkbox " ng-model="ac.newApplication.hoursMorning ">
+                        <label>Afternoons:</label>
+                        <input type="checkbox " ng-model="ac.newApplication.hoursAfternoon ">
+                        <label>Evening:</label>
+                        <input type="checkbox " ng-model="ac.newApplication.hoursEvening ">
+                    </div>
+                    <div>
+                        <p><label><b>Volunteer experience(organization, duties, dates): </b></label><br><input type="text " placeholder="Big Brother, Coordinator, 5/14-9/16 " ng-model="ac.newApplication.volunteerExperience "></p>
+
+                        <div>
+                            <p><label><b>Volunteer Skills: </b></label><br></p>
+                            <label>Tutoring:
                     <input type="checkbox " ng-model="ac.newApplication.tutoringSkill ">
                   </label><br/>
-                        <label>Cooking:
+                            <label>Cooking:
                     <input type="checkbox " ng-model="ac.newApplication.cookingSkill ">
                   </label><br/>
-                        <label>Health/Wellness:
+                            <label>Health/Wellness:
                     <input type="checkbox " ng-model="ac.newApplication.healthWellnessSkill ">
                   </label><br/>
-                        <label>Careers:
+                            <label>Careers:
                     <input type="checkbox " ng-model="ac.newApplication.careersSkill ">
                   </label><br/>
-                        <label>Art:
+                            <label>Art:
                     <input type="checkbox " ng-model="ac.newApplication.artSkill ">
                   </label><br/>
-                        <label>Financial Education:
+                            <label>Financial Education:
                     <input type="checkbox " ng-model="ac.newApplication.financialEducationSkill ">
                   </label><br/>
-                    </div>
-                    <div>
-                        <p><label><b>Languages: </b></label><br></p>
-                        <label>English:
+                        </div>
+                        <div>
+                            <p><label><b>Languages: </b></label><br></p>
+                            <label>English:
                         <input type="checkbox " ng-model="ac.newApplication.english ">
                       </label><br/>
-                        <label>Spanish:
+                            <label>Spanish:
                         <input type="checkbox " ng-model="ac.newApplication.spanish ">
                       </label><br/>
-                        <label>Other:
+                            <label>Other:
                         <input type="checkbox " ng-model="ac.newApplication.languageOther ">
                       </label><br/>
-                    </div>
-                    <div>
-                        <p><label><b>Additional hobbies and interests: </b></label><br></p>
-                        <input type="text " ng-model="ac.newApplication.additionalHobbies ">
-                        </label><br/>
-                    </div>
-                    <div>
-                        <p><label><b>Please list any medical concerns: </b></label><br></p>
-                        <input type="text " ng-model="ac.newApplication.medicalConcerns ">
-                        </label><br/>
-                    </div>
-                    <div>
-                        <p><label><b>Volunteer Opportunities: </b></label><br></p>
-                        <input type="checkbox " ng-model="ac.newApplication.dropinOpportunity "><label>Drop-in Center Shift Volunteer:</label><br/>
-                        <input type="checkbox " ng-model="ac.newApplication.tutorOpportunity "><label>Tutor: </label><br/>
-                        <input type="checkbox " ng-model="ac.newApplication.transportationOpportunity "><label>Transportation: </label><br/>
-                        <input type="checkbox " ng-model="ac.newApplication.administrationOpportunity "><label>Administration(webmaster, technology, data entry, telephone, bookkeeping):</label><br/>
-                        <input type="checkbox " ng-model="ac.newApplication.marketingOpportunity "><label>Marketing and Outreach(and social media):</label><br/>
-                        <input type="checkbox " ng-model="ac.newApplication.suppliesDonationsOpportunity "><label>Supplies/Donations Drives/Donation Coordination:</label><br/>
-                        <input type="checkbox " ng-model="ac.newApplication.fundraisingEventsOpportunity "><label>Fundraising and Events</label><br/>
-                        <input type="checkbox " ng-model="ac.newApplication.otherOpportunity "><label>Other</label><br/>
-                    </div>
-                    <div>
+                        </div>
+                        <div>
+                            <p><label><b>Additional hobbies and interests: </b></label><br></p>
+                            <input type="text " ng-model="ac.newApplication.additionalHobbies ">
+                            </label><br/>
+                        </div>
+                        <div>
+                            <p><label><b>Please list any medical concerns: </b></label><br></p>
+                            <input type="text " ng-model="ac.newApplication.medicalConcerns ">
+                            </label><br/>
+                        </div>
+                        <div>
+                            <p><label><b>Volunteer Opportunities: </b></label><br></p>
+                            <input type="checkbox " ng-model="ac.newApplication.dropinOpportunity "><label>Drop-in Center Shift Volunteer:</label><br/>
+                            <input type="checkbox " ng-model="ac.newApplication.tutorOpportunity "><label>Tutor: </label><br/>
+                            <input type="checkbox " ng-model="ac.newApplication.transportationOpportunity "><label>Transportation: </label><br/>
+                            <input type="checkbox " ng-model="ac.newApplication.administrationOpportunity "><label>Administration(webmaster, technology, data entry, telephone, bookkeeping):</label><br/>
+                            <input type="checkbox " ng-model="ac.newApplication.marketingOpportunity "><label>Marketing and Outreach(and social media):</label><br/>
+                            <input type="checkbox " ng-model="ac.newApplication.suppliesDonationsOpportunity "><label>Supplies/Donations Drives/Donation Coordination:</label><br/>
+                            <input type="checkbox " ng-model="ac.newApplication.fundraisingEventsOpportunity "><label>Fundraising and Events</label><br/>
+                            <input type="checkbox " ng-model="ac.newApplication.otherOpportunity "><label>Other</label><br/>
+                        </div>
+                        <div>
 
 
-                        <input type="checkbox " ng-model="ac.newApplication.attendedOrientation "><label><b>Attended Orientation:  </b></label><br/>
-                        <input type="text " ng-model="ac.newApplication.orientationDate " placeholder="Date of Orientation ">
-                    </div>
+                            <input type="checkbox " ng-model="ac.newApplication.attendedOrientation "><label><b>Attended Orientation:  </b></label><br/>
+                            <input type="text " ng-model="ac.newApplication.orientationDate " placeholder="Date of Orientation ">
+                        </div>
 
-                    <button ng-click="ac.postApplication(); ">Submit</button>
-                    <!-- build ng-model to create object -->
-                </div>
+                        <button ng-click="ac.postApplication(); ">Submit</button>
+                        <!-- build ng-model to create object -->
+                    </div>
         </form>
     </md-content>
 
