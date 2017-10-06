@@ -2,9 +2,8 @@ myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'Vo
     var self = this;
     console.log('OverviewController created');
     self.allVolunteers = VolunteerService.allVolunteers;
-    VolunteerService.getAllVolunteers($routeParams.id);
-    self.currentVolunteerId = $routeParams.id;
     VolunteerService.getAllVolunteers();
+
     
     self.showAllChecked = true
     self.showOnBoardingChecked = function() {
@@ -13,4 +12,8 @@ myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'Vo
             
         }
     }
+
+    self.currentVolunteerId = $routeParams.id;
+    
+
 }]);

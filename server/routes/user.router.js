@@ -46,29 +46,6 @@ router.get('/logout', function(req, res) {
     res.sendStatus(200);
 });
 
-// NEW ADMINISTRATOR POST ROUTE
-router.post('/', function(req, res) {
-    pool.connect(function(errorConnectingToDatabase, client, done) {
-        var addAdmin = req.body;
-        if (errorConnectingToDatabase) {
-            //when connecting to database failed
-            console.log('Error connecting to database', errorConnectingToDatabase);
-            res.sendStatus(500);
-        } else {
-            // when connecting to database worked aka HAPPYPATH!
-            client.query('INSERT INTO users (first_name, last_name, position, user_name, email) VALUES ($1, $2, $3, $4, $5);', [addAdmin.firstName, addAdmin.lastName, addAdmin.position, addAdmin.username, addAdmin.email], function(errorMakingQuery, result) {
-                done(); //needed
-                if (errorMakingQuery) {
-                    console.log('Error making database query', errorMakingQuery);
-                    res.sendStatus(500);
-                } else {
-                    res.sendStatus(201);
-                }
-            }); // end client.query
-        }
-    }); // end pool.connect
-}); // end router.post
-
 //delete route
 router.delete('/:id', function(req, res) {
     console.log('delete hit', req.params.id);

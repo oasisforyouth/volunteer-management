@@ -26,6 +26,28 @@ router.get('/', function(req, res) {
     }); // end pool connect
 }); // end get
 
+//Get for volunteer trainings
+router.get('/volunteers', function(req, res) {
+    pool.connect(function(err, db, done) {
+        if (err) {
+            console.log('Error connecting to the DB', err);
+            res.sendStatus(500);
+            done();
+            return;
+        } // end error
+        else {
+            db.query('SELECT * FROM trainings WHERE volunteers = true', function(errorMakingQuery, result) {
+                done();
+                if (errorMakingQuery) {
+                    console.log('Error making database query', errorMakingQuery);
+                    res.sendStatus(500);
+                } else {
+                    res.send(result.rows);
+                } // end if statement
+            });
+        } // end no error
+    }); // end pool connect
+}); // end get
 // DELETE ROUTE FOR TRAINING
 router.delete('/:id', function(req, res) {
     var trainingId = req.params.id;

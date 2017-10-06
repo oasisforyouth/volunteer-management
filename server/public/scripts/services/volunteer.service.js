@@ -2,6 +2,7 @@ myApp.service('VolunteerService', function($http, $location) {
     console.log('volunteer service loaded');
     var self = this;
     self.allVolunteers = { list: [] };
+    self.volunteerDetail = { list: {} };
 
     var volunteerInterestsObject = { //volunteer interests for each volunteer
         tutor_opportunity: 'Tutoring',
@@ -36,6 +37,13 @@ myApp.service('VolunteerService', function($http, $location) {
         });
     };
 
+    self.getVolunteerDetail = function(currentVolunteerId){
+        console.log('Hit volunteer detail request');
+        $http.get('/volunteer/'+currentVolunteerId).then(function(response){
+            console.log('response from current volunteer get', response.data);
+            self.volunteerDetail.list = response.data[0];
+        })
+    }
 
     self.getAllVolunteers = function() {
         $http.get('/volunteer').then(function(response) {
