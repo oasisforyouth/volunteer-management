@@ -89,6 +89,10 @@ myApp.config(function($routeProvider, $locationProvider) {
                 }
             }
         })
+        .when('/volunteerDetail/:id', {
+            templateUrl: '/views/templates/volunteerDetail.html',
+            controller: 'OverviewController as oc'
+        })
         .otherwise({
             redirectTo: 'home'
         });
