@@ -14,14 +14,14 @@
                             <label for="password">Password:</label>
                             <input type="password" ng-model="lc.newAdmin.password" />
                         </md-input-container>
-                        <md-input-container class="md-block">
+                        <!-- <md-input-container class="md-block">
                             <label for="password">Confirm Password:</label>
                             <input type="password" ng-model="lc.newAdmin.password" />
-                        </md-input-container>
+                        </md-input-container> -->
                     </form>
                 </md-content>
             </div>
-            <md-button class="md-raised md-primary">
+            <md-button class="md-raised md-primary" ng-click="lc.updatePassword(newAdmin)">
                 <inputtype="submit" name="submit" value="Register" />Submit
             </md-button>
             <a href="#login">Cancel</a>

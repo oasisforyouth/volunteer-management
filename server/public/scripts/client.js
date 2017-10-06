@@ -37,12 +37,13 @@ myApp.config(function($routeProvider, $locationProvider) {
         })
         .when('/newAdmin', {
             templateUrl: '/views/templates/newAdmin.html',
-            controller: 'NewAdminController as nc',
-            resolve: {
-                getuser: function(UserService) {
-                    return UserService.getuser();
-                }
-            }
+            controller: 'LoginController as lc',
+            // DO I NEED THIS?
+            // resolve: {
+            //     getuser: function(UserService) {
+            //         return UserService.getuser();
+            //     }
+            // }
         })
         .when('/info', {
             templateUrl: '/views/templates/info.html',
