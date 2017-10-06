@@ -5,4 +5,12 @@ myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'Vo
     VolunteerService.getAllVolunteers($routeParams.id);
     self.currentVolunteerId = $routeParams.id;
     VolunteerService.getAllVolunteers();
+    
+    self.showAllChecked = true
+    self.showOnBoardingChecked = function() {
+        self.showAllChecked = false;
+        if (self.allVolunteers.status != 'Ready To Volunteer') {
+            
+        }
+    }
 }]);

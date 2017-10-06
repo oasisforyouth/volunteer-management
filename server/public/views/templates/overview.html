@@ -8,8 +8,8 @@
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Search Filters</span>
       <h6>Volunteers</h6>
-      <md-checkbox>All</md-checkbox>
-      <md-checkbox>Onboarding</md-checkbox>
+      <md-checkbox ng-model="oc.showAllChecked">All</md-checkbox>
+      <md-checkbox ng-click="oc.showOnBoardingChecked()">Onboarding</md-checkbox>
       <md-checkbox>Ready to Volunteer</md-checkbox>
       <h6>Volunteer Interests</h6>
       <md-checkbox>Tutoring</md-checkbox>
@@ -23,7 +23,7 @@
       <md-checkbox>12-36 months</md-checkbox>
       <md-checkbox>More than 36 months</md-checkbox>
       <h6>Status</h6>
-      <md-checkbox>Submitted Application</md-checkbox>
+      <md-checkbox>Applied</md-checkbox>
       <md-checkbox>Application in Review</md-checkbox>
       <md-checkbox>Checking Background/References</md-checkbox>
       <md-checkbox>Schedule Interview</md-checkbox>
@@ -43,14 +43,14 @@
             </tr>
           </thead>
           <tbody>
-              <tr ng-repeat="volunteer in oc.allVolunteers.list">
+              <tr ng-repeat="volunteer in oc.allVolunteers.list" ng-show="oc.showAllChecked">
                   <td class="mdl-data-table__cell--non-numeric"><a ng-href="/#/volunteerDetail/{{volunteer.id}}">{{volunteer.first_name}} {{volunteer.last_name}}</a></td>
                   <td class="mdl-data-table__cell--non-numeric">{{volunteer.volunteerInterests}}</td>
                   <td class="mdl-data-table__cell--non-numeric">{{volunteer.volunteerSkills}}</td>
                   <td class="mdl-data-table__cell--non-numeric"></td>
                   <td class="mdl-data-table__cell--non-numeric">{{volunteer.status}}</td>
                 </tr>
-            <tr>
+            <!-- <tr>
               <td class="mdl-data-table__cell--non-numeric"><a href="#/volunteerDetail">Chip Chapman III</a></td>
               <td class="mdl-data-table__cell--non-numeric">Tutoring, Administration</td>
               <td class="mdl-data-table__cell--non-numeric">Cooking, Politicking</td>
@@ -70,9 +70,10 @@
               <td class="mdl-data-table__cell--non-numeric">Health and Wellness</td>
               <td class="mdl-data-table__cell--non-numeric">0 months</td>
               <td class="mdl-data-table__cell--non-numeric">Checking Background/References</td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
+        {{oc}}
       </div>
     </main>
   </div>

@@ -41,18 +41,17 @@ myApp.service('VolunteerService', function($http, $location) {
         $http.get('/volunteer').then(function(response) {
             console.log('all volunteers from server', response.data);
             self.allVolunteers.list = response.data;
-            for (var i = 0; i < self.allVolunteers.list.length; i++) {
+            for (var i = 0; i < self.allVolunteers.list.length; i++) {//loop through allVolunteers.list array
                 var volunteerInterests = ''; //variable to hold a list of volunteer interests as a string
                 for (var property in self.allVolunteers.list[i]) { // for in loop goes through properties in each object of the allVolunteers.list array
-                    if (volunteerInterestsObject[property]) { // is this property (from self.allVolunteers) in volunteerInterestsObject       
-                        if (self.allVolunteers.list[i][property] == true) { //property is a variable that we define in the for loop - need to use brackets instead of dot notation
-                            // volunteerInterests.push(volunteerInterestsObject[property]);
-                            volunteerInterests += volunteerInterestsObject[property] + ', ';
+                    if (volunteerInterestsObject[property]) { // is the property (from self.allVolunteers) also in volunteerInterestsObject      
+                        if (self.allVolunteers.list[i][property] == true) { //is the property a variable that we define in the for loop - need to use brackets instead of dot notation
+                            volunteerInterests += volunteerInterestsObject[property] + ', '; //add them to volunteerIntersts variable
                         }
                     }
                 }
-                volunteerInterests = volunteerInterests.substring(0, volunteerInterests.length - 2)
-                self.allVolunteers.list[i].volunteerInterests = volunteerInterests;
+                volunteerInterests = volunteerInterests.substring(0, volunteerInterests.length - 2)// removes the comma and space from the end of the string 
+                self.allVolunteers.list[i].volunteerInterests = volunteerInterests; //sets a new property for each object within allVolunteers.list array equal to the new string
             }
             for (var i = 0; i < self.allVolunteers.list.length; i++) {
                 var volunteerSkills = '';
