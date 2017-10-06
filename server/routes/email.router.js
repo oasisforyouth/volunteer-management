@@ -1,11 +1,11 @@
-var express = require('express');
-var router = express.Router();
-var passport = require('passport');
-var path = require('path');
-var nodemailer = require('nodemailer');
+let express = require('express');
+let router = express.Router();
+let passport = require('passport');
+let path = require('path');
+let nodemailer = require('nodemailer');
 
 nodemailer.createTestAccount((err, account) => {
-    router.post('/', function(req, res, next) {
+    router.post('/', (req, res, next) => {
         // create reusable transporter object using the default SMTP transport
         let transporter = nodemailer.createTransport({
             service: 'gmail',

@@ -1,7 +1,7 @@
-myApp.controller('VolunteerDetailController', function($http, $location, UserService, TrainingService) {
+
+myApp.controller('VolunteerDetailController', 'VolunteerService', 'UserService', '$routeParams', function($http, $location, UserService, $routeParams, VolunteerService) {
     console.log('VolunteerDetailController created');
     var self = this;
-    self.trainings = TrainingService.volunteerTraining;
-    TrainingService.getVolunteerTrainings();
-    console.log('trainings on controller,', self.trainings);
+    VolunteerService.getAllVolunteers($routeParams.id);
+    self.currentVolunteerId = $routeParams.id;
 });
