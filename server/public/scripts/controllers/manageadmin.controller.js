@@ -13,7 +13,11 @@ myApp.controller('ManageAdminController', ['$http', '$location', 'UserService', 
         console.log('updateAdmin was clicked', user);
         UserService.updateAdmin(user);
         self.toggle = false;
-    }
+    };
 
-
+    // SEND NEW ADMIN SIGN UP EMAIL LINK
+    self.sendEmail = function() {
+        console.log('email admin clicked', self.emailAdmin);
+        UserService.sendEmail(self.emailAdmin);
+    };
 }]);

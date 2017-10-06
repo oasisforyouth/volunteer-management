@@ -6,41 +6,41 @@ var encryptLib = require('../modules/encryption');
 
 // Handles request for HTML file
 router.get('/', function(req, res, next) {
-  console.log('get /register route');
-  res.sendFile(path.resolve(__dirname, '../public/views/templates/register.html'));
+    console.log('get /register route');
+    res.sendFile(path.resolve(__dirname, '../public/views/templates/register.html'));
 });
 
 // Handles POST request with new user data
 // Handles POST request with new user data
 router.post('/', function(req, res, next) {
 
-  var saveUser = {
-    username: req.body.username,
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-    email: req.body.email,
-    password: encryptLib.encryptPassword(req.body.password)
-  };
-  console.log('new user:', saveUser);
+    var saveUser = {
+        firstname: req.body.firstName,
+        lastname: req.body.lastName,
+        username: req.body.username,
+        email: req.body.email,
+        password: encryptLib.encryptPassword(req.body.password),
+        position: req.body.position,
+    };
+    console.log('new user:', saveUser);
 
-  pool.connect(function(err, client, done) {
-    if(err) {
-      console.log("Error connecting: ", err);
-      res.sendStatus(500);
-    }
-    client.query("INSERT INTO users (username, password) VALUES ($1, $2) RETURNING id",
-      [saveUser.username, saveUser.password],
-        function (err, result) {
-          client.end();
-
-          if(err) {
-            console.log("Error inserting data: ", err);
+    pool.connect(function(err, client, done) {
+        if (err) {
+            console.log("Error connecting: ", err);
             res.sendStatus(500);
-          } else {
-            res.sendStatus(201);
-          }
-        });
-  });
+        }
+        client.query("INSERT INTO users (first_name, last_name, user_name, email, password, position) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id", [saveUser.firstname, saveUser.lastname, saveUser.username, saveUser.email, saveUser.password, saveUser.position],
+            function(err, result) {
+                client.end();
+
+                if (err) {
+                    console.log("Error inserting data: ", err);
+                    res.sendStatus(500);
+                } else {
+                    res.sendStatus(201);
+                }
+            });
+    });
 
 });
 

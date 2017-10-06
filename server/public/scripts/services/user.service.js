@@ -39,8 +39,16 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
         });
     }
 
+    // EMAILS NEW ADMIN SIGNUP LINK
+    self.sendEmail = function(email) {
+        // console.log('sendemail', email);
+        $http.post('/email/user', email).then(function(response) {
+            console.log('email sent to new Admin: ', response);
+        });
+    };
+
     self.addAdmin = function(newAdmin) {
-        console.log('UserService -- addAdmin', newAdmin);
+        // console.log('UserService -- addAdmin', newAdmin);
         $http.post('/user', newAdmin).then(function(response) {
             console.log('UserService post response:', response);
         });
@@ -57,9 +65,10 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
     };
 
     self.updateAdmin = function(user) {
-        console.log('updateAdmin hit', user);
+        // console.log('updateAdmin hit', user);
         $http.put('/user/', user).then(function(response) {
             self.getAllUsers();
         })
     };
+
 }]);

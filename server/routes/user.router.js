@@ -56,7 +56,7 @@ router.post('/', function(req, res) {
             res.sendStatus(500);
         } else {
             // when connecting to database worked aka HAPPYPATH!
-            client.query('INSERT INTO users (first_name, last_name, user_name, email) VALUES ($1, $2, $3, $4);', [addAdmin.firstName, addAdmin.lastName, addAdmin.username, addAdmin.email], function(errorMakingQuery, result) {
+            client.query('INSERT INTO users (first_name, last_name, position, user_name, email) VALUES ($1, $2, $3, $4, $5);', [addAdmin.firstName, addAdmin.lastName, addAdmin.position, addAdmin.username, addAdmin.email], function(errorMakingQuery, result) {
                 done(); //needed
                 if (errorMakingQuery) {
                     console.log('Error making database query', errorMakingQuery);
