@@ -5,14 +5,15 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
 
     self.toggle = false;
     self.newTrainingToggle = false;
-    self.Trainings = TrainingService;
+    self.trainings = TrainingService.training;
     TrainingService.getTraining();
 
     // ADDS NEW TRAININGS
     self.addTraining = function() {
         console.log('addTraining button was clicked', self.newTraining);
-        TrainingService.addTraining(self.newTraining);
         self.newTrainingToggle = false;
+        self.toggle = false;
+        TrainingService.addTraining(self.newTraining);
         self.newTraining = {};
     };
 

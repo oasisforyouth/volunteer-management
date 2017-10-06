@@ -35,15 +35,6 @@ myApp.config(function($routeProvider, $locationProvider) {
                 }
             }
         })
-        .when('/volunteerDetail', {
-            templateUrl: '/views/templates/volunteerDetail.html',
-            controller: 'VolunteerDetailController as vc',
-            resolve: {
-                getuser: function(UserService) {
-                    return UserService.getuser();
-                }
-            }
-        })
         .when('/newAdmin', {
             templateUrl: '/views/templates/newAdmin.html',
             controller: 'LoginController as lc',
@@ -92,7 +83,12 @@ myApp.config(function($routeProvider, $locationProvider) {
         })
         .when('/volunteerDetail/:id', {
             templateUrl: '/views/templates/volunteerDetail.html',
-            controller: 'OverviewController as oc'
+            controller: 'VolunteerDetailController as vc',
+            resolve: {
+                getuser: function(UserService) {
+                    return UserService.getuser();
+                }
+            }
         })
         .otherwise({
             redirectTo: 'home'
