@@ -28,6 +28,27 @@ router.post('/', function(req, res) {
     })
 
 })
+router.get('/:id', function(req,res){
+    let volunteerId = req.params.id;
+    console.log('current volunteer route reached,', volunteerId);
+    pool.connect(function(errorconnecting,client,done){
+        if(errorconnecting){
+            res.sendStatus(500);
+        }
+        else{
+            client.query('SELECT * FROM volunteers WHERE id = $1',[volunteerId], function(errormakingquery,result){
+                done();
+                if(errormakingquery){
+                    res.sendStatus(500);
+                }else{
+                    console.log('result', result)
+                    res.send(result.rows);
+                }   
+            })
+        }
+    }
+    )
+})
 
 router.get('/', function(req, res) {
     console.log('Volunteer get route reached');

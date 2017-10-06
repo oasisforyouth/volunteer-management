@@ -18,7 +18,7 @@
                 </tr>
             </thead>
             <!-- NON-EDITABLE TABLE -->
-            <tr ng-repeat="training in tc.Trainings.training.list | orderBy: 'title'" ng-class="{'hidden': tc.toggle}">
+            <tr ng-repeat="training in tc.trainings.list | orderBy: 'title'" ng-class="{'hidden': tc.toggle}" >
                 <td class="mdl-data-table__cell--non-numeric">{{training.title}}</td>
                 <td>
                     <md-checkbox aria-label="disabled volunteer checkbox" ng-disabled="true" ng-model="training.volunteers"></md-checkbox>
@@ -30,7 +30,7 @@
                     <td><i class="fa fa-trash-o" id="deleteIcon" aria-hidden="true" ng-click="tc.deleteTraining(training.id)"></i>
             </tr>
             <!-- EDITABLE TABLE -->
-            <tr ng-repeat="training in tc.Trainings.training.list | orderBy: 'title'" ng-class="{'hidden': !tc.toggle}">
+            <tr ng-repeat="training in tc.trainings.list | orderBy: 'title'" ng-class="{'hidden': !tc.toggle}">
                 <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="training.title"></td>
                 <td>
                     <md-checkbox aria-label="volunteer checkbox" ng-model="training.volunteers"></md-checkbox>
@@ -46,7 +46,8 @@
 </div>
 <div layout="row" layout-align="center center">
     <!-- HIDDEN NEW TRAINING FORM -->
-    <md-content ng-class="{'hidden': !tc.newTrainingToggle}">
+    <md-content>
+        <!--  ng-class="{'hidden': !tc.newTrainingToggle}" -->
         <table>
             <table class="mdl-data-table mdl-js-data-table">
                 <thead>
