@@ -144,7 +144,6 @@
                         <input type="text" ng-model="ac.newApplication.reference1Relationship">
                     </md-input-container>
                 </div>
-
             </div>
             <div>
                 <p><label><b>Second Reference:</b></label></p>
@@ -195,44 +194,22 @@
                         <md-radio-button value="weekly">Weekly</md-radio-button>
                         <md-radio-button value="monthly">Monthly</md-radio-button>
                     </md-radio-group>
-
-                    <select name="availabilitySelect " ng-model="data.availabilitySelect ">
-                <option value="Daily ">Daily</option>
-                <option value="Weekly ">Weekly</option>
-                <option value="Monthly ">Monthly</option>
-              </select><br>
-                    <div>
-                        </script>
-                        <p><label><b>Preferred days to volunteer: </b></label><br></p>
-
-                        <form name="preferredDays ">
-                            <label>Monday:
-            <input type="checkbox " ng-model="ac.newApplication.mondayPreference ">
-          </label><br/>
-                            <label>Tuesday:
-            <input type="checkbox " ng-model="ac.newApplication.tuesdayPreference ">
-          </label><br/>
-                            <label>Wednesday:
-            <input type="checkbox " ng-model="ac.newApplication.wednesdayPreference ">
-          </label><br/>
-                            <label>Thursday:
-            <input type="checkbox " ng-model="ac.newApplication.thursdayPreference ">
-          </label><br/>
-                            <label>Friday:
-            <input type="checkbox " ng-model="ac.newApplication.fridayPreference ">
-          </label><br/>
-                            <label>Saturday:
-            <input type="checkbox " ng-model="ac.newApplication.saturdayPreference ">
-          </label><br/>
-                            <label>Sunday:
-            <input type="checkbox " ng-model="ac.newApplication.sundayPreference ">
-          </label><br/>
-                            <label>No Preference:
-            <input type="checkbox " ng-model="ac.newApplication.noDayPreference ">
-           </label><br/>
-
-                        </form>
+                </div>
+                <div>
+                    </script>
+                    <p><label><b>Preferred days to volunteer: </b></label><br></p>
+                    <div layout="row">
+                        <md-checkbox aria-label="monday checkbox" ng-model="ac.newApplication.mondayPreference">Monday</md-checkbox>
+                        <md-checkbox aria-label="tuesday checkbox" ng-model="ac.newApplication.tuesdayPreference ">Tuesday </md-checkbox>
+                        <md-checkbox aria-label="wednesday checkbox" ng-model="ac.newApplication.wednesdayPreference">Wednesday</md-checkbox>
+                        <md-checkbox aria-label="thursday checkbox" ng-model="ac.newApplication.thursdayPreference">Thursday</md-checkbox>
+                        <md-checkbox aria-label="friday checkbox" ng-model="ac.newApplication.fridayPreference">Friday</md-checkbox>
+                        <md-checkbox aria-label="saturday checkbox" ng-model="ac.newApplication.saturdayPreference">Saturday</md-checkbox>
+                        <md-checkbox aria-label="sunday checkbox" ng-model="ac.newApplication.sundayPreference">Sunday</md-checkbox>
+                        <md-checkbox aria-label="no preference checkbox" ng-model="ac.newApplication.noDayPreference">No Preference</md-checkbox>
                     </div>
+
+
                     <div>
                         <p><label><b>Hours available: </b></label><br></p>
                         <label>Any:</label>
