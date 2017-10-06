@@ -35,6 +35,7 @@ myApp.controller('LoginController', function($http, $location, UserService) {
         }
     };
 
+    // ADMIN SIGN UP POST ROUTE
     self.registerUser = function() {
         console.log('LoginController -- registerUser');
         if (self.user.username === '' || self.user.password === '') {
@@ -49,6 +50,5 @@ myApp.controller('LoginController', function($http, $location, UserService) {
                 self.message = "Please try again."
             });
         }
-        self.user = {};
     }
 });

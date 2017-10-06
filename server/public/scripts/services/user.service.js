@@ -47,12 +47,13 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
         });
     };
 
-    self.addAdmin = function(newAdmin) {
-        // console.log('UserService -- addAdmin', newAdmin);
-        $http.post('/user', newAdmin).then(function(response) {
-            console.log('UserService post response:', response);
-        });
-    }
+    // self.addAdmin = function(newAdmin) {
+    //     // console.log('UserService -- addAdmin', newAdmin);
+    //     $http.post('/user', newAdmin).then(function(response) {
+    //         console.log('UserService post response:', response);
+    //     });
+    // }
+
     self.deleteAdmin = function(id) {
         $http({
             method: 'DELETE',
