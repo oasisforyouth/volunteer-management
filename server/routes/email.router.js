@@ -40,6 +40,8 @@ nodemailer.createTestAccount((err, account) => {
 
 nodemailer.createTestAccount((err, account) => {
     router.post('/user', (req, res, next) => {
+        var email = req.body;
+        console.log('post req.body', email);
         // create reusable transporter object using the default SMTP transport
         let transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -52,7 +54,8 @@ nodemailer.createTestAccount((err, account) => {
         // setup email data with unicode symbols
         let mailOptions = {
             from: '"Administrator" <pm.oasisforyouth@gmail.com>', // sender address  NEEDS ADDRESS
-            to: 'nicbade@me.com', // list of receivers NEEDS ADDRESS
+            // HOW TO DO THIS DYNAMICALLY
+            to: email.email, // list of receivers NEEDS ADDRESS
             subject: 'New Admin', // Subject line
             text: 'Please click the following link: ' + 'http://localhost:5000/#/newAdminLogin ', // plain text body
         };
