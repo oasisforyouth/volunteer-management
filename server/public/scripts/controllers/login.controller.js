@@ -2,9 +2,13 @@ myApp.controller('LoginController', function($http, $location, UserService) {
     console.log('LoginController created');
     var self = this;
     self.user = {
+        firstName: '',
+        lastName: '',
         username: '',
-        password: ''
+        password: '',
+        email: ''
     };
+
     self.message = '';
 
 
@@ -45,9 +49,6 @@ myApp.controller('LoginController', function($http, $location, UserService) {
                 self.message = "Please try again."
             });
         }
-    }
-
-    self.setPassword = function() {
-        console.log('LoginController -- setPassword');
+        self.user = {};
     }
 });
