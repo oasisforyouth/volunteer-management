@@ -6,6 +6,7 @@ myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserS
     self.placeChanged = function() {
         self.place = this.getPlace();
     }
+
     self.postApplication = function() {
         VolunteerService.postNewVolunteer(self.newApplication);
 
