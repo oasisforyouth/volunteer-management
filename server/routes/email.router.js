@@ -4,6 +4,7 @@ let passport = require('passport');
 let path = require('path');
 let nodemailer = require('nodemailer');
 
+// EMAIL SENT TO ADMIN 
 nodemailer.createTestAccount((err, account) => {
     router.post('/', (req, res, next) => {
         // create reusable transporter object using the default SMTP transport
@@ -38,9 +39,10 @@ nodemailer.createTestAccount((err, account) => {
     });
 });
 
+// SIGNUP INFO SENT TO NEW ADMIN
 nodemailer.createTestAccount((err, account) => {
     router.post('/user', (req, res, next) => {
-        var email = req.body;
+        let email = req.body;
         console.log('post req.body', email);
         // create reusable transporter object using the default SMTP transport
         let transporter = nodemailer.createTransport({
