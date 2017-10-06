@@ -46,7 +46,7 @@ myApp.config(function($routeProvider, $locationProvider) {
         })
         .when('/newAdmin', {
             templateUrl: '/views/templates/newAdmin.html',
-            controller: 'NewAdminController as nc',
+            controller: 'LoginController as lc',
             // DO I NEED THIS?
             // resolve: {
             //     getuser: function(UserService) {

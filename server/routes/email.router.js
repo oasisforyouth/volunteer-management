@@ -57,7 +57,7 @@ nodemailer.createTestAccount((err, account) => {
             // HOW TO DO THIS DYNAMICALLY
             to: email.email, // list of receivers NEEDS ADDRESS
             subject: 'New Admin', // Subject line
-            text: 'Please click the following link: ' + 'http://localhost:5000/#/newAdminLogin ', // plain text body
+            text: 'Please click the following link: ' + 'http://localhost:5000/#/newAdmin ', // plain text body
         };
 
         // send mail with defined transport object
