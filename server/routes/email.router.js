@@ -25,15 +25,10 @@ router.post('/', (req, res, next) => {
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            res.sendStatus(500);
             return console.log(error);
-        } else {
-            res.sendStatus(200);
-            console.log('Message sent: %s', info.messageId);
-            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-
         }
-
+        console.log('Message sent: %s', info.messageId);
+        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
     });
 });
 // AUTHENTICATE ME
@@ -51,7 +46,7 @@ router.post('/user', (req, res, next) => {
 
     // setup email data with unicode symbols
     let mailOptions = {
-        from: '"Administrator" <DB_EMAIL>', // sender address  NEEDS ADDRESS
+        from: '"Administrator"' + process.env.DB_EMAIL, // sender address  NEEDS ADDRESS
         // HOW TO DO THIS DYNAMICALLY
         to: email.email, // list of receivers NEEDS ADDRESS
         subject: 'New Admin', // Subject line
