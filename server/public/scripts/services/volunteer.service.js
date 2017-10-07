@@ -1,8 +1,12 @@
 myApp.service('VolunteerService', function($http, $location) {
-    console.log('volunteer service loaded');
+    // console.log('volunteer service loaded');
     var self = this;
+    
     self.allVolunteers = { list: [] };
+
     self.volunteerDetail = { list: {} };
+
+    var tutorOppSearchObject = {tutor_opportunity: true};
 
     var volunteerInterestsObject = { //volunteer interests for each volunteer
         tutor_opportunity: 'Tutoring',
@@ -26,7 +30,6 @@ myApp.service('VolunteerService', function($http, $location) {
         $http.post('/email').then(function(response) {
             console.log('email sent', response.data);
         });
-
     };
 
     self.postNewVolunteer = function(newVolunteer) {
@@ -47,8 +50,20 @@ myApp.service('VolunteerService', function($http, $location) {
 
     self.getAllVolunteers = function() {
         $http.get('/volunteer').then(function(response) {
-            console.log('all volunteers from server', response.data);
+            // console.log('all volunteers from server', response.data);
             self.allVolunteers.list = response.data;
+
+            function filterFunction(array, searchObject) {
+                var tutorOppFilteredArray = [];
+                for(var i = 0; i < array.length; i++) {
+                    if (array[i].tutor_opportunity == tutorOppSearchObject.tutor_opportunity) {
+                        tutorOppFilteredArray.push(array[i]);
+                    }
+                }    
+              return tutorOppFilteredArray;
+            }
+            console.log(filterFunction(self.allVolunteers.list, tutorOppSearchObject));
+
             for (var i = 0; i < self.allVolunteers.list.length; i++) {//loop through allVolunteers.list array
                 var volunteerInterests = ''; //variable to hold a list of volunteer interests as a string
                 for (var property in self.allVolunteers.list[i]) { // for in loop goes through properties in each object of the allVolunteers.list array
