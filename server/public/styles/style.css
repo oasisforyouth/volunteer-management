@@ -60,14 +60,9 @@ html {
     width: 15%;
 }
 
-#sidebar {
-    height: 100%;
-}
-
 #overviewTable {
-    /* display: flex;
-    justify-content: flex-end;
-    padding-right: 1%; */
+    display: flex;
+    justify-content: center;
 }
 
 .container h3 {
