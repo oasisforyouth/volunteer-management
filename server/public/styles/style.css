@@ -35,6 +35,16 @@ html {
     height: 100vh;
 }
 
+.boldstuff{
+    font-weight: bold;
+}
+
+.volunteerform{
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+}
 .container h6 {
     margin-bottom: 0px;
     font-weight: bold;

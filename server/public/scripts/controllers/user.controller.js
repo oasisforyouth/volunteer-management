@@ -1,4 +1,4 @@
-myApp.controller('UserController', function(UserService) {
+myApp.controller('UserController', function(UserService, $mdDialog) {
     console.log('UserController created');
     var self = this;
     self.userService = UserService;
@@ -11,6 +11,7 @@ myApp.controller('UserController', function(UserService) {
         // self.newAdmin = {};
     };
 
-
+    // self.status = '';
+    // self.customFullscreen = false;
 
 });

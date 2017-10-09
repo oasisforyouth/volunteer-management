@@ -90,6 +90,9 @@ myApp.config(function($routeProvider, $locationProvider) {
                 }
             }
         })
+        .when('/substituteorg', {
+            templateUrl: '/views/templates/substituteorg.html'
+        })
         .otherwise({
             redirectTo: 'home'
         });
