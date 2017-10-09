@@ -36,6 +36,30 @@ myApp.filter('volunteerFilter', function () {
                 // volunteerSearchObject.all = false;
                 addVolunteer = true;
             }
+
+
+            if (volunteerArray[i].tutoring_skill && volunteerSearchObject.tutoring_skill) {
+                // volunteerSearchObject.all = false;
+                addVolunteer = true;
+            }
+            if (volunteerArray[i].cooking_skill && volunteerSearchObject.cooking_skill) {
+                // volunteerSearchObject.all = false;
+                addVolunteer = true;
+            }
+            if (volunteerArray[i].art_skill && volunteerSearchObject.art_skill) {
+                // volunteerSearchObject.all = false;
+                addVolunteer = true;
+            }
+            if (volunteerArray[i].health_wellness_skill && volunteerSearchObject.health_wellness_skill) {
+                // volunteerSearchObject.all = false;
+                addVolunteer = true;
+            }
+            if (volunteerArray[i].career_jobs_skill && volunteerSearchObject.career_jobs_skill) {
+                // volunteerSearchObject.all = false;
+                addVolunteer = true;
+            }
+
+
             if (volunteerArray[i].status == 'Applied' && volunteerSearchObject.status_applied) {
                 // volunteerSearchObject.all = false;
                 addVolunteer = true;

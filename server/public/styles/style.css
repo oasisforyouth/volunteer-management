@@ -6,9 +6,9 @@ html {
     font-size: 14px;
 }
 
-/* body{
-    background-image: url('../images/maxresdefault.jpg');
-} */
+#header {
+    text-align: center;
+}
 
 .instructions .container h1 {
     font-size: 32px;
@@ -67,6 +67,7 @@ html {
 #overviewTable {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .container h3 {
@@ -126,7 +127,6 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
-
 
 /* Change the link color to #111 (black) on hover */
 
