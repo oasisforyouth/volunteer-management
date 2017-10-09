@@ -64,7 +64,7 @@ router.post('/user', (req, res, next) => {
             from: '"Administrator"' + process.env.DB_EMAIL, // sender address  NEEDS ADDRESS
             to: email.email, // list of receivers NEEDS ADDRESS
             subject: 'New Administrator', // Subject line
-            text: 'Please click the following link: ' + process.env.DB_HOST, // plain text body
+            text: 'Please click the following link: ' + process.env.DB_HOST
         };
 
         // send mail with defined transport object
