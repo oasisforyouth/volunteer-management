@@ -6,6 +6,10 @@ html {
     font-size: 14px;
 }
 
+/* body{
+    background-image: url('../images/maxresdefault.jpg');
+} */
+
 .instructions .container h1 {
     font-size: 32px;
     font-weight: 600;

@@ -6,7 +6,15 @@ myApp.service('VolunteerService', function($http, $location) {
 
     self.volunteerDetail = { list: {} };
 
-    var tutorOppSearchObject = {tutor_opportunity: true};
+   
+
+    self.tutorOppFilteredArray = [];
+    self.dropinOppFilteredArray = [];
+    self.transportationOppFilteredArray = [];
+    self.administrationOppFilteredArray = [];
+    self.marketingOppFilteredArray = [];
+    self.supplies_donationsOppFilteredArray = [];
+    self.fundraising_eventsOppFilteredArray = [];
 
     var volunteerInterestsObject = { //volunteer interests for each volunteer
         tutor_opportunity: 'Tutoring',
@@ -53,16 +61,7 @@ myApp.service('VolunteerService', function($http, $location) {
             // console.log('all volunteers from server', response.data);
             self.allVolunteers.list = response.data;
 
-            function filterFunction(array, searchObject) {
-                var tutorOppFilteredArray = [];
-                for(var i = 0; i < array.length; i++) {
-                    if (array[i].tutor_opportunity == tutorOppSearchObject.tutor_opportunity) {
-                        tutorOppFilteredArray.push(array[i]);
-                    }
-                }    
-              return tutorOppFilteredArray;
-            }
-            console.log(filterFunction(self.allVolunteers.list, tutorOppSearchObject));
+            
 
             for (var i = 0; i < self.allVolunteers.list.length; i++) {//loop through allVolunteers.list array
                 var volunteerInterests = ''; //variable to hold a list of volunteer interests as a string
