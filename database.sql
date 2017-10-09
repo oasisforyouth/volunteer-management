@@ -102,3 +102,11 @@ INSERT INTO "public"."volunteers"("first_name", "last_name", "middle_name", "add
 
 ALTER TABLE volunteers
 ADD COLUMN frequency TEXT;
+
+-- CONFIRMS LINK IS SECURE
+CREATE TABLE crypto(
+id SERIAL PRIMARY KEY,
+email TEXT NOT NULL,
+md5 TEXT NOT NULL,
+created_at TIMESTAMP DEFAULT NOW()
+);

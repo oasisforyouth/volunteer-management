@@ -43,10 +43,10 @@ router.post('/', (req, res, next) => {
 
 
 router.post('/user', (req, res, next) => {
-    var email = req.body;
+    let email = req.body;
     console.log('post req.body', email);
     console.log('hash: ', md5(email));
-    var hash = md5(email);
+    let hash = md5(email);
     // create reusable transporter object using the default SMTP transport
 
     if (req.isAuthenticated()) {
@@ -54,7 +54,7 @@ router.post('/user', (req, res, next) => {
         // SEND EMAIL AND HASH TO DB
         pool.connect(function(errorConnectingToDatabase, client, done) {
             if (errorConnectingToDatabase) {
-                //when connecting to database failed
+                //when connecting to database failed aka sadpath.
                 console.log('Error connecting to database', errorConnectingToDatabase);
                 res.sendStatus(500);
             } else {
