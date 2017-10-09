@@ -1,13 +1,12 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div id="overviewContainer" class="container">
-  
-  volunteerSearchObject: {{oc.volunteerSearchObject}}
+ 
   <div layout-padding class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Search Filters</span>
       <h6>Volunteers</h6>
-      <md-checkbox>All</md-checkbox>
-      <md-checkbox ng-click="oc.showOnBoardingChecked()">Onboarding</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.all">All</md-checkbox>
+      <md-checkbox>Onboarding</md-checkbox>
       <md-checkbox>Ready to Volunteer</md-checkbox>
       <h6>Volunteer Interests</h6>
       <md-checkbox ng-model="oc.volunteerSearchObject.tutor_opportunity">Tutoring</md-checkbox>
@@ -22,12 +21,12 @@
       <md-checkbox>12-36 months</md-checkbox>
       <md-checkbox>More than 36 months</md-checkbox>
       <h6>Status</h6>
-      <md-checkbox>Applied</md-checkbox>
-      <md-checkbox>Application in Review</md-checkbox>
-      <md-checkbox>Checking Background/References</md-checkbox>
-      <md-checkbox>Schedule Interview</md-checkbox>
-      <md-checkbox>Schedule Training</md-checkbox>
-      <md-checkbox>Ready to Volunteer!</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.status_applied">Applied</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.status_review">Application in Review</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.status_background">Checking Background/References</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.status_interview">Schedule Interview</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.status_training">Schedule Training</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.status_ready">Ready to Volunteer!</md-checkbox>
     </div>
     <main class="mdl-layout__content">
         <h3>VOLUNTEER OVERVIEW</h3>

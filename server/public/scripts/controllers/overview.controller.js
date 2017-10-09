@@ -2,23 +2,22 @@ myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'Vo
     // console.log('OverviewController created');
     var self = this;
     self.allVolunteers = VolunteerService.allVolunteers;
-    self.tutorOppFilteredArray = VolunteerService.tutorOppFilteredArray;
-    self.dropinOppFilteredArray = VolunteerService.dropinOppFilteredArray;
-    self.transportationOppFilteredArray = VolunteerService.transportationOppFilteredArray;
-    self.administrationOppFilteredArray = VolunteerService.administrationOppFilteredArray;
-    self.marketingOppFilteredArray = VolunteerService.marketingOppFilteredArray;
-    self.supplies_donationsOppFilteredArray = VolunteerService.supplies_donationsOppFilteredArray;
-    self.fundraising_eventsOppFilteredArray = VolunteerService.fundraising_eventsOppFilteredArray;
 
-
-    self.volunteerSearchObject = { //interests object to use for the filter search 
-        tutor_opportunity: true,
-        dropin_opportunity: true,
-        transportation_opportunity: true,
-        administration_opportunity: true,
-        marketing_opportunity: true,
-        supplies_donations_opportunity: true,
-        fundraising_events_opportunity: true
+    self.volunteerSearchObject = { //interests object to use for the filter search
+        all: true,
+        // tutor_opportunity: true,
+        // dropin_opportunity: true,
+        // transportation_opportunity: true,
+        // administration_opportunity: true,
+        // marketing_opportunity: true,
+        // supplies_donations_opportunity: true,
+        // fundraising_events_opportunity: true,
+        // status_applied: true,
+        // status_review: true,
+        // status_background: true,
+        // status_interview: true,
+        // status_training: true,
+        // status_ready: true
     };
 
     VolunteerService.getAllVolunteers();
@@ -29,10 +28,6 @@ myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'Vo
         self.showAllChecked = false;
         if (self.allVolunteers.status != 'Ready To Volunteer') {          
         }
-    }
-
-    self.showTutoringInterest = function() {
-
     }
 
     self.currentVolunteerId = $routeParams.id; 

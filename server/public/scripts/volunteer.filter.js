@@ -4,26 +4,60 @@ myApp.filter('volunteerFilter', function () {
 
         for (var i = 0; i < volunteerArray.length; i++) {
             var addVolunteer = false;
-            
+            if (volunteerArray[i] && volunteerSearchObject.all) {
+                volunteerSearchObject.all = true;
+                addVolunteer = true;
+            }
             if (volunteerArray[i].tutor_opportunity && volunteerSearchObject.tutor_opportunity) {
+                // volunteerSearchObject.all = false;
                 addVolunteer = true;
             }
             if (volunteerArray[i].dropin_opportunity && volunteerSearchObject.dropin_opportunity) {
+                // volunteerSearchObject.all = false;
                 addVolunteer = true;
             }
             if (volunteerArray[i].transportation_opportunity && volunteerSearchObject.transportation_opportunity) {
+                // volunteerSearchObject.all = false;
                 addVolunteer = true;
             }
             if (volunteerArray[i].administration_opportunity && volunteerSearchObject.administration_opportunity) {
+                // volunteerSearchObject.all = false;
                 addVolunteer = true;
             }   
             if (volunteerArray[i].marketing_opportunity && volunteerSearchObject.marketing_opportunity) {
+                // volunteerSearchObject.all = false;
                 addVolunteer = true;
             }
             if (volunteerArray[i].supplies_donations_opportunity && volunteerSearchObject.supplies_donations_opportunity) {
+                // volunteerSearchObject.all = false;
                 addVolunteer = true;
             }
             if (volunteerArray[i].fundraising_events_opportunity && volunteerSearchObject.fundraising_events_opportunity) {
+                // volunteerSearchObject.all = false;
+                addVolunteer = true;
+            }
+            if (volunteerArray[i].status == 'Applied' && volunteerSearchObject.status_applied) {
+                // volunteerSearchObject.all = false;
+                addVolunteer = true;
+            }
+            if (volunteerArray[i].status == 'Application in Review' && volunteerSearchObject.status_review) {
+                // volunteerSearchObject.all = false;
+                addVolunteer = true;
+            }
+            if (volunteerArray[i].status == 'Checking Background/References' && volunteerSearchObject.status_background) {
+                volunteerSearchObject.all = false;
+                addVolunteer = true;
+            }
+            if (volunteerArray[i].status == 'Schedule Interview' && volunteerSearchObject.status_interview) {
+                // volunteerSearchObject.all = false;
+                addVolunteer = true;
+            }
+            if (volunteerArray[i].status == 'Schedule Training' && volunteerSearchObject.status_training) {
+                // volunteerSearchObject.all = false;
+                addVolunteer = true;
+            }
+            if (volunteerArray[i].status == 'Ready to Volunteer!' && volunteerSearchObject.status_ready) {
+                // volunteerSearchObject.all = false;
                 addVolunteer = true;
             }
 

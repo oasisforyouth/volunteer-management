@@ -6,16 +6,6 @@ myApp.service('VolunteerService', function($http, $location) {
 
     self.volunteerDetail = { list: {} };
 
-   
-
-    self.tutorOppFilteredArray = [];
-    self.dropinOppFilteredArray = [];
-    self.transportationOppFilteredArray = [];
-    self.administrationOppFilteredArray = [];
-    self.marketingOppFilteredArray = [];
-    self.supplies_donationsOppFilteredArray = [];
-    self.fundraising_eventsOppFilteredArray = [];
-
     var volunteerInterestsObject = { //volunteer interests for each volunteer
         tutor_opportunity: 'Tutoring',
         dropin_opportunity: 'Drop-In Center',
@@ -60,9 +50,6 @@ myApp.service('VolunteerService', function($http, $location) {
         $http.get('/volunteer').then(function(response) {
             // console.log('all volunteers from server', response.data);
             self.allVolunteers.list = response.data;
-
-            
-
             for (var i = 0; i < self.allVolunteers.list.length; i++) {//loop through allVolunteers.list array
                 var volunteerInterests = ''; //variable to hold a list of volunteer interests as a string
                 for (var property in self.allVolunteers.list[i]) { // for in loop goes through properties in each object of the allVolunteers.list array
