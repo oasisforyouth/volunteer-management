@@ -6,6 +6,7 @@ html {
     font-size: 14px;
 }
 
+
 .instructions .container h1 {
     font-size: 32px;
     font-weight: 600;
@@ -31,6 +32,16 @@ html {
     height: 100vh;
 }
 
+.boldstuff{
+    font-weight: bold;
+}
+
+.volunteerform{
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+}
 .container h6 {
     margin-bottom: 0px;
     font-weight: bold;
