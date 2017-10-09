@@ -1,79 +1,80 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div id="overviewContainer" class="container">
-  <h3>
-    VOLUNTEER OVERVIEW
-  </h3>
-  
-  <div layout-padding id=sideBar class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Search Filters</span>
-      <h6>Volunteers</h6>
-      <md-checkbox>All</md-checkbox>
-      <md-checkbox>Onboarding</md-checkbox>
-      <md-checkbox>Ready to Volunteer</md-checkbox>
-      <h6>Volunteer Interests</h6>
-      <md-checkbox>Tutoring</md-checkbox>
-      <md-checkbox>Transportation</md-checkbox>
-      <md-checkbox>Administration</md-checkbox>
-      <md-checkbox>Marketing and Outreach</md-checkbox>
-      <md-checkbox>Supplies/Donations</md-checkbox>
-      <md-checkbox>Fundraising and Events</md-checkbox>
-      <h6>Length of Service</h6>
-      <md-checkbox>Less than 12 months</md-checkbox>
-      <md-checkbox>12-36 months</md-checkbox>
-      <md-checkbox>More than 36 months</md-checkbox>
-      <h6>Status</h6>
-      <md-checkbox>Submitted Application</md-checkbox>
-      <md-checkbox>Application in Review</md-checkbox>
-      <md-checkbox>Checking Background/References</md-checkbox>
-      <md-checkbox>Schedule Interview</md-checkbox>
-      <md-checkbox>Schedule Training</md-checkbox>
-      <md-checkbox>Ready to Volunteer!</md-checkbox>
+    <h3>
+        VOLUNTEER OVERVIEW
+    </h3>
+
+    <div layout-padding id=sideBar class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Search Filters</span>
+            <h6>Volunteers</h6>
+            <md-checkbox>All</md-checkbox>
+            <md-checkbox>Onboarding</md-checkbox>
+            <md-checkbox>Ready to Volunteer</md-checkbox>
+            <h6>Volunteer Interests</h6>
+            <md-checkbox>Tutoring</md-checkbox>
+            <md-checkbox>Transportation</md-checkbox>
+            <md-checkbox>Administration</md-checkbox>
+            <md-checkbox>Marketing and Outreach</md-checkbox>
+            <md-checkbox>Supplies/Donations</md-checkbox>
+            <md-checkbox>Fundraising and Events</md-checkbox>
+            <h6>Length of Service</h6>
+            <md-checkbox>Less than 12 months</md-checkbox>
+            <md-checkbox>12-36 months</md-checkbox>
+            <md-checkbox>More than 36 months</md-checkbox>
+            <h6>Status</h6>
+            <md-checkbox>Submitted Application</md-checkbox>
+            <md-checkbox>Application in Review</md-checkbox>
+            <md-checkbox>Checking Background/References</md-checkbox>
+            <md-checkbox>Schedule Interview</md-checkbox>
+            <md-checkbox>Schedule Training</md-checkbox>
+            <md-checkbox>Ready to Volunteer!</md-checkbox>
+            <td class="mdl-data-table__cell--non-numeric"><a ng-href="/#/volunteerDetail/{{volunteer.id}}">{{volunteer.first_name}} {{volunteer.last_name}}</a></td>
+        </div>
+        <main class="mdl-layout__content">
+            <div id="overviewTable" class="page-content">
+                <table class="mdl-data-table mdl-js-data-table">
+                    <thead>
+                        <tr>
+                            <th class="mdl-data-table__cell--non-numeric">Name</th>
+                            <th class="mdl-data-table__cell--non-numeric">Volunteer Interests</th>
+                            <th>Skills/Hobbies/Experience</th>
+                            <th class="mdl-data-table__cell--non-numeric">Length of Service</th>
+                            <th class="mdl-data-table__cell--non-numeric">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="volunteer in oc.allVolunteers.list">
+                            <td class="mdl-data-table__cell--non-numeric"><a ng-href="/#/volunteerDetail/{{volunteer.id}}">{{volunteer.first_name}} {{volunteer.last_name}}</a></td>
+                            <td class="mdl-data-table__cell--non-numeric">{{volunteer.volunteerInterests}}</td>
+                            <td class="mdl-data-table__cell--non-numeric">{{volunteer.volunteerSkills}}</td>
+                            <td class="mdl-data-table__cell--non-numeric"></td>
+                            <td class="mdl-data-table__cell--non-numeric">{{volunteer.status}}</td>
+                        </tr>
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric"><a href="#/volunteerDetail">Chip Chapman III</a></td>
+                            <td class="mdl-data-table__cell--non-numeric">Tutoring, Administration</td>
+                            <td class="mdl-data-table__cell--non-numeric">Cooking, Politicking</td>
+                            <td class="mdl-data-table__cell--non-numeric">18 months</td>
+                            <td class="mdl-data-table__cell--non-numeric">Ready to Volunteer!</td>
+                        </tr>
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">John Doe</td>
+                            <td class="mdl-data-table__cell--non-numeric">Transportation</td>
+                            <td class="mdl-data-table__cell--non-numeric">Teaching, Music</td>
+                            <td class="mdl-data-table__cell--non-numeric">0 months</td>
+                            <td class="mdl-data-table__cell--non-numeric">Application in Review</td>
+                        </tr>
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">Jane Doe</td>
+                            <td class="mdl-data-table__cell--non-numeric">Marketing and Outreach</td>
+                            <td class="mdl-data-table__cell--non-numeric">Health and Wellness</td>
+                            <td class="mdl-data-table__cell--non-numeric">0 months</td>
+                            <td class="mdl-data-table__cell--non-numeric">Checking Background/References</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
     </div>
-    <main class="mdl-layout__content">
-      <div id="overviewTable" class="page-content">
-        <table class="mdl-data-table mdl-js-data-table">
-          <thead>
-            <tr>
-              <th class="mdl-data-table__cell--non-numeric">Name</th>
-              <th class="mdl-data-table__cell--non-numeric">Volunteer Interests</th>
-              <th>Skills/Hobbies/Experience</th>
-              <th class="mdl-data-table__cell--non-numeric">Length of Service</th>
-              <th class="mdl-data-table__cell--non-numeric">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-              <tr ng-repeat="volunteer in oc.allVolunteers.list">
-                  <td class="mdl-data-table__cell--non-numeric"><a ng-href="/#/volunteerDetail/{{volunteer.id}}">{{volunteer.first_name}} {{volunteer.last_name}}</a></td>
-                  <td class="mdl-data-table__cell--non-numeric">{{volunteer.volunteerInterests}}</td>
-                  <td class="mdl-data-table__cell--non-numeric">{{volunteer.volunteerSkills}}</td>
-                  <td class="mdl-data-table__cell--non-numeric"></td>
-                  <td class="mdl-data-table__cell--non-numeric">{{volunteer.status}}</td>
-                </tr>
-            <tr>
-              <td class="mdl-data-table__cell--non-numeric"><a href="#/volunteerDetail">Chip Chapman III</a></td>
-              <td class="mdl-data-table__cell--non-numeric">Tutoring, Administration</td>
-              <td class="mdl-data-table__cell--non-numeric">Cooking, Politicking</td>
-              <td class="mdl-data-table__cell--non-numeric">18 months</td>
-              <td class="mdl-data-table__cell--non-numeric">Ready to Volunteer!</td>
-            </tr>
-            <tr>
-              <td class="mdl-data-table__cell--non-numeric">John Doe</td>
-              <td class="mdl-data-table__cell--non-numeric">Transportation</td>
-              <td class="mdl-data-table__cell--non-numeric">Teaching, Music</td>
-              <td class="mdl-data-table__cell--non-numeric">0 months</td>
-              <td class="mdl-data-table__cell--non-numeric">Application in Review</td>
-            </tr>
-            <tr>
-              <td class="mdl-data-table__cell--non-numeric">Jane Doe</td>
-              <td class="mdl-data-table__cell--non-numeric">Marketing and Outreach</td>
-              <td class="mdl-data-table__cell--non-numeric">Health and Wellness</td>
-              <td class="mdl-data-table__cell--non-numeric">0 months</td>
-              <td class="mdl-data-table__cell--non-numeric">Checking Background/References</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
-  </div>
 </div>
