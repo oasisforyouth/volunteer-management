@@ -1,71 +1,72 @@
 <html>
-<title>Volunteer Application</title>
-<form>
+<title class="boldstuff">Volunteer Application</title>
+<form class= "volunteerform">
     <div class='container'>
         <div>
-            <label><b>Name:  </b></label>
+            <label class="boldstuff">Name:  </label>
             <input type="text" ng-model="firstName" placeholder="First"><input type="text" ng-model="lastName" placeholder="Last">
             <input type="text" ng-model="middleName" placeholder="Middle"><input type="text" ng-model="maidenName" placeholder="Maiden">
             <p></p>
         </div>
         <div>
-            <label><b>Address:  </b></label>
-            <input type="text" ng-model="address" placeholder="Address">
+            <label class="boldstuff"> Address:  </label>
+            <input type="text" ng-model="address" placeholder="Address" size="50">
             <p></p>
         </div>
         <div>
-            <label><b>How long have you been at your current address?</b></label>
+            <label class="boldstuff">How long have you been at your current address?</label>
             <input type="text" ng-model="timeAtAddress" placeholder="Years">
             <p></p>
         </div>
         <div>
-            <p><b>Preferred method of contact:</b></p>
-            <p><input type="checkbox" name="Pimary Phone"><label><b>Primary Phone:  </b></label><input type="text" placeholder="123-456-7890"
+            <p class="boldstuff">Preferred method of contact:</p>
+            <p><input type="checkbox" name="Pimary Phone"><label class="boldstuff">Primary Phone:  </label><input type="text" placeholder="123-456-7890"
                     ng-model="primaryPhone"></p>
-            <p><input type="checkbox" name="Home Phone"><label><b>Secondary Phone:  </b></label><input type="text" placeholder="123-456-7890"
+            <p><input type="checkbox" name="Home Phone"><label class="boldstuff">Secondary Phone:  </label><input type="text" placeholder="123-456-7890"
                     ng-model="secondaryPhone"></p>
-            <p><input type="checkbox" name="Email Address"><label><b>Email Address:  </b></label><input type="text" placeholder="sam.doe@email.com"
+            <p><input type="checkbox" name="Email Address"><label class="boldstuff">Email Address:  </label><input type="text" placeholder="sam.doe@email.com"
                     ng-model="email"></p>
         </div>
         <div>
-            <p><b>Emergency Contact:</b></p>
-            <p><label><b>Name:  </b></label><input type="text" ng-model="emergencyName" placeholder="sam.doe@email.com"></p>
-            <p><label><b>Address:  </b></label><input type="text" ng-model="emergencyAddress" placeholder="123 4th St."></p>
-            <p><label><b>Daytime Phone:  </b></label><input type="text" ng-model="emergencyPhone" placeholder="123-456-7890"></p>
-            <p><label><b>Relationship:  </b></label><input type="text" ng-model="emergencyRelationship" placeholder="friend, cousin, spouse"></p>
+            <p class="boldstuff">Emergency Contact:</p>
+            <p><label class="boldstuff">Name:  </label><input type="text" ng-model="emergencyName" placeholder="sam.doe@email.com"></p>
+            <p><label class="boldstuff">Address:  </label><input type="text" ng-model="emergencyAddress" placeholder="123 4th St." size="50"></p>
+            <p><label class="boldstuff">Daytime Phone:  </label><input type="text" ng-model="emergencyPhone" placeholder="123-456-7890"></p>
+            <p><label class="boldstuff">Relationship:  </label><input type="text" ng-model="emergencyRelationship" placeholder="friend, cousin, spouse"></p>
         </div>
         <div>
-            <p><b>Drivers License:  </b><label>Yes</label><input type="checkbox" ng-model="driversLicense"><label>No</label>
+            <p class="boldstuff">Drivers License:  <label class="boldstuff">Yes</label><input type="checkbox" ng-model="driversLicense"><label class="boldstuff">No</label>
                 <input
                     type="checkbox"></p>
         </div>
         <div>
-            <p><b>Personal References: Must have known for at least two years</b></p>
-            <p><label><b>Name:  </b></label><input type="text" placeholder="First Last" ng-model="reference2Name"></p>
-            <p><label><b>Address:  </b></label><input type="text" placeholder="Address" ng-model="reference2Address"></p>
-            <p><label><b>Phone:  </b></label><input type="text" placeholder="Phone" ng-model="reference2Phone"></p>
-            <p><label><b>Email:  </b></label><input type="text" placeholder="Email" ng-model="reference2Email"></p>
-            <p><label><b>Years Known:  </b></label><input type="text" placeholder="Years" ng-model="reference2YearsKnown"></p>
-            <p><label><b>Relationship:  </b></label><input type="text" placeholder="Boss, Peer, Employee" ng-model="reference2Relationship"></p>
+            <p class="boldstuff">Personal References(Must have known for at least two years): </p>
+            <p><label class="boldstuff">Name:  </label><input size="35" type="text" placeholder="First Last" ng-model="reference2Name"></p>
+            <p><label class="boldstuff">Address:  </label><input size="50" type="text" placeholder="Address" ng-model="reference2Address"></p>
+            <p><label class="boldstuff">Phone:  </label><input type="text" placeholder="Phone" ng-model="reference2Phone"></p>
+            <p><label class="boldstuff">Email:  </label><input type="text" placeholder="Email" ng-model="reference2Email"></p>
+            <p><label class="boldstuff">Years Known:  </label><input type="text" placeholder="Years" ng-model="reference2YearsKnown"></p>
+            <p><label class="boldstuff">Relationship:  </label><input type="text" placeholder="Boss, Peer, Employee" ng-model="reference2Relationship"></p>
         </div>
         <div>
-            <p><label><b>Name:  </b></label><input type="text" placeholder="First Last" ng-model="reference1Name"></p>
-            <p><label><b>Address:  </b></label><input type="text" placeholder="Address" ng-model="reference1Address"></p>
-            <p><label><b>Phone:  </b></label><input type="text" placeholder="Phone" ng-model="reference1Phone"></p>
-            <p><label><b>Email:  </b></label><input type="text" placeholder="Email" ng-model="reference1Email"></p>
-            <p><label><b>Years Known:  </b></label><input type="text" placeholder="Years" ng-model="reference1YearsKnown"></p>
-            <p><label><b>Relationship:  </b></label><input type="text" placeholder="Boss, Peer, Employee" ng-model="reference1Relationship"></p>
+            <p><label class="boldstuff">Name:  </label><input type="text" placeholder="First Last" ng-model="reference1Name"></p>
+            <p><label class="boldstuff">Address:  </label><input size="50" type="text" placeholder="Address" ng-model="reference1Address"></p>
+            <p><label class="boldstuff">Phone:  </label><input type="text" placeholder="Phone" ng-model="reference1Phone"></p>
+            <p><label class="boldstuff">Email:  </label><input type="text" placeholder="Email" ng-model="reference1Email"></p>
+            <p><label class="boldstuff">Years Known:  </label><input type="text" placeholder="Years" ng-model="reference1YearsKnown"></p>
+            <p><label class="boldstuff">Relationship:  </label><input type="text" placeholder="Boss, Peer, Employee" ng-model="reference1Relationship"></p>
         </div>
         <div>
-            <p><label><b>Availability to volunteer: </b></label><br></p>
+            <p><label class="boldstuff">Availability to volunteer: </label><br></p>
             <select name="availabilitySelect" ng-model="">
+                <option value="" disabled selected hidden>Please Choose...</option>
                 <option value="Daily">Daily</option>
                 <option value="Weekly">Weekly</option>
                 <option value="Monthly">Monthly</option>
               </select><br>
             <div>
                 </script>
-                <p><label><b>Preferred days to volunteer: </b></label><br></p>
+                <p><label class="boldstuff">Preferred days to volunteer:  </label><br></p>
 
                 <form name="preferredDays">
                     <label>Monday:
@@ -101,7 +102,7 @@
                 </form>
             </div>
             <div>
-                <p><label><b>Hours available: </b></label><br></p>
+                <p><label class="boldstuff">Hours available: </label><br></p>
                 <label>Any:</label>
                 <input type="checkbox" ng-model="hoursAny" ng-true-value="'YES'" ng-false-value="'NO'">
                 <label>Mornings:</label>
@@ -112,10 +113,10 @@
                 <input type="checkbox" ng-model="hoursEvening" ng-true-value="'YES'" ng-false-value="'NO'">
             </div>
             <div>
-                <p><label><b>Volunteer experience(organization, duties, dates): </b></label><br><input type="text" placeholder="Big Brother, Coordinator, 5/14-9/16" ng-model="volunteerExperience"></p>
+                <p><label class="boldstuff">Volunteer experience(organization, duties, dates): </label><br><input type="text" size="35"placeholder="Big Brother, Coordinator, 5/14-9/16" ng-model="volunteerExperience"></p>
                   
             <div>
-                <p><label><b>Volunteer Skills: </b></label><br></p>
+                <p><label class="boldstuff">Volunteer Skills: </label><br></p>
                 <label>Tutoring:
                     <input type="checkbox" ng-model="tutoringSkill" ng-true-value="'YES'" ng-false-value="'NO'">
                   </label><br/>
@@ -136,7 +137,7 @@
                   </label><br/>
             </div>
             <div>
-                <p><label><b>Languages: </b></label><br></p>
+                <p><label class="boldstuff">Languages: </label><br></p>
                 <label>English:
                         <input type="checkbox" ng-model="english" ng-true-value="'YES'" ng-false-value="'NO'">
                       </label><br/>
@@ -148,17 +149,17 @@
                       </label><br/>
             </div>
             <div>
-                <p><label><b>Additional hobbies and interests: </b></label><br></p>
-                <input type="text" ng-model="additionalHobbies">
+                <p><label class="boldstuff">Additional hobbies and interests: </label><br></p>
+                <input type="text" ng-model="additionalHobbies" size="50">
                 </label><br/>
             </div>
             <div>
-                <p><label><b>Please list any medical concerns: </b></label><br></p>
-                <input type="text" ng-model="medicalConcerns">
+                <p><label class="boldstuff">Please list any medical concerns: </label><br></p>
+                <input type="text" ng-model="medicalConcerns" size="50">
                 </label><br/>
             </div>
             <div>
-                <p><label><b>Volunteer Opportunities: </b></label><br></p>
+                <p><label class="boldstuff">Volunteer Opportunities: </label><br></p>
                 <input type="checkbox" ng-model="dropinOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Drop-in Center Shift Volunteer:</label><br/>
                 <input type="checkbox" ng-model="tutorOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Tutor: </label><br/>
                 <input type="checkbox" ng-model="languageOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Administration(webmaster, technology, data entry, telephone, bookkeeping):</label><br/>
@@ -170,8 +171,15 @@
             <div>
                     
                     
-                <input type="checkbox" ng-model="attendedOrientation" ng-true-value="'YES'" ng-false-value="'NO'"><label><b>Attended Orientation:  </b></label><br/><input type="text" ng-value="orientationDate" placeholder="Date of Orientation">
+                <input type="checkbox" ng-model="attendedOrientation"><label class="boldstuff">Attended Orientation:  </label><br/>
             </div>
+            <md-content  class="datepickerdemoBasicUsage" >
+                    <div layout-gt-xs="row">
+                      <div flex-gt-xs="">
+                        <md-datepicker ng-model="orientationDate" md-placeholder="Enter date"></md-datepicker>
+                      </div>
+
+
 
             <button type="">Submit</button>
             <!-- build ng-model to create object -->
