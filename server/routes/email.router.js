@@ -2,14 +2,16 @@ let express = require('express');
 let router = express.Router();
 let passport = require('passport');
 let path = require('path');
+var pool = require('../modules/pool.js');
 let nodemailer = require('nodemailer');
+let md5 = require('md5');
+// let crypto = require('crypto');
 
 // NEW VOLUNTEER APPLICAITON EMAIL
 router.post('/', (req, res, next) => {
     // create reusable transporter object using the default SMTP transport
     // if (req.isAuthenticated()) {
     //     console.log('logged in email', req.user);
-
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -36,21 +38,38 @@ router.post('/', (req, res, next) => {
         console.log('Message sent: %s', info.messageId);
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
     });
-    // } else {
-    //     console.log('not logged in');
-    //     res.sendStatus(403);
-    // }
+
 });
 
 
 router.post('/user', (req, res, next) => {
     var email = req.body;
     console.log('post req.body', email);
+    console.log('hash: ', md5(email));
+    var hash = md5(email);
     // create reusable transporter object using the default SMTP transport
 
     if (req.isAuthenticated()) {
         console.log('logged in email', req.user);
-
+        // SEND EMAIL AND HASH TO DB
+        pool.connect(function(errorConnectingToDatabase, client, done) {
+            if (errorConnectingToDatabase) {
+                //when connecting to database failed
+                console.log('Error connecting to database', errorConnectingToDatabase);
+                res.sendStatus(500);
+            } else {
+                // when connecting to database worked aka HAPPYPATH!
+                client.query('INSERT INTO crypto (email, md5) VALUES ($1, $2);', [email.email, hash], function(errorMakingQuery, result) {
+                    done(); //needed
+                    if (errorMakingQuery) {
+                        console.log('Error making database query', errorMakingQuery);
+                        res.sendStatus(500);
+                    } else {
+                        res.sendStatus(201);
+                    }
+                }); // end client.query
+            }
+        }); // end pool.connect
         let transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -64,7 +83,7 @@ router.post('/user', (req, res, next) => {
             from: '"Administrator"' + process.env.DB_EMAIL, // sender address  NEEDS ADDRESS
             to: email.email, // list of receivers NEEDS ADDRESS
             subject: 'New Administrator', // Subject line
-            text: 'Please click the following link: ' + process.env.DB_HOST
+            text: 'Please click the following link: ' + process.env.DB_HOST + hash
         };
 
         // send mail with defined transport object
