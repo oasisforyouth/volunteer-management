@@ -2,7 +2,6 @@
 <div class="container">
     <center>
         <h3>Manage Administrators</h3>
-
         <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
             <thead>
                 <tr>
@@ -14,30 +13,47 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Noah Gallagher</td>
-                    <td>Guitar</td>
-                    <td>Noah@oasis.com</td>
+                <!-- non editable table -->
+                <tr ng-repeat="user in mc.allUsers.list" ng-class="{'hidden': mc.toggle}">
+                    <td class="mdl-data-table__cell--non-numeric">{{user.first_name}} {{user.last_name}}</td>
+                    <td>{{user.position}}</td>
+                    <td>{{user.email}}</td>
                     <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-                                <i class="material-icons">create</i>
+                                <i class="material-icons" ng-if="!mc.toggle" ng-click="mc.toggle = true">create</i>
                               </button></td>
-                    <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+                    <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-click="mc.deleteAdmin(user.id)">
                                 <i class="material-icons">delete</i>
                               </button></td>
                 </tr>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Liam Gallagher</td>
-                    <td>Vocals</td>
-                    <td>Liam@oasis.com</td>
-                    <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-                                <i class="material-icons">create</i>
-                              </button></td>
-                    <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-                                <i class="material-icons">delete</i>
-                              </button></td>
+                <!-- editable table -->
+                <tr ng-repeat="user in mc.allUsers.list" ng-class="{'hidden': !mc.toggle}">
+                    <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="user.first_name" placeholder="First Name"></td>
+                    <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="user.last_name" placeholder="Last Name"></td>
+                    <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="user.position" placeholder="Position"></td>
+                    <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="user.email" placeholder="Email Address"></td>
+                    <td><button ng-if="mc.toggle" aria-hidden="true" ng-click="mc.toggle = false">Edit</button></td>
+                    <td><button ng-if="mc.toggle" aria-hidden="true" ng-click="mc.updateAdmin(user)">Save</button></td>
                 </tr>
             </tbody>
         </table>
+        <div>
+            <form>
+                <md-content>
+                    <md-input-container class="md-block">
+                        <label for="email">Email Address</label>
+                        <input required email="email" ng-model="mc.emailAdmin.email">
+                        <!-- <div ng-messages="projectForm.firstName.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div> -->
+                    </md-input-container>
+
+
+                    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                        <md-button class="md-raised md-primary" ng-click="mc.sendEmail(emailAdmin)">Add New Admin</md-button>
+                    </section>
+                </md-content>
+            </form>
+        </div>
     </center>
 
 </div>

@@ -1,9 +1,9 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div id="overviewContainer" class="container">
   <h3>
-    Volunteer Overview
-    {{oc.volunteerData}} 
+    VOLUNTEER OVERVIEW
   </h3>
+  
   <div layout-padding id=sideBar class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Search Filters</span>
@@ -43,6 +43,13 @@
             </tr>
           </thead>
           <tbody>
+              <tr ng-repeat="volunteer in oc.allVolunteers.list">
+                  <td class="mdl-data-table__cell--non-numeric"><a ng-href="/#/volunteerDetail/{{volunteer.id}}">{{volunteer.first_name}} {{volunteer.last_name}}</a></td>
+                  <td class="mdl-data-table__cell--non-numeric">{{volunteer.volunteerInterests}}</td>
+                  <td class="mdl-data-table__cell--non-numeric">{{volunteer.volunteerSkills}}</td>
+                  <td class="mdl-data-table__cell--non-numeric"></td>
+                  <td class="mdl-data-table__cell--non-numeric">{{volunteer.status}}</td>
+                </tr>
             <tr>
               <td class="mdl-data-table__cell--non-numeric"><a href="#/volunteerDetail">Chip Chapman III</a></td>
               <td class="mdl-data-table__cell--non-numeric">Tutoring, Administration</td>

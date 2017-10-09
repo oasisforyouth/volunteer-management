@@ -2,12 +2,12 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
     console.log('UserService Loaded');
     var self = this;
     var userObject = {};
-    self.allUsers = {list:[]};
+    self.allUsers = { list: [] };
 
 
-    self.getAllUsers = function(){
+    self.getAllUsers = function() {
         console.log('UserService -- getAllUsers')
-        $http.get('/user/allusers').then(function(response){
+        $http.get('/user/allusers').then(function(response) {
             console.log('all users route response', response);
             self.allUsers.list = response.data;
         })
@@ -39,11 +39,37 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
         });
     }
 
-    self.addAdmin = function(newAdmin) {
-        console.log('UserService -- addAdmin', newAdmin);
-        $http.post('/user', newAdmin).then(function(response) {
-            console.log('UserService post response:', response);
+    // EMAILS NEW ADMIN SIGNUP LINK
+    self.sendEmail = function(email) {
+        // console.log('sendemail', email);
+        $http.post('/email/user', email).then(function(response) {
+            console.log('email sent to new Admin: ', response);
         });
+    };
+
+    // self.addAdmin = function(newAdmin) {
+    //     // console.log('UserService -- addAdmin', newAdmin);
+    //     $http.post('/user', newAdmin).then(function(response) {
+    //         console.log('UserService post response:', response);
+    //     });
+    // }
+
+    self.deleteAdmin = function(id) {
+        $http({
+            method: 'DELETE',
+            url: '/user/' + id,
+            success: function(response) {
+                console.log('DeleteService response:', response);
+            }
+        })
+        self.getAllUsers();
+    };
+
+    self.updateAdmin = function(user) {
+        // console.log('updateAdmin hit', user);
+        $http.put('/user/', user).then(function(response) {
+            self.getAllUsers();
+        })
     };
 
 }]);

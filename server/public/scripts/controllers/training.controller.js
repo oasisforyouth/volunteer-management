@@ -4,12 +4,17 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
     var self = this;
 
     self.toggle = false;
-    self.Trainings = TrainingService;
+    self.newTrainingToggle = false;
+    self.trainings = TrainingService.training;
     TrainingService.getTraining();
 
     // ADDS NEW TRAININGS
     self.addTraining = function() {
-        console.log('addTraining button was clicked');
+        console.log('addTraining button was clicked', self.newTraining);
+        self.newTrainingToggle = false;
+        self.toggle = false;
+        TrainingService.addTraining(self.newTraining);
+        self.newTraining = {};
     };
 
     // DELETES TRAINING
@@ -22,5 +27,6 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
     self.updateTraining = function(trainingId) {
         // console.log('updateTraining button was clicked', trainingId);
         TrainingService.updateTraining(trainingId);
+        self.toggle = false;
     };
 }]);

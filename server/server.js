@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -11,6 +13,7 @@ var userRouter = require('./routes/user.router');
 var registerRouter = require('./routes/register.router');
 var volunteerRouter = require('./routes/volunteer.router')
 var trainingRouter = require('./routes/training.router');
+var emailRouter = require('./routes/email.router')
 
 var port = process.env.PORT || 5000;
 
@@ -33,6 +36,7 @@ app.use('/register', registerRouter);
 app.use('/user', userRouter);
 app.use('/volunteer', volunteerRouter);
 app.use('/training', trainingRouter);
+app.use('/email', emailRouter);
 
 // Catch all bucket, must be last!
 app.use('/', indexRouter);

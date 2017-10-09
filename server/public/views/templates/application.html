@@ -1,6 +1,6 @@
 <html>
 <title class="boldstuff">Volunteer Application</title>
-<form class= "volunteerform">
+<form class="volunteerform">
     <div class='container'>
         <div>
             <label class="boldstuff">Name:  </label>
@@ -20,24 +20,26 @@
         </div>
         <div>
             <p class="boldstuff">Preferred method of contact:</p>
-            <p><input type="checkbox" name="Pimary Phone"><label class="boldstuff">Primary Phone:  </label><input type="text" placeholder="123-456-7890"
-                    ng-model="primaryPhone"></p>
-            <p><input type="checkbox" name="Home Phone"><label class="boldstuff">Secondary Phone:  </label><input type="text" placeholder="123-456-7890"
-                    ng-model="secondaryPhone"></p>
-            <p><input type="checkbox" name="Email Address"><label class="boldstuff">Email Address:  </label><input type="text" placeholder="sam.doe@email.com"
-                    ng-model="email"></p>
+            <p><input type="checkbox" name="Pimary Phone"><label class="boldstuff">Primary Phone:  </label><input type="text"
+                    placeholder="123-456-7890" ng-model="primaryPhone"></p>
+            <p><input type="checkbox" name="Home Phone"><label class="boldstuff">Secondary Phone:  </label><input type="text"
+                    placeholder="123-456-7890" ng-model="secondaryPhone"></p>
+            <p><input type="checkbox" name="Email Address"><label class="boldstuff">Email Address:  </label><input type="text"
+                    placeholder="sam.doe@email.com" ng-model="email"></p>
         </div>
         <div>
             <p class="boldstuff">Emergency Contact:</p>
             <p><label class="boldstuff">Name:  </label><input type="text" ng-model="emergencyName" placeholder="sam.doe@email.com"></p>
-            <p><label class="boldstuff">Address:  </label><input type="text" ng-model="emergencyAddress" placeholder="123 4th St." size="50"></p>
+            <p><label class="boldstuff">Address:  </label><input type="text" ng-model="emergencyAddress" placeholder="123 4th St."
+                    size="50"></p>
             <p><label class="boldstuff">Daytime Phone:  </label><input type="text" ng-model="emergencyPhone" placeholder="123-456-7890"></p>
             <p><label class="boldstuff">Relationship:  </label><input type="text" ng-model="emergencyRelationship" placeholder="friend, cousin, spouse"></p>
         </div>
         <div>
-            <p class="boldstuff">Drivers License:  <label class="boldstuff">Yes</label><input type="checkbox" ng-model="driversLicense"><label class="boldstuff">No</label>
-                <input
-                    type="checkbox"></p>
+            <p class="boldstuff">Drivers License: <label class="boldstuff">Yes</label><input type="checkbox" ng-model="driversLicense">
+                <label
+                    class="boldstuff">No</label>
+                    <input type="checkbox"></p>
         </div>
         <div>
             <p class="boldstuff">Personal References(Must have known for at least two years): </p>
@@ -59,45 +61,45 @@
         <div>
             <p><label class="boldstuff">Availability to volunteer: </label><br></p>
             <select name="availabilitySelect" ng-model="">
-                <option value="" disabled selected hidden>Please Choose...</option>
-                <option value="Daily">Daily</option>
-                <option value="Weekly">Weekly</option>
-                <option value="Monthly">Monthly</option>
-              </select><br>
+                        <option value="" disabled selected hidden>Please Choose...</option>
+                        <option value="Daily">Daily</option>
+                        <option value="Weekly">Weekly</option>
+                        <option value="Monthly">Monthly</option>
+                      </select><br>
             <div>
                 </script>
                 <p><label class="boldstuff">Preferred days to volunteer:  </label><br></p>
 
                 <form name="preferredDays">
                     <label>Monday:
-            <input type="checkbox" ng-model="mondayPreference">
-          </label><br/>
+                    <input type="checkbox" ng-model="mondayPreference">
+                  </label><br/>
                     <label>Tuesday:
-            <input type="checkbox" ng-model="tuesdayPreference">
-          </label><br/>
+                    <input type="checkbox" ng-model="tuesdayPreference">
+                  </label><br/>
                     <label>Wednesday:
-            <input type="checkbox" ng-model="wednesdayPreference">
-          </label><br/>
+                    <input type="checkbox" ng-model="wednesdayPreference">
+                  </label><br/>
                     <label>Thursday:
-            <input type="checkbox" ng-model="thursdayPreference"
-            ng-true-value="'YES'" ng-false-value="'NO'">
-          </label><br/>
+                    <input type="checkbox" ng-model="thursdayPreference"
+                    ng-true-value="'YES'" ng-false-value="'NO'">
+                  </label><br/>
                     <label>Friday:
-            <input type="checkbox" ng-model="fridayPreference"
-            ng-true-value="'YES'" ng-false-value="'NO'">
-          </label><br/>
+                    <input type="checkbox" ng-model="fridayPreference"
+                    ng-true-value="'YES'" ng-false-value="'NO'">
+                  </label><br/>
                     <label>Saturday:
-            <input type="checkbox" ng-model="saturdayPreference"
-            ng-true-value="'YES'" ng-false-value="'NO'">
-          </label><br/>
+                    <input type="checkbox" ng-model="saturdayPreference"
+                    ng-true-value="'YES'" ng-false-value="'NO'">
+                  </label><br/>
                     <label>Sunday:
-            <input type="checkbox" ng-model="sundayPreference"
-            ng-true-value="'YES'" ng-false-value="'NO'">
-          </label><br/>
+                    <input type="checkbox" ng-model="sundayPreference"
+                    ng-true-value="'YES'" ng-false-value="'NO'">
+                  </label><br/>
                     <label>No Preference:
-            <input type="checkbox" ng-model="noDayPreference"
-                   ng-true-value="'YES'" ng-false-value="'NO'">
-           </label><br/>
+                    <input type="checkbox" ng-model="noDayPreference"
+                           ng-true-value="'YES'" ng-false-value="'NO'">
+                   </label><br/>
 
                 </form>
             </div>
@@ -113,80 +115,77 @@
                 <input type="checkbox" ng-model="hoursEvening" ng-true-value="'YES'" ng-false-value="'NO'">
             </div>
             <div>
-                <p><label class="boldstuff">Volunteer experience(organization, duties, dates): </label><br><input type="text" size="35"placeholder="Big Brother, Coordinator, 5/14-9/16" ng-model="volunteerExperience"></p>
-                  
-            <div>
-                <p><label class="boldstuff">Volunteer Skills: </label><br></p>
-                <label>Tutoring:
-                    <input type="checkbox" ng-model="tutoringSkill" ng-true-value="'YES'" ng-false-value="'NO'">
-                  </label><br/>
-                <label>Cooking:
-                    <input type="checkbox" ng-model="cookingSkill" ng-true-value="'YES'" ng-false-value="'NO'">
-                  </label><br/>
-                <label>Health/Wellness:
-                    <input type="checkbox" ng-model="healthWellnessSkill" ng-true-value="'YES'" ng-false-value="'NO'">
-                  </label><br/>
-                <label>Careers:
-                    <input type="checkbox" ng-model="careersSkill" ng-true-value="'YES'" ng-false-value="'NO'">
-                  </label><br/>
-                <label>Art:
-                    <input type="checkbox" ng-model="artSkill" ng-true-value="'YES'" ng-false-value="'NO'">
-                  </label><br/>
-                <label>Financial Education:
-                    <input type="checkbox" ng-model="financialEducationSkill" ng-true-value="'YES'" ng-false-value="'NO'">
-                  </label><br/>
-            </div>
-            <div>
-                <p><label class="boldstuff">Languages: </label><br></p>
-                <label>English:
-                        <input type="checkbox" ng-model="english" ng-true-value="'YES'" ng-false-value="'NO'">
-                      </label><br/>
-                <label>Spanish:
-                        <input type="checkbox" ng-model="spanish" ng-true-value="'YES'" ng-false-value="'NO'">
-                      </label><br/>
-                <label>Other:
-                        <input type="checkbox" ng-model="languageOther" ng-true-value="'YES'" ng-false-value="'NO'">
-                      </label><br/>
-            </div>
-            <div>
-                <p><label class="boldstuff">Additional hobbies and interests: </label><br></p>
-                <input type="text" ng-model="additionalHobbies" size="50">
-                </label><br/>
-            </div>
-            <div>
-                <p><label class="boldstuff">Please list any medical concerns: </label><br></p>
-                <input type="text" ng-model="medicalConcerns" size="50">
-                </label><br/>
-            </div>
-            <div>
-                <p><label class="boldstuff">Volunteer Opportunities: </label><br></p>
-                <input type="checkbox" ng-model="dropinOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Drop-in Center Shift Volunteer:</label><br/>
-                <input type="checkbox" ng-model="tutorOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Tutor: </label><br/>
-                <input type="checkbox" ng-model="languageOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Administration(webmaster, technology, data entry, telephone, bookkeeping):</label><br/>
-                <input type="checkbox" ng-model="marketingOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Marketing and Outreach(and social media):</label><br/>
-                <input type="checkbox" ng-model="suppliesDonationsOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Supplies/Donations Drives/Donation Coordination:</label><br/>
-                <input type="checkbox" ng-model="fundraisingEventsOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Fundraising and Events</label><br/>
-                <input type="checkbox" ng-model="otherOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Other</label><br/>
-            </div>
-            <div>
-                    
-                    
-                <input type="checkbox" ng-model="attendedOrientation"><label class="boldstuff">Attended Orientation:  </label><br/>
-            </div>
-            <md-content  class="datepickerdemoBasicUsage" >
+                <p><label class="boldstuff">Volunteer experience(organization, duties, dates): </label><br><input type="text"
+                        size="35" placeholder="Big Brother, Coordinator, 5/14-9/16" ng-model="volunteerExperience"></p>
+
+                <div>
+                    <p><label class="boldstuff">Volunteer Skills: </label><br></p>
+                    <label>Tutoring:
+                            <input type="checkbox" ng-model="tutoringSkill" ng-true-value="'YES'" ng-false-value="'NO'">
+                          </label><br/>
+                    <label>Cooking:
+                            <input type="checkbox" ng-model="cookingSkill" ng-true-value="'YES'" ng-false-value="'NO'">
+                          </label><br/>
+                    <label>Health/Wellness:
+                            <input type="checkbox" ng-model="healthWellnessSkill" ng-true-value="'YES'" ng-false-value="'NO'">
+                          </label><br/>
+                    <label>Careers:
+                            <input type="checkbox" ng-model="careersSkill" ng-true-value="'YES'" ng-false-value="'NO'">
+                          </label><br/>
+                    <label>Art:
+                            <input type="checkbox" ng-model="artSkill" ng-true-value="'YES'" ng-false-value="'NO'">
+                          </label><br/>
+                    <label>Financial Education:
+                            <input type="checkbox" ng-model="financialEducationSkill" ng-true-value="'YES'" ng-false-value="'NO'">
+                          </label><br/>
+                </div>
+                <div>
+                    <p><label class="boldstuff">Languages: </label><br></p>
+                    <label>English:
+                                <input type="checkbox" ng-model="english" ng-true-value="'YES'" ng-false-value="'NO'">
+                              </label><br/>
+                    <label>Spanish:
+                                <input type="checkbox" ng-model="spanish" ng-true-value="'YES'" ng-false-value="'NO'">
+                              </label><br/>
+                    <label>Other:
+                                <input type="checkbox" ng-model="languageOther" ng-true-value="'YES'" ng-false-value="'NO'">
+                              </label><br/>
+                </div>
+                <div>
+                    <p><label class="boldstuff">Additional hobbies and interests: </label><br></p>
+                    <input type="text" ng-model="additionalHobbies" size="50">
+                    </label><br/>
+                </div>
+                <div>
+                    <p><label class="boldstuff">Please list any medical concerns: </label><br></p>
+                    <input type="text" ng-model="medicalConcerns" size="50">
+                    </label><br/>
+                </div>
+                <div>
+                    <p><label class="boldstuff">Volunteer Opportunities: </label><br></p>
+                    <input type="checkbox" ng-model="dropinOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Drop-in Center Shift Volunteer:</label><br/>
+                    <input type="checkbox" ng-model="tutorOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Tutor: </label><br/>
+                    <input type="checkbox" ng-model="languageOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Administration(webmaster, technology, data entry, telephone, bookkeeping):</label><br/>
+                    <input type="checkbox" ng-model="marketingOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Marketing and Outreach(and social media):</label><br/>
+                    <input type="checkbox" ng-model="suppliesDonationsOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Supplies/Donations Drives/Donation Coordination:</label><br/>
+                    <input type="checkbox" ng-model="fundraisingEventsOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Fundraising and Events</label><br/>
+                    <input type="checkbox" ng-model="otherOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Other</label><br/>
+                </div>
+                <div>
+
+
+                    <input type="checkbox" ng-model="attendedOrientation"><label class="boldstuff">Attended Orientation:  </label><br/>
+                </div>
+                <md-content class="datepickerdemoBasicUsage">
                     <div layout-gt-xs="row">
-                      <div flex-gt-xs="">
-                        <md-datepicker ng-model="orientationDate" md-placeholder="Enter date"></md-datepicker>
-                      </div>
+                        <div flex-gt-xs="">
+                            <md-datepicker ng-model="orientationDate" md-placeholder="Enter date"></md-datepicker>
+                        </div>
 
 
 
-            <button type="">Submit</button>
-            <!-- build ng-model to create object -->
-
-
-
-
+                        <button type="">Submit</button>
+                        <!-- build ng-model to create object -->
 
 
 
@@ -196,7 +195,11 @@
 
 
 
-        </div>
+
+
+
+
+                    </div>
 </form>
 
 </html>

@@ -152,8 +152,15 @@ li a:hover {
     width: 70%;
     border: 1px solid black;
     padding: 10px;
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.setPassword {
+    height: 30%;
+    width: 70%;
+    border: 1px solid black;
+    padding: 10px;
 }
 
 .login {
@@ -162,4 +169,20 @@ li a:hover {
     border: 1px solid black;
     margin: 20px;
     padding: 10px;
+}
+
+.Icon {
+    font-size: 150%;
+}
+
+#editIcon {
+    font-size: 150%;
+}
+
+#saveIcon {
+    font-size: 150%;
+}
+
+#cancelIcon {
+    font-size: 150%;
 }
