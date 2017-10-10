@@ -50,12 +50,14 @@ router.put('/:id', function(req, res, next) {
             console.log("Error connecting: ", err);
             res.sendStatus(500);
         }
-        client.query("UPDATE crypto SET route_params=$1 WHERE md5=$2;", [adminId, adminId],
+        client.query("UPDATE crypto SET route_params=$1 WHERE md5=$2 RETURNING id;", [adminId, adminId],
             function(err, result) {
                 client.end();
 
                 if (err) {
                     console.log("Error inserting data: ", err);
+                    res.sendStatus(500);
+                } else if (result < 1) {
                     res.sendStatus(500);
                 } else {
                     res.sendStatus(201);

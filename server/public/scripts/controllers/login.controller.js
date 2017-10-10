@@ -46,15 +46,19 @@ myApp.controller('LoginController', function($http, $location, $routeParams, Use
             console.log('LoginController -- registerUser -- sending to server...', self.user);
 
             $http.put('/register/' + self.currentAdminId).then(function(response) {
-                console.log('update response: ', response);
+                console.log('update response: ', response.status);
+                if (response.status == 201) {
+                    $http.post('/register', self.user).then(function(response) {
+                        console.log('LoginController -- registerUser -- success');
+                        $location.path('/login');
+                    }).catch(function(response) {
+                        console.log('LoginController -- registerUser -- error');
+                        self.message = "Please try again."
+                    });
+                } else {
+                    console.log('No Admin fo you!');
+                }
             });
-            // $http.post('/register', self.user).then(function(response) {
-            //     console.log('LoginController -- registerUser -- success');
-            //     $location.path('/login');
-            // }).catch(function(response) {
-            //     console.log('LoginController -- registerUser -- error');
-            //     self.message = "Please try again."
-            // });
         }
     }
 });
