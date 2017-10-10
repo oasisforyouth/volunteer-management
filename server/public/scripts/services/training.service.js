@@ -2,25 +2,40 @@ myApp.service('TrainingService', function($http, $location) {
     // console.log('training service loaded');
     var self = this;
 
-    self.training = { list: [] };
-    self.volunteerTraining = { list: [] };
+    self.trainings = { list: [] };
+    self.volunteerTrainings = { list: [] };
+    self.completedTrainings = { list: [] };
     // OBTAINS TRAINING EVENTS FROM DB
-    self.getTraining = function() {
-        self.training.list = [];
+    self.getTrainings = function() {
+        self.trainings.list = [];
         // console.log('getTraining hit');
         $http.get('/training').then(function(response) {
-            self.training.list = response.data;
-            console.log('training get response', self.training.list);
+            self.trainings.list = response.data;
+            console.log('trainings get response', self.trainings.list);
         });
     };
     self.getVolunteerTrainings = function() {
-        self.volunteerTraining.list = [];
+        //self.volunteerTraining.list = [];
         // console.log('getTraining hit');
         $http.get('/training/volunteers').then(function(response) {
-            self.volunteerTraining.list = response.data;
-            console.log('training get response', self.volunteerTraining.list);
+            self.volunteerTrainings.list = response.data;
+            console.log('training get response', self.volunteerTrainings.list);
         });
     };
+
+    self.getCompletedTrainings = function(traineeId) {
+        $http.get('/completedTrainings/' + traineeId).then(function(response) {
+            self.completedTrainings.list = response.data;
+            console.log('completedTrainings response', response.data);
+        })
+    }
+
+    self.updateCompletedTraining = function(traineeId, trainingId, completionDate) {
+        let updateTrainingDate = { traineeId: traineeId, trainingId: trainingId, completionDate: completionDate }
+        $http.post('/completedTrainings', updateTrainingDate).then(function(response) {
+            self.getCompletedTrainings(traineeId);
+        })
+    }
 
     // DELETES TRAINING FROM DATABASE
     self.deleteTraining = function(trainingId) {
@@ -34,7 +49,6 @@ myApp.service('TrainingService', function($http, $location) {
     self.updateTraining = function(trainingId) {
         // console.log('updateTraining hit', trainingId);
         $http.put('/training/' + trainingId.id, trainingId).then(function(response) {
-            console.log('response: ', response);
             self.getTraining();
         })
     };

@@ -43,7 +43,6 @@ router.get('/:id', function(req,res){
                 if(errormakingquery){
                     res.sendStatus(500);
                 }else{
-                    console.log('result', result)
                     res.send(result.rows);
                 }   
             })
