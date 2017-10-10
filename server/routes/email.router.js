@@ -45,8 +45,8 @@ router.post('/', (req, res, next) => {
 router.post('/user', (req, res, next) => {
     let email = req.body;
     console.log('post req.body', email);
-    console.log('hash: ', md5(email));
-    let hash = md5(email);
+    console.log('hash: ', md5(email.email));
+    let hash = md5(email.email);
     // create reusable transporter object using the default SMTP transport
 
     if (req.isAuthenticated()) {

@@ -43,5 +43,27 @@ router.post('/', function(req, res, next) {
 
 });
 
+router.put('/:id', function(req, res, next) {
+    var adminId = req.params.id;
+    pool.connect(function(err, client, done) {
+        if (err) {
+            console.log("Error connecting: ", err);
+            res.sendStatus(500);
+        }
+        client.query("UPDATE crypto SET route_params=$1 WHERE md5=$2;", [adminId, adminId],
+            function(err, result) {
+                client.end();
+
+                if (err) {
+                    console.log("Error inserting data: ", err);
+                    res.sendStatus(500);
+                } else {
+                    res.sendStatus(201);
+                }
+            });
+    });
+
+});
+
 
 module.exports = router;

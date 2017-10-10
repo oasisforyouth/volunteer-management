@@ -108,5 +108,7 @@ CREATE TABLE crypto(
 id SERIAL PRIMARY KEY,
 email TEXT NOT NULL,
 md5 TEXT NOT NULL,
-created_at TIMESTAMP DEFAULT NOW()
+created_at TIMESTAMP DEFAULT NOW(),
+active BOOLEAN DEFAULT true,
+route_params TEXT
 );
