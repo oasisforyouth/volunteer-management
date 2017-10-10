@@ -6,7 +6,25 @@ html {
     font-size: 14px;
 }
 
+.mdl-data-table {
+    table-layout:fixed;
+    width:90%; 
+}
+
+.mdl-data-table td, th {
+    width: 100%;
+    /* white-space: pre-wrap; */
+    overflow-x: scroll;
+    /* text-overflow: ellipsis; */
+    /* -o-text-overflow: ellipsis; */
+  }
+
+
 #header {
+    text-align: center;
+}
+
+#cell {
     text-align: center;
 }
 
