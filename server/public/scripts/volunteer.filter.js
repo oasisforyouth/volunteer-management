@@ -9,63 +9,63 @@ myApp.filter('volunteerFilter', function () {
                 addVolunteer = true;
             }
             if (volunteerArray[i].tutor_opportunity && volunteerSearchObject.tutor_opportunity) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
             if (volunteerArray[i].dropin_opportunity && volunteerSearchObject.dropin_opportunity) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
             if (volunteerArray[i].transportation_opportunity && volunteerSearchObject.transportation_opportunity) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
             if (volunteerArray[i].administration_opportunity && volunteerSearchObject.administration_opportunity) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }   
             if (volunteerArray[i].marketing_opportunity && volunteerSearchObject.marketing_opportunity) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
             if (volunteerArray[i].supplies_donations_opportunity && volunteerSearchObject.supplies_donations_opportunity) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
             if (volunteerArray[i].fundraising_events_opportunity && volunteerSearchObject.fundraising_events_opportunity) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
 
 
             if (volunteerArray[i].tutoring_skill && volunteerSearchObject.tutoring_skill) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
             if (volunteerArray[i].cooking_skill && volunteerSearchObject.cooking_skill) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
             if (volunteerArray[i].art_skill && volunteerSearchObject.art_skill) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
             if (volunteerArray[i].health_wellness_skill && volunteerSearchObject.health_wellness_skill) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
             if (volunteerArray[i].career_jobs_skill && volunteerSearchObject.career_jobs_skill) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
 
 
             if (volunteerArray[i].status == 'Applied' && volunteerSearchObject.status_applied) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
             if (volunteerArray[i].status == 'Application in Review' && volunteerSearchObject.status_review) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
             if (volunteerArray[i].status == 'Checking Background/References' && volunteerSearchObject.status_background) {
@@ -73,15 +73,15 @@ myApp.filter('volunteerFilter', function () {
                 addVolunteer = true;
             }
             if (volunteerArray[i].status == 'Schedule Interview' && volunteerSearchObject.status_interview) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
             if (volunteerArray[i].status == 'Schedule Training' && volunteerSearchObject.status_training) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
             if (volunteerArray[i].status == 'Ready to Volunteer!' && volunteerSearchObject.status_ready) {
-                // volunteerSearchObject.all = false;
+                
                 addVolunteer = true;
             }
 

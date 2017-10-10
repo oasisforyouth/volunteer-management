@@ -5,55 +5,13 @@ myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'Vo
 
     self.volunteerSearchObject = { //interests object to use for the filter search
         all: true,
-        // tutor_opportunity: true,
-        // dropin_opportunity: true,
-        // transportation_opportunity: true,
-        // administration_opportunity: true,
-        // marketing_opportunity: true,
-        // supplies_donations_opportunity: true,
-        // fundraising_events_opportunity: true,
-        // status_applied: true,
-        // status_review: true,
-        // status_background: true,
-        // status_interview: true,
-        // status_training: true,
-        // status_ready: true
     };
 
     VolunteerService.getAllVolunteers();
 
-    self.showAllChecked = true
-
-    self.showOnBoardingChecked = function() {
-        self.showAllChecked = false;
-        if (self.allVolunteers.status != 'Ready To Volunteer') {          
-        }
-    }
-
     self.currentVolunteerId = $routeParams.id; 
 
 }]);
-
-
-
-    // var fakeArray = [{name: 'Bob', tutoring: true},{name: 'Tony', tutoring: true}];
-    // var fakeSearchObject = {tutoring: true};
-    
-    // function filterFunction(array, searcObject) {
-    //     var filteredArray = [];
-      
-    //   for(var i = 0; i<array.length; i++) {
-    //       if (array[i].tutoring == fakeSearchObject.tutoring) {
-    //         filteredArray.push(array[i]);
-    //     }
-    //   }
-      
-    //     return filteredArray;
-    // }
-    
-    // console.log(filterFunction(fakeArray, fakeSearchObject));
-
-
 
 // "tutor_opportunity":true,
 // "dropin_opportunity":false,
@@ -69,8 +27,6 @@ myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'Vo
 // "art_skill":true,
 // "health_wellness_skill":true,
 // "career_jobs_skill":false,
-
-
 
 // {"list":[{"id":1,
 // "first_name":"Troy",
