@@ -5,8 +5,8 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
 
     self.toggle = false;
     self.newTrainingToggle = false;
-    self.trainings = TrainingService.training;
-    TrainingService.getTraining();
+    self.trainings = TrainingService.trainings;
+    TrainingService.getTrainings();
 
     // ADDS NEW TRAININGS
     self.addTraining = function() {
