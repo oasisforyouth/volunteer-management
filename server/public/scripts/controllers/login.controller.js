@@ -45,7 +45,7 @@ myApp.controller('LoginController', function($http, $location, $routeParams, Use
         } else {
             console.log('LoginController -- registerUser -- sending to server...', self.user);
             $http.put('/register/' + self.currentAdminId).then(function(response) {
-                console.log(response);
+                console.log('update response', response);
             });
             // $http.post('/register', self.user).then(function(response) {
             //     console.log('LoginController -- registerUser -- success');
