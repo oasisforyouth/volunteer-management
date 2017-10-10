@@ -87,7 +87,7 @@
 
       <md-card-content ng-repeat='training in vc.completedTrainings.list'> 
           
-          {{training.title}}<input type='date' value='{{training.date_completed | date:"yyyy-MM-dd"}}'><button>Save</button><br>
+          {{training.title}}<input type='date' value='{{training.date_completed | date:"yyyy-MM-dd"}}' ng-model='training.updateCompletedDate'><button ng-click='vc.updateCompletedTraining(training.updateCompletedDate, training.id);'>Save</button><br>
       </md-card-content>
     </md-card>
   </div>

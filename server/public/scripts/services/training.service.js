@@ -30,6 +30,13 @@ myApp.service('TrainingService', function ($http, $location) {
         })
     }
 
+    self.updateCompletedTraining = function(traineeId, trainingId, completionDate){
+        let updateTrainingDate = {traineeId: traineeId, trainingId:trainingId, completionDate:completionDate}
+        $http.post('/completedTrainings', updateTrainingDate).then(function(response){
+            self.getCompletedTrainings(traineeId);
+        })
+    }
+
     // DELETES TRAINING FROM DATABASE
     self.deleteTraining = function (trainingId) {
         // console.log('deleteTraining hit', trainingId);

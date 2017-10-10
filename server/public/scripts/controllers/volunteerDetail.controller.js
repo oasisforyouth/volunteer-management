@@ -9,4 +9,8 @@ myApp.controller('VolunteerDetailController', ['VolunteerService', 'UserService'
     VolunteerService.getVolunteerDetail($routeParams.id);
     TrainingService.getCompletedTrainings($routeParams.id);
     TrainingService.getVolunteerTrainings();
+    self.updateCompletedTraining = function(completedDate, trainingId){
+        TrainingService.updateCompletedTraining($routeParams.id, trainingId, completedDate);
+        console.log('completed date data controller, ', $routeParams.id, trainingId, completedDate);
+    }
 }]);
