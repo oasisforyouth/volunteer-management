@@ -6,6 +6,27 @@ html {
     font-size: 14px;
 }
 
+.mdl-data-table {
+    table-layout:fixed;
+    width:90%; 
+}
+
+.mdl-data-table td, th {
+    width: 100%;
+    /* white-space: pre-wrap; */
+    overflow-x: scroll;
+    /* text-overflow: ellipsis; */
+    /* -o-text-overflow: ellipsis; */
+  }
+
+
+#header {
+    text-align: center;
+}
+
+#cell {
+    text-align: center;
+}
 
 .instructions .container h1 {
     font-size: 32px;
@@ -71,14 +92,10 @@ html {
     width: 15%;
 }
 
-#sidebar {
-    height: 100%;
-}
-
 #overviewTable {
-    /* display: flex;
-    justify-content: flex-end;
-    padding-right: 1%; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .container h3 {
@@ -138,7 +155,6 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
-
 
 /* Change the link color to #111 (black) on hover */
 
