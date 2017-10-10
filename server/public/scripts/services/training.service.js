@@ -34,17 +34,18 @@ myApp.service('TrainingService', function($http, $location) {
     self.updateTraining = function(trainingId) {
         // console.log('updateTraining hit', trainingId);
         $http.put('/training/' + trainingId.id, trainingId).then(function(response) {
+            console.log('response: ', response);
             self.getTraining();
         })
     };
 
     // ADD A NEW TRAINING TO THE DATABASE
     self.addTraining = function(newTraining) {
-        
+
         console.log(newTraining);
         $http.post('/training', newTraining).then(function(response) {
             console.log('service post was returned: ', response);
-            
+
             self.getTraining();
         });
     };
