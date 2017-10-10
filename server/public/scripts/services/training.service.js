@@ -26,7 +26,7 @@ myApp.service('TrainingService', function ($http, $location) {
     self.getCompletedTrainings = function(traineeId){
         $http.get('/completedTrainings/'+ traineeId).then(function(response){
             self.completedTrainings.list = response.data;
-            console.log('completedTrainings response', response);
+            console.log('completedTrainings response', response.data);
         })
     }
 

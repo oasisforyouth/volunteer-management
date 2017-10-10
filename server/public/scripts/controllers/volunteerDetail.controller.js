@@ -4,7 +4,7 @@ myApp.controller('VolunteerDetailController', ['VolunteerService', 'UserService'
     var self = this;
     self.trainings = TrainingService.volunteerTrainings;
     self.volunteerDetail = VolunteerService.volunteerDetail;
-    self.completedTrainings = VolunteerService.completedTrainings;
+    self.completedTrainings = TrainingService.completedTrainings;
     self.currentVolunteerId = $routeParams.id;//filters to the current user from the whole list of users instead of running another query
     VolunteerService.getVolunteerDetail($routeParams.id);
     TrainingService.getCompletedTrainings($routeParams.id);

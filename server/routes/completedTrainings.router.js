@@ -11,7 +11,10 @@ router.get('/:id', function(req,res){
                 console.log("Error connecting: ", err);
                 res.sendStatus(500);
             }
-            client.query("SELECT * FROM Completed_trainings WHERE trainee_id = $1", [traineeId],
+            client.query(`SELECT trainings.title, completed_trainings.date_completed FROM volunteers
+            JOIN completed_trainings ON completed_trainings.trainee_id = volunteers.id AND volunteers.id=$1
+            RIGHT OUTER JOIN trainings ON completed_trainings.training_id = trainings.id
+            WHERE trainings.volunteers = TRUE;`, [traineeId],
                 function(err, result) {
                     done();
     

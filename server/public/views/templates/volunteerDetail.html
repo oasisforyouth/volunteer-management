@@ -84,8 +84,10 @@
           
         </md-card-title-text>
       </md-card-title>
-      <md-card-content ng-repeat='training in vc.trainings.list'>  
-          {{training.title}}<input type='date'><button>Save</button><br>
+
+      <md-card-content ng-repeat='training in vc.completedTrainings.list'> 
+          
+          {{training.title}}<input type='date' value='{{training.date_completed | date:"yyyy-MM-dd"}}'><button>Save</button><br>
       </md-card-content>
     </md-card>
   </div>
