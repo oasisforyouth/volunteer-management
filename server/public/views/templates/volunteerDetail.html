@@ -17,7 +17,7 @@
         </div>
         <!-- column 2 -->
         <div flex layout-padding>
-            <md-card>
+            <md-card layout-fill>
                 <md-card-title>
                     <md-card-title-text>
                         <h5>VOLUNTEER STATUS</h5>
@@ -47,7 +47,7 @@
 <div layout="row">
   <!-- column 1 -->
   <div flex layout-padding>
-    <md-card>
+    <md-card layout-fill>
       <md-card-title>
         <md-card-title-text>
           <h5>EMERGENCY CONTACT</h5>
@@ -64,7 +64,7 @@
   </div>
   <!-- column 2 -->
   <div flex layout-padding>
-    <md-card>
+    <md-card layout-fill> 
       <md-card-title>
         <md-card-title-text>
           <h5>AVAILABILITY </h5>
@@ -77,15 +77,17 @@
   </div>
   <!-- column 3 -->
   <div flex layout-padding>
-    <md-card>
+    <md-card layout-fill>
       <md-card-title>
         <md-card-title-text>
           <h5>TRAININGS</h5>
           
         </md-card-title-text>
       </md-card-title>
-      <md-card-content ng-repeat='training in vc.trainings.list'>  
-          {{training.title}}<input type='date'><button>Save</button><br>
+
+      <md-card-content ng-repeat='training in vc.completedTrainings.list'> 
+          
+          {{training.title}}<input type='date' value='{{training.date_completed | date:"yyyy-MM-dd"}}' ng-model='training.updateCompletedDate'><button ng-click='vc.updateCompletedTraining(training.updateCompletedDate, training.id);'>Save</button><br>
       </md-card-content>
     </md-card>
   </div>
@@ -96,7 +98,7 @@
     <div layout="row">
         <!-- column 1 -->
         <div flex layout-padding>
-            <md-card>
+            <md-card layout-fill>
                 <md-card-title>
                     <md-card-title-text>
                         <h5>PERSONAL REFERENCE</h5>
@@ -113,7 +115,7 @@
         </div>
         <!-- column 2 -->
         <div flex layout-padding>
-            <md-card>
+            <md-card layout-fill>
                 <md-card-title>
                     <md-card-title-text>
                         <h5>LANGUAGES </h5>
@@ -127,7 +129,7 @@
         </div>
         <!-- column 3 -->
         <div flex layout-padding>
-            <md-card>
+            <md-card layout-fill>
                 <md-card-title>
                     <md-card-title-text>
                         <h5>VOLUNTEER INTERESTS </h5>
@@ -148,7 +150,7 @@
     <div layout="row">
         <!-- column 1 -->
         <div flex layout-padding>
-            <md-card>
+            <md-card layout-fill>
                 <md-card-title>
                     <md-card-title-text>
                         <h5>HOBBIES/SKILLS/INTERESTS</h5>
@@ -162,7 +164,7 @@
         </div>
         <!-- column 2 -->
         <div flex layout-padding>
-            <md-card>
+            <md-card layout-fill>
                 <md-card-title>
                     <md-card-title-text>
                         <h5>MEDICAL CONDITIONS</h5>
@@ -175,7 +177,7 @@
         </div>
         <!-- column 3 -->
         <div flex layout-padding>
-            <md-card>
+            <md-card layout-fill>
                 <md-card-title>
                     <md-card-title-text>
                         <h5>VOLUNTEER EXPERIENCE</h5>
@@ -192,7 +194,7 @@
     <!-- begin row 6 -->
     <div layout="row">
         <div flex layout-padding>
-            <md-card>
+            <md-card layout-fill>
                 <md-card-title>
                     <md-card-title-text>
                         <h5>ADMINISTRATOR NOTES</h5>
