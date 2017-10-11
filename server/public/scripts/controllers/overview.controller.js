@@ -10,7 +10,6 @@ myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'Vo
     VolunteerService.getAllVolunteers();
 
     self.currentVolunteerId = $routeParams.id; 
-
 }]);
 
 // "tutor_opportunity":true,

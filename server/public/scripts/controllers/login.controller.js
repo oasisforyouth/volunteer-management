@@ -1,6 +1,8 @@
-myApp.controller('LoginController', function($http, $location, UserService) {
+myApp.controller('LoginController', function($http, $location, $routeParams, UserService) {
     console.log('LoginController created');
     var self = this;
+    self.currentAdminId = $routeParams.id;
+    console.log("current Admin ID: ", self.currentAdminId);
     self.user = {
         firstName: '',
         lastName: '',
@@ -42,12 +44,20 @@ myApp.controller('LoginController', function($http, $location, UserService) {
             self.message = "Choose a username and password!";
         } else {
             console.log('LoginController -- registerUser -- sending to server...', self.user);
-            $http.post('/register', self.user).then(function(response) {
-                console.log('LoginController -- registerUser -- success');
-                $location.path('/login');
-            }).catch(function(response) {
-                console.log('LoginController -- registerUser -- error');
-                self.message = "Please try again."
+
+            $http.put('/register/' + self.currentAdminId).then(function(response) {
+                console.log('update response: ', response.status, response.data[0].active);
+                if (response.status == 200 && response.data[0].active == true) {
+                    $http.post('/register', self.user).then(function(response) {
+                        console.log('LoginController -- registerUser -- success');
+                        $location.path('/login');
+                    }).catch(function(response) {
+                        console.log('LoginController -- registerUser -- error');
+                        self.message = "Please try again."
+                    });
+                } else {
+                    console.log('No Admin fo you!');
+                }
             });
         }
     }

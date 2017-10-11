@@ -2,40 +2,34 @@
 <div class="container">
     <center>
         <h3>Manage Administrators</h3>
-        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" "table table-hover" ng-class="{'hidden': mc.toggle}">
             <thead>
                 <tr>
-                    <th class="mdl-data-table__cell--non-numeric">Name</th>
-                    <th>Position</th>
-                    <th>Email Address</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th style="text-align:right"><u>Name</u></th>
+                    <th style="text-align:right"><u>Position</u></th>
+                    <th style="text-align:right"><u>Email Address</u></th>
+                    <th style="text-align:right"><u>Edit</u></th>
                 </tr>
             </thead>
             <tbody>
-                <!-- non editable table -->
-                <tr ng-repeat="user in mc.allUsers.list" ng-class="{'hidden': mc.toggle}">
-                    <td class="mdl-data-table__cell--non-numeric">{{user.first_name}} {{user.last_name}}</td>
-                    <td>{{user.position}}</td>
-                    <td>{{user.email}}</td>
-                    <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-                                <i class="material-icons" ng-if="!mc.toggle" ng-click="mc.toggle = true">create</i>
-                              </button></td>
-                    <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-click="mc.deleteAdmin(user.id)">
-                                <i class="material-icons">delete</i>
-                              </button></td>
-                </tr>
-                <!-- editable table -->
-                <tr ng-repeat="user in mc.allUsers.list" ng-class="{'hidden': !mc.toggle}">
-                    <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="user.first_name" placeholder="First Name"></td>
-                    <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="user.last_name" placeholder="Last Name"></td>
-                    <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="user.position" placeholder="Position"></td>
-                    <td class="mdl-data-table__cell--non-numeric"><input type="text" ng-model="user.email" placeholder="Email Address"></td>
-                    <td><button ng-if="mc.toggle" aria-hidden="true" ng-click="mc.toggle = false">Edit</button></td>
-                    <td><button ng-if="mc.toggle" aria-hidden="true" ng-click="mc.updateAdmin(user)">Save</button></td>
+                <tr data-ng-repeat="user in mc.allUsers.list" data-ng-class="{danger:!entry.active}">
+                    <td style="width:600px"><span data-ng-hide="editMode">{{user.first_name}} {{user.last_name}}</span>
+                        <input type="text" data-ng-show="editMode" data-ng-model="user.first_name" placeholder="First Name" data-ng-required /><br>
+                        <input type="text" data-ng-show="editMode" data-ng-model="user.last_name" placeholder="Last Name" data-ng-required /></td>
+                    <td><span data-ng-hide="editMode">{{user.position}}</span>
+                        <input type="text" data-ng-show="editMode" data-ng-model="user.position" placeholder="Position" data-ng-required /></td>
+                    <td><span data-ng-hide="editMode">{{user.email}}</span>
+                        <input type="text" data-ng-show="editMode" data-ng-model="user.email" placeholder="Email Address" data-ng-required /></td>
+                    <td>
+                        <button type="submit" data-ng-hide="editMode" data-ng-click="editMode = true; editAppKey(entry)" class="btn btn-default">Edit</button>
+                        <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; mc.updateAdmin(user)" class="btn btn-default">Save</button>
+                        <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; cancel()" class="btn btn-default">Cancel</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
+
         <div>
             <form>
                 <md-content>
