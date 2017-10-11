@@ -20,4 +20,31 @@ myApp.controller('ManageAdminController', ['$http', '$location', 'UserService', 
         console.log('email admin clicked', self.emailAdmin);
         UserService.sendEmail(self.emailAdmin);
     };
+
+    self.editAdmin = function() {
+        console.log('edit admin hit');
+        self.newField = {};
+        self.editing = false;
+
+        self.editAppKey = function(field) {
+            self.editing = self.appkeys.indexOf(field);
+            self.newField = angular.copy(field);
+        }
+
+        self.saveField = function(index) {
+            if (self.editing !== false) {
+                self.appkeys[self.editing] = self.newField;
+                self.editing = false;
+            }
+        };
+
+        self.cancel = function(index) {
+            if (self.editing !== false) {
+                self.appkeys[self.editing] = self.newField;
+                self.editing = false;
+            }
+        };
+    }
+
+
 }]);
