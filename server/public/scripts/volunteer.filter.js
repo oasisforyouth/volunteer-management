@@ -8,80 +8,73 @@ myApp.filter('volunteerFilter', function () {
                 volunteerSearchObject.all = true;
                 addVolunteer = true;
             }
-            if (volunteerArray[i].tutor_opportunity && volunteerSearchObject.tutor_opportunity) {
-                
+            if (volunteerArray[i].tutor_opportunity && volunteerSearchObject.tutor_opportunity) {          
                 addVolunteer = true;
             }
-            if (volunteerArray[i].dropin_opportunity && volunteerSearchObject.dropin_opportunity) {
-                
+            if (volunteerArray[i].dropin_opportunity && volunteerSearchObject.dropin_opportunity) {              
                 addVolunteer = true;
             }
-            if (volunteerArray[i].transportation_opportunity && volunteerSearchObject.transportation_opportunity) {
-                
+            if (volunteerArray[i].transportation_opportunity && volunteerSearchObject.transportation_opportunity) {             
                 addVolunteer = true;
             }
-            if (volunteerArray[i].administration_opportunity && volunteerSearchObject.administration_opportunity) {
-                
+            if (volunteerArray[i].administration_opportunity && volunteerSearchObject.administration_opportunity) {              
                 addVolunteer = true;
             }   
-            if (volunteerArray[i].marketing_opportunity && volunteerSearchObject.marketing_opportunity) {
-                
+            if (volunteerArray[i].marketing_opportunity && volunteerSearchObject.marketing_opportunity) {              
                 addVolunteer = true;
             }
-            if (volunteerArray[i].supplies_donations_opportunity && volunteerSearchObject.supplies_donations_opportunity) {
-                
+            if (volunteerArray[i].supplies_donations_opportunity && volunteerSearchObject.supplies_donations_opportunity) {           
                 addVolunteer = true;
             }
-            if (volunteerArray[i].fundraising_events_opportunity && volunteerSearchObject.fundraising_events_opportunity) {
-                
+            if (volunteerArray[i].fundraising_events_opportunity && volunteerSearchObject.fundraising_events_opportunity) {    
                 addVolunteer = true;
             }
 
 
-            if (volunteerArray[i].tutoring_skill && volunteerSearchObject.tutoring_skill) {
-                
+            if (volunteerArray[i].tutoring_skill && volunteerSearchObject.tutoring_skill) {         
                 addVolunteer = true;
             }
             if (volunteerArray[i].cooking_skill && volunteerSearchObject.cooking_skill) {
-                
                 addVolunteer = true;
             }
             if (volunteerArray[i].art_skill && volunteerSearchObject.art_skill) {
-                
                 addVolunteer = true;
             }
             if (volunteerArray[i].health_wellness_skill && volunteerSearchObject.health_wellness_skill) {
-                
                 addVolunteer = true;
             }
             if (volunteerArray[i].career_jobs_skill && volunteerSearchObject.career_jobs_skill) {
-                
                 addVolunteer = true;
             }
 
-
+            // console.log('here is the months info on the filter ', volunteerArray[i].months);
+            
+            if (volunteerArray[i].months < 12 && volunteerSearchObject.months_underTwelve) {
+                addVolunteer = true;
+            }
+            if (volunteerArray[i].months >= 12 && volunteerArray[i].months < 36 && volunteerSearchObject.months_underThirtySix) {
+                addVolunteer = true;
+            }
+            if (volunteerArray[i].months >= 36 && volunteerSearchObject.months_aboveThirtySix) {
+                addVolunteer = true;
+            }
             if (volunteerArray[i].status == 'Applied' && volunteerSearchObject.status_applied) {
-                
                 addVolunteer = true;
             }
             if (volunteerArray[i].status == 'Application in Review' && volunteerSearchObject.status_review) {
-                
                 addVolunteer = true;
             }
             if (volunteerArray[i].status == 'Checking Background/References' && volunteerSearchObject.status_background) {
                 volunteerSearchObject.all = false;
                 addVolunteer = true;
             }
-            if (volunteerArray[i].status == 'Schedule Interview' && volunteerSearchObject.status_interview) {
-                
+            if (volunteerArray[i].status == 'Schedule Interview' && volunteerSearchObject.status_interview) { 
                 addVolunteer = true;
             }
             if (volunteerArray[i].status == 'Schedule Training' && volunteerSearchObject.status_training) {
-                
                 addVolunteer = true;
             }
             if (volunteerArray[i].status == 'Ready to Volunteer!' && volunteerSearchObject.status_ready) {
-                
                 addVolunteer = true;
             }
 
