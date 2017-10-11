@@ -1,4 +1,4 @@
-myApp.controller('LoginController', function($http, $location, $routeParams, UserService) {
+myApp.controller('LoginController', function($http, $location, $routeParams, UserService, $mdDialog, $scope) {
     console.log('LoginController created');
     var self = this;
     self.currentAdminId = $routeParams.id;
@@ -14,6 +14,21 @@ myApp.controller('LoginController', function($http, $location, $routeParams, Use
     self.message = '';
 
 
+    $scope.showAlert = function(ev) {
+        // Appending dialog to document.body to cover sidenav in docs app
+        // Modal dialogs should fully cover application
+        // to prevent interaction outside of dialog
+        $mdDialog.show(
+            $mdDialog.alert()
+            .parent(angular.element(document.querySelector('#popupContainer')))
+            .clickOutsideToClose(true)
+            .title('Your registration is complete!')
+            .textContent('You now have access to the Oasis Volunteer Management System')
+            .ariaLabel('registration complete dialog')
+            .ok('Got it!')
+            .targetEvent(ev)
+        );
+    };
 
     self.login = function() {
         console.log('LoginController -- login');
@@ -50,6 +65,7 @@ myApp.controller('LoginController', function($http, $location, $routeParams, Use
                 if (response.status == 200 && response.data[0].active == true) {
                     $http.post('/register', self.user).then(function(response) {
                         console.log('LoginController -- registerUser -- success');
+                        $scope.showAlert();
                         $location.path('/login');
                     }).catch(function(response) {
                         console.log('LoginController -- registerUser -- error');
@@ -61,5 +77,6 @@ myApp.controller('LoginController', function($http, $location, $routeParams, Use
                 }
             });
         }
+
     }
 });

@@ -36,42 +36,15 @@
                 </tr>
             </tbody>
         </table>
-
-
-        <!-- <div>
-
-            <form>
-                <md-content>
-                    <md-input-container class="md-block">
-                        <label for="email">Email Address</label>
-                        <input required email="email" ng-model="mc.emailAdmin.email">
-                        <!-- <div ng-messages="projectForm.firstName.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div> -->
-        <!-- </md-input-container> -->
-
-
-        <!-- <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-            <md-button class="md-raised md-primary" ng-click="mc.sendEmail(emailAdmin)">Add New Admin</md-button>
-        </section>
-        </md-content>
-        </form>
-</div> -->
-
-
+        <!-- ADD NEW ADMIN PROMPT / BUTTON  -->
 
         <div>
             <div ng-if="mc.status" id="status">
-                <b layout="row" layout-align="center center" class="md-padding">
-                              {{mc.status}}
-                            </b>
+                <b layout="row" layout-align="center center" class="md-padding">{{mc.status}}</b>
             </div>
             <md-button class="md-primary md-raised" ng-click="mc.promptDialog($event)">
                 Add New Admin
             </md-button>
-
         </div>
-
     </center>
-
 </div>
