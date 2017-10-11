@@ -1,35 +1,54 @@
 <html>
 <title class="boldstuff">Volunteer Application</title>
+<h3 class="lead" layout="row" layout-align="center center">Volunteer Sign Up</h3>
 <form class="volunteerform">
-    <div class='container'>
+    <div flexbox-parent="flexbox-parent" layout-align="center center">
         <div>
-            <label class="boldstuff">Name:  </label>
-            <input type="text" ng-model="firstName" placeholder="First"><input type="text" ng-model="lastName" placeholder="Last">
-            <input type="text" ng-model="middleName" placeholder="Middle"><input type="text" ng-model="maidenName" placeholder="Maiden">
+            <md-input-container class="md-block">
+                <md-input-container>
+                    <input required name="firstName" type="text" ng-model="firstName" placeholder="First">
+                </md-input-container>
+                <md-input-container>
+                    <input required name="lastName" type="text" ng-model="lastName" placeholder="Last">
+                </md-input-container>
+                <md-input-container>
+                    <input required name="middleName" type="text" ng-model="middleName" placeholder="Middle">
+                </md-input-container>
+                <md-input-container>
+                    <input type="text" ng-model="maidenName" placeholder="Maiden">
+                </md-input-container>
+            </md-input-container>
+        </div>
+        <md-input-container class="md-block">
+            <label class="md-block"> Address:  </label>
+            <input type="text" name="address" ng-model="address" placeholder="123 Oasis Ave." size="50">
             <p></p>
-        </div>
+        </md-input-container>
+        <md-input-container class="md-block">
         <div>
-            <label class="boldstuff"> Address:  </label>
-            <input type="text" ng-model="address" placeholder="Address" size="50">
-            <p></p>
+            <label class="md-block">How long have you been at your current address?</label>
+            <input type="text" ng-model="timeAtAddress" placeholder="3 Years">
         </div>
+        </md-input-container class="md-block">
         <div>
-            <label class="boldstuff">How long have you been at your current address?</label>
-            <input type="text" ng-model="timeAtAddress" placeholder="Years">
-            <p></p>
-        </div>
+                    <h4 layout-align="center center">Preferred contact method:</h4>            
+            <md-input-container class="md-block">
+                <label for="Primary phone">Primary Phone</label>
+                <input type="text" placeholder="555-867-5309" ng-model="primaryPhone"> 
+
+                </md-input-container>
+            <md-input-container class="md-block">
+                <label for="Secondary phone">Secondary Phone</label>
+                <input type="text" placeholder="555-867-5309" ng-model="secondaryPhone">
+                </md-input-container>
+            <md-input-container class="md-block">
+                <label for="Email">Email</label>
+                <input type="text" placeholder="sam.doe@email.com" ng-model="email">
+                </md-input-container>
+            
         <div>
-            <p class="boldstuff">Preferred method of contact:</p>
-            <p><input type="checkbox" name="Pimary Phone"><label class="boldstuff">Primary Phone:  </label><input type="text"
-                    placeholder="123-456-7890" ng-model="primaryPhone"></p>
-            <p><input type="checkbox" name="Home Phone"><label class="boldstuff">Secondary Phone:  </label><input type="text"
-                    placeholder="123-456-7890" ng-model="secondaryPhone"></p>
-            <p><input type="checkbox" name="Email Address"><label class="boldstuff">Email Address:  </label><input type="text"
-                    placeholder="sam.doe@email.com" ng-model="email"></p>
-        </div>
-        <div>
-            <p class="boldstuff">Emergency Contact:</p>
-            <p><label class="boldstuff">Name:  </label><input type="text" ng-model="emergencyName" placeholder="sam.doe@email.com"></p>
+                <h4 layout-align="center center">Emergency Contact:</h4>
+            <p><label class="boldstuff">Name:  </label><input type="text" ng-model="emergencyName" placeholder="Pat Doe"></p>
             <p><label class="boldstuff">Address:  </label><input type="text" ng-model="emergencyAddress" placeholder="123 4th St."
                     size="50"></p>
             <p><label class="boldstuff">Daytime Phone:  </label><input type="text" ng-model="emergencyPhone" placeholder="123-456-7890"></p>
@@ -37,9 +56,8 @@
         </div>
         <div>
             <p class="boldstuff">Drivers License: <label class="boldstuff">Yes</label><input type="checkbox" ng-model="driversLicense">
-                <label
-                    class="boldstuff">No</label>
-                    <input type="checkbox"></p>
+                <label class="boldstuff">No</label>
+                <input type="checkbox"></p>
         </div>
         <div>
             <p class="boldstuff">Personal References(Must have known for at least two years): </p>
