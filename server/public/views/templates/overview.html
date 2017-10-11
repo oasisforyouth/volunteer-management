@@ -5,13 +5,13 @@
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Search Filters</span>
       <h6>Volunteers</h6>
-      <md-checkbox ng-model="oc.volunteerSearchObject.all">All</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.all" ng-change="oc.clearFilter()">All</md-checkbox>
       <md-checkbox>Onboarding</md-checkbox>
       <md-checkbox>Ready to Volunteer</md-checkbox>
       <h6>Volunteer Interests</h6>
-      <md-checkbox ng-model="oc.volunteerSearchObject.tutor_opportunity">Tutoring</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.tutor_opportunity" ng-change="oc.volunteerSearchObject.all=false">Tutoring</md-checkbox>
       <md-checkbox ng-model="oc.volunteerSearchObject.dropin_opportunity">Drop In Center</md-checkbox>
-      <md-checkbox ng-model="oc.volunteerSearchObject.transportation_opportunity">Transportation</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.transportation_opportunity" ng-change="oc.volunteerSearchObject.all=false">Transportation</md-checkbox>
       <md-checkbox ng-model="oc.volunteerSearchObject.administration_opportunity">Administration</md-checkbox>
       <md-checkbox ng-model="oc.volunteerSearchObject.marketing_opportunity">Marketing and Outreach</md-checkbox>
       <md-checkbox ng-model="oc.volunteerSearchObject.supplies_donations_opportunity">Supplies/Donations</md-checkbox>
@@ -36,7 +36,7 @@
     </div>
     <main class="mdl-layout__content">
         <h3>VOLUNTEER OVERVIEW</h3>
-        {{oc.allVolunteers.list[0].months}}
+       
       <div id="overviewTable" class="page-content">
         <table class="mdl-data-table mdl-js-data-table">
           <thead>

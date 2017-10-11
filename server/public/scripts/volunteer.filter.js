@@ -1,7 +1,7 @@
 myApp.filter('volunteerFilter', function () {
     return function (volunteerArray, volunteerSearchObject) {
         var output = [];
-
+        
         for (var i = 0; i < volunteerArray.length; i++) {
             var addVolunteer = false;
             if (volunteerArray[i] && volunteerSearchObject.all) {

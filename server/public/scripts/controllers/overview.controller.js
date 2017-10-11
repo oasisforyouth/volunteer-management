@@ -1,12 +1,15 @@
 myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'VolunteerService', '$routeParams', function($http, $location, UserService, VolunteerService, $routeParams) {
-    // console.log('OverviewController created');
+    console.log('OverviewController created');
     var self = this;
     self.allVolunteers = VolunteerService.allVolunteers;
 
     self.volunteerSearchObject = { //interests object to use for the filter search
         all: true,
     };
-
+    self.clearFilter = function(){
+        self.volunteerSearchObject.tutor_opportunity = false;
+        self.volunteerSearchObject.transportation_opportunity = false;
+    }
     VolunteerService.getAllVolunteers();
 
     self.currentVolunteerId = $routeParams.id; 
