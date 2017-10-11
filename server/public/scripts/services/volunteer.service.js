@@ -50,7 +50,21 @@ myApp.service('VolunteerService', function($http, $location) {
         $http.get('/volunteer').then(function(response) {
             // console.log('all volunteers from server', response.data);
             self.allVolunteers.list = response.data;
+        
             for (var i = 0; i < self.allVolunteers.list.length; i++) {//loop through allVolunteers.list array
+                
+                var orientation = new Date(self.allVolunteers.list[i].orientation_date);
+                var today = new Date();
+                var months;
+                months = (today.getFullYear() - orientation.getFullYear()) * 12;
+                months -= orientation.getMonth() + 1;
+                months += today.getMonth();
+                if(months < 0){
+                    months = 0;
+                }
+                self.allVolunteers.list[i].months = months;
+                console.log('months data', self.allVolunteers.list[i].months);
+                
                 var volunteerInterests = ''; //variable to hold a list of volunteer interests as a string
                 for (var property in self.allVolunteers.list[i]) { // for in loop goes through properties in each object of the allVolunteers.list array
                     if (volunteerInterestsObject[property]) { // is the property (from self.allVolunteers) also in volunteerInterestsObject      
