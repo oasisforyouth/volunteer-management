@@ -56,6 +56,7 @@ myApp.controller('LoginController', function($http, $location, $routeParams, Use
                         self.message = "Please try again."
                     });
                 } else {
+                    self.message = "Link is inactive!!";
                     console.log('No Admin fo you!');
                 }
             });
