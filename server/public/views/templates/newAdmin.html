@@ -6,7 +6,14 @@
         <h1 class="lead" layout="row" layout-align="center center">Administrator Sign Up</h1>
         <div>
             <form class="user">
-                
+                <md-input-container class="md-block">
+                    <label for="firstName">First Name</label>
+                    <input required name="firstName" ng-model="lc.user.firstName">
+                    <div ng-messages="projectForm.firstName.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+
 
                 <md-input-container class="md-block">
                     <label for="lastName">Last Name</label>
