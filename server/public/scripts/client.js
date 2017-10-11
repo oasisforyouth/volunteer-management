@@ -35,7 +35,7 @@ myApp.config(function($routeProvider, $locationProvider, $mdThemingProvider) {
                 }
             }
         })
-        .when('/newAdmin', {
+        .when('/newAdmin/:id', {
             templateUrl: '/views/templates/newAdmin.html',
             controller: 'LoginController as lc',
             // DO I NEED THIS?
