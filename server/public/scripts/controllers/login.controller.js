@@ -13,7 +13,18 @@ myApp.controller('LoginController', function($http, $location, $routeParams, Use
 
     self.message = '';
 
-
+    $scope.badAlert = function(ev) {
+        $mdDialog.show(
+            $mdDialog.alert()
+            .parent(angular.element(document.querySelector('#popupContainer')))
+            .clickOutsideToClose(true)
+            .title('Your code has been rejected')
+            .textContent('Contact the Program Manager for a new email link')
+            .ariaLabel('registration complete dialog')
+            .ok('Ok')
+            .targetEvent(ev)
+        );
+    };
     $scope.showAlert = function(ev) {
         // Appending dialog to document.body to cover sidenav in docs app
         // Modal dialogs should fully cover application
@@ -72,6 +83,7 @@ myApp.controller('LoginController', function($http, $location, $routeParams, Use
                         self.message = "Please try again."
                     });
                 } else {
+                    $scope.badAlert();
                     self.message = "Link is inactive!!";
                     console.log('No Admin fo you!');
                 }

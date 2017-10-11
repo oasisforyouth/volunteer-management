@@ -19,7 +19,7 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
 
     // DELETES TRAINING
     self.deleteTraining = function(trainingId) {
-        // console.log('delete training was clicked', trainingId);
+        console.log('delete training was clicked', trainingId);
         TrainingService.deleteTraining(trainingId);
     };
 
