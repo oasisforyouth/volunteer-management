@@ -5,20 +5,21 @@ html {
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
 }
-
+.instructions{
+    box-shadow: 10px 10px 5px #888888;
+}
 .mdl-data-table {
     table-layout:fixed;
     width:90%; 
 }
+.navbar{
+    box-shadow: 10px 10px 5px #888888;
+}
 
 .mdl-data-table td, th {
     width: 100%;
-    /* white-space: pre-wrap; */
     overflow-x: scroll;
-    /* text-overflow: ellipsis; */
-    /* -o-text-overflow: ellipsis; */
   }
-
 
 #header {
     text-align: center;
@@ -81,15 +82,19 @@ html {
 }
 
 #adminButton {
+    font-weight: bold;
     color: white;
     background-color: #f96413;
-    width: 15%;
+    width: 20%;
+    height: 75px;
 }
 
 #volunteerButton {
+    font-weight: bold;
     color: white;
     background-color: #104b86;
-    width: 15%;
+    width: 20%; 
+    height: 75px;
 }
 
 #overviewTable {
