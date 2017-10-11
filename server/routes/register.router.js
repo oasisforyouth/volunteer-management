@@ -45,6 +45,7 @@ router.post('/', function(req, res, next) {
 
 router.put('/:id', function(req, res, next) {
     var adminId = req.params.id;
+    var active = false;
     pool.connect(function(err, client, done) {
         if (err) {
             console.log("Error connecting: ", err);
@@ -53,19 +54,45 @@ router.put('/:id', function(req, res, next) {
         client.query("UPDATE crypto SET route_params=$1 WHERE md5=$2 RETURNING id;", [adminId, adminId],
             function(err, result) {
                 client.end();
-
                 if (err) {
                     console.log("Error inserting data: ", err);
                     res.sendStatus(500);
+                    // MATCHES HASH WITH ROUTE PARAMS, IF THE SAME WE CAN PROCEED
                 } else if (result < 1) {
                     res.sendStatus(500);
                 } else {
-                    res.sendStatus(201);
+                    pool.connect(function(err, client, done) {
+                        if (err) {
+                            console.log("Error connecting: ", err);
+                            res.sendStatus(500);
+                        }
+                        client.query("SELECT * FROM crypto WHERE md5=$1;", [adminId],
+                                function(err, result) {
+                                    res.send(result.rows);
+                                    client.end();
+                                    pool.connect(function(err, client, done) {
+                                        if (err) {
+                                            console.log("Error connecting: ", err);
+                                            res.sendStatus(500);
+                                        } else {
+                                            client.query("UPDATE crypto SET active=$1 WHERE md5=$2;", [active, adminId],
+                                                function(err, result) {
+                                                    // res.sendStatus(201);
+                                                    client.end();
+                                                });
+                                        }
+
+                                    });
+                                })
+                            // CHANGES ACTIVE TO FALSE, EFFECTIVELY TURNING OFF THE HASH
+
+                    }); // end pool.connect
+
                 }
             });
-    });
+    }); // end pool . connect
 
-});
+}); // end router.put
 
 
 module.exports = router;
