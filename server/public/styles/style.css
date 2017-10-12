@@ -7,18 +7,15 @@ html {
 }
 
 .mdl-data-table {
-    table-layout:fixed;
-    width:90%; 
+    table-layout: fixed;
+    width: 90%;
 }
 
-.mdl-data-table td, th {
+.mdl-data-table td,
+th {
     width: 100%;
-    /* white-space: pre-wrap; */
     overflow-x: scroll;
-    /* text-overflow: ellipsis; */
-    /* -o-text-overflow: ellipsis; */
-  }
-
+}
 
 #header {
     text-align: center;
@@ -53,16 +50,17 @@ html {
     height: 100vh;
 }
 
-.boldstuff{
+.boldstuff {
     font-weight: bold;
 }
 
-.volunteerform{
+.volunteerform {
     padding-top: 50px;
     padding-right: 30px;
     padding-bottom: 50px;
     padding-left: 80px;
 }
+
 .container h6 {
     margin-bottom: 0px;
     font-weight: bold;
@@ -81,15 +79,19 @@ html {
 }
 
 #adminButton {
+    font-weight: bold;
     color: white;
     background-color: #f96413;
-    width: 15%;
+    width: 20%;
+    height: 75px;
 }
 
 #volunteerButton {
+    font-weight: bold;
     color: white;
     background-color: #104b86;
-    width: 15%;
+    width: 20%;
+    height: 75px;
 }
 
 #overviewTable {
@@ -156,6 +158,7 @@ li a {
     text-decoration: none;
 }
 
+
 /* Change the link color to #111 (black) on hover */
 
 li a:hover {
@@ -201,4 +204,9 @@ li a:hover {
 
 #cancelIcon {
     font-size: 150%;
+}
+
+.tableHeading {
+    font-size: 24px;
+    text-align: right;
 }
