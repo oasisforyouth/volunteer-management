@@ -24,6 +24,7 @@ myApp.controller('ManageAdminController', ['$http', '$location', 'UserService', 
         UserService.sendEmail(result);
     };
 
+
     self.promptDialog = function(ev) {
         var confirm = $mdDialog.prompt()
             .title('Enter their email address.')
@@ -41,6 +42,32 @@ myApp.controller('ManageAdminController', ['$http', '$location', 'UserService', 
 
         });
     };
+
+    self.editAdmin = function() {
+        console.log('edit admin hit');
+        self.newField = {};
+        self.editing = false;
+
+        self.editAppKey = function(field) {
+            self.editing = self.appkeys.indexOf(field);
+            self.newField = angular.copy(field);
+        }
+
+        self.saveField = function(index) {
+            if (self.editing !== false) {
+                self.appkeys[self.editing] = self.newField;
+                self.editing = false;
+            }
+        };
+
+        self.cancel = function(index) {
+            if (self.editing !== false) {
+                self.appkeys[self.editing] = self.newField;
+                self.editing = false;
+            }
+        };
+    }
+
 
 
 }]);

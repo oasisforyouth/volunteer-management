@@ -11,10 +11,10 @@ myApp.controller('HomeController', function($location, UserService, $mdDialog) {
     self.showConfirm = function(ev) {
         var confirm = $mdDialog.confirm()
             .title('Are you 21 or over?')
-            .textContent('If under 21 you are not eligible to be a volunteer.')
+            .textContent('If you are under the age of 21 you are not eligible to be a volunteer with Oasis for Youth.')
             .targetEvent(ev)
-            .ok('I am 21 or over 21')
-            .cancel('I am under 21');
+            .ok('I am 21+')
+            .cancel('I am not 21');
         $mdDialog.show(confirm).then(function() {
             $location.path('/application');
             self.status = 'Thank you for volunteering!';
