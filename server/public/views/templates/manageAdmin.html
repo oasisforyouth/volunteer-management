@@ -34,25 +34,25 @@
 
 
         <div>
-            <form>
-                <md-content>
+
+            <!-- <md-content>
                     <md-input-container class="md-block">
                         <label for="email">Email Address</label>
                         <input required email="email" ng-model="mc.emailAdmin.email">
                         <!-- <div ng-messages="projectForm.firstName.$error">
                         <div ng-message="required">This is required.</div>
                     </div> -->
-                    </md-input-container>
+            <!-- </md-input-container> -->
 
 
 
-        <div>
-            <div ng-if="mc.status" id="status">
-                <b layout="row" layout-align="center center" class="md-padding">{{mc.status}}</b>
+            <div>
+                <div ng-if="mc.status" id="status">
+                    <b layout="row" layout-align="center center" class="md-padding">{{mc.status}}</b>
+                </div>
+                <md-button class="md-primary md-raised" ng-click="mc.promptDialog($event)">
+                    Add New Admin
+                </md-button>
             </div>
-            <md-button class="md-primary md-raised" ng-click="mc.promptDialog($event)">
-                Add New Admin
-            </md-button>
-        </div>
     </center>
-</div>
+    </div>
