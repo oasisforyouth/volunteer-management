@@ -49,7 +49,7 @@ myApp.service('TrainingService', function($http, $location) {
     self.updateTraining = function(trainingId) {
         // console.log('updateTraining hit', trainingId);
         $http.put('/training/' + trainingId.id, trainingId).then(function(response) {
-            self.getTraining();
+            self.getTrainings();
         })
     };
 
@@ -60,7 +60,7 @@ myApp.service('TrainingService', function($http, $location) {
         $http.post('/training', newTraining).then(function(response) {
             console.log('service post was returned: ', response);
 
-            self.getTraining();
+            self.getTrainings();
         });
     };
 });

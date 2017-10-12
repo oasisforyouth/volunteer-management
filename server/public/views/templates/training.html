@@ -68,7 +68,7 @@
                         <md-checkbox aria-label="employee checkbox" ng-model="tc.newTraining.employees"></md-checkbox>
                     </td>
                     <td><button class="mdl-button mdl-js-button mdl-button--raised" ng-click="tc.addTraining()">Submit Training</button></td>
-                    <td><i class="fa fa-ban" id="cancelIcon" aria-hidden="true" ng-if="tc.newTrainingToggle" ng-click="tc.newTrainingToggle = false"></i>
+                    <td><button><i class="fa fa-ban" id="cancelIcon" aria-hidden="true" ng-click="tc.newTrainingToggle = false" ng-if="tc.newTrainingToggle"></i></button></td>
                 </tr>
             </table>
 
