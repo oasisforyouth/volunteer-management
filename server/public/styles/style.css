@@ -15,7 +15,12 @@ html {
 .navbar{
     box-shadow: 10px 10px 5px #888888;
 }
-
+/* .detailLabel{
+    font-size:20px;
+} */
+.availabilityCard{
+    text-decoration: underline;
+}
 .mdl-data-table td, th {
     width: 100%;
     overflow-x: scroll;

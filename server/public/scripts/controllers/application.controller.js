@@ -72,7 +72,8 @@ myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserS
         saturdayPreference: false,
         sundayPreference: false,
         attendedOrientation: false,
-        adminNotes: ""
+        adminNotes: "",
+        medicalConcersn:""
 
     }
 }]);
