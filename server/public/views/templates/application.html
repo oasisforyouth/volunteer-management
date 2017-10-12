@@ -1,243 +1,240 @@
-
 <html>
-        <title class="boldstuff">Volunteer Application</title>
-        <h3 class="lead" layout="row" layout-align="center center">Volunteer Sign Up</h3>
-        <form class="volunteerform">
-            <div flexbox-parent="flexbox-parent" layout-align="center center">
-                <div>
-                    <md-input-container class="md-block">
-                        <md-input-container>
-                            <input required name="firstName" type="text" ng-model="firstName" placeholder="First">
-                        </md-input-container>
-                        <md-input-container>
-                            <input required name="lastName" type="text" ng-model="lastName" placeholder="Last">
-                        </md-input-container>
-                        <md-input-container>
-                            <input required name="middleName" type="text" ng-model="middleName" placeholder="Middle">
-                        </md-input-container>
-                        <md-input-container>
-                            <input type="text" ng-model="maidenName" placeholder="Maiden">
-                        </md-input-container>
-                    </md-input-container>
-                </div>
+<title class="boldstuff">Volunteer Application</title>
+<h3 class="lead" layout="row" layout-align="center center">Volunteer Sign Up</h3>
+<form class="volunteerform">
+    <div flexbox-parent="flexbox-parent" layout-align="center center">
+        <div>
+            <md-input-container class="md-block">
+                <md-input-container>
+                    <input required name="firstName" type="text" ng-model="firstName" placeholder="First">
+                </md-input-container>
+                <md-input-container>
+                    <input required name="lastName" type="text" ng-model="lastName" placeholder="Last">
+                </md-input-container>
+                <md-input-container>
+                    <input required name="middleName" type="text" ng-model="middleName" placeholder="Middle">
+                </md-input-container>
+                <md-input-container>
+                    <input type="text" ng-model="maidenName" placeholder="Maiden">
+                </md-input-container>
+            </md-input-container>
+        </div>
+        <md-input-container class="md-block">
+            <label class="md-block"> Address:  </label>
+            <input type="text" name="address" ng-model="address" placeholder="123 Oasis Ave." size="50">
+            <p></p>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <div>
+                <label class="md-block">How long have you been at your current address?</label>
+                <input type="text" ng-model="timeAtAddress" placeholder="3 Years">
+            </div>
+        </md-input-container class="md-block">
+        <div>
+            <h4 layout-align="center center">Preferred contact method:</h4>
+            <md-input-container class="md-block">
+                <label for="Primary phone">Primary Phone</label>
+                <input type="text" placeholder="555-867-5309" ng-model="primaryPhone">
+
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label for="Secondary phone">Secondary Phone</label>
+                <input type="text" placeholder="555-867-5309" ng-model="secondaryPhone">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label for="Email">Email</label>
+                <input type="text" placeholder="sam.doe@email.com" ng-model="email">
+            </md-input-container>
+
+            <div>
+                <h4>Emergency Contact:</h4>
                 <md-input-container class="md-block">
-                    <label class="md-block"> Address:  </label>
-                    <input type="text" name="address" ng-model="address" placeholder="123 Oasis Ave." size="50">
-                    <p></p>
+                    <label class="boldstuff">Name:  </label><input type="text" ng-model="emergencyName" placeholder="Pat Doe">
                 </md-input-container>
                 <md-input-container class="md-block">
-                    <div>
-                        <label class="md-block">How long have you been at your current address?</label>
-                        <input type="text" ng-model="timeAtAddress" placeholder="3 Years">
-                    </div>
-                </md-input-container class="md-block">
-                <div>
-                    <h4 layout-align="center center">Preferred contact method:</h4>
-                    <md-input-container class="md-block">
-                        <label for="Primary phone">Primary Phone</label>
-                        <input type="text" placeholder="555-867-5309" ng-model="primaryPhone">
-        
-                    </md-input-container>
-                    <md-input-container class="md-block">
-                        <label for="Secondary phone">Secondary Phone</label>
-                        <input type="text" placeholder="555-867-5309" ng-model="secondaryPhone">
-                    </md-input-container>
-                    <md-input-container class="md-block">
-                        <label for="Email">Email</label>
-                        <input type="text" placeholder="sam.doe@email.com" ng-model="email">
-                    </md-input-container>
-        
-                    <div>
-                        <h4>Emergency Contact:</h4>
-                        <md-input-container class="md-block">
-                            <label class="boldstuff">Name:  </label><input type="text" ng-model="emergencyName" placeholder="Pat Doe">
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label class="boldstuff">Address:  </label><input type="text" ng-model="emergencyAddress" placeholder="123 4th St."
-                                size="50">
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label class="boldstuff">Daytime Phone:  </label><input type="text" ng-model="emergencyPhone" placeholder="123-456-7890">
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label class="boldstuff">Relationship:  </label><input type="text" ng-model="emergencyRelationship" placeholder="friend, cousin, spouse">
-                        </md-input-container>
-                    </div>
-                    <div>
-                        <h4>Do you have a valid drivers license: </h4>
-                        <md-checkbox>
-                            <label class="boldstuff">Yes</label>
-                        </md-checkbox>
-                        <md-checkbox>
-                            <label class="boldstuff">No</label>
-                        </md-checkbox>
-                    </div>
-                    <div>
-                        <h4 layout-align="center center">Personal References(Must have known for at least two years): </h4>
-                        <md-input-container class="md-block">
-                            <label class="boldstuff">Name:  </label><input size="35" type="text" placeholder="First Last" ng-model="reference2Name"></p>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label class="boldstuff">Address:  </label><input size="50" type="text" placeholder="Address" ng-model="reference2Address"></p>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label class="boldstuff">Phone:  </label><input type="text" placeholder="Phone" ng-model="reference2Phone"></p>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label class="boldstuff">Email:  </label><input type="text" placeholder="Email" ng-model="reference2Email"></p>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label class="boldstuff">Years Known:  </label><input type="text" placeholder="Years" ng-model="reference2YearsKnown"></p>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label class="boldstuff">Relationship:  </label><input type="text" placeholder="Boss, Peer, Employee"
-                                ng-model="reference2Relationship"></p>
-                        </md-input-container>
-                    </div>
-                    <h4 layout-align="center center">Second Personal Reference: </h4>
-                    <div>
-                        <md-input-container class="md-block">
-                            <p><label class="boldstuff">Name:  </label><input type="text" placeholder="First Last" ng-model="reference1Name"></p>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <p><label class="boldstuff">Address:  </label><input size="50" type="text" placeholder="Address" ng-model="reference1Address"></p>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <p><label class="boldstuff">Phone:  </label><input type="text" placeholder="Phone" ng-model="reference1Phone"></p>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <p><label class="boldstuff">Email:  </label><input type="text" placeholder="Email" ng-model="reference1Email"></p>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <p><label class="boldstuff">Years Known:  </label><input type="text" placeholder="Years" ng-model="reference1YearsKnown"></p>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <p><label class="boldstuff">Relationship:  </label><input type="text" placeholder="Boss, Peer, Employee"
-                                    ng-model="reference1Relationship"></p>
-                        </md-input-container>
-                    </div>
-                    <p>
-                        <md-input-container class="md-block">
-                            <aria-label class="boldstuff">Availability to volunteer: </aria-label>
-                            <select name="availabilitySelect" ng-model="">
+                    <label class="boldstuff">Address:  </label><input type="text" ng-model="emergencyAddress" placeholder="123 4th St." size="50">
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label class="boldstuff">Daytime Phone:  </label><input type="text" ng-model="emergencyPhone" placeholder="123-456-7890">
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label class="boldstuff">Relationship:  </label><input type="text" ng-model="emergencyRelationship" placeholder="friend, cousin, spouse">
+                </md-input-container>
+            </div>
+            <div>
+                <!-- NEEDS NG-MODEL SHOULD BE A md-REMOTE -->
+                <h4>Do you have a valid drivers license: </h4>
+                <md-checkbox>
+                    <label class="boldstuff">Yes</label>
+                </md-checkbox>
+                <md-checkbox>
+                    <label class="boldstuff">No</label>
+                </md-checkbox>
+            </div>
+            <div>
+                <h4 layout-align="center center">Personal References(Must have known for at least two years): </h4>
+                <md-input-container class="md-block">
+                    <label class="boldstuff">Name:  </label><input size="35" type="text" placeholder="First Last" ng-model="reference2Name"></p>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label class="boldstuff">Address:  </label><input size="50" type="text" placeholder="Address" ng-model="reference2Address"></p>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label class="boldstuff">Phone:  </label><input type="text" placeholder="Phone" ng-model="reference2Phone"></p>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label class="boldstuff">Email:  </label><input type="text" placeholder="Email" ng-model="reference2Email"></p>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label class="boldstuff">Years Known:  </label><input type="text" placeholder="Years" ng-model="reference2YearsKnown"></p>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label class="boldstuff">Relationship:  </label><input type="text" placeholder="Boss, Peer, Employee" ng-model="reference2Relationship"></p>
+                </md-input-container>
+            </div>
+            <h4 layout-align="center center">Second Personal Reference: </h4>
+            <div>
+                <md-input-container class="md-block">
+                    <p><label class="boldstuff">Name:  </label><input type="text" placeholder="First Last" ng-model="reference1Name"></p>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <p><label class="boldstuff">Address:  </label><input size="50" type="text" placeholder="Address" ng-model="reference1Address"></p>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <p><label class="boldstuff">Phone:  </label><input type="text" placeholder="Phone" ng-model="reference1Phone"></p>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <p><label class="boldstuff">Email:  </label><input type="text" placeholder="Email" ng-model="reference1Email"></p>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <p><label class="boldstuff">Years Known:  </label><input type="text" placeholder="Years" ng-model="reference1YearsKnown"></p>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <p><label class="boldstuff">Relationship:  </label><input type="text" placeholder="Boss, Peer, Employee" ng-model="reference1Relationship"></p>
+                </md-input-container>
+            </div>
+            <p>
+                <md-input-container class="md-block">
+                    <aria-label class="boldstuff">Availability to volunteer: </aria-label>
+                    <select name="availabilitySelect" ng-model="">
                                 <option value="" disabled selected hidden>Please Choose...</option>
                                 <option value="Daily">Daily</option>
                                 <option value="Weekly">Weekly</option>
                                 <option value="Monthly">Monthly</option>
                               </select>
-                        </md-input-container>
+                </md-input-container>
+        </div>
+        </p>
+        <aria-label class="boldstuff">Preferred days to volunteer: </aria-label>
+        </br>
+        <md-checkbox ng-model="mondayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Monday</label>
+        </md-checkbox>
+        <md-checkbox ng-model="tuesdayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Tuesday</label>
+        </md-checkbox>
+        <md-checkbox ng-model="wednesdayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Wednesday</label>
+        </md-checkbox>
+        <md-checkbox ng-model="thursdayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Thursday</label>
+        </md-checkbox>
+        </br>
+        <md-checkbox ng-model="fridayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Friday</label>
+        </md-checkbox>
+        <md-checkbox ng-model="saturdayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Saturday</label>
+        </md-checkbox>
+        <md-checkbox ng-model="sundayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Sunday</label>
+        </md-checkbox>
+        <md-checkbox ng-model="noDayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>No Preference</label>
+        </md-checkbox>
+
+        <div>
+            <label>Hours available: </label><br>
+            <md-checkbox ng-model="hoursAny" ng-true-value="'YES'" ng-false-value="'NO'"><label>Any</label>
+            </md-checkbox>
+            <md-checkbox ng-model="hoursMorning" ng-true-value="'YES'" ng-false-value="'NO'"><label>Mornings</label>
+            </md-checkbox>
+            <md-checkbox ng-model="hoursAfternoon" ng-true-value="'YES'" ng-false-value="'NO'"><label>Afternoons</label>
+            </md-checkbox>
+            <md-checkbox ng-model="hoursEvening" ng-true-value="'YES'" ng-false-value="'NO'"><label>Evening</label>
+            </md-checkbox>
+        </div>
+        <div>
+            <label class="boldstuff">Volunteer experience(organization, duties, dates): </label>
+            <br><textarea rows="" cols="" type="text" placeholder="Big Brother, Coordinator, 5/14-9/16" ng-model="volunteerExperience"></textarea>
+        </div>
+        </br>
+        <div>
+            <aria-label class="boldstuff">Volunteer Skills: </aria-label>
+            </br>
+            <md-checkbox ng-model="tutoringSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Tutoring</label>
+            </md-checkbox>
+            <md-checkbox ng-model="cookingSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Cooking</label>
+            </md-checkbox>
+            <md-checkbox ng-model="healthWellnessSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Health/Wellness </label>
+            </md-checkbox>
+            <md-checkbox ng-model="careersSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Career assistance </label>
+            </md-checkbox>
+            <md-checkbox ng-model="artSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Art</label>
+            </md-checkbox>
+            <md-checkbox ng-model="financialEducationSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Financial Education</label>
+                </md-input-container>
+        </div>
+        <div>
+            <aria-label class="boldstuff">Languages: </aria-label>
+            </br>
+            <md-checkbox ng-model="english" ng-true-value="'YES'" ng-false-value="'NO'"><label>English</label>
+            </md-checkbox>
+            <md-checkbox ng-model="spanish" ng-true-value="'YES'" ng-false-value="'NO'"><label>Spanish</label>
+            </md-checkbox>
+            <md-input-container class="md-block">
+                <label>Other languages:</label>
+                <input type="textarea" ng-model="languageOther" ng-true-value="'YES'" ng-false-value="'NO'">
+            </md-input-container>
+        </div>
+        <div>
+            <md-input-container class="md-block">
+                <p><label class="boldstuff">Additional hobbies and interests: </label><br></p>
+                <input type="textarea" ng-model="additionalHobbies" size="50">
+                </label><br/>
+            </md-input-container>
+
+        </div>
+        <div>
+            <md-input-container class="md-block">
+                <p><label class="boldstuff">Please list any medical concerns: </label><br></p>
+                <input type="textarea" ng-model="medicalConcerns" size="50">
+                </label><br/>
+            </md-input-container>
+        </div>
+        <div>
+            <p>
+                <aria-label class="boldstuff">Volunteer Opportunities: </aria-label><br></p>
+            <md-checkbox ng-model="dropinOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Drop-in Center Shift Volunteer</label><br/>
+            </md-checkbox>
+            <md-checkbox ng-model="tutorOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Tutor </label><br/>
+            </md-checkbox>
+            <md-checkbox ng-model="languageOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Administration(webmaster, technology, data entry, telephone, bookkeeping)</label><br/>
+            </md-checkbox>
+            <md-checkbox ng-model="marketingOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Marketing and Outreach(and social media)</label><br/>
+            </md-checkbox>
+            <md-checkbox ng-model="suppliesDonationsOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Supplies/Donations Drives/Donation Coordination</label><br/>
+            </md-checkbox>
+            <md-checkbox ng-model="fundraisingEventsOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Fundraising and Events</label><br/>
+            </md-checkbox>
+            <md-checkbox ng-model="otherOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Other</label><br/>
+            </md-checkbox>
+
+        </div>
+        <div>
+            <md-checkbox ng-model="attendedOrientation"><label class="boldstuff">Attended Orientation:  </label><br/>
+        </div>
+        <md-content class="datepickerdemoBasicUsage">
+            <div layout-gt-xs="row">
+                <div flex-gt-xs="">
+                    <md-datepicker ng-model="orientationDate" md-placeholder="Enter date"></md-datepicker>
                 </div>
-                </p>
-                <aria-label class="boldstuff">Preferred days to volunteer: </aria-label>
-                </br>
-                <md-checkbox ng-model="mondayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Monday</label>
-                </md-checkbox>
-                <md-checkbox ng-model="tuesdayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Tuesday</label>
-                </md-checkbox>
-                <md-checkbox ng-model="wednesdayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Wednesday</label>
-                </md-checkbox>
-                <md-checkbox ng-model="thursdayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Thursday</label>
-                </md-checkbox>
-                </br>
-                <md-checkbox ng-model="fridayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Friday</label>
-                </md-checkbox>
-                <md-checkbox ng-model="saturdayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Saturday</label>
-                </md-checkbox>
-                <md-checkbox ng-model="sundayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Sunday</label>
-                </md-checkbox>
-                <md-checkbox ng-model="noDayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>No Preference</label>
-                </md-checkbox>
-        
-                <div>
-                    <label>Hours available: </label><br>
-                    <md-checkbox ng-model="hoursAny" ng-true-value="'YES'" ng-false-value="'NO'"><label>Any</label>
-                    </md-checkbox>
-                    <md-checkbox ng-model="hoursMorning" ng-true-value="'YES'" ng-false-value="'NO'"><label>Mornings</label>
-                    </md-checkbox>
-                    <md-checkbox ng-model="hoursAfternoon" ng-true-value="'YES'" ng-false-value="'NO'"><label>Afternoons</label>
-                    </md-checkbox>
-                    <md-checkbox ng-model="hoursEvening" ng-true-value="'YES'" ng-false-value="'NO'"><label>Evening</label>
-                    </md-checkbox>
-                </div>
-                <div>
-                    <label class="boldstuff">Volunteer experience(organization, duties, dates): </label>
-                    <br><textarea rows="" cols="" type="text" placeholder="Big Brother, Coordinator, 5/14-9/16" ng-model="volunteerExperience"></textarea>
-                </div>
-                </br>
-                <div>
-                    <aria-label class="boldstuff">Volunteer Skills: </aria-label>
-                    </br>
-                    <md-checkbox ng-model="tutoringSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Tutoring</label>
-                    </md-checkbox>
-                    <md-checkbox ng-model="cookingSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Cooking</label>
-                    </md-checkbox>
-                    <md-checkbox ng-model="healthWellnessSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Health/Wellness </label>
-                    </md-checkbox>
-                    <md-checkbox ng-model="careersSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Career assistance </label>
-                    </md-checkbox>
-                    <md-checkbox ng-model="artSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Art</label>
-                    </md-checkbox>
-                    <md-checkbox ng-model="financialEducationSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Financial Education</label>
-                        </md-input-container>
-                </div>
-                <div>
-                    <aria-label class="boldstuff">Languages: </aria-label>
-                    </br>
-                    <md-checkbox ng-model="english" ng-true-value="'YES'" ng-false-value="'NO'"><label>English</label>
-                    </md-checkbox>
-                    <md-checkbox ng-model="spanish" ng-true-value="'YES'" ng-false-value="'NO'"><label>Spanish</label>
-                    </md-checkbox>
-                    <md-input-container class="md-block">
-                        <label>Other languages:</label>
-                        <input type="textarea" ng-model="languageOther" ng-true-value="'YES'" ng-false-value="'NO'">
-                    </md-input-container>
-                </div>
-                <div>
-                    <md-input-container class="md-block">
-                        <p><label class="boldstuff">Additional hobbies and interests: </label><br></p>
-                        <input type="textarea" ng-model="additionalHobbies" size="50">
-                        </label><br/>
-                    </md-input-container>
-        
-                </div>
-                <div>
-                    <md-input-container class="md-block">
-                        <p><label class="boldstuff">Please list any medical concerns: </label><br></p>
-                        <input type="textarea" ng-model="medicalConcerns" size="50">
-                        </label><br/>
-                    </md-input-container>
-                </div>
-                <div>
-                    <p>
-                        <aria-label class="boldstuff">Volunteer Opportunities: </aria-label><br></p>
-                    <md-checkbox ng-model="dropinOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Drop-in Center Shift Volunteer</label><br/>
-                    </md-checkbox>
-                    <md-checkbox ng-model="tutorOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Tutor </label><br/>
-                    </md-checkbox>
-                    <md-checkbox ng-model="languageOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Administration(webmaster, technology, data entry, telephone, bookkeeping)</label><br/>
-                    </md-checkbox>
-                    <md-checkbox ng-model="marketingOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Marketing and Outreach(and social media)</label><br/>
-                    </md-checkbox>
-                    <md-checkbox ng-model="suppliesDonationsOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Supplies/Donations Drives/Donation Coordination</label><br/>
-                    </md-checkbox>
-                    <md-checkbox ng-model="fundraisingEventsOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Fundraising and Events</label><br/>
-                    </md-checkbox>
-                    <md-checkbox ng-model="otherOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Other</label><br/>
-                    </md-checkbox>
-        
-                </div>
-                <div>
-                    <md-checkbox ng-model="attendedOrientation"><label class="boldstuff">Attended Orientation:  </label><br/>
-                </div>
-                <md-content class="datepickerdemoBasicUsage">
-                    <div layout-gt-xs="row">
-                        <div flex-gt-xs="">
-                            <md-datepicker ng-model="orientationDate" md-placeholder="Enter date"></md-datepicker>
-                        </div>
-                        <button type="">Submit</button>
-                        <!-- build ng-model to create object -->
-        
-                    </div>
-        </form>
-        
-        </html
+                <button type="">Submit</button>
+                <!-- build ng-model to create object -->
+
+            </div>
+</form>
+
+</html

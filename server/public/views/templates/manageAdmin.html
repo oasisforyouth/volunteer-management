@@ -23,6 +23,7 @@
                         <input type="text" data-ng-show="editMode" data-ng-model="user.email" placeholder="Email Address" data-ng-required /></td>
                     <td>
                         <button type="submit" data-ng-hide="editMode" data-ng-click="editMode = true; editAppKey(entry)" class="btn btn-default">Edit</button>
+                        <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; vm.resetPassword(user)" class="btn btn-default">Reset Password</button>
                         <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; vm.updateAdmin(user)" class="btn btn-default">Save</button>
                         <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; cancel()" class="btn btn-default">Cancel</button>
                     </td>
@@ -41,12 +42,9 @@
                     Add New Admin
                 </md-button>
                 <!-- PASSWORD RESET BUTTON-->
-                <div ng-if="vm.status" id="status">
-                    <b layout="row" layout-align="center center" class="md-padding">{{vm.status}}</b>
-                </div>
-                <md-button class="md-primary md-raised" ng-click="vm.resetPrompt($event)">
+                <!-- <md-button class="md-primary md-raised" ng-click="vm.resetPrompt($event)">
                     Reset Password
-                </md-button>
+                </md-button> -->
             </div>
     </center>
     </div>

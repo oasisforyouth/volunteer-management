@@ -99,4 +99,36 @@ router.post('/user', (req, res, next) => {
     }
 });
 
+// GET ROUTES FOR TRAINING 
+router.post('/password', function(req, res) {
+    let username = req.body;
+    console.log('username: ', username);
+    if (req.isAuthenticated()) {
+        // send back user object from database
+        console.log('logged in', req.user);
+        pool.connect(function(errorConnectingToDatabase, client, done) {
+            if (errorConnectingToDatabase) {
+                //when connecting to database failed
+                console.log('Error connecting to database', errorConnectingToDatabase);
+                res.sendStatus(500);
+            } else {
+                // when connecting to database worked aka HAPPYPATH!
+                client.query('INSERT INTO crypto (uname, email) VALUES ($1, $2) RETURNING md5, email;', [username.user_name, username.email], function(errorMakingQuery, result) {
+                    done(); //needed
+                    if (errorMakingQuery) {
+                        console.log('Error making database query', errorMakingQuery);
+                        res.sendStatus(500);
+                    } else {
+                        res.sendStatus(201);
+                    }
+                }); // end client.query
+            }
+        }); // end pool.connect
+    } else {
+        // failure best handled on the server. do redirect here.
+        console.log('not logged in');
+        res.sendStatus(403);
+    }
+}); // end get
+
 module.exports = router;

@@ -25,24 +25,25 @@ myApp.controller('ManageAdminController', ['$http', '$location', 'UserService', 
     self.resetPassword = function(result) {
         console.log('reset password username: ', result);
         UserService.resetPassword(result);
+        console.log('result: ', result);
     };
 
-    self.resetPrompt = function(ev) {
-        var confirm = $mdDialog.prompt()
-            .title('Enter their username')
-            .placeholder('Username')
-            .ariaLabel('username')
-            .ok('Send Email')
-            .cancel('Cancel')
+    // self.resetPrompt = function(ev) {
+    //     var confirm = $mdDialog.prompt()
+    //         .title('Enter their username')
+    //         .placeholder('Username')
+    //         .ariaLabel('username')
+    //         .ok('Send Email')
+    //         .cancel('Cancel')
 
-        $mdDialog.show(confirm).then(function(result) {
-            self.status = 'An reset password link has been sent to ' + result;
-            console.log('result: ', result)
-            self.resetPassword(result);
-        }, function() {
-            self.status = 'You didn\'t enter a username.';
-        });
-    };
+    //     $mdDialog.show(confirm).then(function(result) {
+    //         self.status = 'An reset password link has been sent to ' + result;
+    //         console.log('result: ', result)
+    //         self.resetPassword(result);
+    //     }, function() {
+    //         self.status = 'You didn\'t enter a username.';
+    //     });
+    // };
 
     // SEND NEW ADMIN SIGN UP EMAIL LINK
     self.sendEmail = function(result) {
