@@ -1,4 +1,4 @@
-myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserService', 'VolunteerService', function(NgMap, $http, $location, UserService, VolunteerService) {
+myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserService', 'VolunteerService', '$mdDialog', function(NgMap, $http, $location, UserService, VolunteerService, $mdDialog) {
     console.log('ApplicationController created');
     var self = this;
     self.newApplication = {};
@@ -75,4 +75,20 @@ myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserS
         adminNotes: ""
 
     }
+
+    self.showAlert = function(ev) {
+        $mdDialog.show(
+                $mdDialog.alert()
+                .parent(angular.element(document.querySelector('#popupContainer')))
+                .clickOutsideToClose(false)
+                .title('Thank you for volunteering!')
+                .textContent('Oasis for Youth will contact you in 7-10 business days')
+                .ariaLabel('Alert Dialog Demo')
+                .ok('Got it!')
+                .targetEvent(ev)
+            )
+            .finally(function() {
+                window.location.replace('http://www.oasisforyouth.org/')
+            })
+    };
 }]);
