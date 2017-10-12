@@ -3,7 +3,7 @@
     <center>
         <h3>Manage Administrators</h3>
 
-        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" "table table-hover" ng-class="{'hidden': mc.toggle}">
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" "table table-hover" ng-class="{'hidden': vm.toggle}">
             <thead>
                 <tr>
                     <th style="text-align:right"><u>Name</u></th>
@@ -13,7 +13,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr data-ng-repeat="user in mc.allUsers.list" data-ng-class="{danger:!entry.active}">
+                <tr data-ng-repeat="user in vm.allUsers.list" data-ng-class="{danger:!entry.active}">
                     <td style="width:600px"><span data-ng-hide="editMode">{{user.first_name}} {{user.last_name}}</span>
                         <input type="text" data-ng-show="editMode" data-ng-model="user.first_name" placeholder="First Name" data-ng-required /><br>
                         <input type="text" data-ng-show="editMode" data-ng-model="user.last_name" placeholder="Last Name" data-ng-required /></td>
@@ -23,7 +23,7 @@
                         <input type="text" data-ng-show="editMode" data-ng-model="user.email" placeholder="Email Address" data-ng-required /></td>
                     <td>
                         <button type="submit" data-ng-hide="editMode" data-ng-click="editMode = true; editAppKey(entry)" class="btn btn-default">Edit</button>
-                        <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; mc.updateAdmin(user)" class="btn btn-default">Save</button>
+                        <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; vm.updateAdmin(user)" class="btn btn-default">Save</button>
                         <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; cancel()" class="btn btn-default">Cancel</button>
                     </td>
                 </tr>
@@ -38,7 +38,7 @@
                 <md-content>
                     <md-input-container class="md-block">
                         <label for="email">Email Address</label>
-                        <input required email="email" ng-model="mc.emailAdmin.email">
+                        <input required email="email" ng-model="vm.emailAdmin.email">
                         <!-- <div ng-messages="projectForm.firstName.$error">
                         <div ng-message="required">This is required.</div>
                     </div> -->
@@ -47,10 +47,10 @@
 
 
         <div>
-            <div ng-if="mc.status" id="status">
-                <b layout="row" layout-align="center center" class="md-padding">{{mc.status}}</b>
+            <div ng-if="vm.status" id="status">
+                <b layout="row" layout-align="center center" class="md-padding">{{vm.status}}</b>
             </div>
-            <md-button class="md-primary md-raised" ng-click="mc.promptDialog($event)">
+            <md-button class="md-primary md-raised" ng-click="vm.promptDialog($event)">
                 Add New Admin
             </md-button>
         </div>
