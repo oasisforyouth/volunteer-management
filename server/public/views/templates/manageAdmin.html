@@ -30,6 +30,9 @@
             </tbody>
         </table>
 
+        <!-- ADD NEW ADMIN PROMPT / BUTTON  -->
+
+
         <div>
             <form>
                 <md-content>
@@ -42,12 +45,14 @@
                     </md-input-container>
 
 
-                    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-                        <md-button class="md-raised md-primary" ng-click="mc.sendEmail(emailAdmin)">Add New Admin</md-button>
-                    </section>
-                </md-content>
-            </form>
+
+        <div>
+            <div ng-if="mc.status" id="status">
+                <b layout="row" layout-align="center center" class="md-padding">{{mc.status}}</b>
+            </div>
+            <md-button class="md-primary md-raised" ng-click="mc.promptDialog($event)">
+                Add New Admin
+            </md-button>
         </div>
     </center>
-
 </div>

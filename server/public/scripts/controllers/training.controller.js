@@ -5,8 +5,8 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
 
     self.toggle = false;
     self.newTrainingToggle = false;
-    self.trainings = TrainingService.training;
-    TrainingService.getTraining();
+    self.trainings = TrainingService.trainings;
+    TrainingService.getTrainings();
 
     // ADDS NEW TRAININGS
     self.addTraining = function() {
@@ -19,7 +19,7 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
 
     // DELETES TRAINING
     self.deleteTraining = function(trainingId) {
-        // console.log('delete training was clicked', trainingId);
+        console.log('delete training was clicked', trainingId);
         TrainingService.deleteTraining(trainingId);
     };
 

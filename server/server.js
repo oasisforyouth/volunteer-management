@@ -11,9 +11,10 @@ var sessionConfig = require('./modules/session.config');
 var indexRouter = require('./routes/index.router');
 var userRouter = require('./routes/user.router');
 var registerRouter = require('./routes/register.router');
-var volunteerRouter = require('./routes/volunteer.router')
+var volunteerRouter = require('./routes/volunteer.router');
 var trainingRouter = require('./routes/training.router');
-var emailRouter = require('./routes/email.router')
+var emailRouter = require('./routes/email.router');
+var completedTrainings = require('./routes/completedTrainings.router')
 
 var port = process.env.PORT || 5000;
 
@@ -37,6 +38,7 @@ app.use('/user', userRouter);
 app.use('/volunteer', volunteerRouter);
 app.use('/training', trainingRouter);
 app.use('/email', emailRouter);
+app.use('/completedTrainings', completedTrainings);
 
 // Catch all bucket, must be last!
 app.use('/', indexRouter);
