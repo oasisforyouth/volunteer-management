@@ -1,6 +1,8 @@
 myApp.controller('ManageAdminController', ['$http', '$location', 'UserService', function($http, $location, UserService) {
     console.log('ManageAdminController created');
     var self = this;
+    self.currentPage = "manageAdmin";
+    
     var toggle = false;
     self.allUsers = UserService.allUsers;
     self.deleteAdmin = function(userId) {

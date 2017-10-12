@@ -7,7 +7,6 @@
       <h6>Volunteers</h6>
       <md-checkbox ng-model="oc.volunteerSearchObject.all" ng-change="oc.clearFilter()">Show All</md-checkbox>
       <md-checkbox ng-model="oc.volunteerSearchObject.onboarding" ng-change="oc.volunteerSearchObject.all=false">Onboarding</md-checkbox>
-      <!-- <md-checkbox ng-model="oc.volunteerSearchObject.ready" ng-change="oc.volunteerSearchObject.all=false">Ready to Volunteer</md-checkbox> -->
       <h6>Volunteer Interests</h6>
       <md-checkbox ng-model="oc.volunteerSearchObject.tutor_opportunity" ng-change="oc.volunteerSearchObject.all=false">Tutoring</md-checkbox>
       <md-checkbox ng-model="oc.volunteerSearchObject.dropin_opportunity" ng-change="oc.volunteerSearchObject.all=false">Drop In Center</md-checkbox>
@@ -17,22 +16,23 @@
       <md-checkbox ng-model="oc.volunteerSearchObject.supplies_donations_opportunity" ng-change="oc.volunteerSearchObject.all=false">Supplies/Donations</md-checkbox>
       <md-checkbox ng-model="oc.volunteerSearchObject.fundraising_events_opportunity" ng-change="oc.volunteerSearchObject.all=false">Fundraising and Events</md-checkbox>
       <h6>Skills/Hobbies/Experience</h6>
-      <md-checkbox ng-model="oc.volunteerSearchObject.tutoring_skill">Tutoring</md-checkbox>
-      <md-checkbox ng-model="oc.volunteerSearchObject.cooking_skill">Cooking</md-checkbox>
-      <md-checkbox ng-model="oc.volunteerSearchObject.art_skill">Art</md-checkbox>
-      <md-checkbox ng-model="oc.volunteerSearchObject.health_wellness_skill">Health and Wellness</md-checkbox>
-      <md-checkbox ng-model="oc.volunteerSearchObject.career_jobs_skill">Career Services</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.tutoring_skill" ng-change="oc.volunteerSearchObject.all=false">Tutoring</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.cooking_skill" ng-change="oc.volunteerSearchObject.all=false">Cooking</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.art_skill" ng-change="oc.volunteerSearchObject.all=false">Art</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.health_wellness_skill" ng-change="oc.volunteerSearchObject.all=false">Health and Wellness</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.career_jobs_skill" ng-change="oc.volunteerSearchObject.all=false">Career Services</md-checkbox>
       <h6>Length of Service</h6>
-      <md-checkbox ng-model="oc.volunteerSearchObject.months_underTwelve">Less than 12 months</md-checkbox>
-      <md-checkbox ng-model="oc.volunteerSearchObject.months_underThirtySix">12-36 months</md-checkbox>
-      <md-checkbox ng-model="oc.volunteerSearchObject.months_aboveThirtySix">More than 36 months</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.months_underTwelve" ng-change="oc.volunteerSearchObject.all=false">Less than 12 months</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.months_underThirtySix" ng-change="oc.volunteerSearchObject.all=false">12-36 months</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.months_aboveThirtySix" ng-change="oc.volunteerSearchObject.all=false">More than 36 months</md-checkbox>
       <h6>Status</h6>
-      <md-checkbox ng-model="oc.volunteerSearchObject.status_applied">Applied</md-checkbox>
-      <md-checkbox ng-model="oc.volunteerSearchObject.status_review">Application in Review</md-checkbox>
-      <md-checkbox ng-model="oc.volunteerSearchObject.status_background">Checking Background/References</md-checkbox>
-      <md-checkbox ng-model="oc.volunteerSearchObject.status_interview">Schedule Interview</md-checkbox>
-      <md-checkbox ng-model="oc.volunteerSearchObject.status_training">Schedule Training</md-checkbox>
-      <md-checkbox ng-model="oc.volunteerSearchObject.status_ready">Ready to Volunteer!</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.status_applied" ng-change="oc.volunteerSearchObject.all=false">Applied</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.status_review" ng-change="oc.volunteerSearchObject.all=false">Application in Review</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.status_background" ng-change="oc.volunteerSearchObject.all=false">Checking Background/References</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.status_interview" ng-change="oc.volunteerSearchObject.all=false">Schedule Interview</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.status_training" ng-change="oc.volunteerSearchObject.all=false">Schedule Training</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.status_ready" ng-change="oc.volunteerSearchObject.all=false">Ready to Volunteer!</md-checkbox>
+      <md-checkbox ng-model="oc.volunteerSearchObject.status_inactive" ng-change="oc.volunteerSearchObject.all=false"[]>Inactive</md-checkbox>
     </div>
     <main class="mdl-layout__content">
         <h3>VOLUNTEER OVERVIEW</h3>

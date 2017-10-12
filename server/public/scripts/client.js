@@ -28,7 +28,7 @@ myApp.config(function($routeProvider, $locationProvider, $mdThemingProvider) {
         })
         .when('/overview', {
             templateUrl: '/views/templates/overview.html',
-            controller: 'OverviewController as oc',
+            controller: 'OverviewController as vm',
             resolve: {
                 getuser: function(UserService) {
                     return UserService.getuser();
@@ -56,7 +56,7 @@ myApp.config(function($routeProvider, $locationProvider, $mdThemingProvider) {
         })
         .when('/manageAdmin', {
             templateUrl: '/views/templates/manageAdmin.html',
-            controller: 'ManageAdminController as mc',
+            controller: 'ManageAdminController as vm',
             resolve: {
                 getuser: function(UserService) {
                     return UserService.getuser();
@@ -65,7 +65,7 @@ myApp.config(function($routeProvider, $locationProvider, $mdThemingProvider) {
         })
         .when('/training', {
             templateUrl: '/views/templates/training.html',
-            controller: 'TrainingController as tc',
+            controller: 'TrainingController as vm',
             resolve: {
                 getuser: function(UserService) {
                     return UserService.getuser();

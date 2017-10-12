@@ -2,6 +2,8 @@ myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'Vo
     // console.log('OverviewController created');
     var self = this;
     self.allVolunteers = VolunteerService.allVolunteers;
+    self.currentPage = "overview";
+    // self.showNav = true;
 
     self.volunteerSearchObject = { //interests object to use for the filter search
         all: true,
@@ -40,6 +42,7 @@ myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'Vo
         self.volunteerSearchObject.status_interview = false;
         self.volunteerSearchObject.status_training = false;
         self.volunteerSearchObject.status_ready = false;
+        self.volunteerSearchObject.status_inactive = false;
     }
 
 }]);

@@ -82,6 +82,10 @@ myApp.filter('volunteerFilter', function () {
                 addVolunteer = false;
             }
 
+            if (volunteerArray[i].status != 'Inactive' && volunteerSearchObject.status_ready) {
+                addVolunteer = false;
+            }
+
             if(addVolunteer) {
                 output.push(volunteerArray[i]);
             }
