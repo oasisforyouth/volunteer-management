@@ -1,6 +1,8 @@
 myApp.controller('ManageAdminController', ['$http', '$location', 'UserService', '$mdDialog', '$scope', function($http, $location, UserService, $mdDialog, $scope) {
     console.log('ManageAdminController created');
     var self = this;
+    self.currentPage = "manageAdmin";
+    
     var toggle = false;
     self.status = '';
     // result = '';
