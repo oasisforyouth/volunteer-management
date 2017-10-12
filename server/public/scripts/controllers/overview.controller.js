@@ -2,6 +2,8 @@ myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'Vo
     console.log('OverviewController created');
     var self = this;
     self.allVolunteers = VolunteerService.allVolunteers;
+    self.currentPage = "overview";
+    // self.showNav = true;
 
     self.volunteerSearchObject = { //interests object to use for the filter search
         all: true,
@@ -13,6 +15,39 @@ myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'Vo
     VolunteerService.getAllVolunteers();
 
     self.currentVolunteerId = $routeParams.id; 
+
+    self.clearFilter = function(){
+
+        self.volunteerSearchObject.onboarding = false;
+        // self.volunteerSearchObject.ready = false;
+
+        self.volunteerSearchObject.tutor_opportunity = false;
+        self.volunteerSearchObject.transportation_opportunity = false;
+        self.volunteerSearchObject.dropin_opportunity = false;
+        self.volunteerSearchObject.administration_opportunity = false;
+        self.volunteerSearchObject.marketing_opportunity = false;
+        self.volunteerSearchObject.supplies_donations_opportunity = false;
+        self.volunteerSearchObject.fundraising_events_opportunity = false;
+
+        self.volunteerSearchObject.tutoring_skill = false;
+        self.volunteerSearchObject.cooking_skill = false;
+        self.volunteerSearchObject.art_skill = false;
+        self.volunteerSearchObject.health_wellness_skill = false;
+        self.volunteerSearchObject.career_jobs_skill = false;
+
+        self.volunteerSearchObject.volunteerSearchObject.months_underTwelve = false;
+        self.volunteerSearchObject.volunteerSearchObject.months_underThirtySix = false;
+        self.volunteerSearchObject.volunteerSearchObject.months_aboveThirtySix = false;
+
+        self.volunteerSearchObject.status_applied = false;
+        self.volunteerSearchObject.status_review = false;
+        self.volunteerSearchObject.status_background = false;
+        self.volunteerSearchObject.status_interview = false;
+        self.volunteerSearchObject.status_training = false;
+        self.volunteerSearchObject.status_ready = false;
+        self.volunteerSearchObject.status_inactive = false;
+    }
+
 }]);
 
 // "tutor_opportunity":true,
