@@ -133,8 +133,7 @@
                 <input type="checkbox" ng-model="hoursEvening" ng-true-value="'YES'" ng-false-value="'NO'">
             </div>
             <div>
-                <p><label class="boldstuff">Volunteer experience(organization, duties, dates): </label><br><input type="text"
-                        size="35" placeholder="Big Brother, Coordinator, 5/14-9/16" ng-model="volunteerExperience"></p>
+                <p><label class="boldstuff">Volunteer experience(organization, duties, dates): </label><br><input type="text" size="35" placeholder="Big Brother, Coordinator, 5/14-9/16" ng-model="volunteerExperience"></p>
 
                 <div>
                     <p><label class="boldstuff">Volunteer Skills: </label><br></p>
@@ -202,7 +201,9 @@
 
 
 
-                        <button type="">Submit</button>
+                        <md-button class="md-primary md-raised" ng-click="ac.showAlert($event)">
+                            Submit
+                        </md-button>
                         <!-- build ng-model to create object -->
 
 
