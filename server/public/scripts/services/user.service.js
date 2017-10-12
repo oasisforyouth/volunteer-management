@@ -47,12 +47,10 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
         });
     };
 
-    // self.addAdmin = function(newAdmin) {
-    //     // console.log('UserService -- addAdmin', newAdmin);
-    //     $http.post('/user', newAdmin).then(function(response) {
-    //         console.log('UserService post response:', response);
-    //     });
-    // }
+    //RESET PASSWORD ROUTE
+    self.resetPassword = function(username) {
+        console.log('reset password username: ', username);
+    };
 
     self.deleteAdmin = function(id) {
         $http({
