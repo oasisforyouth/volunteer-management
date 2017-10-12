@@ -1,7 +1,7 @@
 <div class="container" flexbox-parent="flexbox-parent" layout="column" layout-align="center center">
     <h1 class="lead" layout="column" layout-align="center center">Administrator Page</h1>
     <p>Welcome, username should go here with angular magic</p>
-    <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
+    <h1 class="lead alert alert-danger" role="alert" ng-if="vm.message != ''">{{lc.message}}</h2>
         <form ng-submit="lc.registerUser()">
             <!-- <div>
                 <label for="username">Username:</label>

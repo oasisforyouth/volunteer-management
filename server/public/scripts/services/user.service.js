@@ -41,8 +41,8 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
 
     // EMAILS NEW ADMIN SIGNUP LINK
     self.sendEmail = function(email) {
-        // console.log('sendemail', email);
-        $http.post('/email/user', email).then(function(response) {
+        console.log('sendemail', { email: email });
+        $http.post('/email/user', { email: email }).then(function(response) {
             console.log('email sent to new Admin: ', response);
         });
     };

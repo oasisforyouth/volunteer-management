@@ -2,7 +2,7 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
     console.log('TrainingController created');
 
     var self = this;
-
+    self.currentPage = "training";
     self.toggle = false;
     self.newTrainingToggle = false;
     self.trainings = TrainingService.trainings;
@@ -19,7 +19,7 @@ myApp.controller('TrainingController', ['TrainingService', '$http', '$location',
 
     // DELETES TRAINING
     self.deleteTraining = function(trainingId) {
-        // console.log('delete training was clicked', trainingId);
+        console.log('delete training was clicked', trainingId);
         TrainingService.deleteTraining(trainingId);
     };
 

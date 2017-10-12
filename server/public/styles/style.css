@@ -9,17 +9,18 @@ html {
     box-shadow: 10px 10px 5px #888888;
 }
 .mdl-data-table {
-    table-layout:fixed;
-    width:90%; 
+    table-layout: fixed;
+    width: 90%;
 }
 .navbar{
     box-shadow: 10px 10px 5px #888888;
 }
 
-.mdl-data-table td, th {
+.mdl-data-table td,
+th {
     width: 100%;
     overflow-x: scroll;
-  }
+}
 
 #header {
     text-align: center;
@@ -54,16 +55,17 @@ html {
     height: 100vh;
 }
 
-.boldstuff{
+.boldstuff {
     font-weight: bold;
 }
 
-.volunteerform{
+.volunteerform {
     padding-top: 50px;
     padding-right: 30px;
     padding-bottom: 50px;
     padding-left: 80px;
 }
+
 .container h6 {
     margin-bottom: 0px;
     font-weight: bold;
@@ -93,7 +95,7 @@ html {
     font-weight: bold;
     color: white;
     background-color: #104b86;
-    width: 20%; 
+    width: 20%;
     height: 75px;
 }
 
@@ -161,6 +163,7 @@ li a {
     text-decoration: none;
 }
 
+
 /* Change the link color to #111 (black) on hover */
 
 li a:hover {
@@ -206,4 +209,9 @@ li a:hover {
 
 #cancelIcon {
     font-size: 150%;
+}
+
+.tableHeading {
+    font-size: 24px;
+    text-align: right;
 }
