@@ -1,10 +1,19 @@
 <div class="navbar">
   <div class="container">
-    <ul>
-      <li><a href="#/overview">Overview</a></li>
-      <li><a href="#/manageAdmin">Administrators</a></li>
-      <li><a href="#/training">Trainings</a></li>
-      <li><a href="#/login">Logout</a></li>
-    </ul>
+   <md-nav-bar
+    md-selected-nav-item="vm.currentPage">
+    <md-nav-item md-nav-href="#/overview" name="overview">Overview</md-nav-item>
+    <md-nav-item md-nav-href="#/manageAdmin" name="manageAdmin">Administrators</md-nav-item>
+    <md-nav-item md-nav-href="#/training" name="training">Trainings</md-nav-item>
+    <md-nav-item md-nav-href="#/login" name="login">Logout</md-nav-item>
+  </md-nav-bar>
   </div>
 </div>
+
+
+<!-- <md-nav-bar>
+    <md-nav-item md-nav-href="#/overview" name="overview">Overview</md-nav-item>
+    <md-nav-item md-nav-href="#/manageAdmin" name="manageAdmin">Administrators</md-nav-item>
+    <md-nav-item md-nav-href="#/training" name="training">Trainings</md-nav-item>
+    <md-nav-item md-nav-href="#/login" name="login">Logout</md-nav-item>
+  </md-nav-bar> -->
