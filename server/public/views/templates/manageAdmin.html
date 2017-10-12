@@ -31,27 +31,21 @@
         </table>
 
         <!-- ADD NEW ADMIN PROMPT / BUTTON  -->
-
-
         <div>
-
-            <!-- <md-content>
-                    <md-input-container class="md-block">
-                        <label for="email">Email Address</label>
-                        <input required email="email" ng-model="vm.emailAdmin.email">
-                        <!-- <div ng-messages="projectForm.firstName.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div> -->
-            <!-- </md-input-container> -->
-
-
-
             <div>
+                <!-- ADD NEW ADMIN BUTTON -->
                 <div ng-if="vm.status" id="status">
                     <b layout="row" layout-align="center center" class="md-padding">{{vm.status}}</b>
                 </div>
                 <md-button class="md-primary md-raised" ng-click="vm.promptDialog($event)">
                     Add New Admin
+                </md-button>
+                <!-- PASSWORD RESET BUTTON-->
+                <div ng-if="vm.status" id="status">
+                    <b layout="row" layout-align="center center" class="md-padding">{{vm.status}}</b>
+                </div>
+                <md-button class="md-primary md-raised" ng-click="vm.resetPrompt($event)">
+                    Reset Password
                 </md-button>
             </div>
     </center>
