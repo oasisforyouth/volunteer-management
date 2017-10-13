@@ -120,124 +120,6 @@
                                 <option value="Weekly">Weekly</option>
                                 <option value="Monthly">Monthly</option>
                               </select>
-<<<<<<< HEAD
-                </md-input-container>
-        </div>
-        </p>
-        <aria-label class="boldstuff">Preferred days to volunteer: </aria-label>
-        </br>
-        <md-checkbox ng-model="mondayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Monday</label>
-        </md-checkbox>
-        <md-checkbox ng-model="tuesdayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Tuesday</label>
-        </md-checkbox>
-        <md-checkbox ng-model="wednesdayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Wednesday</label>
-        </md-checkbox>
-        <md-checkbox ng-model="thursdayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Thursday</label>
-        </md-checkbox>
-        </br>
-        <md-checkbox ng-model="fridayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Friday</label>
-        </md-checkbox>
-        <md-checkbox ng-model="saturdayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Saturday</label>
-        </md-checkbox>
-        <md-checkbox ng-model="sundayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>Sunday</label>
-        </md-checkbox>
-        <md-checkbox ng-model="noDayPreference" ng-true-value="'YES'" ng-false-value="'NO'"><label>No Preference</label>
-        </md-checkbox>
-
-        <div>
-            <label>Hours available: </label><br>
-            <md-checkbox ng-model="hoursAny" ng-true-value="'YES'" ng-false-value="'NO'"><label>Any</label>
-            </md-checkbox>
-            <md-checkbox ng-model="hoursMorning" ng-true-value="'YES'" ng-false-value="'NO'"><label>Mornings</label>
-            </md-checkbox>
-            <md-checkbox ng-model="hoursAfternoon" ng-true-value="'YES'" ng-false-value="'NO'"><label>Afternoons</label>
-            </md-checkbox>
-            <md-checkbox ng-model="hoursEvening" ng-true-value="'YES'" ng-false-value="'NO'"><label>Evening</label>
-            </md-checkbox>
-        </div>
-        <div>
-            <label class="boldstuff">Volunteer experience(organization, duties, dates): </label>
-            <br><textarea rows="" cols="" type="text" placeholder="Big Brother, Coordinator, 5/14-9/16" ng-model="volunteerExperience"></textarea>
-        </div>
-        </br>
-        <div>
-            <aria-label class="boldstuff">Volunteer Skills: </aria-label>
-            </br>
-            <md-checkbox ng-model="tutoringSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Tutoring</label>
-            </md-checkbox>
-            <md-checkbox ng-model="cookingSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Cooking</label>
-            </md-checkbox>
-            <md-checkbox ng-model="healthWellnessSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Health/Wellness </label>
-            </md-checkbox>
-            <md-checkbox ng-model="careersSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Career assistance </label>
-            </md-checkbox>
-            <md-checkbox ng-model="artSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Art</label>
-            </md-checkbox>
-            <md-checkbox ng-model="financialEducationSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Financial Education</label>
-                </md-input-container>
-        </div>
-        <div>
-            <aria-label class="boldstuff">Languages: </aria-label>
-            </br>
-            <md-checkbox ng-model="english" ng-true-value="'YES'" ng-false-value="'NO'"><label>English</label>
-            </md-checkbox>
-            <md-checkbox ng-model="spanish" ng-true-value="'YES'" ng-false-value="'NO'"><label>Spanish</label>
-            </md-checkbox>
-            <md-input-container class="md-block">
-                <label>Other languages:</label>
-                <input type="textarea" ng-model="languageOther" ng-true-value="'YES'" ng-false-value="'NO'">
-            </md-input-container>
-        </div>
-        <div>
-            <md-input-container class="md-block">
-                <p><label class="boldstuff">Additional hobbies and interests: </label><br></p>
-                <input type="textarea" ng-model="additionalHobbies" size="50">
-                </label><br/>
-            </md-input-container>
-
-        </div>
-        <div>
-            <md-input-container class="md-block">
-                <p><label class="boldstuff">Please list any medical concerns: </label><br></p>
-                <input type="textarea" ng-model="medicalConcerns" size="50">
-                </label><br/>
-            </md-input-container>
-        </div>
-        <div>
-            <p>
-                <aria-label class="boldstuff">Volunteer Opportunities: </aria-label><br></p>
-            <md-checkbox ng-model="dropinOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Drop-in Center Shift Volunteer</label><br/>
-            </md-checkbox>
-            <md-checkbox ng-model="tutorOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Tutor </label><br/>
-            </md-checkbox>
-            <md-checkbox ng-model="languageOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Administration(webmaster, technology, data entry, telephone, bookkeeping)</label><br/>
-            </md-checkbox>
-            <md-checkbox ng-model="marketingOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Marketing and Outreach(and social media)</label><br/>
-            </md-checkbox>
-            <md-checkbox ng-model="suppliesDonationsOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Supplies/Donations Drives/Donation Coordination</label><br/>
-            </md-checkbox>
-            <md-checkbox ng-model="fundraisingEventsOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Fundraising and Events</label><br/>
-            </md-checkbox>
-            <md-checkbox ng-model="otherOpportunity" ng-true-value="'YES'" ng-false-value="'NO'"><label>Other</label><br/>
-            </md-checkbox>
-
-        </div>
-        <div>
-            <md-checkbox ng-model="attendedOrientation"><label class="boldstuff">Attended Orientation:  </label><br/>
-        </div>
-        <md-content class="datepickerdemoBasicUsage">
-            <div layout-gt-xs="row">
-                <div flex-gt-xs="">
-                    <md-datepicker ng-model="orientationDate" md-placeholder="Enter date"></md-datepicker>
-                </div>
-                <button type="">Submit</button>
-                <!-- build ng-model to create object -->
-
-            </div>
-</form>
-
-</html
-=======
                         </md-input-container>
                 </div>
                 </p>
@@ -347,11 +229,10 @@
                         <div flex-gt-xs="">
                             <md-datepicker ng-model="vm.newApplication.orientationDate" md-placeholder="Enter date"></md-datepicker>
                         </div>
-                        <button type="">Submit</button>
+                        <button ng-click='vm.postApplication();'>Submit</button>
                         <!-- build ng-model to create object -->
         
                     </div>
         </form>
         
         </html
->>>>>>> master

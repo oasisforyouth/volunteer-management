@@ -52,8 +52,8 @@
 
             <div ng-repeat='training in vm.completedTrainings.list'>
                 <label class='detailLabel'>{{training.title}}</label>
-                <md-datepicker ng-model=training.date_completed></md-datepicker>
-                <button ng-click='vm.updateCompletedTraining(training.date_completed, training.id);'>Save</button><br>
+                <md-datepicker ng-model=training.date_completed ng-change='vm.updateCompletedTraining(training.date_completed, training.id);'></md-datepicker>
+                <!-- <button ng-click='vm.updateCompletedTraining(training.date_completed, training.id);'>Save</button><br> -->
             </div>
 
         </div>
