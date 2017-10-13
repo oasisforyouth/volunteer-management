@@ -40,7 +40,8 @@ myApp.service('TrainingService', function($http, $location) {
     // DELETES TRAINING FROM DATABASE
     self.deleteTraining = function(trainingId) {
         // console.log('deleteTraining hit', trainingId);
-        $http.delete('/training/' + trainingId).then(function(response) {
+        $http.delete('/training/' + trainingId).then(function (response) {
+
             self.getTrainings();
         });
     };
@@ -48,8 +49,9 @@ myApp.service('TrainingService', function($http, $location) {
     // EDITS FROM TRAINING.HTML TO DATABASE
     self.updateTraining = function(trainingId) {
         // console.log('updateTraining hit', trainingId);
-        $http.put('/training/' + trainingId.id, trainingId).then(function(response) {
+        $http.put('/training/' + trainingId.id, trainingId).then(function (response) {
             self.getTrainings();
+
         })
     };
 

@@ -9,12 +9,12 @@
                     <th style="text-align:right"><u>Name</u></th>
                     <th style="text-align:right"><u>Position</u></th>
                     <th style="text-align:right"><u>Email Address</u></th>
-                    <th style="text-align:right"><u>Edit</u></th>
+                    <th style="text-align:right"></th>
                 </tr>
             </thead>
             <tbody>
-                <tr data-ng-repeat="user in vm.allUsers.list" data-ng-class="{danger:!entry.active}">
-                    <td style="width:600px"><span data-ng-hide="editMode">{{user.first_name}} {{user.last_name}}</span>
+                <tr data-ng-repeat="user in mc.allUsers.list" data-ng-class="{danger:!entry.active}">
+                    <td><span data-ng-hide="editMode">{{user.first_name}} {{user.last_name}}</span>
                         <input type="text" data-ng-show="editMode" data-ng-model="user.first_name" placeholder="First Name" data-ng-required /><br>
                         <input type="text" data-ng-show="editMode" data-ng-model="user.last_name" placeholder="Last Name" data-ng-required /></td>
                     <td><span data-ng-hide="editMode">{{user.position}}</span>
@@ -22,10 +22,10 @@
                     <td><span data-ng-hide="editMode">{{user.email}}</span>
                         <input type="text" data-ng-show="editMode" data-ng-model="user.email" placeholder="Email Address" data-ng-required /></td>
                     <td>
-                        <button type="submit" data-ng-hide="editMode" data-ng-click="editMode = true; editAppKey(entry)" class="btn btn-default">Edit</button>
-                        <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; vm.resetPassword(user)" class="btn btn-default">Reset Password</button>
-                        <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; vm.updateAdmin(user)" class="btn btn-default">Save</button>
-                        <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; cancel()" class="btn btn-default">Cancel</button>
+
+                        <button type="submit" data-ng-hide="editMode" data-ng-click="editMode = true; editAppKey(entry)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect md-18"><i class="material-icons">create</i></button>
+                        <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; mc.updateAdmin(user)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">save</i></button>
+                        <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; cancel()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">cancel</i></button>
                     </td>
                 </tr>
             </tbody>
