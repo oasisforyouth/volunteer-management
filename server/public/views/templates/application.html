@@ -19,7 +19,7 @@
                 </div>
                 <md-input-container class="md-block">
                     <label class="md-block"> Address:  </label>
-                    <input type="text" required name="address" ng-model="vm.newApplication.address" placeholder="ex.123 Oasis Ave." size="50">
+                    <input places-auto-complete component-restrictions="{country:'us'}" type="text" required name="address" ng-model="vm.newApplication.address" placeholder="ex.123 Oasis Ave." size="50">
                     <p></p>
                 </md-input-container>
                 <md-input-container class="md-block">
@@ -50,7 +50,7 @@
                             <label class="boldstuff">Name:  </label><input type="text" required ng-model="vm.newApplication.emergencyName" placeholder="ex.Pat Doe">
                         </md-input-container>
                         <md-input-container class="md-block">
-                            <label class="boldstuff">Address:  </label><input type="text" required ng-model="vm.newApplication.emergencyAddress" placeholder="ex.123 4th St."
+                            <label class="boldstuff">Address:  </label><input places-auto-complete component-restrictions="{country:'us'}" type="text" required ng-model="vm.newApplication.emergencyAddress" placeholder="ex.123 4th St."
                                 size="50">
                         </md-input-container>
                         <md-input-container class="md-block">
@@ -75,7 +75,7 @@
                             <label class="boldstuff">Name:  </label><input size="35" type="text" placeholder="First Last" required ng-model="vm.newApplication.reference2Name"></p>
                         </md-input-container>
                         <md-input-container class="md-block">
-                            <label class="boldstuff">Address:  </label><input size="50" type="text" placeholder="Address" required ng-model="vm.newApplication.reference2Address"></p>
+                            <label class="boldstuff">Address:  </label><input places-auto-complete component-restrictions="{country:'us'}" size="50" type="text" placeholder="Address" required ng-model="vm.newApplication.reference2Address"></p>
                         </md-input-container>
                         <md-input-container class="md-block">
                             <label class="boldstuff">Phone:  </label><input type="text" placeholder="Phone" required ng-model="vm.newApplication.reference2Phone"></p>
@@ -96,7 +96,7 @@
                             <p><label class="boldstuff">Name:  </label><input type="text" placeholder="First Last" required ng-model="vm.newApplication.reference1Name"></p>
                         </md-input-container>
                         <md-input-container class="md-block">
-                            <p><label class="boldstuff">Address:  </label><input size="50" type="text" placeholder="Address" required ng-model="vm.newApplication.reference1Address"></p>
+                            <p><label class="boldstuff">Address:  </label><input places-auto-complete component-restrictions="{country:'us'}" size="50" type="text" placeholder="Address" required ng-model="vm.newApplication.reference1Address"></p>
                         </md-input-container>
                         <md-input-container class="md-block">
                             <p><label class="boldstuff">Phone:  </label><input type="text" placeholder="Phone" required ng-model="vm.newApplication.reference1Phone"></p>

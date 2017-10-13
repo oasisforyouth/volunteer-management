@@ -1,11 +1,6 @@
 myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserService', 'VolunteerService', '$mdDialog', function(NgMap, $http, $location, UserService, VolunteerService, $mdDialog) {
     console.log('ApplicationController created');
     var self = this;
-    
-
-    self.placeChanged = function() {
-        self.place = this.getPlace();
-    }
 
     self.postApplication = function() {
         console.log('submit clicked', self.newApplication)
