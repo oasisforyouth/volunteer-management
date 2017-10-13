@@ -2,7 +2,7 @@
     "name": "oasis_for_youth_volunteer_registration",
     "version": "1.0.0",
     "description": "One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.",
-    "main": "index.js",
+    "main": "server/server.js",
     "scripts": {
         "test": "nodemon server/server.js",
         "start": "node server/server.js"
