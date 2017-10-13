@@ -18,7 +18,7 @@ myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserS
         primaryPhone: "",
         secondaryPhone: "",
         email: "",
-        preferredContact: "Primary Phone",
+        preferredContact: "",
         emergencyName: "",
         emergencyPhone: "",
         emergencyAddress: "",
@@ -69,11 +69,11 @@ myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserS
         sundayPreference: false,
         attendedOrientation: false,
         adminNotes: "",
-        medicalConcersn:"",
+        medicalConcerns:"",
         over21:false
+        }
 
-    }
-
+        
     self.showAlert = function(ev) {
         $mdDialog.show(
                 $mdDialog.alert()
