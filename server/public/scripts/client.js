@@ -45,6 +45,10 @@ myApp.config(function($routeProvider, $locationProvider, $mdThemingProvider) {
             //     }
             // }
         })
+        .when('/passwordReset/:id', {
+            templateUrl: '/views/templates/passwordReset.html',
+            controller: 'LoginController as vm',
+        })
         .when('/info', {
             templateUrl: '/views/templates/info.html',
             controller: 'InfoController',

@@ -132,7 +132,7 @@ router.post('/password', function(req, res, next) {
                             from: '"Administrator"' + process.env.DB_EMAIL, // sender address  NEEDS ADDRESS
                             to: username.email, // list of receivers NEEDS ADDRESS
                             subject: 'New Administrator', // Subject line
-                            text: 'Please click the following link to reset your password: ' + process.env.DB_HOST + result.rows[0].md5
+                            text: 'Please click the following link to reset your password: ' + process.env.DB_RESET_PASSWORD + result.rows[0].md5
                         };
 
                         // send mail with defined transport object

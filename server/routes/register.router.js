@@ -52,8 +52,6 @@ router.post('/', function(req, res, next) {
 });
 
 // DO THIS AGAIN TO COMPARE USER NAME AND MD5
-
-
 router.put('/:id', function(req, res, next) {
     var adminId = req.params.id;
     var active = false;

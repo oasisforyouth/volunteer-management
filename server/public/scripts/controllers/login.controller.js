@@ -92,4 +92,32 @@ myApp.controller('LoginController', function($http, $location, $routeParams, Use
         }
 
     }
+    self.registerUser = function() {
+        console.log('LoginController -- registerUser');
+        if (self.reset.username === '' || self.reset.password === '') {
+            self.message = "Enter a username and NEW password!";
+        } else {
+            console.log('LoginController -- registerUser -- sending to server...', self.reset);
+
+            // $http.put('/register/' + self.currentAdminId).then(function(response) {
+            //     console.log('update response: ', response.status, response.data[0].active);
+            // if (response.status == 200 && response.data[0].active == true) {
+            //     $http.post('/register', self.user).then(function(response) {
+            //         console.log('LoginController -- registerUser -- success');
+            //         $scope.showAlert();
+            //         $location.path('/login');
+            //     }).catch(function(response) {
+            //         console.log('LoginController -- registerUser -- error');
+            //         self.message = "Please try again."
+            //     });
+            // } else {
+            //     $scope.badAlert();
+            //     self.message = "Link is inactive!!";
+            //     console.log('No Admin fo you!');
+            //     }
+            // });
+        }
+
+    }
+
 });
