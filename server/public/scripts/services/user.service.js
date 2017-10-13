@@ -49,9 +49,9 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
 
     //RESET PASSWORD ROUTE
     self.resetPassword = function(username) {
-        console.log('reset password username: ', { username: username });
-        $http.post('/email/password', { username: username }).then(function(response) {
-            console.log('resetPassword --', response);
+        console.log('reset password username: ', username);
+        $http.post('/email/password', username).then(function(response) {
+            console.log(' response resetPassword --', response);
         });
     };
 
