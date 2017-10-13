@@ -1,7 +1,7 @@
 myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserService', 'VolunteerService', '$mdDialog', function(NgMap, $http, $location, UserService, VolunteerService, $mdDialog) {
     console.log('ApplicationController created');
     var self = this;
-    self.newApplication = {};
+    
 
     self.placeChanged = function() {
         self.place = this.getPlace();

@@ -4,6 +4,7 @@ let passport = require('passport');
 let path = require('path');
 var pool = require('../modules/pool.js');
 let nodemailer = require('nodemailer');
+//let md5 = require('md5');
 // let crypto = require('crypto');
 
 // NEW VOLUNTEER APPLICAITON EMAIL
@@ -44,6 +45,8 @@ router.post('/', (req, res, next) => {
 router.post('/user', (req, res, next) => {
     let email = req.body;
     console.log('post req.body', email);
+    // console.log('hash: ', md5(email.email));
+    // let hash = md5(email.email);
     // create reusable transporter object using the default SMTP transport
 
     if (req.isAuthenticated()) {
