@@ -8,6 +8,7 @@ myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserS
     }
 
     self.postApplication = function() {
+        console.log('submit clicked', self.newApplication)
         VolunteerService.postNewVolunteer(self.newApplication);
 
     }
@@ -72,7 +73,9 @@ myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserS
         saturdayPreference: false,
         sundayPreference: false,
         attendedOrientation: false,
-        adminNotes: ""
+        adminNotes: "",
+        medicalConcersn:"",
+        over21:false
 
     }
 
