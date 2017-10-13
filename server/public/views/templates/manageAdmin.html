@@ -3,7 +3,7 @@
     <center>
         <h3>Manage Administrators</h3>
 
-        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" "table table-hover" ng-class="{'hidden': mc.toggle}">
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" "table table-hover" ng-class="{'hidden': vm.toggle}">
             <thead>
                 <tr>
                     <th style="text-align:right"><u>Name</u></th>
@@ -22,6 +22,7 @@
                     <td><span data-ng-hide="editMode">{{user.email}}</span>
                         <input type="text" data-ng-show="editMode" data-ng-model="user.email" placeholder="Email Address" data-ng-required /></td>
                     <td>
+
                         <button type="submit" data-ng-hide="editMode" data-ng-click="editMode = true; editAppKey(entry)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect md-18"><i class="material-icons">create</i></button>
                         <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; mc.updateAdmin(user)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">save</i></button>
                         <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; cancel()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">cancel</i></button>
@@ -31,28 +32,22 @@
         </table>
 
         <!-- ADD NEW ADMIN PROMPT / BUTTON  -->
-
-
         <div>
-            <form>
-                <md-content>
-                    <md-input-container class="md-block">
-                        <label for="email">Email Address</label>
-                        <input required email="email" ng-model="mc.emailAdmin.email">
-                        <!-- <div ng-messages="projectForm.firstName.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div> -->
-                    </md-input-container>
-
-
-
-                    <div>
-                        <div ng-if="mc.status" id="status">
-                            <b layout="row" layout-align="center center" class="md-padding">{{mc.status}}</b>
-                        </div>
-                        <md-button class="md-primary md-raised" ng-click="mc.promptDialog($event)">
-                            Add New Admin
-                        </md-button>
-                    </div>
+            <div>
+                <!-- ADD NEW ADMIN BUTTON -->
+                <div ng-if="vm.status" id="status">
+                    <b layout="row" layout-align="center center" class="md-padding">{{vm.status}}</b>
+                </div>
+                <md-button class="md-primary md-raised" ng-click="vm.promptDialog($event)">
+                    Add New Admin
+                </md-button>
+                <!-- PASSWORD RESET BUTTON-->
+                <div ng-if="vm.status" id="status">
+                    <b layout="row" layout-align="center center" class="md-padding">{{vm.status}}</b>
+                </div>
+                <md-button class="md-primary md-raised" ng-click="vm.resetPrompt($event)">
+                    Reset Password
+                </md-button>
+            </div>
     </center>
     </div>

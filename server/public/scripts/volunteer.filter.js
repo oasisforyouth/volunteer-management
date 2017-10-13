@@ -1,81 +1,89 @@
 myApp.filter('volunteerFilter', function () {
     return function (volunteerArray, volunteerSearchObject) {
         var output = [];
-
+        
         for (var i = 0; i < volunteerArray.length; i++) {
-            var addVolunteer = false;
+            var addVolunteer = true;
             if (volunteerArray[i] && volunteerSearchObject.all) {
                 volunteerSearchObject.all = true;
                 addVolunteer = true;
             }
-            if (volunteerArray[i].tutor_opportunity && volunteerSearchObject.tutor_opportunity) {          
+            if (volunteerArray[i].status != 'Applied' && volunteerSearchObject.onboarding) {          
                 addVolunteer = true;
             }
-            if (volunteerArray[i].dropin_opportunity && volunteerSearchObject.dropin_opportunity) {              
-                addVolunteer = true;
+
+            if (volunteerArray[i].tutor_opportunity == false && volunteerSearchObject.tutor_opportunity) {          
+                addVolunteer = false;
             }
-            if (volunteerArray[i].transportation_opportunity && volunteerSearchObject.transportation_opportunity) {             
-                addVolunteer = true;
+            if (volunteerArray[i].dropin_opportunity == false && volunteerSearchObject.dropin_opportunity) {              
+                addVolunteer = false;
             }
-            if (volunteerArray[i].administration_opportunity && volunteerSearchObject.administration_opportunity) {              
-                addVolunteer = true;
+            if (volunteerArray[i].transportation_opportunity == false  && volunteerSearchObject.transportation_opportunity) {             
+                addVolunteer = false;
+            }
+            if (volunteerArray[i].administration_opportunity == false && volunteerSearchObject.administration_opportunity) {              
+                addVolunteer = false;
             }   
-            if (volunteerArray[i].marketing_opportunity && volunteerSearchObject.marketing_opportunity) {              
-                addVolunteer = true;
+            if (volunteerArray[i].marketing_opportunity == false && volunteerSearchObject.marketing_opportunity) {              
+                addVolunteer = false;
             }
-            if (volunteerArray[i].supplies_donations_opportunity && volunteerSearchObject.supplies_donations_opportunity) {           
-                addVolunteer = true;
+            if (volunteerArray[i].supplies_donations_opportunity == false && volunteerSearchObject.supplies_donations_opportunity) {           
+                addVolunteer = false;
             }
-            if (volunteerArray[i].fundraising_events_opportunity && volunteerSearchObject.fundraising_events_opportunity) {    
-                addVolunteer = true;
-            }
-
-
-            if (volunteerArray[i].tutoring_skill && volunteerSearchObject.tutoring_skill) {         
-                addVolunteer = true;
-            }
-            if (volunteerArray[i].cooking_skill && volunteerSearchObject.cooking_skill) {
-                addVolunteer = true;
-            }
-            if (volunteerArray[i].art_skill && volunteerSearchObject.art_skill) {
-                addVolunteer = true;
-            }
-            if (volunteerArray[i].health_wellness_skill && volunteerSearchObject.health_wellness_skill) {
-                addVolunteer = true;
-            }
-            if (volunteerArray[i].career_jobs_skill && volunteerSearchObject.career_jobs_skill) {
-                addVolunteer = true;
+            if (volunteerArray[i].fundraising_events_opportunity == false && volunteerSearchObject.fundraising_events_opportunity) {    
+                addVolunteer = false;
             }
 
-            // console.log('here is the months info on the filter ', volunteerArray[i].months);
+
+            if (volunteerArray[i].tutoring_skill == false && volunteerSearchObject.tutoring_skill) {         
+                addVolunteer = false;
+            }
+            if (volunteerArray[i].cooking_skill == false && volunteerSearchObject.cooking_skill) {
+                addVolunteer = false;
+            }
+            if (volunteerArray[i].art_skill == false && volunteerSearchObject.art_skill) {
+                addVolunteer = false;
+            }
+            if (volunteerArray[i].health_wellness_skill == false && volunteerSearchObject.health_wellness_skill) {
+                addVolunteer = false;
+            }
+            if (volunteerArray[i].career_jobs_skill == false && volunteerSearchObject.career_jobs_skill) {
+                addVolunteer = false;
+            }
             
-            if (volunteerArray[i].months < 12 && volunteerSearchObject.months_underTwelve) {
-                addVolunteer = true;
+
+            if (volunteerArray[i].months >= 12 && volunteerSearchObject.months_underTwelve) {
+                addVolunteer = false;
             }
-            if (volunteerArray[i].months >= 12 && volunteerArray[i].months < 36 && volunteerSearchObject.months_underThirtySix) {
-                addVolunteer = true;
+            if ((volunteerArray[i].months < 12 || volunteerArray[i].months > 36) && volunteerSearchObject.months_underThirtySix) {
+                addVolunteer = false;
             }
-            if (volunteerArray[i].months >= 36 && volunteerSearchObject.months_aboveThirtySix) {
-                addVolunteer = true;
+            if (volunteerArray[i].months < 36 && volunteerSearchObject.months_aboveThirtySix) {
+                addVolunteer = false;
             }
-            if (volunteerArray[i].status == 'Applied' && volunteerSearchObject.status_applied) {
-                addVolunteer = true;
+
+            
+            if (volunteerArray[i].status != 'Applied' && volunteerSearchObject.status_applied) {
+                addVolunteer = false;
             }
-            if (volunteerArray[i].status == 'Application in Review' && volunteerSearchObject.status_review) {
-                addVolunteer = true;
+            if (volunteerArray[i].status != 'Application in Review' && volunteerSearchObject.status_review) {
+                addVolunteer = false;
             }
-            if (volunteerArray[i].status == 'Checking Background/References' && volunteerSearchObject.status_background) {
-                volunteerSearchObject.all = false;
-                addVolunteer = true;
+            if (volunteerArray[i].status != 'Checking Background/References' && volunteerSearchObject.status_background) {
+                addVolunteer = false;
             }
-            if (volunteerArray[i].status == 'Schedule Interview' && volunteerSearchObject.status_interview) { 
-                addVolunteer = true;
+            if (volunteerArray[i].status != 'Schedule Interview' && volunteerSearchObject.status_interview) { 
+                addVolunteer = false;
             }
-            if (volunteerArray[i].status == 'Schedule Training' && volunteerSearchObject.status_training) {
-                addVolunteer = true;
+            if (volunteerArray[i].status != 'Schedule Training' && volunteerSearchObject.status_training) {
+                addVolunteer = false;
             }
-            if (volunteerArray[i].status == 'Ready to Volunteer!' && volunteerSearchObject.status_ready) {
-                addVolunteer = true;
+            if (volunteerArray[i].status != 'Ready to Volunteer!' && volunteerSearchObject.status_ready) {
+                addVolunteer = false;
+            }
+
+            if (volunteerArray[i].status != 'Inactive' && volunteerSearchObject.status_ready) {
+                addVolunteer = false;
             }
 
             if(addVolunteer) {
@@ -85,41 +93,3 @@ myApp.filter('volunteerFilter', function () {
         return output;
     }
 });
-
-
-// function filterFunction(volunteerArray, searchObject) {
-
-
-//     for(var i = 0; i < volunteerArray.length; i++) {
-//         if (volunteerArray[i].tutor_opportunity && volunteerSearchObject.tutor_opportunity) {
-//             self.tutorOppFilteredvolunteerArray.push(volunteerArray[i]);
-//             console.log( 'tutorFiltervolunteerArray', self.tutorOppFilteredvolunteerArray )
-//         }
-//         if (volunteerArray[i].dropin_opportunity && volunteerSearchObject.dropin_opportunity) {
-//             self.dropinOppFilteredvolunteerArray.push(volunteerArray[i]);
-//             console.log( 'dropinOppFilteredvolunteerArray', self.dropinOppFilteredvolunteerArray )
-//         }
-//         if (volunteerArray[i].transportation_opportunity && volunteerSearchObject.transportation_opportunity) {
-//             self.transportationOppFilteredvolunteerArray.push(volunteerArray[i]);
-//             console.log( 'transportationOppFilteredvolunteerArray', self.transportationOppFilteredvolunteerArray )
-//         }
-//         if (volunteerArray[i].administration_opportunity && volunteerSearchObject.administration_opportunity) {
-//             self.administrationOppFilteredvolunteerArray.push(volunteerArray[i]);
-//             console.log( 'administrationOppFilteredvolunteerArray', self.administrationOppFilteredvolunteerArray )
-//         }
-//         if (volunteerArray[i].marketing_opportunity && volunteerSearchObject.marketing_opportunity) {
-//             self.marketingOppFilteredvolunteerArray.push(volunteerArray[i]);
-//             console.log( 'marketingOppFilteredvolunteerArray', self.marketingOppFilteredvolunteerArray )
-//         }
-//         if (volunteerArray[i].supplies_donations_opportunity && volunteerSearchObject.supplies_donations_opportunity) {
-//             self.supplies_donationsOppFilteredvolunteerArray.push(volunteerArray[i]);
-//             console.log( 'supplies_donationsOppFilteredvolunteerArray', self.supplies_donationsOppFilteredvolunteerArray )
-//         }
-//         if (volunteerArray[i].fundraising_events_opportunity && volunteerSearchObject.fundraising_events_opportunity) {
-//             self.fundraising_eventsOppFilteredvolunteerArray.push(volunteerArray[i]);
-//             console.log( 'fundraising_eventsOppFilteredvolunteerArray', self.fundraising_eventsOppFilteredvolunteerArray )
-//         }
-//     }    
-// }
-
-// filterFunction(self.allVolunteers.list, volunteerSearchObject);

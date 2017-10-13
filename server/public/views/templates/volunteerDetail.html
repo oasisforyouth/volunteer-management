@@ -1,9 +1,13 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div>
     <!-- begin row 1 -->
+    
     <div layout="row" class="container">
         <div flex layout-padding>
-            <h2 align="center">{{vc.volunteerDetail.list.first_name}} {{vc.volunteerDetail.list.last_name}} </h2>
+            <h2 align="center">{{vm.volunteerDetail.list.first_name}} {{vm.volunteerDetail.list.last_name}}
+                <md-button align="right" ng-click='vm.udpateVolunteer();'>Save</md-button>
+            </h2>
+
         </div>
     </div>
     <!-- end row 1 -->
@@ -12,87 +16,123 @@
     <div layout="row">
         <!-- column 1 -->
         <div flex layout-padding>
-            ADDRESS:{{vc.volunteerDetail.list.address}}<br> TIME AT CURRENT ADDRESS:{{vc.volunteerDetail.list.time_at_address}}<br> PRIMARY PHONE: {{vc.volunteerDetail.list.primary_phone}}<br> SECONDARY PHONE: {{vc.volunteerDetail.list.secondary_phone}}<br> EMAIL: {{vc.volunteerDetail.list.email}}
-            <br> DRIVER'S LICENSE: {{vc.volunteerDetail.list.drivers_license}}
+            <md-input-container><label class="detailLabel">Address:</label><textarea ng-model=vm.volunteerDetail.list.address></textarea></md-input-container>
+            <md-input-container><label class="detailLabel">TIME AT CURRENT ADDRESS:</label><input type="text" ng-model=vm.volunteerDetail.list.time_at_address></md-input-container>
+            <md-input-container><label class="detailLabel">PRIMARY PHONE: </label> <input type="text" ng-model=vm.volunteerDetail.list.primary_phone></md-input-container>
+            <md-input-container><label class="detailLabel">SECONDARY PHONE: </label><input type="text" ng-model=vm.volunteerDetail.list.secondary_phone></md-input-container>
+            <md-input-container><label class="detailLabel">EMAIL: </label><input type='text' ng-model=vm.volunteerDetail.list.email></md-input-container>
+            <md-checkbox ng-model=vm.volunteerDetail.list.drivers_license><label class="detailLabel">DRIVER'S LICENSE</label> </md-checkbox>
+        </div>
+        <!-- column 2 -->
+        <div flex layout-padding>
+            <!-- <md-card layout-fill>
+                <md-card-title>
+                    <md-card-title-text> -->
+            <h5>VOLUNTEER STATUS</h5>
+            </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <md-select ng-model="vm.volunteerDetail.list.status" placeholder="Submitted Application" class="md-no-underline">
+                    <md-option value="Submitted Application">Submitted Application</md-option>
+                    <md-option value="Application in Review">Application in Review</md-option>
+                    <md-option value="Checking Background/Reference">Checking Background/Reference</md-option>
+                    <md-option value="Schedule Interview">Schedule Interview</md-option>
+                    <md-option value="Schedule Training">Schedule Training</md-option>
+                    <md-option value="Inactive">Inactive</md-option>
+                    <md-option value="Ready to Volunteer">Ready to Volunteer!</md-option>
+                </md-select>
+                <!-- </md-card-content>
+            </md-card> -->
+        </div>
+        <!-- column 2 -->
+        <div flex layout-padding>
+
+            <h5>TRAININGS</h5>
+
+
+            <div ng-repeat='training in vm.completedTrainings.list'>
+                <label class='detailLabel'>{{training.title}}</label>
+                <md-datepicker ng-model=training.date_completed ng-change='vm.updateCompletedTraining(training.date_completed, training.id);'></md-datepicker>
+                <!-- <button ng-click='vm.updateCompletedTraining(training.date_completed, training.id);'>Save</button><br> -->
+            </div>
+
+        </div>
+    </div>
+    <!-- end row 2 -->
+
+    <!-- begin row 3 -->
+    <div layout="row">
+        <!-- column 1 -->
+        <div flex layout-padding>
+            <md-card layout-fill>
+                <md-card-title>
+                    <md-card-title-text>
+                        <h5>EMERGENCY CONTACT</h5>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <md-input-container><label class="detailLabel">NAME: </label><input type='text' ng-model=vm.volunteerDetail.list.emergency_name></md-input-container>
+                    <md-input-container><label class="detailLabel">ADDRESS: </label><input type='text' ng-model=vm.volunteerDetail.list.emergency_address></md-input-container>
+                    <md-input-container><label class="detailLabel">PHONE: </label><input type='text' ng-model=vm.volunteerDetail.list.emergency_phone></md-input-container>
+                    <md-input-container><label class="detailLabel">EMAIL: </label><input type='text' ng-model=vm.volunteerDetail.list.emergency_email></md-input-container>
+                    <md-input-container><label class="detailLabel">RELATIONSHIP: </label><input type='text' ng-model=vm.volunteerDetail.list.emergency_relationship></md-input-container>
+                </md-card-content>
+            </md-card>
         </div>
         <!-- column 2 -->
         <div flex layout-padding>
             <md-card layout-fill>
                 <md-card-title>
                     <md-card-title-text>
-                        <h5>VOLUNTEER STATUS</h5>
+                        <h5>AVAILABILITY </h5>
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                    <md-select ng-model="status" placeholder="Submitted Application" class="md-no-underline">
-                        <md-option value="Submitted Application">Submitted Application</md-option>
-                        <md-option value="Application in Review">Application in Review</md-option>
-                        <md-option value="Checking Background/Reference">Checking Background/Reference</md-option>
-                        <md-option value="Schedule Interview">Schedule Interview</md-option>
-                        <md-option value="Schedule Training">Schedule Training</md-option>
-                        <md-option value="Ready to Volunteer">Ready to Volunteer!</md-option>
+                    <label class='availabilityCard'>FREQUENCY AVAILABLE</label>
+                    <md-select ng-model=vm.volunteerDetail.list.frequency class="md-no-underline">
+                        <md-option value="daily">Daily</md-option>
+                        <md-option value="weekly">Weekly</md-option>
+                        <md-option value="monthly">Monthly</md-option>
                     </md-select>
+                    <label class='availabilityCard'>DAYS OF AVAILABILITY</label><br>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.no_day_preference><label>Available All Days</label></md-checkbox>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.monday_preference><label>Monday</label></md-checkbox>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.tuesday_preference><label>Tuesday</label></md-checkbox>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.wednesday_preference><label>Wednesday</label></md-checkbox>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.thursday_preference><label>thursday</label></md-checkbox>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.friday_preference><label>Friday</label></md-checkbox>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.saturday_preference><label>Saturday</label></md-checkbox>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.sunday_preference><label>Sunday</label></md-checkbox>
+                    <br>
+                    <label class='availabilityCard'>HOURS OF AVAILABILITY</label><br>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.hours_any><label>Any Hours</label></md-checkbox>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.hours_morning><label>Morning Hours</label></md-checkbox>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.hours_afternoon><label>Afternoon Hours</label></md-checkbox>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.hours_evening><label>Evening Hours</label></md-checkbox>
+
                 </md-card-content>
             </md-card>
         </div>
-        <!-- column 2 -->
+        <!-- column 3 -->
         <div flex layout-padding>
-            <md-button>EDIT</md-button>
-            <md-button>DELETE</md-button>
+            <md-card layout-fill>
+                <md-card-title>
+                    <md-card-title-text>
+                        <h5>PERSONAL REFERENCE 1</h5>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <md-input-container><label class="detailLabel">NAME: </label><input type='text' ng-model=vm.volunteerDetail.list.reference_1_name></md-input-container>
+                    <md-input-container><label class="detailLabel">ADDRESS: </label><input type='text' ng-model=vm.volunteerDetail.list.reference_1_address></md-input-container>
+                    <md-input-container><label class="detailLabel">PHONE: </label><input type='text' ng-model=vm.volunteerDetail.list.reference_1_phone></md-input-container>
+                    <md-input-container><label class="detailLabel">EMAIL: </label><input type='text' ng-model=vm.volunteerDetail.list.reference_1_email></md-input-container>
+                    <md-input-container><label class="detailLabel">RELATIONSHIP: </label><input type='text' ng-model=vm.volunteerDetail.list.reference_1_relationship></md-input-container>
+                    <md-input-container><label class="detailLabel">YEARS KNOWN: </label><input type='text' ng-model=vm.volunteerDetail.list.reference_1_years_known></md-input-container>
+                </md-card-content>
+            </md-card>
         </div>
     </div>
-    <!-- end row 2 -->
-
-  <!-- begin row 3 -->
-<div layout="row">
-  <!-- column 1 -->
-  <div flex layout-padding>
-    <md-card layout-fill>
-      <md-card-title>
-        <md-card-title-text>
-          <h5>EMERGENCY CONTACT</h5>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        NAME {{vc.volunteerDetail.list.emergency_name}}<br> ADDRESS v{{vc.volunteerDetail.list.emergency_address}}
-        <br> PHONE {{vc.volunteerDetail.list.emergency_phone}}
-        <br> EMAIL {{vc.volunteerDetail.list.emergency_email}}
-        <br> RELATIONSHIP {{vc.volunteerDetail.list.emergency_relationship}}
-        <br>
-      </md-card-content>
-    </md-card>
-  </div>
-  <!-- column 2 -->
-  <div flex layout-padding>
-    <md-card layout-fill> 
-      <md-card-title>
-        <md-card-title-text>
-          <h5>AVAILABILITY </h5>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content>
-        FREQUENCY {{vc.volunteerDetail.list.frequency}}<br> DAYS OF THE WEEK <br> TIME OF DAY
-      </md-card-content>
-    </md-card>
-  </div>
-  <!-- column 3 -->
-  <div flex layout-padding>
-    <md-card layout-fill>
-      <md-card-title>
-        <md-card-title-text>
-          <h5>TRAININGS</h5>
-          
-        </md-card-title-text>
-      </md-card-title>
-
-      <md-card-content ng-repeat='training in vc.completedTrainings.list'> 
-          
-          {{training.title}}<input type='date' value='{{training.date_completed | date:"yyyy-MM-dd"}}' ng-model='training.updateCompletedDate'><button ng-click='vc.updateCompletedTraining(training.updateCompletedDate, training.id);'>Save</button><br>
-      </md-card-content>
-    </md-card>
-  </div>
-</div>
-<!-- end row 3 -->
+    <!-- end row 3 -->
 
     <!-- begin row 4 -->
     <div layout="row">
@@ -101,15 +141,16 @@
             <md-card layout-fill>
                 <md-card-title>
                     <md-card-title-text>
-                        <h5>PERSONAL REFERENCE</h5>
+                        <h5>PERSONAL REFERENCE 2</h5>
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                    NAME {{vc.volunteerDetail.list.reference_1_name}}<br> ADDRESS {{vc.volunteerDetail.list.reference_1_address}}
-                    <br> PHONE {{vc.volunteerDetail.list.reference_1_phone}}
-                    <br> EMAIL {{vc.volunteerDetail.list.reference_1_email}}
-                    <br> RELATIONSHIP {{vc.volunteerDetail.list.reference_1_relationship}}
-                    <br> YEARS KNOWN {{vc.volunteerDetail.list.reference_1_years_known}}<br>
+                    <md-input-container><label class="detailLabel">NAME: </label><input type='text' ng-model=vm.volunteerDetail.list.reference_2_name></md-input-container>
+                    <md-input-container><label class="detailLabel">ADDRESS: </label><input type='text' ng-model=vm.volunteerDetail.list.reference_2_address></md-input-container>
+                    <md-input-container><label class="detailLabel">PHONE: </label><input type='text' ng-model=vm.volunteerDetail.list.reference_2_phone></md-input-container>
+                    <md-input-container><label class="detailLabel">EMAIL: </label><input type='text' ng-model=vm.volunteerDetail.list.reference_2_email></md-input-container>
+                    <md-input-container><label class="detailLabel">RELATIONSHIP: </label><input type='text' ng-model=vm.volunteerDetail.list.reference_2_relationship></md-input-container>
+                    <md-input-container><label class="detailLabel">YEARS KNOWN: </label><input type='text' ng-model=vm.volunteerDetail.list.reference_2_years_known></md-input-container>
                 </md-card-content>
             </md-card>
         </div>
@@ -118,12 +159,17 @@
             <md-card layout-fill>
                 <md-card-title>
                     <md-card-title-text>
-                        <h5>LANGUAGES </h5>
+                        <h5>HOBBIES/SKILLS/INTERESTS</h5>
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                    ENGLISH {{vc.volunteerDetail.list.english}}<br> SPANISH {{vc.volunteerDetail.list.spanish}}
-                    <br> OTHER {{vc.volunteerDetail.list.language_other}}
+                    <md-checkbox ng-model=vm.volunteerDetail.list.tutoring_skill><label>TUTOR</label></md-checkbox><br>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.cooking_skill><label>COOKING</label></md-checkbox><br>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.health_wellness_skill><label>HEALTH AND WELLNESS</label></md-checkbox><br>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.career_jobs_skill><label>CAREER/JOBS</label></md-checkbox>
+                    <br>
+                    <md-checkbox ng-model='vm.volunteerDetail.list.art_skill'><label>ART</label></md-checkbox><br>
+                    <md-input-container><label>OTHER HOBBIES/SKILLS: </label><textarea ng-model=vm.volunteerDetail.list.additional_hobbies></textarea></md-input-container>
                 </md-card-content>
             </md-card>
         </div>
@@ -136,9 +182,17 @@
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                    TUTOR {{vc.volunteerDetail.list.tutor_opportunity}}<br> TRANSPORTATION {{vc.volunteerDetail.list.transportation_opportunity}}
-                    <br> MARKETING AND OUTREACH {{vc.volunteerDetail.list.marketing_opportunity}}<br>
-                    DROP-IN CENTER {{vc.volunteerDetail.list.dropin_opportunity}} <br> ADMINISTRATION {{vc.volunteerDetail.list.administration_opportunity}} <br> SUPPLIES/DONATIONS {{vc.volunteerDetail.list.supplies_donations_opportunity}} <br> FUNDRAISING AND EVENTS {{vc.volunteerDetail.list.fundraising_events_opportunity}} <br> OTHER {{vc.volunteerDetail.list.other_opportunity}}
+                    <md-checkbox ng-model=vm.volunteerDetail.list.tutor_opportunity><label>TUTOR</label></md-checkbox>
+                    <br>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.transportation_opportunity><label>TRANSPORTATION</label></md-checkbox> <br>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.marketing_opportunity><label>MARKETING AND OUTREACH</label></md-checkbox><br>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.dropin_opportunity><label>DROP-IN CENTER</label></md-checkbox>
+                    <br>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.administration_opportunity><label>ADMINISTRATION</label></md-checkbox> <br>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.supplies_donations_opportunity><label>SUPPLIES/DONATIONS</label></md-checkbox>
+                    <br>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.fundraising_events_opportunity><label>FUNDRAISING AND EVENTS</label></md-checkbox><br>
+                    <md-input-container><label>OTHER: </label><input type='text' ng-model=vm.volunteerDetail.list.other_opportunity></md-input-container>
                 </md-card-content>
             </md-card>
         </div>
@@ -153,13 +207,15 @@
             <md-card layout-fill>
                 <md-card-title>
                     <md-card-title-text>
-                        <h5>HOBBIES/SKILLS/INTERESTS</h5>
+                        <h5>LANGUAGES </h5>
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                    TUTOR {{vc.volunteerDetail.list.tutoring_skill}}<br> COOKING {{vc.volunteerDetail.list.cooking_skill}}
-                    <br> HEALTH AND WELLNESS {{vc.volunteerDetail.list.health_wellness_skill}} <br> CAREER/JOBS {{vc.volunteerDetail.list.career_jobs_skill}} <br> ART {{vc.volunteerDetail.list.art_skill}} <br> OTHER HOBBIES/SKILLS {{vc.volunteerDetail.list.additional_hobbies}}
+                    <md-checkbox ng-model='vm.volunteerDetail.list.english'><label>ENGLISH</label></md-checkbox><br>
+                    <md-checkbox ng-model='vm.volunteerDetail.list.spanish'><label>SPANISH</label></md-checkbox><br>
+                    <md-input-container><label class="detailLabel">OTHER: </label><input type='text' ng-model=vm.volunteerDetail.list.language_other></md-input-container>
                 </md-card-content>
+
             </md-card>
         </div>
         <!-- column 2 -->
@@ -171,7 +227,7 @@
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                    PEANUT ALLERGY
+                    <md-input-container class="md-block"><textarea aria-label='Medical Concerns' ng-model=vm.volunteerDetail.list.medical_concerns></textarea></md-input-container>
                 </md-card-content>
             </md-card>
         </div>
@@ -184,7 +240,7 @@
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                   VOLUNTEER EXPERIENCE {{vc.volunteerDetail.list.volunteer_experience}}
+                    <md-input-container class="md-block"><textarea aria-label='Volunteer Experience' ng-model=vm.volunteerDetail.list.volunteer_experience></textarea></md-input-container>
                 </md-card-content>
             </md-card>
         </div>
@@ -201,7 +257,7 @@
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
-                    {{vc.volunteerDetail.list.admin_notes}}
+                    <md-input-container class="md-block"><textarea aria-label='Admin Notes' ng-model=vm.volunteerDetail.list.admin_notes></textarea></md-input-container>
                 </md-card-content>
             </md-card>
         </div>

@@ -1,13 +1,14 @@
 myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserService', 'VolunteerService', '$mdDialog', function(NgMap, $http, $location, UserService, VolunteerService, $mdDialog) {
     console.log('ApplicationController created');
     var self = this;
-    self.newApplication = {};
+    
 
     self.placeChanged = function() {
         self.place = this.getPlace();
     }
 
     self.postApplication = function() {
+        console.log('submit clicked', self.newApplication)
         VolunteerService.postNewVolunteer(self.newApplication);
 
     }
@@ -72,7 +73,9 @@ myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserS
         saturdayPreference: false,
         sundayPreference: false,
         attendedOrientation: false,
-        adminNotes: ""
+        adminNotes: "",
+        medicalConcersn:"",
+        over21:false
 
     }
 

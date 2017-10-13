@@ -2,6 +2,7 @@ myApp.controller('LoginController', function($http, $location, $routeParams, Use
     console.log('LoginController created');
     var self = this;
     self.currentAdminId = $routeParams.id;
+    self.currentPage = "login";
     console.log("current Admin ID: ", self.currentAdminId);
     self.user = {
         firstName: '',

@@ -1,6 +1,8 @@
 myApp.controller('ManageAdminController', ['$http', '$location', 'UserService', '$mdDialog', '$scope', function($http, $location, UserService, $mdDialog, $scope) {
     console.log('ManageAdminController created');
     var self = this;
+    self.currentPage = "manageAdmin";
+
     var toggle = false;
     self.status = '';
     // result = '';
@@ -18,13 +20,36 @@ myApp.controller('ManageAdminController', ['$http', '$location', 'UserService', 
         self.toggle = false;
     };
 
+
+    // RESET PASSWORD 
+    self.resetPassword = function(result) {
+        console.log('reset password username: ', result);
+        UserService.resetPassword(result);
+    };
+
+    self.resetPrompt = function(ev) {
+        var confirm = $mdDialog.prompt()
+            .title('Enter their username')
+            .placeholder('Username')
+            .ariaLabel('username')
+            .ok('Send Email')
+            .cancel('Cancel')
+
+        $mdDialog.show(confirm).then(function(result) {
+            self.status = 'An reset password link has been sent to ' + result;
+            console.log('result: ', result)
+            self.resetPassword(result);
+        }, function() {
+            self.status = 'You didn\'t enter a username.';
+        });
+    };
+
     // SEND NEW ADMIN SIGN UP EMAIL LINK
     self.sendEmail = function(result) {
         console.log('email admin clicked', result);
         UserService.sendEmail(result);
     };
-
-
+    // ADD ADMIN EMAIL
     self.promptDialog = function(ev) {
         var confirm = $mdDialog.prompt()
             .title('Enter their email address.')
