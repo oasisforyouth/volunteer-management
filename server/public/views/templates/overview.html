@@ -1,6 +1,6 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div id="overviewContainer" class="container">
- 
+
   <div layout-padding class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Search Filters</span>
@@ -32,14 +32,10 @@
       <md-checkbox ng-model="vm.volunteerSearchObject.status_interview" ng-change="vm.volunteerSearchObject.all=false">Schedule Interview</md-checkbox>
       <md-checkbox ng-model="vm.volunteerSearchObject.status_training" ng-change="vm.volunteerSearchObject.all=false">Schedule Training</md-checkbox>
       <md-checkbox ng-model="vm.volunteerSearchObject.status_ready" ng-change="vm.volunteerSearchObject.all=false">Ready to Volunteer!</md-checkbox>
-      <md-checkbox ng-model="vm.volunteerSearchObject.status_inactive" ng-change="vm.volunteerSearchObject.all=false"[]>Inactive</md-checkbox>
+      <md-checkbox ng-model="vm.volunteerSearchObject.status_inactive" ng-change="vm.volunteerSearchObject.all=false" []>Inactive</md-checkbox>
     </div>
     <main class="mdl-layout__content">
-        <h3>VOLUNTEER OVERVIEW</h3>
-<<<<<<< HEAD
-       
-=======
->>>>>>> master
+      <h3>VOLUNTEER OVERVIEW</h3>
       <div id="overviewTable" class="page-content">
         <table class="mdl-data-table mdl-js-data-table">
           <thead>
@@ -52,17 +48,17 @@
             </tr>
           </thead>
           <tbody>
-              <tr ng-repeat="volunteer in vm.allVolunteers.list | volunteerFilter:vm.volunteerSearchObject">
-                  <td id="cell" class="mdl-data-table__cell--non-numeric"><a ng-href="/#/volunteerDetail/{{volunteer.id}}">{{volunteer.first_name}} {{volunteer.last_name}}</a></td>
-                  <td  class="mdl-data-table__cell--non-numeric">{{volunteer.volunteerInterests}}</td>
-                  <td  class="mdl-data-table__cell--non-numeric">{{volunteer.volunteerSkills}}</td>
-                  <td id="cell" class="mdl-data-table__cell--non-numeric">{{volunteer.months}}</td>
-                  <td id="cell" class="mdl-data-table__cell--non-numeric">{{volunteer.status}}</td>
-                </tr>
+            <tr ng-repeat="volunteer in vm.allVolunteers.list | volunteerFilter:vm.volunteerSearchObject">
+              <td id="cell" class="mdl-data-table__cell--non-numeric"><a ng-href="/#/volunteerDetail/{{volunteer.id}}">{{volunteer.first_name}} {{volunteer.last_name}}</a></td>
+              <td class="mdl-data-table__cell--non-numeric">{{volunteer.volunteerInterests}}</td>
+              <td class="mdl-data-table__cell--non-numeric">{{volunteer.volunteerSkills}}</td>
+              <td id="cell" class="mdl-data-table__cell--non-numeric">{{volunteer.months}}</td>
+              <td id="cell" class="mdl-data-table__cell--non-numeric">{{volunteer.status}}</td>
+            </tr>
           </tbody>
         </table>
       </div>
     </main>
   </div>
-  
+
 </div>
