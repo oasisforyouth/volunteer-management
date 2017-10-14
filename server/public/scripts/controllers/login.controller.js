@@ -72,22 +72,25 @@ myApp.controller('LoginController', function($http, $location, $routeParams, Use
         } else {
             console.log('LoginController -- registerUser -- sending to server...', self.user);
 
-            $http.put('/register/' + self.currentAdminId).then(function(response) {
-                console.log('update response: ', response.status, response.data[0].active);
-                if (response.status == 200 && response.data[0].active == true) {
-                    $http.post('/register', self.user).then(function(response) {
-                        console.log('LoginController -- registerUser -- success');
-                        $scope.showAlert();
-                        $location.path('/login');
-                    }).catch(function(response) {
-                        console.log('LoginController -- registerUser -- error');
-                        self.message = "Please try again."
-                    });
-                } else {
-                    $scope.badAlert();
-                    self.message = "Link is inactive!!";
-                    console.log('No Admin fo you!');
-                }
+            $http.put('/register/' + self.currentAdminId, self.user).then(function(response) {
+                //         console.log('update response: ', response.status, response.data[0].active);
+                //     if (response.status == 200 && response.data[0].active == true) {
+                //         $http.post('/register', self.user).then(function(response) {
+                //             console.log('LoginController -- registerUser -- success');
+                //             $scope.showAlert();
+                //             $location.path('/login');
+                //         }).catch(function(response) {
+                //             console.log('LoginController -- registerUser -- error');
+                //             self.message = "Please try again."
+                //         });
+                //     } else {
+                //         $scope.badAlert();
+                //         self.message = "Link is inactive!!";
+                //         console.log('No Admin fo you!');
+                //     }
+            }).catch(function(response) {
+                console.log('LoginController -- registerUser -- error');
+                self.message = "Please try again."
             });
         }
 

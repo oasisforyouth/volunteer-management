@@ -55,7 +55,7 @@ router.post('/', function(req, res, next) {
 router.put('/:id', function(req, res, next) {
     var adminId = req.params.id;
     var active = false;
-
+    console.log('req.body', req.body)
     if (req.isAuthenticated()) {
         // send back user object from database
         console.log('logged in', req.user);
@@ -82,6 +82,7 @@ router.put('/:id', function(req, res, next) {
                             // CHANGES ACTIVE TO FALSE, EFFECTIVELY TURNING OFF THE HASH
                             client.query("SELECT * FROM crypto WHERE md5=$1;", [adminId],
                                 function(err, result) {
+                                    console.log('result.rows: ', result.rows);
                                     res.send(result.rows);
                                     client.end();
                                     pool.connect(function(err, client, done) {
@@ -91,9 +92,41 @@ router.put('/:id', function(req, res, next) {
                                         } else {
                                             client.query("UPDATE crypto SET active=$1 WHERE md5=$2;", [active, adminId],
                                                 function(err, result) {
+                                                    console.log('result: ', result);
                                                     // res.sendStatus(201);
                                                     client.end();
                                                 });
+                                            if (adminId == result.rows[0].md5 && result.rows[0].active == true) {
+                                                // console.log('HOOORAY');
+                                                pool.connect(function(err, client, done) {
+                                                    var saveUser = {
+                                                        firstname: req.body.firstName,
+                                                        lastname: req.body.lastName,
+                                                        username: req.body.username,
+                                                        email: req.body.email,
+                                                        password: encryptLib.encryptPassword(req.body.password),
+                                                        position: req.body.position,
+                                                    };
+                                                    console.log('saveUser: ', saveUser)
+                                                    if (err) {
+                                                        console.log("Error connecting post: ", err);
+                                                        res.sendStatus(500);
+                                                    }
+                                                    client.query("INSERT INTO users (first_name, last_name, user_name, email, password, position) VALUES ($1, $2, $3, $4, $5, $6);"), [saveUser.firstname, saveUser.lastname, saveUser.username, saveUser.email, saveUser.password, saveUser.position],
+                                                        function(err, result) {
+                                                            console.log('result: ', result.rows);
+                                                            client.end();
+
+                                                            if (err) {
+                                                                console.log("Error inserting data: ", err);
+                                                                res.sendStatus(500);
+                                                            } else {
+                                                                res.sendStatus(201);
+                                                            }
+
+                                                        }
+                                                });
+                                            }
                                         }
 
                                     });
