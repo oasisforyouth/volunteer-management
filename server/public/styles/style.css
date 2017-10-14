@@ -11,7 +11,7 @@ html {
     width: 90%;
 }
 
-.mdl-data-table td
+#tableCell
  {
     width: 100%;
     white-space: nowrap;
@@ -20,7 +20,7 @@ html {
     /* overflow-x: scroll; */
 }
 
-.mdl-data-table td:hover { 
+#tableCell:hover { 
     overflow: visible;
     white-space: pre-wrap;
 }
