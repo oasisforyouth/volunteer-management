@@ -5,10 +5,15 @@ html {
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
 }
-
+.instructions{
+    box-shadow: 10px 10px 5px #888888;
+}
 .mdl-data-table {
     table-layout: fixed;
     width: 90%;
+}
+.navbar{
+    box-shadow: 10px 10px 5px #888888;
 }
 
 #tableCell
@@ -26,6 +31,7 @@ html {
 }
 
 #header {
+    \
     text-align: center;
 }
 

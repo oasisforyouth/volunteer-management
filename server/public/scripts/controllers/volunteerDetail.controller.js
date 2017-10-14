@@ -13,4 +13,8 @@ myApp.controller('VolunteerDetailController', ['VolunteerService', 'UserService'
         TrainingService.updateCompletedTraining($routeParams.id, trainingId, completedDate);
         console.log('completed date data controller, ', $routeParams.id, trainingId, completedDate);
     }
+    self.udpateVolunteer = function(){
+        console.log('update volunteer', self.volunteerDetail);
+        VolunteerService.updateVolunteer(self.volunteerDetail.list);
+    }
 }]);

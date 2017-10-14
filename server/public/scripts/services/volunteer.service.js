@@ -45,7 +45,11 @@ myApp.service('VolunteerService', function($http, $location) {
             self.volunteerDetail.list = response.data[0];
         })
     }
-
+    self.updateVolunteer = function(updatedVolunteer){
+        $http.put('/volunteer/update', updatedVolunteer).then(function(response){
+            self.getVolunteerDetail();
+        })
+    }
     self.getAllVolunteers = function() {
         $http.get('/volunteer').then(function(response) {
             // console.log('all volunteers from server', response.data);
