@@ -6,14 +6,14 @@ html {
     font-size: 14px;
 }
 .instructions{
-    box-shadow: 10px 10px 5px #888888;
+    box-shadow: 0 10px 2px gray;
 }
 .mdl-data-table {
     table-layout: fixed;
     width: 90%;
 }
 .navbar{
-    box-shadow: 10px 10px 5px #888888;
+    box-shadow: 0 4px 2px -2px gray;
 }
 
 #tableCell
