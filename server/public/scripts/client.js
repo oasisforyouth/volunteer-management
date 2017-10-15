@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial', 'ngMap']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial', 'ngMap', 'md.data.table']);
 
 /// Routes ///
 myApp.config(function($routeProvider, $locationProvider, $mdThemingProvider) {

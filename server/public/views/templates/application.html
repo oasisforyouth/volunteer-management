@@ -1,8 +1,11 @@
 <html>
 <title class="boldstuff">Volunteer Application</title>
 <h3 class="lead" layout="row" layout-align="center center">Volunteer Sign Up</h3>
+
 <form class="volunteerform">
     <div layout-align="center center">
+        <md-checkbox ng-model="vm.newApplication.over21"><label>Are you 21 or Over?</label>
+        </md-checkbox>
         <div>
             <md-input-container>
                 <input required name="firstName" type="text" ng-model="vm.newApplication.firstName" placeholder="First">
@@ -17,32 +20,40 @@
                 <input type="text" ng-model="vm.newApplication.maidenName" placeholder="Maiden">
             </md-input-container>
         </div>
-        <md-input-container class="md-block">
+        <md-input-container>
             <label class="md-block"> Address:  </label>
-            <input type="text" required name="address" ng-model="vm.newApplication.address" placeholder="ex.123 Oasis Ave." size="50">
+            <input places-auto-complete component-restrictions="{country:'us'}" type="text" required name="address" ng-model="vm.newApplication.address" placeholder="ex.123 Oasis Ave." size="50">
             <p></p>
         </md-input-container>
-        <md-input-container class="md-block">
+        <md-input-container>
             <div>
                 <label class="md-block">How long have you been at your current address?</label>
                 <input type="text" required ng-model="vm.newApplication.timeAtAddress" placeholder="ex.3 Years">
             </div>
-        </md-input-container class="md-block">
+        </md-input-container>
         <div>
             <h4 layout-align="center center">Preferred contact method:</h4>
-            <md-input-container class="md-block">
-                <label for="Primary phone">Primary Phone</label>
-                <input required type="text" placeholder="ex.555-867-5309" ng-model="vm.newApplication.primaryPhone">
+            <md-radio-group ng-model="vm.newApplication.preferredContact">
+                <md-radio-button value="Primary Phone" class="md-primary"></md-radio-button>
+                <md-input-container>
 
-            </md-input-container>
-            <md-input-container class="md-block">
-                <label for="Secondary phone">Secondary Phone</label>
-                <input type="text" placeholder="ex.555-867-5309" ng-model="vm.newApplication.secondaryPhone">
-            </md-input-container>
-            <md-input-container class="md-block">
-                <label for="Email">Email</label>
-                <input required type="text" placeholder="ex. sam.doe@email.com" ng-model="vm.newApplication.email">
-            </md-input-container>
+                    <label for="Primary phone">Primary Phone</label>
+                    <input required type="text" placeholder="ex.555-867-5309" ng-model="vm.newApplication.primaryPhone">
+
+                </md-input-container>
+                <md-radio-button value="Secondary Phone" class="md-primary"></md-radio-button>
+                <md-input-container class="md-block">
+
+                    <label for="Secondary phone">Secondary Phone</label>
+                    <input type="text" placeholder="ex.555-867-5309" ng-model="vm.newApplication.secondaryPhone">
+                </md-input-container>
+                <md-radio-button value="Email" class="md-primary"></md-radio-button>
+                <md-input-container class="md-block">
+
+                    <label for="Email">Email</label>
+                    <input required type="text" placeholder="ex. sam.doe@email.com" ng-model="vm.newApplication.email">
+                </md-input-container>
+            </md-radio-group>
 
             <div>
                 <h4>Emergency Contact:</h4>
@@ -50,7 +61,7 @@
                     <label class="boldstuff">Name:  </label><input type="text" required ng-model="vm.newApplication.emergencyName" placeholder="ex.Pat Doe">
                 </md-input-container>
                 <md-input-container class="md-block">
-                    <label class="boldstuff">Address:  </label><input type="text" required ng-model="vm.newApplication.emergencyAddress" placeholder="ex.123 4th St." size="50">
+                    <label class="boldstuff">Address:  </label><input places-auto-complete component-restrictions="{country:'us'}" type="text" required ng-model="vm.newApplication.emergencyAddress" placeholder="ex.123 4th St." size="50">
                 </md-input-container>
                 <md-input-container class="md-block">
                     <label class="boldstuff">Daytime Phone:  </label><input type="text" required ng-model="vm.newApplication.emergencyPhone" placeholder="ex.123-456-7890">
@@ -74,7 +85,7 @@
                     <label class="boldstuff">Name:  </label><input size="35" type="text" placeholder="First Last" required ng-model="vm.newApplication.reference2Name"></p>
                 </md-input-container>
                 <md-input-container class="md-block">
-                    <label class="boldstuff">Address:  </label><input size="50" type="text" placeholder="Address" required ng-model="vm.newApplication.reference2Address"></p>
+                    <label class="boldstuff">Address:  </label><input places-auto-complete component-restrictions="{country:'us'}" size="50" type="text" placeholder="Address" required ng-model="vm.newApplication.reference2Address"></p>
                 </md-input-container>
                 <md-input-container class="md-block">
                     <label class="boldstuff">Phone:  </label><input type="text" placeholder="Phone" required ng-model="vm.newApplication.reference2Phone"></p>
@@ -95,7 +106,7 @@
                     <p><label class="boldstuff">Name:  </label><input type="text" placeholder="First Last" required ng-model="vm.newApplication.reference1Name"></p>
                 </md-input-container>
                 <md-input-container class="md-block">
-                    <p><label class="boldstuff">Address:  </label><input size="50" type="text" placeholder="Address" required ng-model="vm.newApplication.reference1Address"></p>
+                    <p><label class="boldstuff">Address:  </label><input places-auto-complete component-restrictions="{country:'us'}" size="50" type="text" placeholder="Address" required ng-model="vm.newApplication.reference1Address"></p>
                 </md-input-container>
                 <md-input-container class="md-block">
                     <p><label class="boldstuff">Phone:  </label><input type="text" placeholder="Phone" required ng-model="vm.newApplication.reference1Phone"></p>
@@ -124,33 +135,33 @@
         </p>
         <aria-label class="boldstuff">Preferred days to volunteer: </aria-label>
         </br>
-        <md-checkbox ng-model="vm.newApplication.mondayPreference" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Monday</label>
+        <md-checkbox ng-model="vm.newApplication.mondayPreference"><label>Monday</label>
         </md-checkbox>
-        <md-checkbox ng-model="vm.newApplication.tuesdayPreference" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Tuesday</label>
+        <md-checkbox ng-model="vm.newApplication.tuesdayPreference"><label>Tuesday</label>
         </md-checkbox>
-        <md-checkbox ng-model="vm.newApplication.wednesdayPreference" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Wednesday</label>
+        <md-checkbox ng-model="vm.newApplication.wednesdayPreference"><label>Wednesday</label>
         </md-checkbox>
-        <md-checkbox ng-model="vm.newApplication.thursdayPreference" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Thursday</label>
+        <md-checkbox ng-model="vm.newApplication.thursdayPreference"><label>Thursday</label>
         </md-checkbox>
         </br>
-        <md-checkbox ng-model="vm.newApplication.fridayPreference" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Friday</label>
+        <md-checkbox ng-model="vm.newApplication.fridayPreference"><label>Friday</label>
         </md-checkbox>
-        <md-checkbox ng-model="vm.newApplication.saturdayPreference" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Saturday</label>
+        <md-checkbox ng-model="vm.newApplication.saturdayPreference"><label>Saturday</label>
         </md-checkbox>
-        <md-checkbox ng-model="vm.newApplication.sundayPreference" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Sunday</label>
+        <md-checkbox ng-model="vm.newApplication.sundayPreference"><label>Sunday</label>
         </md-checkbox>
-        <md-checkbox ng-model="vm.newApplication.noDayPreference" required ng-true-value="'YES'" ng-false-value="'NO'"><label>No Preference</label>
+        <md-checkbox ng-model="vm.newApplication.noDayPreference"><label>No Preference</label>
         </md-checkbox>
 
         <div>
             <label>Hours available: </label><br>
-            <md-checkbox ng-model="vm.newApplication.hoursAny" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Any</label>
+            <md-checkbox ng-model="vm.newApplication.hoursAny"><label>Any</label>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.hoursMorning" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Mornings</label>
+            <md-checkbox ng-model="vm.newApplication.hoursMorning"><label>Mornings</label>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.hoursAfternoon" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Afternoons</label>
+            <md-checkbox ng-model="vm.newApplication.hoursAfternoon"><label>Afternoons</label>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.hoursEvening" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Evening</label>
+            <md-checkbox ng-model="vm.newApplication.hoursEvening"><label>Evening</label>
             </md-checkbox>
         </div>
         <div>
@@ -161,29 +172,29 @@
         <div>
             <aria-label class="boldstuff">Volunteer Skills: </aria-label>
             </br>
-            <md-checkbox ng-model="vm.newApplication.tutoringSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Tutoring</label>
+            <md-checkbox ng-model="vm.newApplication.tutoringSkill"><label>Tutoring</label>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.cookingSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Cooking</label>
+            <md-checkbox ng-model="vm.newApplication.cookingSkill"><label>Cooking</label>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.healthWellnessSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Health/Wellness </label>
+            <md-checkbox ng-model="vm.newApplication.healthWellnessSkill"><label>Health/Wellness </label>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.careersSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Career assistance </label>
+            <md-checkbox ng-model="vm.newApplication.careersSkill"><label>Career assistance </label>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.artSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Art</label>
+            <md-checkbox ng-model="vm.newApplication.artSkill"><label>Art</label>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.financialEducationSkill" ng-true-value="'YES'" ng-false-value="'NO'"><label>Financial Education</label>
+            <md-checkbox ng-model="vm.newApplication.financialEducationSkill"><label>Financial Education</label>
                 </md-input-container>
         </div>
         <div>
             <aria-label class="boldstuff">Languages: </aria-label>
             </br>
-            <md-checkbox ng-model="vm.newApplication.english" required ng-true-value="'YES'" ng-false-value="'NO'"><label>English</label>
+            <md-checkbox ng-model="vm.newApplication.english"><label>English</label>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.spanish" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Spanish</label>
+            <md-checkbox ng-model="vm.newApplication.spanish"><label>Spanish</label>
             </md-checkbox>
             <md-input-container class="md-block">
                 <label>Other languages:</label>
-                <input type="textarea" ng-model="vm.newApplication.languageOther" ng-true-value="'YES'" ng-false-value="'NO'">
+                <input type="textarea" ng-model="vm.newApplication.languageOther">
             </md-input-container>
         </div>
         <div>
@@ -204,19 +215,19 @@
         <div>
             <p>
                 <aria-label class="boldstuff">Volunteer Opportunities: </aria-label><br></p>
-            <md-checkbox ng-model="vm.newApplication.dropinOpportunity" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Drop-in Center Shift Volunteer</label><br/>
+            <md-checkbox ng-model="vm.newApplication.dropinOpportunity"><label>Drop-in Center Shift Volunteer</label><br/>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.tutorOpportunity" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Tutor </label><br/>
+            <md-checkbox ng-model="vm.newApplication.tutorOpportunity"><label>Tutor </label><br/>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.languageOpportunity" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Administration(webmaster, technology, data entry, telephone, bookkeeping)</label><br/>
+            <md-checkbox ng-model="vm.newApplication.languageOpportunity"><label>Administration(webmaster, technology, data entry, telephone, bookkeeping)</label><br/>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.marketingOpportunity" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Marketing and Outreach(and social media)</label><br/>
+            <md-checkbox ng-model="vm.newApplication.marketingOpportunity"><label>Marketing and Outreach(and social media)</label><br/>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.suppliesDonationsOpportunity" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Supplies/Donations Drives/Donation Coordination</label><br/>
+            <md-checkbox ng-model="vm.newApplication.suppliesDonationsOpportunity"><label>Supplies/Donations Drives/Donation Coordination</label><br/>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.fundraisingEventsOpportunity" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Fundraising and Events</label><br/>
+            <md-checkbox ng-model="vm.newApplication.fundraisingEventsOpportunity"><label>Fundraising and Events</label><br/>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.otherOpportunity" required ng-true-value="'YES'" ng-false-value="'NO'"><label>Other</label><br/>
+            <md-checkbox ng-model="vm.newApplication.otherOpportunity"><label>Other</label><br/>
             </md-checkbox>
 
         </div>
