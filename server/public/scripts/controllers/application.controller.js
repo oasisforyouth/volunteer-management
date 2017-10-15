@@ -1,11 +1,6 @@
 myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserService', 'VolunteerService', '$mdDialog', function(NgMap, $http, $location, UserService, VolunteerService, $mdDialog) {
     console.log('ApplicationController created');
     var self = this;
-    
-
-    self.placeChanged = function() {
-        self.place = this.getPlace();
-    }
 
     self.postApplication = function() {
         console.log('submit clicked', self.newApplication)
@@ -23,7 +18,7 @@ myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserS
         primaryPhone: "",
         secondaryPhone: "",
         email: "",
-        preferredContact: "Primary Phone",
+        preferredContact: "",
         emergencyName: "",
         emergencyPhone: "",
         emergencyAddress: "",
@@ -74,11 +69,11 @@ myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserS
         sundayPreference: false,
         attendedOrientation: false,
         adminNotes: "",
-        medicalConcersn:"",
+        medicalConcerns:"",
         over21:false
+        }
 
-    }
-
+        
     self.showAlert = function(ev) {
         $mdDialog.show(
                 $mdDialog.alert()
