@@ -3,13 +3,15 @@
     <center>
         <h3>Manage Administrators</h3>
 
-        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" "table table-hover" ng-class="{'hidden': vm.toggle}">
-            <thead>
-                <tr>
-                    <th style="text-align:right"><u>Name</u></th>
-                    <th style="text-align:right"><u>Position</u></th>
-                    <th style="text-align:right"><u>Email Address</u></th>
-                    <th style="text-align:right"></th>
+<md-card>
+    <md-table-container>
+        <table md-table ng-class="{'hidden': vm.toggle}">
+            <thead md-head>
+                <tr md-row>
+                    <th md-column style="text-align:right"><u>Name</u></th>
+                    <th md-column style="text-align:right"><u>Position</u></th>
+                    <th md-column style="text-align:right"><u>Email Address</u></th>
+                    <th md-column style="text-align:right"></th>
                 </tr>
             </thead>
             <tbody>
@@ -17,11 +19,11 @@
                     <td><span data-ng-hide="editMode">{{user.first_name}} {{user.last_name}}</span>
                         <input type="text" data-ng-show="editMode" data-ng-model="user.first_name" placeholder="First Name" data-ng-required /><br>
                         <input type="text" data-ng-show="editMode" data-ng-model="user.last_name" placeholder="Last Name" data-ng-required /></td>
-                    <td><span data-ng-hide="editMode">{{user.position}}</span>
+                    <td md-cell><span data-ng-hide="editMode">{{user.position}}</span>
                         <input type="text" data-ng-show="editMode" data-ng-model="user.position" placeholder="Position" data-ng-required /></td>
-                    <td><span data-ng-hide="editMode">{{user.email}}</span>
+                    <td md-cell><span data-ng-hide="editMode">{{user.email}}</span>
                         <input type="text" data-ng-show="editMode" data-ng-model="user.email" placeholder="Email Address" data-ng-required /></td>
-                    <td>
+                    <td md-cell>
 
                         <button type="submit" data-ng-hide="editMode" data-ng-click="editMode = true; editAppKey(entry)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect md-18"><i class="material-icons">create</i></button>
                         <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; mc.updateAdmin(user)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">save</i></button>
@@ -30,6 +32,8 @@
                 </tr>
             </tbody>
         </table>
+    </md-table-container>
+</md-card>
 
         <!-- ADD NEW ADMIN PROMPT / BUTTON  -->
         <div>
@@ -51,3 +55,38 @@
             </div>
     </center>
     </div>
+
+
+
+
+
+
+<!-- old mdl style table -->
+
+    <!-- <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" "table table-hover" ng-class="{'hidden': vm.toggle}">
+            <thead>
+                <tr>
+                    <th style="text-align:right"><u>Name</u></th>
+                    <th style="text-align:right"><u>Position</u></th>
+                    <th style="text-align:right"><u>Email Address</u></th>
+                    <th style="text-align:right"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="user in mc.allUsers.list" data-ng-class="{danger:!entry.active}">
+                    <td><span data-ng-hide="editMode">{{user.first_name}} {{user.last_name}}</span>
+                        <input type="text" data-ng-show="editMode" data-ng-model="user.first_name" placeholder="First Name" data-ng-required /><br>
+                        <input type="text" data-ng-show="editMode" data-ng-model="user.last_name" placeholder="Last Name" data-ng-required /></td>
+                    <td><span data-ng-hide="editMode">{{user.position}}</span>
+                        <input type="text" data-ng-show="editMode" data-ng-model="user.position" placeholder="Position" data-ng-required /></td>
+                    <td><span data-ng-hide="editMode">{{user.email}}</span>
+                        <input type="text" data-ng-show="editMode" data-ng-model="user.email" placeholder="Email Address" data-ng-required /></td>
+                    <td>
+
+                        <button type="submit" data-ng-hide="editMode" data-ng-click="editMode = true; editAppKey(entry)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect md-18"><i class="material-icons">create</i></button>
+                        <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; mc.updateAdmin(user)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">save</i></button>
+                        <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; cancel()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">cancel</i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table> -->
