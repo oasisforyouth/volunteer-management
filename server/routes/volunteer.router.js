@@ -22,6 +22,8 @@ router.post('/', function(req, res) {
                         console.log('error making query', errormakingquery);
                         res.sendStatus(500);
                     } else {
+
+                        // NOTICE EMAIL SENT TO PROGRAM MANAGER
                         let transporter = nodemailer.createTransport({
                             service: 'gmail',
                             auth: {
@@ -29,7 +31,6 @@ router.post('/', function(req, res) {
                                 pass: process.env.DB_PASS
                             }
                         });
-
                         // setup email data with unicode symbols
                         let mailOptions = {
                             from: '"Administrator"' + process.env.DB_EMAIL, // sender address  
@@ -53,8 +54,8 @@ router.post('/', function(req, res) {
             )
         }
     })
-
 })
+
 router.get('/:id', function(req, res) {
         let volunteerId = req.params.id;
         console.log('current volunteer route reached,', volunteerId);
