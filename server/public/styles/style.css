@@ -5,38 +5,77 @@ html {
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
 }
-.instructions{
-    box-shadow: 0 10px 2px gray;
-}
-.mdl-data-table {
-    table-layout: fixed;
-    width: 90%;
-}
-.navbar{
-    box-shadow: 0 4px 2px -2px gray;
+
+#title{
+    color: orange;
 }
 
+.instructions{
+    box-shadow: 10px 10px 5px #888888;
+}
+
+/* overview page styling */
+
 #tableCell
- {
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow:ellipsis;
-    /* overflow-x: scroll; */
+{
+   width: 100%;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow:ellipsis;
 }
 
 #tableCell:hover { 
-    overflow: visible;
-    white-space: pre-wrap;
+   overflow: visible;
+   white-space: pre-wrap;
 }
 
 #header {
-    \
-    text-align: center;
+   text-align: center;
 }
 
 #cell {
-    text-align: center;
+   text-align: center;
+}
+
+.container h6 {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.container h4 {
+    display: flex;
+    justify-content: center;
+}
+
+#overviewContainer {
+    height: 100vh;
+    max-width: 300px;
+}
+
+#overviewTable {
+    table-layout: fixed;
+    width: 100%; 
+}
+
+.hoverRow:hover{
+    background-color: whitesmoke;
+}
+
+.links {
+    color: #104b86;
+}
+/* end of overview styling */
+
+.navbar{
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.navbar {
+    background-color: #104b86;
+    width: 100%;
+    border-radius: 0px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .instructions .container h1 {
@@ -60,9 +99,7 @@ html {
     margin-top: 10px;
 }
 
-#overviewContainer {
-    height: 100vh;
-}
+
 
 .boldstuff {
     font-weight: bold;
@@ -75,15 +112,12 @@ html {
     padding-left: 80px;
 }
 
-.container h6 {
-    margin-bottom: 0px;
-    font-weight: bold;
-}
 
 .container p {
     margin-top: 14px;
 }
 
+/* home page styling */
 .homeButtonsDiv {
     display: flex;
     justify-content: center;
@@ -108,17 +142,6 @@ html {
     height: 75px;
 }
 
-#overviewTable {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.container h3 {
-    display: flex;
-    justify-content: center;
-}
-
 .message {
     padding: 10px 0;
 }
@@ -137,14 +160,6 @@ html {
 
 .btn-danger {
     margin-left: 10px;
-}
-
-.navbar {
-    background-color: #104b86;
-    width: 100%;
-    border-radius: 0px;
-    display: flex;
-    justify-content: flex-end;
 }
 
 .loginHeader {

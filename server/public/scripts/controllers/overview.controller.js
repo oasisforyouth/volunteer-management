@@ -1,9 +1,13 @@
-myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'VolunteerService', '$routeParams', function($http, $location, UserService, VolunteerService, $routeParams) {
+myApp.controller('OverviewController', ['$http', '$location', 'UserService', 'VolunteerService', '$routeParams','$mdSidenav', function($http, $location, UserService, VolunteerService, $routeParams, $mdSidenav) {
     console.log('OverviewController created');
     var self = this;
     self.allVolunteers = VolunteerService.allVolunteers;
     self.currentPage = "overview";
     // self.showNav = true;
+
+    // self.openLeftMenu = function () {
+    //     $mdSidenav('left').toggle();
+    //   };
 
     self.volunteerSearchObject = { //interests object to use for the filter search
         all: true,
