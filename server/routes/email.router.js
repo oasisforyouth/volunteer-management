@@ -12,6 +12,7 @@ router.post('/', (req, res, next) => {
     // create reusable transporter object using the default SMTP transport
     // if (req.isAuthenticated()) {
     //     console.log('logged in email', req.user);
+    console.log('email post: ', req.body);
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -24,7 +25,7 @@ router.post('/', (req, res, next) => {
     let mailOptions = {
         from: '"Administrator"' + process.env.DB_EMAIL, // sender address  
         // THIS WILL BE JESS' EMAIL ADDRESS
-        to: process.env.DB_PM_EMAIL, // list of receivers 
+        to: process.env.DB_EMAIL, // list of receivers 
         subject: 'Volunteer Application', // Subject line
         // JESS CAN PERSONALIZE THIS IF SHE WOULD LIKE US TO
         text: 'A new Volunteer application has been submitted', // plain text body

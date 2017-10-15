@@ -1,7 +1,7 @@
 myApp.service('VolunteerService', function($http, $location) {
     // console.log('volunteer service loaded');
     var self = this;
-    
+
     self.allVolunteers = { list: [] };
 
     self.volunteerDetail = { list: {} };
@@ -24,9 +24,10 @@ myApp.service('VolunteerService', function($http, $location) {
         career_jobs_skill: 'Career Training'
     }
 
-    self.emailProgramManager = function() {
-        $http.post('/email').then(function(response) {
-            console.log('email sent', response.data);
+    self.emailProgramManager = function(newVolunteer) {
+        console.log('email route: ', newVolunteer.data.data);
+        $http.post('/email', newVolunteer).then(function(response) {
+            // console.log('email sent', response.data.data);
         });
     };
 
@@ -34,19 +35,19 @@ myApp.service('VolunteerService', function($http, $location) {
         console.log('new volunteer object', newVolunteer);
         $http.post('/volunteer', newVolunteer).then(function(response) {
             console.log('completed the post route', response);
-            self.emailProgramManager();
+            self.emailProgramManager(response);
         });
     };
 
-    self.getVolunteerDetail = function(currentVolunteerId){
+    self.getVolunteerDetail = function(currentVolunteerId) {
         console.log('Hit volunteer detail request');
-        $http.get('/volunteer/'+currentVolunteerId).then(function(response){
+        $http.get('/volunteer/' + currentVolunteerId).then(function(response) {
             console.log('response from current volunteer get', response.data);
             self.volunteerDetail.list = response.data[0];
         })
     }
-    self.updateVolunteer = function(updatedVolunteer){
-        $http.put('/volunteer/update', updatedVolunteer).then(function(response){
+    self.updateVolunteer = function(updatedVolunteer) {
+        $http.put('/volunteer/update', updatedVolunteer).then(function(response) {
             self.getVolunteerDetail();
         })
     }
@@ -54,21 +55,21 @@ myApp.service('VolunteerService', function($http, $location) {
         $http.get('/volunteer').then(function(response) {
             // console.log('all volunteers from server', response.data);
             self.allVolunteers.list = response.data;
-        
-            for (var i = 0; i < self.allVolunteers.list.length; i++) {//loop through allVolunteers.list array
-                
+
+            for (var i = 0; i < self.allVolunteers.list.length; i++) { //loop through allVolunteers.list array
+
                 var orientation = new Date(self.allVolunteers.list[i].orientation_date);
                 var today = new Date();
                 var months;
                 months = (today.getFullYear() - orientation.getFullYear()) * 12;
                 months -= orientation.getMonth() + 1;
                 months += today.getMonth();
-                if(months < 0){
+                if (months < 0) {
                     months = 0;
                 }
                 self.allVolunteers.list[i].months = months;
                 console.log('months data', self.allVolunteers.list[i].months);
-                
+
                 var volunteerInterests = ''; //variable to hold a list of volunteer interests as a string
                 for (var property in self.allVolunteers.list[i]) { // for in loop goes through properties in each object of the allVolunteers.list array
                     if (volunteerInterestsObject[property]) { // is the property (from self.allVolunteers) also in volunteerInterestsObject      
@@ -77,7 +78,7 @@ myApp.service('VolunteerService', function($http, $location) {
                         }
                     }
                 }
-                volunteerInterests = volunteerInterests.substring(0, volunteerInterests.length - 2)// removes the comma and space from the end of the string 
+                volunteerInterests = volunteerInterests.substring(0, volunteerInterests.length - 2) // removes the comma and space from the end of the string 
                 self.allVolunteers.list[i].volunteerInterests = volunteerInterests; //sets a new property for each object within allVolunteers.list array equal to the new string
             }
             for (var i = 0; i < self.allVolunteers.list.length; i++) {
