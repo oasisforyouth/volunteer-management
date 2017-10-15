@@ -48,7 +48,7 @@ myApp.service('VolunteerService', function($http, $location) {
     }
     self.updateVolunteer = function(updatedVolunteer) {
         $http.put('/volunteer/update', updatedVolunteer).then(function(response) {
-            self.getVolunteerDetail();
+            self.getVolunteerDetail(updatedVolunteer.id);
         })
     }
     self.getAllVolunteers = function() {

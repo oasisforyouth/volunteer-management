@@ -14,9 +14,9 @@
                             <th md-column style="text-align:right"></th>
                         </tr>
                     </thead>
-                    <tbody md-body>
-                        <tr class="hoverRow" md-row ng-repeat="user in vm.allUsers.list" data-ng-class="{danger:!entry.active}">
-                            <td md-cell><span data-ng-hide="editMode">{{user.first_name}} {{user.last_name}}</span>
+                    <tbody>
+                        <tr data-ng-repeat="user in vm.allUsers.list" data-ng-class="{danger:!entry.active}">
+                            <td><span data-ng-hide="editMode">{{user.first_name}} {{user.last_name}}</span>
                                 <input type="text" data-ng-show="editMode" data-ng-model="user.first_name" placeholder="First Name" data-ng-required /><br>
                                 <input type="text" data-ng-show="editMode" data-ng-model="user.last_name" placeholder="Last Name" data-ng-required /></td>
                             <td md-cell><span data-ng-hide="editMode">{{user.position}}</span>
