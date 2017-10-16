@@ -114,8 +114,6 @@ router.put('/:id', function(req, res, next) {
                                                                     // console.log("Error connecting post: ", err);
                                                                     res.sendStatus(500);
                                                                 } else {
-
-
                                                                     client.query("INSERT INTO users (first_name, last_name, user_name, email, password, position) VALUES ($1, $2, $3, $4, $5, $6);", [saveUser.firstname, saveUser.lastname, saveUser.username, saveUser.email, saveUser.password, saveUser.position], function(err, result) {
                                                                         console.log('result: ', result.rows);
                                                                         client.end();
@@ -131,18 +129,12 @@ router.put('/:id', function(req, res, next) {
                                                                 }
                                                             });
                                                         }
-                                                        // res.sendStatus(201);
-
                                                     });
-
                                             }
-
                                         });
                                     }
                                 })
-
                         }); // end pool.connect
-
                     }
                 });
         }); // end pool . connect

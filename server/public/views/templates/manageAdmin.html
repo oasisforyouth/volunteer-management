@@ -8,15 +8,15 @@
                 <table md-table ng-class="{'hidden': vm.toggle}">
                     <thead md-head>
                         <tr md-row>
-                            <th md-column style="text-align:right"><u>Name</u></th>
-                            <th md-column style="text-align:right"><u>Position</u></th>
-                            <th md-column style="text-align:right"><u>Email Address</u></th>
+                            <th md-column style="text-align:left"><u>Name</u></th>
+                            <th md-column style="text-align:left"><u>Position</u></th>
+                            <th md-column style="text-align:left"><u>Email Address</u></th>
                             <th md-column style="text-align:right"></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr data-ng-repeat="user in vm.allUsers.list" data-ng-class="{danger:!entry.active}">
-                            <td><span data-ng-hide="editMode">{{user.first_name}} {{user.last_name}}</span>
+                            <td md-cell><span data-ng-hide="editMode">{{user.first_name}} {{user.last_name}}</span>
                                 <input type="text" data-ng-show="editMode" data-ng-model="user.first_name" placeholder="First Name" data-ng-required /><br>
                                 <input type="text" data-ng-show="editMode" data-ng-model="user.last_name" placeholder="Last Name" data-ng-required /></td>
                             <td md-cell><span data-ng-hide="editMode">{{user.position}}</span>
@@ -46,6 +46,9 @@
                     Add New Admin
                 </md-button>
                 <!-- PASSWORD RESET BUTTON-->
+                <!-- <div ng-if="vm.status" id="status">
+                    <b layout="row" layout-align="center center" class="md-padding">{{vm.status}}</b>
+                </div> -->
                 <!-- <md-button class="md-primary md-raised" ng-click="vm.resetPrompt($event)">
                     Reset Password
                 </md-button> -->

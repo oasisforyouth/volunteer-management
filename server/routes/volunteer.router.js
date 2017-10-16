@@ -2,8 +2,7 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var pool = require('../modules/pool.js')
-let nodemailer = require('nodemailer');
-
+var nodemailer = require('nodemailer');
 
 router.post('/', function(req, res) {
     let volunteer = req.body;
@@ -31,23 +30,18 @@ router.post('/', function(req, res) {
                                 pass: process.env.DB_PASS
                             }
                         });
-                        // setup email data with unicode symbols
-                        let mailOptions = {
-                            from: '"Administrator"' + process.env.DB_EMAIL, // sender address  
-                            // THIS WILL BE JESS' EMAIL ADDRESS
-                            to: process.env.DB_EMAIL, // list of receivers 
-                            subject: 'Volunteer Application', // Subject line
-                            // JESS CAN PERSONALIZE THIS IF SHE WOULD LIKE US TO
-                            text: volunteer.firstName + ' ' + volunteer.lastName + ' has submitted a volunteer application.', // plain text body
+                        var mailOptions = {
+                            from: '"Administrator"' + process.env.DB_EMAIL,
+                            to: process.env.DB_EMAIL,
+                            subject: 'Volunteer Application',
+                            text: volunteer.firstName + ' ' + volunteer.lastName + ' has submitted a volunteer application.'
                         };
-
-                        // send mail with defined transport object
-                        transporter.sendMail(mailOptions, (error, info) => {
+                        transporter.sendMail(mailOptions, function(error, info) {
                             if (error) {
-                                return console.log(error);
+                                return console.log(error)
                             }
                             console.log('Message sent: %s', info.messageId);
-                            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+                            console.log('Preview URL: %s', nodemailer.getTestMessageURL(info));
                         });
                     }
                 }

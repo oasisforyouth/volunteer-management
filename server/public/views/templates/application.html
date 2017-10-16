@@ -239,7 +239,7 @@
                 <div flex-gt-xs="">
                     <md-datepicker ng-model="vm.newApplication.orientationDate" md-placeholder="Enter date"></md-datepicker>
                 </div>
-                <button ng-click='vm.postApplication();'>Submit</button>
+                <md-button ng-click='vm.postApplication(); vm.showAlert($event)' class="md-raised md-primary">Submit</md-button>
                 <!-- build ng-model to create object -->
 
             </div>

@@ -86,6 +86,7 @@ myApp.controller('ApplicationController', ['NgMap', '$http', '$location', 'UserS
                 .targetEvent(ev)
             )
             .finally(function() {
+                
                 window.location.replace('http://www.oasisforyouth.org/')
             })
     };

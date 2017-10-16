@@ -10,9 +10,9 @@ html {
     color: orange;
 }
 
-.instructions{
+/* .instructions{
     box-shadow: 10px 10px 5px #888888;
-}
+} */
 
 /* overview page styling */
 
@@ -27,6 +27,10 @@ html {
 #tableCell:hover { 
    overflow: visible;
    white-space: pre-wrap;
+}
+
+.loginCard {
+    margin-top: 40px;
 }
 
 #header {
@@ -66,9 +70,9 @@ html {
 }
 /* end of overview styling */
 
-.navbar{
+/* .navbar{
     box-shadow: 10px 10px 5px #888888;
-}
+} */
 
 .navbar {
     background-color: #104b86;
@@ -129,7 +133,7 @@ html {
 #adminButton {
     font-weight: bold;
     color: white;
-    background-color: #f96413;
+    background-color: #F99930;
     width: 20%;
     height: 75px;
 }
@@ -218,7 +222,7 @@ md-nav-bar.md-default-theme .md-button._md-nav-button.md-unselected, md-nav-bar 
 .login {
     height: 30%;
     width: 300px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 20px;
     padding: 10px;
 }
