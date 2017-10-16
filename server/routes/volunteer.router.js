@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var pool = require('../modules/pool.js')
-
+var nodemailer = require('nodemailer');
 
 router.post('/', function (req, res) {
     let volunteer = req.body;
@@ -22,7 +22,26 @@ router.post('/', function (req, res) {
                         console.log('error making query', errormakingquery);
                         res.sendStatus(500);
                     } else {
-                        res.sendStatus(200);
+                        var transporter = nodemailer.createTransport({
+                            service: 'gmail',
+                            auth: {
+                                user: process.env.DB_USER,
+                                pass: process.env.DB_PASS
+                            }
+                        });
+                        var mailOptions = {
+                            from: '"Administrator"' + process.env.DB_EMAIL,
+                            to: process.env.DB_EMAIL,
+                            subject: 'Volunteer Application',
+                            text: volunteer.firstName + ' ' + volunteer.lastName + ' has submitted a volunteer application.'
+                        };
+                        transporter.sendMail(mailOptions, function(error, info){
+                            if(error) {
+                                return console.log(error)
+                            } 
+                            console.log('Message sent: %s', info.messageId);
+                            console.log('Preview URL: %s', nodemailer.getTestMessageURL(info));
+                        });
                     }
                 }
             )

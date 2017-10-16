@@ -24,17 +24,17 @@ myApp.service('VolunteerService', function($http, $location) {
         career_jobs_skill: 'Career Training'
     }
 
-    self.emailProgramManager = function() {
-        $http.post('/email').then(function(response) {
-            console.log('email sent', response.data);
-        });
-    };
+    // self.emailProgramManager = function() {
+    //     $http.post('/email').then(function(response) {
+    //         console.log('email sent', response.data);
+    //     });
+    // };
 
     self.postNewVolunteer = function(newVolunteer) {
         console.log('new volunteer object', newVolunteer);
         $http.post('/volunteer', newVolunteer).then(function(response) {
             console.log('completed the post route', response);
-            self.emailProgramManager();
+            // self.emailProgramManager();
         });
     };
 

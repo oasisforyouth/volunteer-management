@@ -2,10 +2,12 @@
 
 
 <div flexbox-parent="flexbox-parent" layout="row" layout-align="center center">
-    <md-content>
-        <h1 class="lead" layout="row" layout-align="center center">Administrator Sign Up</h1>
+
+
         <div>
+
             <form class="user">
+                <h3 class="lead" layout="row" layout-align="center center">Administrator Sign Up</h3>
                 <md-input-container class="md-block">
                     <label for="firstName">First Name</label>
                     <input required name="firstName" ng-model="vm.user.firstName">
@@ -41,7 +43,7 @@
 
                 <md-input-container class="md-block">
                     <label for="password">Password</label>
-                    <input required name="password" ng-model="vm.user.password">
+                    <input required type="password" name="password" ng-model="vm.user.password">
                     <div ng-messages="projectForm.password.$error">
                         <div ng-message="required">This is required.</div>
                     </div>
@@ -60,5 +62,5 @@
                 </section>
             </form>
         </div>
-    </md-content>
+
 </div>
