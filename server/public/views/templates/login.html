@@ -1,8 +1,10 @@
 <div class="container" flexbox-parent="flexbox-parent" layout="row" layout-align="center center">
-    <md-content>
-        <h1 class="lead" layout="row" layout-align="center center">Login</h1>
+    
+        
         <h1 class="lead alert alert-danger" role="alert" ng-if="vm.message != ''">{{vm.message}}</h2>
+            <md-card class=loginCard>
             <form class="login" ng-submit="vm.login()">
+                    <h3 class="lead" layout="row" layout-align="center center">Login</h3>
                 <div>
                     <md-input-container class="md-block">
                         <label for="username">Username:</label>
@@ -18,5 +20,6 @@
                     <md-button class="md-raised md-primary" type="submit" name="submit" value="Log In" />Submit</md-button>
                 </div>
             </form>
-    </md-content>
+        </md-card>
+    
 </div>
