@@ -20,10 +20,9 @@
                 <input type="text" ng-model="vm.newApplication.maidenName" placeholder="Maiden">
             </md-input-container>
         </div>
-        <md-input-container >
+        <md-input-container>
             <label class="md-block"> Address:  </label>
-            <input places-auto-complete component-restrictions="{country:'us'}" type="text" required name="address" ng-model="vm.newApplication.address"
-                placeholder="ex.123 Oasis Ave." size="50">
+            <input places-auto-complete component-restrictions="{country:'us'}" type="text" required name="address" ng-model="vm.newApplication.address" placeholder="ex.123 Oasis Ave." size="50">
             <p></p>
         </md-input-container>
         <md-input-container>
@@ -36,7 +35,7 @@
             <h4 layout-align="center center">Preferred contact method:</h4>
             <md-radio-group ng-model="vm.newApplication.preferredContact">
                 <md-radio-button value="Primary Phone" class="md-primary"></md-radio-button>
-                <md-input-container >
+                <md-input-container>
 
                     <label for="Primary phone">Primary Phone</label>
                     <input required type="text" placeholder="ex.555-867-5309" ng-model="vm.newApplication.primaryPhone">
@@ -59,20 +58,16 @@
             <div>
                 <h4>Emergency Contact:</h4>
                 <md-input-container class="md-block">
-                    <label class="boldstuff">Name:  </label><input type="text" required ng-model="vm.newApplication.emergencyName"
-                        placeholder="ex.Pat Doe">
+                    <label class="boldstuff">Name:  </label><input type="text" required ng-model="vm.newApplication.emergencyName" placeholder="ex.Pat Doe">
                 </md-input-container>
                 <md-input-container class="md-block">
-                    <label class="boldstuff">Address:  </label><input places-auto-complete component-restrictions="{country:'us'}"
-                        type="text" required ng-model="vm.newApplication.emergencyAddress" placeholder="ex.123 4th St." size="50">
+                    <label class="boldstuff">Address:  </label><input places-auto-complete component-restrictions="{country:'us'}" type="text" required ng-model="vm.newApplication.emergencyAddress" placeholder="ex.123 4th St." size="50">
                 </md-input-container>
                 <md-input-container class="md-block">
-                    <label class="boldstuff">Daytime Phone:  </label><input type="text" required ng-model="vm.newApplication.emergencyPhone"
-                        placeholder="ex.123-456-7890">
+                    <label class="boldstuff">Daytime Phone:  </label><input type="text" required ng-model="vm.newApplication.emergencyPhone" placeholder="ex.123-456-7890">
                 </md-input-container>
                 <md-input-container class="md-block">
-                    <label class="boldstuff">Relationship:  </label><input type="text" required ng-model="vm.newApplication.emergencyRelationship"
-                        placeholder="ex.friend, cousin, spouse">
+                    <label class="boldstuff">Relationship:  </label><input type="text" required ng-model="vm.newApplication.emergencyRelationship" placeholder="ex.friend, cousin, spouse">
                 </md-input-container>
             </div>
             <div>
@@ -87,12 +82,10 @@
             <div>
                 <h4 layout-align="center center">Personal References(Must have known for at least two years): </h4>
                 <md-input-container class="md-block">
-                    <label class="boldstuff">Name:  </label><input size="35" type="text" placeholder="First Last" required
-                        ng-model="vm.newApplication.reference2Name"></p>
+                    <label class="boldstuff">Name:  </label><input size="35" type="text" placeholder="First Last" required ng-model="vm.newApplication.reference2Name"></p>
                 </md-input-container>
                 <md-input-container class="md-block">
-                    <label class="boldstuff">Address:  </label><input places-auto-complete component-restrictions="{country:'us'}"
-                        size="50" type="text" placeholder="Address" required ng-model="vm.newApplication.reference2Address"></p>
+                    <label class="boldstuff">Address:  </label><input places-auto-complete component-restrictions="{country:'us'}" size="50" type="text" placeholder="Address" required ng-model="vm.newApplication.reference2Address"></p>
                 </md-input-container>
                 <md-input-container class="md-block">
                     <label class="boldstuff">Phone:  </label><input type="text" placeholder="Phone" required ng-model="vm.newApplication.reference2Phone"></p>
@@ -104,8 +97,7 @@
                     <label class="boldstuff">Years Known:  </label><input type="text" placeholder="Years" required ng-model="vm.newApplication.reference2YearsKnown"></p>
                 </md-input-container>
                 <md-input-container class="md-block">
-                    <label class="boldstuff">Relationship:  </label><input type="text" placeholder="ex.Boss, Peer, Employee"
-                        required ng-model="vm.newApplication.reference2Relationship"></p>
+                    <label class="boldstuff">Relationship:  </label><input type="text" placeholder="ex.Boss, Peer, Employee" required ng-model="vm.newApplication.reference2Relationship"></p>
                 </md-input-container>
             </div>
             <h4 layout-align="center center">Second Personal Reference: </h4>
@@ -114,8 +106,7 @@
                     <p><label class="boldstuff">Name:  </label><input type="text" placeholder="First Last" required ng-model="vm.newApplication.reference1Name"></p>
                 </md-input-container>
                 <md-input-container class="md-block">
-                    <p><label class="boldstuff">Address:  </label><input places-auto-complete component-restrictions="{country:'us'}"
-                            size="50" type="text" placeholder="Address" required ng-model="vm.newApplication.reference1Address"></p>
+                    <p><label class="boldstuff">Address:  </label><input places-auto-complete component-restrictions="{country:'us'}" size="50" type="text" placeholder="Address" required ng-model="vm.newApplication.reference1Address"></p>
                 </md-input-container>
                 <md-input-container class="md-block">
                     <p><label class="boldstuff">Phone:  </label><input type="text" placeholder="Phone" required ng-model="vm.newApplication.reference1Phone"></p>
@@ -127,8 +118,7 @@
                     <p><label class="boldstuff">Years Known:  </label><input type="text" placeholder="Years" required ng-model="vm.newApplication.reference1YearsKnown"></p>
                 </md-input-container>
                 <md-input-container class="md-block">
-                    <p><label class="boldstuff">Relationship:  </label><input type="text" placeholder="ex.Boss, Peer, Employee"
-                            required ng-model="vm.newApplication.reference1Relationship"></p>
+                    <p><label class="boldstuff">Relationship:  </label><input type="text" placeholder="ex.Boss, Peer, Employee" required ng-model="vm.newApplication.reference1Relationship"></p>
                 </md-input-container>
             </div>
             <p>
@@ -225,7 +215,7 @@
         <div>
             <p>
                 <aria-label class="boldstuff">Volunteer Opportunities: </aria-label><br></p>
-            <md-checkbox ng-model="vm.newApplication.dropinOpportunity" ><label>Drop-in Center Shift Volunteer</label><br/>
+            <md-checkbox ng-model="vm.newApplication.dropinOpportunity"><label>Drop-in Center Shift Volunteer</label><br/>
             </md-checkbox>
             <md-checkbox ng-model="vm.newApplication.tutorOpportunity"><label>Tutor </label><br/>
             </md-checkbox>

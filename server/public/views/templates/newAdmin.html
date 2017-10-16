@@ -4,63 +4,63 @@
 <div flexbox-parent="flexbox-parent" layout="row" layout-align="center center">
 
 
-        <div>
+    <div>
 
-            <form class="user">
-                <h3 class="lead" layout="row" layout-align="center center">Administrator Sign Up</h3>
-                <md-input-container class="md-block">
-                    <label for="firstName">First Name</label>
-                    <input required name="firstName" ng-model="vm.user.firstName">
-                    <div ng-messages="projectForm.firstName.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
+        <form class="user">
+            <h3 class="lead" layout="row" layout-align="center center">Administrator Sign Up</h3>
+            <md-input-container class="md-block">
+                <label for="firstName">First Name</label>
+                <input required name="firstName" ng-model="vm.user.firstName">
+                <div ng-messages="projectForm.firstName.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
 
 
-                <md-input-container class="md-block">
-                    <label for="lastName">Last Name</label>
-                    <input required name="lastName" ng-model="vm.user.lastName">
-                    <div ng-messages="projectForm.lastName.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
+            <md-input-container class="md-block">
+                <label for="lastName">Last Name</label>
+                <input required name="lastName" ng-model="vm.user.lastName">
+                <div ng-messages="projectForm.lastName.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
 
-                <md-input-container class="md-block">
-                    <label for="position">Position</label>
-                    <input required name="position" ng-model="vm.user.position">
-                    <div ng-messages="projectForm.position.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
+            <md-input-container class="md-block">
+                <label for="position">Position</label>
+                <input required name="position" ng-model="vm.user.position">
+                <div ng-messages="projectForm.position.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
 
-                <md-input-container class="md-block">
-                    <label for="username">Username</label>
-                    <input required name="username" ng-model="vm.user.username">
-                    <div ng-messages="projectForm.username.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
+            <md-input-container class="md-block">
+                <label for="username">Username</label>
+                <input required name="username" ng-model="vm.user.username">
+                <div ng-messages="projectForm.username.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
 
-                <md-input-container class="md-block">
-                    <label for="password">Password</label>
-                    <input required type="password" name="password" ng-model="vm.user.password">
-                    <div ng-messages="projectForm.password.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
+            <md-input-container class="md-block">
+                <label for="password">Password</label>
+                <input required type="password" name="password" ng-model="vm.user.password">
+                <div ng-messages="projectForm.password.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
 
-                <md-input-container class="md-block">
-                    <label for="email">Email</label>
-                    <input required type="email" ng-model="vm.user.email">
-                    <div ng-messages="projectForm.email.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
+            <md-input-container class="md-block">
+                <label for="email">Email</label>
+                <input required type="email" ng-model="vm.user.email">
+                <div ng-messages="projectForm.email.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
 
-                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-                    <md-button class="md-raised md-primary" ng-click="vm.registerUser(user)">Submit</md-button>
-                </section>
-            </form>
-        </div>
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button class="md-raised md-primary" ng-click="vm.registerUser(user)">Submit</md-button>
+            </section>
+        </form>
+    </div>
 
 </div>
