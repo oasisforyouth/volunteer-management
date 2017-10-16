@@ -97,38 +97,38 @@ router.put('/:id', function(req, res, next) {
                                                     function(err, result) {
                                                         client.end();
                                                         console.log('result: ', result);
-                                                        if (adminId == result.rows[0].md5) {
-                                                            // console.log('HOOORAY');
-                                                            pool.connect(function(err, client, done) {
-                                                                var saveUser = {
-                                                                    firstname: req.body.firstName,
-                                                                    lastname: req.body.lastName,
-                                                                    username: req.body.username,
-                                                                    email: req.body.email,
-                                                                    password: encryptLib.encryptPassword(req.body.password),
-                                                                    position: req.body.position,
-                                                                };
-                                                                console.log('saveUser: ', saveUser)
+                                                        // if (adminId == result.rows[0].md5) {
+                                                        // console.log('HOOORAY');
+                                                        pool.connect(function(err, client, done) {
+                                                            var saveUser = {
+                                                                firstname: req.body.firstName,
+                                                                lastname: req.body.lastName,
+                                                                username: req.body.username,
+                                                                email: req.body.email,
+                                                                password: encryptLib.encryptPassword(req.body.password),
+                                                                position: req.body.position,
+                                                            };
+                                                            console.log('saveUser: ', saveUser)
 
-                                                                if (err) {
-                                                                    // console.log("Error connecting post: ", err);
-                                                                    res.sendStatus(500);
-                                                                } else {
-                                                                    client.query("INSERT INTO users (first_name, last_name, user_name, email, password, position) VALUES ($1, $2, $3, $4, $5, $6);", [saveUser.firstname, saveUser.lastname, saveUser.username, saveUser.email, saveUser.password, saveUser.position], function(err, result) {
-                                                                        console.log('result: ', result.rows);
-                                                                        client.end();
+                                                            if (err) {
+                                                                // console.log("Error connecting post: ", err);
+                                                                res.sendStatus(500);
+                                                            } else {
+                                                                client.query("INSERT INTO users (first_name, last_name, user_name, email, password, position) VALUES ($1, $2, $3, $4, $5, $6);", [saveUser.firstname, saveUser.lastname, saveUser.username, saveUser.email, saveUser.password, saveUser.position], function(err, result) {
+                                                                    console.log('result: ', result.rows);
+                                                                    client.end();
 
-                                                                        if (err) {
-                                                                            console.log("Error inserting data: ", err);
-                                                                            res.sendStatus(500);
-                                                                        } else {
-                                                                            res.sendStatus(201);
-                                                                        }
+                                                                    if (err) {
+                                                                        console.log("Error inserting data: ", err);
+                                                                        res.sendStatus(500);
+                                                                    } else {
+                                                                        res.sendStatus(201);
+                                                                    }
 
-                                                                    });
-                                                                }
-                                                            });
-                                                        }
+                                                                });
+                                                            }
+                                                        });
+                                                        // }
                                                     });
                                             }
                                         });
