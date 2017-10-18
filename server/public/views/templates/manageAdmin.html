@@ -3,6 +3,7 @@
     <center>
         <h3>Manage Administrators</h3>
 
+
 <md-card id="adminTable">
     <md-table-container>
         <table  md-table ng-class="{'hidden': vm.toggle}">
@@ -25,15 +26,15 @@
                         <input type="text" data-ng-show="editMode" data-ng-model="user.email" placeholder="Email Address" data-ng-required /></td>
                     <td md-cell>
 
-                        <button type="submit" data-ng-hide="editMode" data-ng-click="editMode = true; editAppKey(entry)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect md-18"><i class="material-icons">create</i></button>
-                        <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; mc.updateAdmin(user)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">save</i></button>
-                        <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; cancel()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">cancel</i></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </md-table-container>
-</md-card>
+                                <button type="submit" data-ng-hide="editMode" data-ng-click="editMode = true; editAppKey(entry)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect md-18"><i class="material-icons">create</i></button>
+                                <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; mc.updateAdmin(user)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">save</i></button>
+                                <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; cancel()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">cancel</i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+        </md-card>
 
         <!-- ADD NEW ADMIN PROMPT / BUTTON  -->
         <div>
@@ -61,7 +62,7 @@
 
 
 
-<!-- old mdl style table -->
+    <!-- old mdl style table -->
 
     <!-- <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" "table table-hover" ng-class="{'hidden': vm.toggle}">
             <thead>
