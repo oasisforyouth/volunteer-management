@@ -1,12 +1,12 @@
-<html>
+
 <title class="boldstuff">Volunteer Application</title>
 <h3 class="lead" layout="row" layout-align="center center">Volunteer Sign Up</h3>
-
+<md-card class="application">
 <form class="volunteerform">
     <div layout-align="center center">
         <md-checkbox ng-model="vm.newApplication.over21"><label>Are you 21 or Over?</label>
-        </md-checkbox>
-        <div>
+        </md-checkbox> 
+        <div> 
             <md-input-container>
                 <input required name="firstName" type="text" ng-model="vm.newApplication.firstName" placeholder="First">
             </md-input-container>
@@ -80,7 +80,7 @@
                 </md-checkbox>
             </div>
             <div>
-                <h4 layout-align="center center">Personal References(Must have known for at least two years): </h4>
+                <h4 layout-align="center center">Personal References (Must have known for at least two years): </h4>
                 <md-input-container class="md-block">
                     <label class="boldstuff">Name:  </label><input size="35" type="text" placeholder="First Last" required ng-model="vm.newApplication.reference2Name"></p>
                 </md-input-container>
@@ -165,7 +165,7 @@
             </md-checkbox>
         </div>
         <div>
-            <label class="boldstuff">Volunteer experience(organization, duties, dates): </label>
+            <label class="boldstuff">Volunteer experience (organization, duties, dates): </label>
             <br><textarea rows="" cols="" type="text" placeholder="Big Brother, Coordinator, 5/14-9/16" ng-model="vm.newApplication.volunteerExperience"></textarea>
         </div>
         </br>
@@ -215,34 +215,38 @@
         <div>
             <p>
                 <aria-label class="boldstuff">Volunteer Opportunities: </aria-label><br></p>
-            <md-checkbox ng-model="vm.newApplication.dropinOpportunity"><label>Drop-in Center Shift Volunteer</label><br/>
+
+            <md-checkbox ng-model="vm.newApplication.dropinOpportunity" ><label>Drop-in Center</label><br/>
             </md-checkbox>
             <md-checkbox ng-model="vm.newApplication.tutorOpportunity"><label>Tutor </label><br/>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.languageOpportunity"><label>Administration(webmaster, technology, data entry, telephone, bookkeeping)</label><br/>
+            <md-checkbox ng-model="vm.newApplication.languageOpportunity"><label>Administration</label><br/>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.marketingOpportunity"><label>Marketing and Outreach(and social media)</label><br/>
+            <md-checkbox ng-model="vm.newApplication.marketingOpportunity"><label>Marketing and Outreach</label><br/>
             </md-checkbox>
-            <md-checkbox ng-model="vm.newApplication.suppliesDonationsOpportunity"><label>Supplies/Donations Drives/Donation Coordination</label><br/>
+            <md-checkbox ng-model="vm.newApplication.suppliesDonationsOpportunity"><label>Supplies/Donations</label><br/>
             </md-checkbox>
             <md-checkbox ng-model="vm.newApplication.fundraisingEventsOpportunity"><label>Fundraising and Events</label><br/>
+            </md-checkbox>
+            <md-checkbox ng-model="vm.newApplication.transportationOpportunity"><label>Transportation</label><br/>
             </md-checkbox>
             <md-checkbox ng-model="vm.newApplication.otherOpportunity"><label>Other</label><br/>
             </md-checkbox>
 
-        </div>
+        </div></br>
         <div>
             <md-checkbox required ng-model="vm.newApplication.attendedOrientation"><label class="boldstuff">Attended Orientation:  </label><br/>
         </div>
-        <md-content class="datepickerdemoBasicUsage">
+        <!-- <md-content class="datepickerdemoBasicUsage"> -->
             <div layout-gt-xs="row">
                 <div flex-gt-xs="">
                     <md-datepicker ng-model="vm.newApplication.orientationDate" md-placeholder="Enter date"></md-datepicker>
                 </div>
-                <md-button ng-click='vm.postApplication(); vm.showAlert($event)' class="md-raised md-primary">Submit</md-button>
-                <!-- build ng-model to create object -->
-
             </div>
-</form>
+            <!-- </br> -->
+                <div layout="row" layout-align="center center"><md-button   id="appSubmitButton" ng-click='vm.postApplication(); vm.showAlert($event)' class="md-raised md-primary">Submit</md-button>
+                </div><!-- build ng-model to create object  -->
 
-</html
+            
+</form>
+</md-card>

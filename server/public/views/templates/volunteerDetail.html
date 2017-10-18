@@ -5,7 +5,7 @@
     <div layout="row" class="container">
         <div flex layout-padding>
             <h2 align="center">{{vm.volunteerDetail.list.first_name}} {{vm.volunteerDetail.list.last_name}}
-                <md-button align="right" ng-click='vm.udpateVolunteer();'>Save</md-button>
+                <md-button class="md-primary md-raised" align="right" ng-click='vm.udpateVolunteer(); vm.showAlert($event)'>Save</md-button>
             </h2>
 
         </div>
@@ -158,7 +158,7 @@
             <md-card layout-fill>
                 <md-card-title>
                     <md-card-title-text>
-                        <h5>HOBBIES/SKILLS/INTERESTS</h5>
+                        <h5>SKILLS</h5>
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
@@ -168,7 +168,7 @@
                     <md-checkbox ng-model=vm.volunteerDetail.list.career_jobs_skill><label>CAREER/JOBS</label></md-checkbox>
                     <br>
                     <md-checkbox ng-model='vm.volunteerDetail.list.art_skill'><label>ART</label></md-checkbox><br>
-                    <md-input-container><label>OTHER HOBBIES/SKILLS: </label><textarea ng-model=vm.volunteerDetail.list.additional_hobbies></textarea></md-input-container>
+                    <md-input-container><label>OTHER SKILLS: </label><textarea ng-model=vm.volunteerDetail.list.additional_hobbies></textarea></md-input-container>
                 </md-card-content>
             </md-card>
         </div>
@@ -177,7 +177,7 @@
             <md-card layout-fill>
                 <md-card-title>
                     <md-card-title-text>
-                        <h5>VOLUNTEER INTERESTS </h5>
+                        <h5>INTERESTS </h5>
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
@@ -191,6 +191,8 @@
                     <md-checkbox ng-model=vm.volunteerDetail.list.supplies_donations_opportunity><label>SUPPLIES/DONATIONS</label></md-checkbox>
                     <br>
                     <md-checkbox ng-model=vm.volunteerDetail.list.fundraising_events_opportunity><label>FUNDRAISING AND EVENTS</label></md-checkbox><br>
+                    <md-checkbox ng-model=vm.volunteerDetail.list.transportation_opportunity><label>Transportation</label></md-checkbox><br>
+                    
                     <md-input-container><label>OTHER: </label><input type='text' ng-model=vm.volunteerDetail.list.other_opportunity></md-input-container>
                 </md-card-content>
             </md-card>

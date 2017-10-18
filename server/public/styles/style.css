@@ -103,10 +103,22 @@ html {
     margin-top: 10px;
 }
 
+md-card{
+    background-color: #F8F4EF;
+}
 
+#adminTable{
+    width: 80%;
+}
 
 .boldstuff {
     font-weight: bold;
+}
+
+.application{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 40px;
 }
 
 .volunteerform {
@@ -114,8 +126,12 @@ html {
     padding-right: 30px;
     padding-bottom: 50px;
     padding-left: 80px;
+    
 }
 
+#appSubmitButton {
+    width: 25%;
+}
 
 .container p {
     margin-top: 14px;
