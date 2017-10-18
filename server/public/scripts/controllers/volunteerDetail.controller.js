@@ -1,5 +1,5 @@
 
-myApp.controller('VolunteerDetailController', ['VolunteerService', 'UserService', '$routeParams', 'TrainingService', '$http', '$location','$mdDialog', function (VolunteerService, UserService, $routeParams, TrainingService, $http, $location,$mdDialog ) {
+myApp.controller('VolunteerDetailController', ['VolunteerService', 'UserService', '$routeParams', 'TrainingService', '$http', '$location', '$mdDialog', function (VolunteerService, UserService, $routeParams, TrainingService, $http, $location, $mdDialog) {
     console.log('VolunteerDetailController created');
     var self = this;
     self.trainings = TrainingService.volunteerTrainings;
@@ -28,5 +28,22 @@ myApp.controller('VolunteerDetailController', ['VolunteerService', 'UserService'
                 .ok('Okay')
                 .targetEvent(ev)
         )
+    }
+    self.deleteVolunteer = function (ev) {
+        let confirm = $mdDialog.confirm()
+            .parent(angular.element(document.querySelector('#popupContainer')))
+            .clickOutsideToClose(true)
+            .title('Delete volunteer?')
+            .textContent('If you delete, all of this volunteers data will be lost.')
+            .ariaLabel('Delete Dialog')
+            .ok('Delete')
+            .cancel('Do Not Delete')
+            .targetEvent(ev)
+        $mdDialog.show(confirm).then(function () {
+            console.log('delete confirmed')
+            VolunteerService.deleteVolunteer($routeParams.id);
+        }, function(){
+            console.log('delete cancelled')
+        })
     }
 }]);
