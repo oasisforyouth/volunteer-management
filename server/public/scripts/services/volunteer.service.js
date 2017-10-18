@@ -32,9 +32,9 @@ myApp.service('VolunteerService', function($http, $location) {
     };
 
     self.deleteVolunteer = function(volunteerId){
-        $http.delete('/voluteer/delete/'+ volunteerId).then(function(response){
+        $http.delete('/volunteer/delete/'+ volunteerId).then(function(response){
             console.log('response from delete route,', response)
-            
+            $location.path('/overview');
         })
     }
 

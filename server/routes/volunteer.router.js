@@ -133,6 +133,21 @@ router.delete('/delete/:id', function(req,res){
     let ID = req.params.id;
     if (req.isAuthenticated()) {
         console.log('reached delete route,', ID);
+        pool.connect(function (errorconnecting, client, done){
+            if(errorconnecting){
+                console.log('error connecting to database,', errorconnecting)
+                res.sendStatus(500)
+            }else{
+                client.query('DELETE FROM volunteers WHERE id = $1',[ID], function(errormakingquery, result){
+                    if(errormakingquery){
+                        console.log('error making query', errormakingquery);
+                        res.sendStatus(500);
+                    }else{
+                        res.sendStatus(200);
+                    }
+                })
+            }
+        })
     }else{
 
     }
