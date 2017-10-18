@@ -31,6 +31,13 @@ myApp.service('VolunteerService', function($http, $location) {
         });
     };
 
+    self.deleteVolunteer = function(volunteerId){
+        $http.delete('/volunteer/delete/'+ volunteerId).then(function(response){
+            console.log('response from delete route,', response)
+            $location.path('/overview');
+        })
+    }
+
     self.getVolunteerDetail = function(currentVolunteerId) {
         console.log('Hit volunteer detail request');
         $http.get('/volunteer/' + currentVolunteerId).then(function(response) {
