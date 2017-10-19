@@ -21,6 +21,27 @@ myApp.controller('ManageAdminController', ['$http', '$location', 'UserService', 
     };
 
 
+    // DELETE ADMINISTRATOR
+    self.deleteAdmin = function (ev, id) {
+        
+        let confirm = $mdDialog.confirm()
+            .parent(angular.element(document.querySelector('#popupContainer')))
+            .clickOutsideToClose(true)
+            .title('Delete administrator?')
+            .textContent('Are you sure you want to delete this administrator?')
+            .ariaLabel('Delete Dialog')
+            .ok('Delete')
+            .cancel('Do Not Delete')
+            .targetEvent(ev)
+        $mdDialog.show(confirm).then(function () {
+            console.log('delete confirmed')
+            UserService.deleteAdmin(id);
+        }, function(){
+            console.log('delete cancelled')
+        });
+    }
+
+
     // RESET PASSWORD 
     self.resetPassword = function(result) {
         console.log('reset password username: ', result);

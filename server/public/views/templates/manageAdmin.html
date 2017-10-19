@@ -9,9 +9,9 @@
         <table  md-table ng-class="{'hidden': vm.toggle}">
             <thead md-head>
                 <tr md-row>
-                    <th md-column style="text-align:left"><u>Name</u></th>
-                    <th md-column style="text-align:left"><u>Position</u></th>
-                    <th md-column style="text-align:left"><u>Email Address</u></th>
+                    <th md-column style="text-align:left">Name</th>
+                    <th md-column style="text-align:left">Position</th>
+                    <th md-column style="text-align:left">Email Address</th>
                     <th md-column style="text-align:right"></th>
                 </tr>
             </thead>
@@ -29,6 +29,7 @@
                                 <button type="submit" data-ng-hide="editMode" data-ng-click="editMode = true; editAppKey(entry)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect md-18"><i class="material-icons">create</i></button>
                                 <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; mc.updateAdmin(user)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">save</i></button>
                                 <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; cancel()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">cancel</i></button>
+                                <md-button class="md-warn md-raised" data-ng-show="editMode" align="right" ng-click='vm.deleteAdmin($event, user.id);'>Delete</md-button> 
                             </td>
                         </tr>
                     </tbody>
