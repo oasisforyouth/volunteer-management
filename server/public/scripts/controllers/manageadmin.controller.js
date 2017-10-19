@@ -28,10 +28,10 @@ myApp.controller('ManageAdminController', ['$http', '$location', 'UserService', 
             .parent(angular.element(document.querySelector('#popupContainer')))
             .clickOutsideToClose(true)
             .title('Delete administrator?')
-            .textContent('Are you sure you want to delete this administrator?')
+            .textContent('If you delete, this administrator will no longer have access to the system.')
             .ariaLabel('Delete Dialog')
-            .ok('Delete')
-            .cancel('Do Not Delete')
+            .ok('Delete Administrator')
+            .cancel('Cancel')
             .targetEvent(ev)
         $mdDialog.show(confirm).then(function () {
             console.log('delete confirmed')
