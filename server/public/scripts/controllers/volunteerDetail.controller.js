@@ -9,6 +9,7 @@ myApp.controller('VolunteerDetailController', ['VolunteerService', 'UserService'
     VolunteerService.getVolunteerDetail($routeParams.id);
     TrainingService.getCompletedTrainings($routeParams.id);
     TrainingService.getVolunteerTrainings();
+
     self.updateCompletedTraining = function (completedDate, trainingId) {
         TrainingService.updateCompletedTraining($routeParams.id, trainingId, completedDate);
         console.log('completed date data controller, ', $routeParams.id, trainingId, completedDate);
@@ -34,10 +35,10 @@ myApp.controller('VolunteerDetailController', ['VolunteerService', 'UserService'
             .parent(angular.element(document.querySelector('#popupContainer')))
             .clickOutsideToClose(true)
             .title('Delete volunteer?')
-            .textContent('If you delete, all of this volunteers data will be lost.')
+            .textContent('If you delete, all of this volunteer\'s data will be lost.')
             .ariaLabel('Delete Dialog')
-            .ok('Delete')
-            .cancel('Do Not Delete')
+            .ok('Delete Volunteer')
+            .cancel('Cancel')
             .targetEvent(ev)
         $mdDialog.show(confirm).then(function () {
             console.log('delete confirmed')

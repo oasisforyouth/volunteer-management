@@ -56,15 +56,25 @@ myApp.service('UserService', ['$http', '$location', function($http, $location) {
     };
 
     self.deleteAdmin = function(id) {
-        $http({
-            method: 'DELETE',
-            url: '/user/' + id,
-            success: function(response) {
-                console.log('DeleteService response:', response);
-            }
-        })
+        $http.delete('/user/'+ id).then(function(response){
+            console.log('response from delete route,', response)
+        });
         self.getAllUsers();
+        $location.path("/manageAdmin");
+        // $http({
+        //     method: 'DELETE',
+        //     url: '/user/' + id,
+        //     success: function(response) {
+        //         console.log('DeleteService response:', response);
+        //     }
+        // });
+        // 
     };
+
+    
+
+
+
 
     self.updateAdmin = function(user) {
         // console.log('updateAdmin hit', user);
