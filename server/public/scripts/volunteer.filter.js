@@ -8,8 +8,8 @@ myApp.filter('volunteerFilter', function () {
                 volunteerSearchObject.all = true;
                 addVolunteer = true;
             }
-            if (volunteerArray[i].status != 'Applied' && volunteerSearchObject.onboarding) {          
-                addVolunteer = true;
+            if (volunteerArray[i].status == 'Applied' && volunteerSearchObject.onboarding) {          
+                addVolunteer = false;
             }
 
             if (volunteerArray[i].tutor_opportunity == false && volunteerSearchObject.tutor_opportunity) {          
@@ -82,7 +82,7 @@ myApp.filter('volunteerFilter', function () {
                 addVolunteer = false;
             }
 
-            if (volunteerArray[i].status != 'Inactive' && volunteerSearchObject.status_ready) {
+            if (volunteerArray[i].status != 'Inactive' && volunteerSearchObject.status_inactive) {
                 addVolunteer = false;
             }
 
