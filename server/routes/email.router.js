@@ -27,7 +27,6 @@ router.post('/user', (req, res, next) => {
                 // when connecting to database worked aka HAPPYPATH!
                 client.query('INSERT INTO crypto (email) VALUES ($1) RETURNING md5;', [email.email], function(errorMakingQuery, result) {
                     done(); //needed
-                    console.log('result', result.rows[0].md5);
                     if (errorMakingQuery) {
                         console.log('Error making database query', errorMakingQuery);
                         res.sendStatus(500);
