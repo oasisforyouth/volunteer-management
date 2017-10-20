@@ -57,7 +57,7 @@ router.put('/:id', function(req, res, next) {
     var adminId = req.params.id;
     var active = false;
     console.log('req.body', req.body)
-    if (req.isAuthenticated()) {
+    // if (req.isAuthenticated()) {
         // send back user object from database
         console.log('logged in', req.user);
         pool.connect(function(err, client, done) {
@@ -138,32 +138,33 @@ router.put('/:id', function(req, res, next) {
                     }
                 });
         }); // end pool . connect
-    } else {
-        // failure best handled on the server. do redirect here.
-        console.log('not logged in');
-        res.sendStatus(403);
-    }
+    // } 
+    // else {
+    //     // failure best handled on the server. do redirect here.
+    //     console.log('not logged in');
+    //     res.sendStatus(403);
+    // }
 }); // end router.put
 
-router.put('/reset/:id', function(req, res, next) {
-    // console.log('adminID - Params: ', req.params.id);
-    var user = {
-        md5: req.params.id,
-        password: encryptLib.encryptPassword(req.body.password),
-    }
-    console.log('new password:', user);
-    // pool.connect(function(err, client, done) {
-    //     if (err) {
-    //         console.log("Error connecting: ", err);
-    //         res.sendStatus(500);
-    //     }
-    //     client.query("UPDATE pword_reset SET route_params=$1 WHERE md5=$2 RETURNING id;", [adminId, adminId],
-    //         function(err, result) {
-    //             client.end();
+// router.put('/reset/:id', function(req, res, next) {
+//     // console.log('adminID - Params: ', req.params.id);
+//     var user = {
+//         md5: req.params.id,
+//         password: encryptLib.encryptPassword(req.body.password),
+//     }
+//     console.log('new password:', user);
+//     // pool.connect(function(err, client, done) {
+//     //     if (err) {
+//     //         console.log("Error connecting: ", err);
+//     //         res.sendStatus(500);
+//     //     }
+//     //     client.query("UPDATE pword_reset SET route_params=$1 WHERE md5=$2 RETURNING id;", [adminId, adminId],
+//     //         function(err, result) {
+//     //             client.end();
 
-    //         }); // end pool.connect
+//     //         }); // end pool.connect
 
-}); // end router.put
+// }); // end router.put
 
 
 module.exports = router;
