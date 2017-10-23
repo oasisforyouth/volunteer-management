@@ -8,7 +8,7 @@ myApp.filter('volunteerFilter', function () {
                 volunteerSearchObject.all = true;
                 addVolunteer = true;
             }
-            if (volunteerArray[i].status == 'Applied' && volunteerSearchObject.onboarding) {          
+            if (volunteerArray[i].status == 'Ready to Volunteer!' && volunteerSearchObject.onboarding) {          
                 addVolunteer = false;
             }
 
