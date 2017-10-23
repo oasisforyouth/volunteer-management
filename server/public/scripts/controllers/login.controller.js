@@ -55,11 +55,11 @@ myApp.controller('LoginController', function($http, $location, $routeParams, Use
                     $location.path('/overview'); // http://localhost:5000/#/overview
                 } else {
                     console.log('LoginController -- login -- failure: ', response);
-                    self.message = "Wrong!!";
+                    self.message = "Error logging in, please try again";
                 }
             }).catch(function(response) {
                 console.log('LoginController -- registerUser -- failure: ', response);
-                self.message = "Wrong!!";
+                self.message = "Error logging in, please try again";
             });
         }
     };
@@ -78,7 +78,7 @@ myApp.controller('LoginController', function($http, $location, $routeParams, Use
                 //         $http.post('/register', self.user).then(function(response) {
                 //             console.log('LoginController -- registerUser -- success');
                 //             $scope.showAlert();
-                //             $location.path('/login');
+                            $location.path('/login');
                 //         }).catch(function(response) {
                 //             console.log('LoginController -- registerUser -- error');
                 //             self.message = "Please try again."
