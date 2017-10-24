@@ -63,7 +63,7 @@ myApp.filter('volunteerFilter', function () {
             }
 
             
-            if (volunteerArray[i].status == 'Applied' && volunteerSearchObject.status_applied) {
+            if (volunteerArray[i].status != 'Applied' && volunteerSearchObject.status_applied) {
                 addVolunteer = false;
             }
             if (volunteerArray[i].status != 'Application in Review' && volunteerSearchObject.status_review) {
