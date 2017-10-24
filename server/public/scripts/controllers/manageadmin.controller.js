@@ -8,10 +8,7 @@ myApp.controller('ManageAdminController', ['$http', '$location', 'UserService', 
     // result = '';
 
     self.allUsers = UserService.allUsers;
-    self.deleteAdmin = function(userId) {
-        console.log('delete hit', userId);
-        UserService.deleteAdmin(userId);
-    }
+   
     UserService.getAllUsers();
 
     self.updateAdmin = function(user) {

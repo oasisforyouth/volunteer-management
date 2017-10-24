@@ -79,17 +79,28 @@ router.delete('/:id', function(req, res) {
                 console.log('Error connecting to database', errorConnectingToDatabase);
                 res.sendStatus(500);
             } else {
+                client.query('DELETE FROM completed_trainings WHERE training_id=$1;', [trainingId],
+                function(errorMakingQuery, result) {
+                    done();
+                    if (errorMakingQuery) {
+                        console.log('Error making database query', errorMakingQuery);
+                        res.sendStatus(500);
+                    } else {
+                        client.query('DELETE FROM trainings WHERE id=$1;', [trainingId],
+                        function(errorMakingQuery, result) {
+                            done();
+                            if (errorMakingQuery) {
+                                console.log('Error making database query', errorMakingQuery);
+                                res.sendStatus(500);
+                            } else {
+                                res.sendStatus(200);
+                            }
+                        });
+                        
+                    }
+                });
                 // when connecting to database worked!
-                client.query('DELETE FROM trainings WHERE id=$1;', [trainingId],
-                    function(errorMakingQuery, result) {
-                        done();
-                        if (errorMakingQuery) {
-                            console.log('Error making database query', errorMakingQuery);
-                            res.sendStatus(500);
-                        } else {
-                            res.sendStatus(200);
-                        }
-                    });
+                
             }
         });
     } else {

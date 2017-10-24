@@ -14,8 +14,8 @@
                             <th md-column style="text-align:left">Title</th>
                             <!-- <th md-column style="text-align:right">Volunteers</th>
                             <th md-column style="text-align:right">Employees</th> -->
-                            <th md-column style="text-align:right">Edit</th>
-                            <th md-column style="text-align:right">Delete</th>
+                            <!-- <th md-column style="text-align:right">Edit</th> -->
+                            <th md-column style="text-align:center">Delete</th>
                         </tr>
                     </thead>
                     <!-- NON-EDITABLE TABLE -->
@@ -27,9 +27,9 @@
                         <td md-cell>
                             <md-checkbox aria-label="employee checkbox" ng-disabled="true" ng-model="training.employees"></md-checkbox>
                         </td> -->
-                        <td md-cell><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-                    <i class="material-icons" ng-if="!vm.toggle" ng-click="vm.toggle = true">create</i></button>
-                            <td md-cell><button ng-click="vm.deleteTraining(training.id)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons" aria-hidden="true" >delete</i></button>
+                        <!-- <td md-cell><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+                    <i class="material-icons" ng-if="!vm.toggle" ng-click="vm.toggle = true">create</i></button> -->
+                            <td md-cell><md-button class="md-warn md-raised" ng-click="vm.deleteTraining($event, training.id)">Delete</md-button></td>
                     </tr>
                     <!-- EDITABLE TABLE -->
                     <tr class="hoverRow" ng-repeat="training in vm.trainings.list | orderBy: 'title'" ng-class="{'hidden': !vm.toggle}">
