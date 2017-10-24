@@ -31,7 +31,7 @@ myApp.controller('VolunteerDetailController', ['VolunteerService', 'UserService'
         )
     }
     self.deleteVolunteer = function (ev) {
-        let confirm = $mdDialog.confirm()
+        var confirm = $mdDialog.confirm()
             .parent(angular.element(document.querySelector('#popupContainer')))
             .clickOutsideToClose(true)
             .title('Delete volunteer?')

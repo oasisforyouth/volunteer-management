@@ -39,7 +39,7 @@ myApp.service('TrainingService', function($http, $location) {
 
     // DELETES TRAINING FROM DATABASE
     self.deleteTraining = function(trainingId) {
-        // console.log('deleteTraining hit', trainingId);
+        //console.log('deleteTraining hit', trainingId);
         $http.delete('/training/' + trainingId).then(function (response) {
 
             self.getTrainings();

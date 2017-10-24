@@ -4,32 +4,32 @@
         <h3>Manage Administrators</h3>
 
 
-<md-card id="adminTable">
-    <md-table-container>
-        <table  md-table ng-class="{'hidden': vm.toggle}">
-            <thead md-head>
-                <tr md-row>
-                    <th md-column style="text-align:left">Name</th>
-                    <th md-column style="text-align:left">Position</th>
-                    <th md-column style="text-align:left">Email Address</th>
-                    <th md-column style="text-align:right"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="hoverRow" data-ng-repeat="user in vm.allUsers.list" data-ng-class="{danger:!entry.active}">
-                    <td md-cell><span data-ng-hide="editMode">{{user.first_name}} {{user.last_name}}</span>
-                        <input type="text" data-ng-show="editMode" data-ng-model="user.first_name" placeholder="First Name" data-ng-required /><br>
-                        <input type="text" data-ng-show="editMode" data-ng-model="user.last_name" placeholder="Last Name" data-ng-required /></td>
-                    <td md-cell><span data-ng-hide="editMode">{{user.position}}</span>
-                        <input type="text" data-ng-show="editMode" data-ng-model="user.position" placeholder="Position" data-ng-required /></td>
-                    <td md-cell><span data-ng-hide="editMode">{{user.email}}</span>
-                        <input type="text" data-ng-show="editMode" data-ng-model="user.email" placeholder="Email Address" data-ng-required /></td>
-                    <td md-cell>
+        <md-card id="adminTable">
+            <md-table-container>
+                <table md-table ng-class="{'hidden': vm.toggle}">
+                    <thead md-head>
+                        <tr md-row>
+                            <th md-column style="text-align:left">Name</th>
+                            <th md-column style="text-align:left">Position</th>
+                            <th md-column style="text-align:left">Email Address</th>
+                            <th md-column style="text-align:right"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hoverRow" data-ng-repeat="user in vm.allUsers.list" data-ng-class="{danger:!entry.active}">
+                            <td md-cell><span data-ng-hide="editMode">{{user.first_name}} {{user.last_name}}</span>
+                                <input type="text" data-ng-show="editMode" data-ng-model="user.first_name" placeholder="First Name" data-ng-required /><br>
+                                <input type="text" data-ng-show="editMode" data-ng-model="user.last_name" placeholder="Last Name" data-ng-required /></td>
+                            <td md-cell><span data-ng-hide="editMode">{{user.position}}</span>
+                                <input type="text" data-ng-show="editMode" data-ng-model="user.position" placeholder="Position" data-ng-required /></td>
+                            <td md-cell><span data-ng-hide="editMode">{{user.email}}</span>
+                                <input type="text" data-ng-show="editMode" data-ng-model="user.email" placeholder="Email Address" data-ng-required /></td>
+                            <td md-cell>
 
-                                <button type="submit" data-ng-hide="editMode" data-ng-click="editMode = true; editAppKey(entry)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect md-18"><i class="material-icons">create</i></button>
-                                <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; mc.updateAdmin(user)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">save</i></button>
-                                <button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; cancel()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"><i class="material-icons">cancel</i></button>
-                                <md-button class="md-warn md-raised" data-ng-show="editMode" align="right" ng-click='vm.deleteAdmin($event, user.id);'>Delete</md-button> 
+                                <md-button class="md-accent md-raised" type="submit" data-ng-hide="editMode" data-ng-click="editMode = true; editAppKey(entry)">Edit</md-button>
+                                <md-button class="md-primary md-raised" type="submit" data-ng-show="editMode" data-ng-click="editMode = false; mc.updateAdmin(user)">Save</md-button>
+                                <md-button class="md-warn md-raised" data-ng-show="editMode" align="right" ng-click='vm.deleteAdmin($event, user.id);'>Delete</md-button>
+                                <md-button type="submit" data-ng-show="editMode" data-ng-click="editMode = false; cancel()">Cancel</md-button>
                             </td>
                         </tr>
                     </tbody>
